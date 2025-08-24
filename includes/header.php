@@ -184,7 +184,7 @@ if (!defined('SITE_NAME')) {
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-dark-primary focus:outline-none">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
@@ -192,13 +192,13 @@ if (!defined('SITE_NAME')) {
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+        <div id="mobile-menu" class="hidden md:hidden dark-primary border-t border-gray-200">
             <div class="px-6 py-4 space-y-3">
-                <a href="/" class="block py-2 text-gray-600 hover:text-brand-blue transition-colors">Home</a>
-                <a href="/pages/services.php" class="block py-2 text-gray-600 hover:text-brand-blue transition-colors">Services</a>
-                <a href="/pages/portfolio.php" class="block py-2 text-gray-600 hover:text-brand-blue transition-colors">Portfolio</a>
-                <a href="/pages/about.php" class="block py-2 text-gray-600 hover:text-brand-blue transition-colors">About</a>
-                <a href="/pages/blog.php" class="block py-2 text-gray-600 hover:text-brand-blue transition-colors">Blog</a>
+                <a href="/" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'text-brand-blue font-medium' : ''; ?>">Home</a>
+                <a href="/pages/services.php" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'services.php' ? 'text-brand-blue font-medium' : ''; ?>">Services</a>
+                <a href="/pages/portfolio.php" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'portfolio.php' ? 'text-brand-blue font-medium' : ''; ?>">Portfolio</a>
+                <a href="/pages/about.php" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'text-brand-blue font-medium' : ''; ?>">About</a>
+                <a href="/pages/blog.php" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'text-brand-blue font-medium' : ''; ?>">Blog</a>
                 <a href="/pages/contact.php" class="block mt-3 bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors">Get a Free Quote</a>
             </div>
         </div>

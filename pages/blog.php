@@ -159,7 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_newsletter'])) 
                     <?php endforeach; ?>
 
                     <!-- Placeholder posts for demo -->
-                    <article class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
+                    <!-- <article class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
                         <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
                             <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -229,7 +229,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_newsletter'])) 
                                 </svg>
                             </a>
                         </div>
-                    </article>
+                    </article> -->
                 </div>
             <?php else: ?>
                 <div class="text-center py-12">
