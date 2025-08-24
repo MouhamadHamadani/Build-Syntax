@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
 
 <main>
     <!-- =========== Hero Section =========== -->
-    <section class="bg-gradient-to-br from-blue-500 to-gray-700 text-white pt-32 pb-20">
+    <section class="gradient-hero-dark text-white pt-32 pb-20">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Contact Us</h1>
             <p class="text-xl opacity-90 max-w-3xl mx-auto fade-in">
@@ -55,13 +55,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
     </section>
 
     <!-- =========== Contact Form Section =========== -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <!-- Contact Form -->
                 <div class="fade-in">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get a Free Quote</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
+                    <h2 class="text-3xl font-bold text-dark-accent mb-6">Get a Free Quote</h2>
+                    <p class="text-dark-secondary mb-8 leading-relaxed">
                         Tell us about your project and we'll get back to you within 24 hours with a detailed proposal and timeline.
                     </p>
 
@@ -91,13 +91,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                     <form method="POST" action="" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+                                <label for="name" class="block text-white font-medium mb-2">Full Name *</label>
                                 <input type="text" id="name" name="name" required 
                                        value="<?php echo isset($_POST['name']) ? htmlspecialchars($_POST['name']) : ''; ?>"
                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
                             </div>
                             <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+                                <label for="email" class="block text-white font-medium mb-2">Email Address *</label>
                                 <input type="email" id="email" name="email" required 
                                        value="<?php echo isset($_POST['email']) ? htmlspecialchars($_POST['email']) : ''; ?>"
                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
@@ -106,13 +106,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                         
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="company" class="block text-gray-700 font-medium mb-2">Company Name</label>
+                                <label for="company" class="block text-white font-medium mb-2">Company Name</label>
                                 <input type="text" id="company" name="company" 
                                        value="<?php echo isset($_POST['company']) ? htmlspecialchars($_POST['company']) : ''; ?>"
                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
                             </div>
                             <div>
-                                <label for="budget_range" class="block text-gray-700 font-medium mb-2">Budget Range</label>
+                                <label for="budget_range" class="block text-white font-medium mb-2">Budget Range</label>
                                 <select id="budget_range" name="budget_range" 
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
                                     <option value="">Select budget range</option>
@@ -125,7 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                         </div>
                         
                         <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Project Details *</label>
+                            <label for="message" class="block text-white font-medium mb-2">Project Details *</label>
                             <textarea id="message" name="message" rows="6" required 
                                       placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
                                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 resize-vertical"><?php echo isset($_POST['message']) ? htmlspecialchars($_POST['message']) : ''; ?></textarea>
@@ -142,8 +142,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
 
                 <!-- Contact Information -->
                 <div class="fade-in">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed">
+                    <h2 class="text-3xl font-bold text-dark-accent mb-6">Get in Touch</h2>
+                    <p class="text-dark-secondary mb-8 leading-relaxed">
                         We're here to help bring your digital vision to life. Reach out to us through any of the channels below.
                     </p>
 
@@ -156,9 +156,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Office Location</h3>
-                                <p class="text-gray-600">Beirut, Lebanon</p>
-                                <p class="text-sm text-gray-500">Available for in-person meetings</p>
+                                <h3 class="text-lg font-semibold text-dark-accent mb-1">Office Location</h3>
+                                <p class="text-dark-secondary">Beirut, Lebanon</p>
+                                <p class="text-sm text-dark-primary">Available for in-person meetings</p>
                             </div>
                         </div>
 
@@ -169,9 +169,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Email Address</h3>
-                                <p class="text-gray-600"><?php echo CONTACT_EMAIL; ?></p>
-                                <p class="text-sm text-gray-500">We respond within 24 hours</p>
+                                <h3 class="text-lg font-semibold text-dark-accent mb-1">Email Address</h3>
+                                <p class="text-dark-secondary"><?php echo CONTACT_EMAIL; ?></p>
+                                <p class="text-sm text-dark-primary">We respond within 24 hours</p>
                             </div>
                         </div>
 
@@ -182,9 +182,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Phone Number</h3>
-                                <p class="text-gray-600">+961 XX XXX XXX</p>
-                                <p class="text-sm text-gray-500">Monday - Friday, 9 AM - 6 PM</p>
+                                <h3 class="text-lg font-semibold text-dark-accent mb-1">Phone Number</h3>
+                                <p class="text-dark-secondary">+961 XX XXX XXX</p>
+                                <p class="text-sm text-dark-primary">Monday - Friday, 9 AM - 6 PM</p>
                             </div>
                         </div>
 
@@ -195,16 +195,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-900 mb-1">Response Time</h3>
-                                <p class="text-gray-600">Within 24 hours</p>
-                                <p class="text-sm text-gray-500">Usually much faster!</p>
+                                <h3 class="text-lg font-semibold text-dark-accent mb-1">Response Time</h3>
+                                <p class="text-dark-secondary">Within 24 hours</p>
+                                <p class="text-sm text-dark-primary">Usually much faster!</p>
                             </div>
                         </div>
                     </div>
 
                     <!-- Quick Contact Options -->
-                    <div class="bg-gray-50 rounded-xl p-6">
-                        <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Contact</h3>
+                    <div class="card-dark rounded-xl p-6">
+                        <h3 class="text-lg font-semibold text-dark-accent mb-4">Quick Contact</h3>
                         <div class="space-y-3">
                             <a href="mailto:<?php echo CONTACT_EMAIL; ?>" 
                                class="flex items-center space-x-3 text-brand-blue hover:text-brand-blue-dark transition-colors">
@@ -235,92 +235,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
     </section>
 
     <!-- =========== FAQ Section =========== -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Get quick answers to common questions about our services and process.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Frequently Asked Questions</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Get quick answers to common questions about our services and process.</p>
             </div>
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-6">
                     <!-- FAQ Item 1 -->
-                    <div class="bg-white rounded-lg shadow-md fade-in">
+                    <div class="card-dark rounded-lg shadow-md fade-in">
                         <button class="faq-toggle w-full text-left p-6 focus:outline-none" data-target="faq-1">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-gray-900">How long does it take to build a website?</h3>
+                                <h3 class="text-lg font-semibold text-dark-accent">How long does it take to build a website?</h3>
                                 <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </div>
                         </button>
                         <div id="faq-1" class="faq-content hidden px-6 pb-6">
-                            <p class="text-gray-600">The timeline depends on the complexity of your project. A simple website typically takes 2-4 weeks, while more complex e-commerce or custom applications can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.</p>
+                            <p class="text-dark-secondary">The timeline depends on the complexity of your project. A simple website typically takes 2-4 weeks, while more complex e-commerce or custom applications can take 6-12 weeks. We'll provide a detailed timeline during our initial consultation.</p>
                         </div>
                     </div>
 
                     <!-- FAQ Item 2 -->
-                    <div class="bg-white rounded-lg shadow-md fade-in">
+                    <div class="card-dark rounded-lg shadow-md fade-in">
                         <button class="faq-toggle w-full text-left p-6 focus:outline-none" data-target="faq-2">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-gray-900">What's included in your web development service?</h3>
+                                <h3 class="text-lg font-semibold text-dark-accent">What's included in your web development service?</h3>
                                 <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </div>
                         </button>
                         <div id="faq-2" class="faq-content hidden px-6 pb-6">
-                            <p class="text-gray-600">Our service includes custom design, responsive development, content management system, basic SEO setup, contact forms, 3 months of free support, and training on how to manage your content. We also handle hosting setup if needed.</p>
+                            <p class="text-dark-secondary">Our service includes custom design, responsive development, content management system, basic SEO setup, contact forms, 3 months of free support, and training on how to manage your content. We also handle hosting setup if needed.</p>
                         </div>
                     </div>
 
                     <!-- FAQ Item 3 -->
-                    <div class="bg-white rounded-lg shadow-md fade-in">
+                    <div class="card-dark rounded-lg shadow-md fade-in">
                         <button class="faq-toggle w-full text-left p-6 focus:outline-none" data-target="faq-3">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Do you provide ongoing maintenance?</h3>
+                                <h3 class="text-lg font-semibold text-dark-accent">Do you provide ongoing maintenance?</h3>
                                 <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </div>
                         </button>
                         <div id="faq-3" class="faq-content hidden px-6 pb-6">
-                            <p class="text-gray-600">Yes! We offer ongoing maintenance packages that include security updates, content updates, performance monitoring, and technical support. We believe in long-term partnerships with our clients.</p>
+                            <p class="text-dark-secondary">Yes! We offer ongoing maintenance packages that include security updates, content updates, performance monitoring, and technical support. We believe in long-term partnerships with our clients.</p>
                         </div>
                     </div>
 
                     <!-- FAQ Item 4 -->
-                    <div class="bg-white rounded-lg shadow-md fade-in">
+                    <div class="card-dark rounded-lg shadow-md fade-in">
                         <button class="faq-toggle w-full text-left p-6 focus:outline-none" data-target="faq-4">
                             <div class="flex justify-between items-center">
-                                <h3 class="text-lg font-semibold text-gray-900">Can you work with clients outside Lebanon?</h3>
+                                <h3 class="text-lg font-semibold text-dark-accent">Can you work with clients outside Lebanon?</h3>
                                 <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </div>
                         </button>
                         <div id="faq-4" class="faq-content hidden px-6 pb-6">
-                            <p class="text-gray-600">Absolutely! We work with clients across the MENA region and internationally. We're experienced in remote collaboration and use modern communication tools to ensure smooth project delivery regardless of location.</p>
+                            <p class="text-dark-secondary">Absolutely! We work with clients across the MENA region and internationally. We're experienced in remote collaboration and use modern communication tools to ensure smooth project delivery regardless of location.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========== Call to Action =========== -->
-    <section class="py-20 bg-brand-blue text-white">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-3xl mx-auto fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Start Your Project?</h2>
-                <p class="text-xl mb-8 opacity-90">Don't wait any longer. Let's turn your vision into reality with professional web development services.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#" onclick="$('html, body').animate({scrollTop: 0}, 800); return false;" 
-                       class="bg-white text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">
-                        Get Free Quote
-                    </a>
-                    <a href="portfolio.php" class="border-2 border-white text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-brand-blue transition-all duration-200">
-                        View Our Work
-                    </a>
                 </div>
             </div>
         </div>

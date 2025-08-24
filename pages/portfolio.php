@@ -45,7 +45,7 @@ try {
 
 <main>
     <!-- =========== Hero Section =========== -->
-    <section class="bg-gradient-to-br from-blue-500 to-gray-700 text-white pt-32 pb-20">
+    <section class="gradient-hero-dark text-white pt-32 pb-20">
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Our Portfolio</h1>
             <p class="text-xl opacity-90 max-w-3xl mx-auto fade-in">
@@ -55,22 +55,22 @@ try {
     </section>
 
     <!-- =========== Portfolio Filter =========== -->
-    <section class="py-12 bg-white border-b border-gray-200">
+    <section class="py-12 bg-dark-secondary border-b border-gray-800">
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap justify-center gap-4">
                 <button class="portfolio-filter active bg-brand-blue text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="all">
                     All Projects
                 </button>
-                <button class="portfolio-filter bg-gray-200 text-gray-700 hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="E-Commerce">
+                <button class="portfolio-filter bg-dark-tertiary text-dark-accent hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="E-Commerce">
                     E-Commerce
                 </button>
-                <button class="portfolio-filter bg-gray-200 text-gray-700 hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="Corporate">
+                <button class="portfolio-filter bg-dark-tertiary text-dark-accent hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="Corporate">
                     Corporate
                 </button>
-                <button class="portfolio-filter bg-gray-200 text-gray-700 hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="Web App">
+                <button class="portfolio-filter bg-dark-tertiary text-dark-accent hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="Web App">
                     Web Apps
                 </button>
-                <button class="portfolio-filter bg-gray-200 text-gray-700 hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="Mobile">
+                <button class="portfolio-filter bg-dark-tertiary text-dark-accent hover:bg-brand-blue hover:text-white px-6 py-2 rounded-full font-medium transition-all duration-200" data-filter="Mobile">
                     Mobile Apps
                 </button>
             </div>
@@ -78,11 +78,11 @@ try {
     </section>
 
     <!-- =========== Portfolio Grid =========== -->
-    <section class="py-20 bg-gray-50">
+    <section class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
                 <?php foreach ($projects as $project): ?>
-                <div class="portfolio-item bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in" data-category="<?php echo htmlspecialchars($project['category']); ?>">
+                <div class="portfolio-item card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in" data-category="<?php echo htmlspecialchars($project['category']); ?>">
                     <div class="h-48 bg-gradient-to-br from-brand-blue to-blue-600 flex items-center justify-center relative overflow-hidden">
                         <?php if ($project['category'] === 'E-Commerce'): ?>
                             <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,8 +108,8 @@ try {
                         <div class="flex items-center justify-between mb-2">
                             <span class="bg-brand-blue text-white text-xs px-2 py-1 rounded"><?php echo htmlspecialchars($project['category']); ?></span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3"><?php echo htmlspecialchars($project['title']); ?></h3>
-                        <p class="text-gray-600 mb-4"><?php echo htmlspecialchars($project['description']); ?></p>
+                        <h3 class="text-xl font-bold mb-3 text-dark-accent"><?php echo htmlspecialchars($project['title']); ?></h3>
+                        <p class="text-gray-600 mb-4 text-dark-secondary"><?php echo htmlspecialchars($project['description']); ?></p>
                         <div class="flex flex-wrap gap-1 mb-4">
                             <?php 
                             $techs = explode(', ', $project['technologies']);
@@ -162,67 +162,49 @@ try {
     </div>
 
     <!-- =========== Technologies Section =========== -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Technologies We Use</h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">We work with modern, reliable technologies to build robust and scalable solutions.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Technologies We Use</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">We work with modern, reliable technologies to build robust and scalable solutions.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
                 <!-- Technology Icons -->
                 <div class="text-center fade-in">
-                    <div class="bg-gray-50 rounded-lg p-6 mb-3 hover:bg-brand-blue hover:text-white transition-all duration-200">
+                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-secondary hover:text-white transition-all duration-200">
                         <div class="text-4xl font-bold">PHP</div>
                     </div>
-                    <p class="text-sm text-gray-600">PHP</p>
+                    <p class="text-sm text-white">PHP</p>
                 </div>
                 <div class="text-center fade-in">
-                    <div class="bg-gray-50 rounded-lg p-6 mb-3 hover:bg-brand-blue hover:text-white transition-all duration-200">
+                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-secondary hover:text-white transition-all duration-200">
                         <div class="text-4xl font-bold">L</div>
                     </div>
-                    <p class="text-sm text-gray-600">Laravel</p>
+                    <p class="text-sm text-white">Laravel</p>
                 </div>
                 <div class="text-center fade-in">
-                    <div class="bg-gray-50 rounded-lg p-6 mb-3 hover:bg-brand-blue hover:text-white transition-all duration-200">
+                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-secondary hover:text-white transition-all duration-200">
                         <div class="text-4xl font-bold">JS</div>
                     </div>
-                    <p class="text-sm text-gray-600">JavaScript</p>
+                    <p class="text-sm text-white">JavaScript</p>
                 </div>
                 <div class="text-center fade-in">
-                    <div class="bg-gray-50 rounded-lg p-6 mb-3 hover:bg-brand-blue hover:text-white transition-all duration-200">
+                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-secondary hover:text-white transition-all duration-200">
                         <div class="text-4xl font-bold">⚛</div>
                     </div>
-                    <p class="text-sm text-gray-600">React</p>
+                    <p class="text-sm text-white">React</p>
                 </div>
                 <div class="text-center fade-in">
-                    <div class="bg-gray-50 rounded-lg p-6 mb-3 hover:bg-brand-blue hover:text-white transition-all duration-200">
+                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-secondary hover:text-white transition-all duration-200">
                         <div class="text-4xl font-bold">DB</div>
                     </div>
-                    <p class="text-sm text-gray-600">MySQL</p>
+                    <p class="text-sm text-white">MySQL</p>
                 </div>
                 <div class="text-center fade-in">
-                    <div class="bg-gray-50 rounded-lg p-6 mb-3 hover:bg-brand-blue hover:text-white transition-all duration-200">
+                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-secondary hover:text-white transition-all duration-200">
                         <div class="text-4xl font-bold">TW</div>
                     </div>
-                    <p class="text-sm text-gray-600">Tailwind</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========== Call to Action =========== -->
-    <section class="py-20 bg-brand-blue text-white">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-3xl mx-auto fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Like What You See?</h2>
-                <p class="text-xl mb-8 opacity-90">Let's create something amazing together. Contact us to discuss your project and get a free consultation.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact.php" class="bg-white text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">
-                        Start Your Project
-                    </a>
-                    <a href="services.php" class="border-2 border-white text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-brand-blue transition-all duration-200">
-                        View Services
-                    </a>
+                    <p class="text-sm text-white">Tailwind</p>
                 </div>
             </div>
         </div>
@@ -236,8 +218,8 @@ $(document).ready(function() {
         const filter = $(this).data('filter');
         
         // Update active button
-        $('.portfolio-filter').removeClass('active bg-brand-blue text-white').addClass('bg-gray-200 text-gray-700');
-        $(this).removeClass('bg-gray-200 text-gray-700').addClass('active bg-brand-blue text-white');
+        $('.portfolio-filter').removeClass('active bg-brand-blue text-white').addClass('bg-dark-tertiary text-dark-accent');
+        $(this).removeClass('bg-dark-tertiary text-dark-accent').addClass('active bg-brand-blue text-white');
         
         // Filter portfolio items
         if (filter === 'all') {

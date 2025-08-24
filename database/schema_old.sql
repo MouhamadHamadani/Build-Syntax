@@ -38,7 +38,6 @@ CREATE TABLE IF NOT EXISTS blog_posts (
     content LONGTEXT,
     featured_image VARCHAR(255),
     published BOOLEAN DEFAULT FALSE,
-    status ENUM('published', 'draft', 'archived') DEFAULT 'published',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
