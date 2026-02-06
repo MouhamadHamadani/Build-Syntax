@@ -57,18 +57,17 @@ include 'header.php';
 ?>
 
         <!-- Main Content -->
-        <div class="flex-1 p-8">
+        <div class="flex-1 p-4 lg:p-8">
             <div class="max-w-7xl mx-auto">
                 <!-- Header -->
-                <div class="mb-8">
-                    <h1 class="text-3xl font-bold text-dark-accent">Dashboard</h1>
+                <div class="mb-6 lg:mb-8">
+                    <h1 class="text-2xl lg:text-3xl font-bold text-dark-accent">Dashboard</h1>
                     <p class="text-dark-secondary mt-2">Welcome to your Build Syntax admin panel</p>
                 </div>
-
-                <!-- Stats Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                    <!-- Contact Quotes -->
-                    <div class="bg-dark-secondary rounded-lg p-6 border border-dark">
+                
+                <!-- Statistics Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-6 lg:mb-8">                   <!-- Contact Quotes -->
+                    <div class="bg-dark-secondary rounded-lg p-4 lg:p-6 border border-dark">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-dark-secondary text-sm font-medium">Contact Quotes</p>
@@ -86,7 +85,7 @@ include 'header.php';
                     </div>
 
                     <!-- Newsletter Subscribers -->
-                    <div class="bg-dark-secondary rounded-lg p-6 border border-dark">
+                    <div class="bg-dark-secondary rounded-lg p-4 lg:p-6 border border-dark">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-dark-secondary text-sm font-medium">Newsletter</p>
@@ -104,7 +103,7 @@ include 'header.php';
                     </div>
 
                     <!-- Blog Posts -->
-                    <div class="bg-dark-secondary rounded-lg p-6 border border-dark">
+                    <div class="bg-dark-secondary rounded-lg p-4 lg:p-6 border border-dark">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-dark-secondary text-sm font-medium">Blog Posts</p>
@@ -122,7 +121,7 @@ include 'header.php';
                     </div>
 
                     <!-- In Progress -->
-                    <div class="bg-dark-secondary rounded-lg p-6 border border-dark">
+                    <div class="bg-dark-secondary rounded-lg p-4 lg:p-6 border border-dark">
                         <div class="flex items-center justify-between">
                             <div>
                                 <p class="text-dark-secondary text-sm font-medium">In Progress</p>
@@ -139,13 +138,13 @@ include 'header.php';
                 </div>
 
                 <!-- Recent Activity -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 lg:gap-8">
                     <!-- Recent Contact Quotes -->
                     <div class="bg-dark-secondary rounded-lg border border-dark">
-                        <div class="p-6 border-b border-dark">
+                        <div class="p-4 lg:p-6 border-b border-dark">
                             <h3 class="text-lg font-semibold text-dark-accent">Recent Contact Quotes</h3>
                         </div>
-                        <div class="p-6">
+                        <div class="p-4 lg:p-6">
                             <?php if (empty($recentContacts)): ?>
                                 <p class="text-dark-secondary text-center py-4">No contact submissions yet</p>
                             <?php else: ?>
@@ -177,10 +176,10 @@ include 'header.php';
 
                     <!-- Recent Newsletter Subscriptions -->
                     <div class="bg-dark-secondary rounded-lg border border-dark">
-                        <div class="p-6 border-b border-dark">
+                        <div class="p-4 lg:p-6 border-b border-dark">
                             <h3 class="text-lg font-semibold text-dark-accent">Recent Newsletter Subscriptions</h3>
                         </div>
-                        <div class="p-6">
+                        <div class="p-4 lg:p-6">
                             <?php if (empty($recentSubscriptions)): ?>
                                 <p class="text-dark-secondary text-center py-4">No newsletter subscriptions yet</p>
                             <?php else: ?>

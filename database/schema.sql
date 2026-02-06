@@ -24,15 +24,19 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
 -- Portfolio projects table
 CREATE TABLE IF NOT EXISTS portfolio_projects (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(200) NOT NULL,
-    description TEXT,
-    category VARCHAR(50),
-    image_url VARCHAR(255),
-    project_url VARCHAR(255),
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    category ENUM('web', 'ecommerce', 'mobile', 'other') NOT NULL DEFAULT 'web',
     technologies TEXT,
+    project_url VARCHAR(500),
+    image_url VARCHAR(500),
     featured BOOLEAN DEFAULT FALSE,
+    created_by INT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_category (category),
+    INDEX idx_featured (featured),
+    INDEX idx_created_at (created_at)
 );
 
 -- Blog posts table

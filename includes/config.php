@@ -31,5 +31,22 @@ function sanitizeInput($data) {
 function isValidEmail($email) {
     return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
+
+
+// Response functions
+function jsonResponse($data, $status = 200) {
+    http_response_code($status);
+    header('Content-Type: application/json');
+    echo json_encode($data);
+    exit;
+}
+
+function errorResponse($message, $status = 400) {
+    jsonResponse(['error' => $message], $status);
+}
+
+function successResponse($data = [], $message = 'Success') {
+    jsonResponse(['success' => true, 'message' => $message, 'data' => $data]);
+}
 ?>
 
