@@ -168,7 +168,7 @@ if (!defined('SITE_NAME')) {
             <a href="/" class="flex items-center space-x-3">
                 <img src="/assets/images/icon.png" alt="Build Syntax Icon" class="h-10 w-10">
                 <div class="flex flex-col">
-                    <span class="text-xl font-bold text-brand-blue">Build <span class="text-[#4c4c4c]">Syntax</span> <span class="text-white">BETA</span></span>
+                    <span class="text-xl font-bold text-brand-blue">Build <span class="text-[#4c4c4c]">Syntax</span></span>
                     <span class="text-xs text-gray-500 hidden sm:block">Your Vision, Our Code</span>
                 </div>
             </a>
