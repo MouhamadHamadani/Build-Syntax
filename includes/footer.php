@@ -90,7 +90,7 @@
         <!-- Bottom Bar -->
         <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p class="text-gray-400 text-sm">
-                &copy; <?php echo date("Y"); ?> Build Syntax S.A.R.L. All Rights Reserved.
+                &copy; <?php echo date("Y"); ?> Build Syntax All Rights Reserved.
             </p>
             <div class="flex space-x-6 mt-4 md:mt-0">
                 <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>

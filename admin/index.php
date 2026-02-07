@@ -153,7 +153,7 @@ if ($_POST) {
             <!-- Footer -->
             <div class="mt-8 text-center">
                 <p class="text-xs text-dark-secondary">
-                    &copy; 2025 Build Syntax S.A.R.L. All rights reserved.
+                    &copy; 2025 Build Syntax All rights reserved.
                 </p>
             </div>
         </div>

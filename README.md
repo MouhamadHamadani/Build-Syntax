@@ -1,10 +1,10 @@
 # Build Syntax Website
 
-A professional website for Build Syntax S.A.R.L., a web development company based in Beirut, Lebanon.
+A professional website for Build Syntax, a web development company based in Beirut, Lebanon.
 
 ## Project Overview
 
-**Company:** Build Syntax S.A.R.L.  
+**Company:** Build Syntax  
 **Tagline:** "Your Vision, Our Code"  
 **Location:** Beirut, Lebanon  
 **Industry:** Web Development & Digital Solutions
@@ -178,7 +178,7 @@ The website uses Build Syntax's brand colors:
 
 For technical support or questions about this website:
 
-**Build Syntax S.A.R.L.**  
+**Build Syntax**  
 Email: info@buildsyntax.com  
 Location: Beirut, Lebanon  
 Website: [Your Domain]
