@@ -150,15 +150,6 @@ if ($_POST) {
                 </button>
             </form>
 
-            <!-- Default Credentials Info -->
-            <div class="mt-6 p-4 bg-dark-tertiary rounded-lg border border-dark">
-                <p class="text-xs text-dark-secondary text-center">
-                    <strong>Default Login:</strong><br>
-                    Username: admin<br>
-                    Password: admin123
-                </p>
-            </div>
-
             <!-- Footer -->
             <div class="mt-8 text-center">
                 <p class="text-xs text-dark-secondary">
