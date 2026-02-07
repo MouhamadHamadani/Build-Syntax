@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                             </div>
                             <div>
                                 <h3 class="text-lg font-semibold text-dark-accent mb-1">Phone Number</h3>
-                                <p class="text-dark-secondary">+961 XX XXX XXX</p>
+                                <p class="text-dark-secondary"><?php echo CONTACT_PHONE; ?></p>
                                 <p class="text-sm text-dark-primary">Monday - Friday, 9 AM - 6 PM</p>
                             </div>
                         </div>

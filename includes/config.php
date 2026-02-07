@@ -10,6 +10,7 @@ define('SITE_NAME', 'Build Syntax');
 define('SITE_TAGLINE', 'Your Vision, Our Code');
 define('SITE_URL', 'http://localhost');
 define('CONTACT_EMAIL', 'info@buildsyntax.com');
+define('CONTACT_PHONE', '+961 71 293 685');
 
 // Database connection function
 function getDBConnection() {
