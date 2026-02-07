@@ -33,7 +33,7 @@ if (!defined('SITE_NAME')) {
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/icon.png">
+    <link rel="icon" type="image/png" href="/assets/images/icon.png">
 
     <style>
         /* Applying the custom font */
@@ -166,7 +166,7 @@ if (!defined('SITE_NAME')) {
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3">
-                <img src="../assets/images/icon.png" alt="Build Syntax Icon" class="h-10 w-10">
+                <img src="/assets/images/icon.png" alt="Build Syntax Icon" class="h-10 w-10">
                 <div class="flex flex-col">
                     <span class="text-xl font-bold text-brand-blue">Build <span class="text-[#4c4c4c]">Syntax</span> <span class="text-white">BETA</span></span>
                     <span class="text-xs text-gray-500 hidden sm:block">Your Vision, Our Code</span>
