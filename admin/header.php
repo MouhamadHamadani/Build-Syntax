@@ -122,7 +122,7 @@
                 </div>
                 <div class="flex items-center space-x-2 lg:space-x-4">
                     <span class="text-dark-secondary text-sm lg:text-base hidden sm:block">Welcome, <?php echo getAdminName(); ?></span>
-                    <a href="logout.php" class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 lg:px-4 rounded-lg text-xs lg:text-sm transition-colors">
+                    <a href="logout" class="bg-red-600 hover:bg-red-700 text-white px-3 py-2 lg:px-4 rounded-lg text-xs lg:text-sm transition-colors">
                         Logout
                     </a>
                 </div>
@@ -144,31 +144,31 @@
             
             <nav class="mt-4 lg:mt-8">
                 <div class="px-4 space-y-2">
-                    <a href="dashboard.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> flex items-center px-4 py-3 rounded-lg hover:text-dark-accent hover:bg-dark-tertiary transition-colors">
+                    <a href="dashboard" class="<?php echo basename($_SERVER['PHP_SELF']) == 'dashboard.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> flex items-center px-4 py-3 rounded-lg hover:text-dark-accent hover:bg-dark-tertiary transition-colors">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
                         </svg>
                         Dashboard
                     </a>
-                    <a href="quotes.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'quotes.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
+                    <a href="quotes" class="<?php echo basename($_SERVER['PHP_SELF']) == 'quotes.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
                         Contact Quotes
                     </a>
-                    <a href="newsletter.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'newsletter.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
+                    <a href="newsletter" class="<?php echo basename($_SERVER['PHP_SELF']) == 'newsletter.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         Newsletter
                     </a>
-                    <a href="blog.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
+                    <a href="blog" class="<?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
                         <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5a2.5 2.5 0 00-2.5-2.5H15" />
                         </svg>
                         Blog Posts
                     </a>
-                    <a href="portfolio.php" class="<?php echo basename($_SERVER['PHP_SELF']) == 'portfolio.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
+                    <a href="portfolio" class="<?php echo basename($_SERVER['PHP_SELF']) == 'portfolio.php' ? 'bg-brand-blue text-white' : 'text-dark-secondary'; ?> hover:text-dark-accent hover:bg-dark-tertiary flex items-center px-4 py-3 rounded-lg transition-colors">
                         <svg class="w-5 h-5 mr-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 7a2 2 0 0 1 2-2h3l2 2h9a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z" />
