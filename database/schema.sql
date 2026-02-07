@@ -1,8 +1,8 @@
 -- Build Syntax Website Database Schema
 -- Created for Build Syntax S.A.R.L.
 
-CREATE DATABASE IF NOT EXISTS build_syntax_db;
-USE build_syntax_db;
+-- CREATE DATABASE IF NOT EXISTS build_syntax_db;
+-- USE build_syntax_db;
 
 -- Contact form submissions table
 CREATE TABLE IF NOT EXISTS contact_submissions (

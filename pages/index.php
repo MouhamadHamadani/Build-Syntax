@@ -1,7 +1,7 @@
 <?php
 $page_title = "Home";
 $page_description = "Build Syntax is a Beirut-based development partner dedicated to transforming your ideas into powerful, modern, and reliable websites and applications.";
-require_once 'includes/header.php';
+require_once '../includes/header.php';
 ?>
 
 <main>
@@ -230,5 +230,5 @@ require_once 'includes/header.php';
     </section>
 </main>
 
-<?php require_once 'includes/footer.php'; ?>
+<?php require_once '../includes/footer.php'; ?>
 

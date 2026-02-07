@@ -1,2 +1,3 @@
 admin/old.zip
-database/schema.sql
+database/*
+/database/*
