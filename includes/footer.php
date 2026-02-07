@@ -52,11 +52,11 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? '../index.php' : 'index.php'; ?>" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
-                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'services.php' : 'pages/services.php'; ?>" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
-                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'portfolio.php' : 'pages/portfolio.php'; ?>" class="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
-                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'about.php' : 'pages/about.php'; ?>" class="text-gray-300 hover:text-white transition-colors">About</a></li>
-                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'blog.php' : 'pages/blog.php'; ?>" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? '../index' : 'index'; ?>" class="text-gray-300 hover:text-white transition-colors">Home</a></li>
+                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'services' : 'pages/services'; ?>" class="text-gray-300 hover:text-white transition-colors">Services</a></li>
+                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'portfolio' : 'pages/portfolio'; ?>" class="text-gray-300 hover:text-white transition-colors">Portfolio</a></li>
+                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'about' : 'pages/about'; ?>" class="text-gray-300 hover:text-white transition-colors">About</a></li>
+                    <li><a href="<?php echo strpos($_SERVER['PHP_SELF'], 'pages/') !== false ? 'blog' : 'pages/blog'; ?>" class="text-gray-300 hover:text-white transition-colors">Blog</a></li>
                 </ul>
             </div>
 
