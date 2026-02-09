@@ -5,10 +5,10 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Bring Your Vision to Life?</h2>
             <p class="text-xl mb-8 opacity-90">Let's discuss your project and create something amazing together. Get a free consultation and project quote today.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contact" class="bg-white text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">
+                <a href="contact" class="bg-white text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">
                     Get Free Quote
                 </a>
-                <a href="#work" class="border-2 border-white text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-brand-blue transition-all duration-200">
+                <a href="portfolio" class="border-2 border-white text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-brand-blue transition-all duration-200">
                     View Portfolio
                 </a>
             </div>
