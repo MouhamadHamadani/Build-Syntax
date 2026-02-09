@@ -109,62 +109,84 @@ require_once '../includes/header.php';
                 <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Take a look at some of our recent projects that showcase our expertise and commitment to quality.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
-                <div class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
-                    <div class="h-48 bg-gradient-to-br from-brand-blue to-blue-600 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark-accent">E-Commerce Demo Platform</h3>
-                        <p class="text-dark-secondary mb-4">A comprehensive e-commerce solution built with Laravel and Livewire, featuring real-time cart updates and secure payment processing.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-brand-blue text-white text-xs px-2 py-1 rounded">Laravel</span>
-                            <span class="bg-brand-blue text-white text-xs px-2 py-1 rounded">Livewire</span>
-                            <span class="bg-brand-blue text-white text-xs px-2 py-1 rounded">MySQL</span>
+                <?php
+                try {
+                    $pdo = getDBConnection();
+                    if ($pdo) {
+                        $stmt = $pdo->prepare("SELECT id, title, description, category, technologies, project_url, image_url FROM portfolio_projects WHERE featured = TRUE ORDER BY created_at DESC");
+                        $stmt->execute();
+                        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                        
+                        if (count($projects) > 0) {
+                            // Define gradient colors for cards
+                            $gradients = [
+                                'from-brand-blue to-blue-600',
+                                'from-green-500 to-green-600',
+                                'from-purple-500 to-purple-600',
+                                'from-pink-500 to-pink-600',
+                                'from-indigo-500 to-indigo-600',
+                                'from-yellow-500 to-yellow-600'
+                            ];
+                            
+                            // Define icons for different categories
+                            $icons = [
+                                'ecommerce' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
+                                'web' => 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+                                'mobile' => 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z',
+                                'other' => 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
+                            ];
+                            
+                            foreach ($projects as $index => $project) {
+                                $gradient = $gradients[$index % count($gradients)];
+                                $icon = $icons[$project['category']] ?? $icons['other'];
+                                $technologies = array_map('trim', explode(',', $project['technologies']));
+                                $techColors = ['bg-brand-blue', 'bg-green-500', 'bg-purple-500', 'bg-pink-500', 'bg-indigo-500', 'bg-yellow-500'];
+                                ?>
+                                <!-- Project Card -->
+                                <div class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
+                                    <div class="h-48 bg-gradient-to-br <?php echo $gradient; ?> flex items-center justify-center">
+                                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="<?php echo $icon; ?>"/>
+                                        </svg>
+                                    </div>
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-bold mb-2 text-dark-accent"><?php echo htmlspecialchars($project['title']); ?></h3>
+                                        <p class="text-dark-secondary mb-4"><?php echo htmlspecialchars($project['description']); ?></p>
+                                        <div class="flex flex-wrap gap-2 mb-4">
+                                            <?php foreach ($technologies as $tech_index => $tech) { 
+                                                $techColor = $techColors[$tech_index % count($techColors)];
+                                            ?>
+                                                <span class="<?php echo $techColor; ?> text-white text-xs px-2 py-1 rounded"><?php echo htmlspecialchars($tech); ?></span>
+                                            <?php } ?>
+                                        </div>
+                                        <a href="portfolio.php" class="text-brand-blue font-semibold hover:underline">View Case Study →</a>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        } else {
+                            ?>
+                            <div class="col-span-full text-center py-12">
+                                <p class="text-dark-secondary text-lg">No projects found</p>
+                            </div>
+                            <?php
+                        }
+                    } else {
+                        ?>
+                        <div class="col-span-full text-center py-12">
+                            <p class="text-dark-secondary text-lg">Unable to load projects at this time</p>
                         </div>
-                        <a href="pages/portfolio.php" class="text-brand-blue font-semibold hover:underline">View Case Study →</a>
+                        <?php
+                    }
+                } catch (Exception $ex) {
+                    error_log("Error fetching featured projects: " . $ex->getMessage());
+                    ?>
+                    <div class="col-span-full text-center py-12">
+                        <p class="text-dark-secondary text-lg">Unable to load projects at this time</p>
                     </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
-                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark-accent">Corporate Website Redesign</h3>
-                        <p class="text-dark-secondary mb-4">Modern, responsive website redesign for a leading Lebanese consulting firm, improving user experience and mobile performance.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">PHP</span>
-                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">HTML5</span>
-                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">CSS3</span>
-                        </div>
-                        <a href="pages/portfolio.php" class="text-brand-blue font-semibold hover:underline">View Case Study →</a>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
-                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
-                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2 text-dark-accent">Restaurant Management App</h3>
-                        <p class="text-dark-secondary mb-4">Full-stack web application for restaurant order management with real-time kitchen updates and customer notifications.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PHP</span>
-                            <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MySQL</span>
-                            <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">jQuery</span>
-                        </div>
-                        <a href="pages/portfolio.php" class="text-brand-blue font-semibold hover:underline">View Case Study →</a>
-                    </div>
-                </div>
+                    <?php
+                }
+                ?>
             </div>
             <div class="text-center mt-12">
                 <a href="pages/portfolio.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
