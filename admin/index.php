@@ -46,6 +46,9 @@ if ($_POST) {
         } catch (PDOException $e) {
             $error = 'Database error occurred';
         }
+        catch (Exception $e) {
+            $error = 'An unexpected error occurred';
+        }
     } else {
         $error = 'Please fill in all fields';
     }
