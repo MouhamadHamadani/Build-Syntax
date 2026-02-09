@@ -17,7 +17,13 @@ if ($_POST) {
 
     if ($username && $password) {
         try {
+            try{
             $stmt = $pdo->prepare("SELECT id, username, email, password_hash, full_name, role, is_active FROM admin_users WHERE username = ? AND is_active = 1");
+            }
+            catch(PDOException $e) {
+                error_log("Database query error: " . $e->getMessage());
+                throw new Exception("An error occurred while processing your request. Please try again later.");
+            }
             $stmt->execute([$username]);
             $admin = $stmt->fetch();
 
