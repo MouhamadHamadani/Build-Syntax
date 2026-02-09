@@ -120,7 +120,9 @@ try {
                                 <span class="bg-brand-blue text-white text-xs px-2 py-1 rounded"><?php echo htmlspecialchars($project['category']); ?></span>
                             </div>
                             <h3 class="text-xl font-bold mb-3 text-dark-accent"><?php echo htmlspecialchars($project['title']); ?></h3>
-                            <p class="text-gray-600 mb-4 text-dark-secondary"><?php echo htmlspecialchars($project['description']); ?></p>
+                            <p class="text-gray-600 mb-4 text-dark-secondary">
+                                <?php echo strlen($project['description']) > 100 ? htmlspecialchars(substr($project['description'], 0, 100)) . '...' : htmlspecialchars($project['description']); ?>
+                            </p>
                             <div class="flex flex-wrap gap-1 mb-4">
                                 <?php
                                 $techs = array_map('trim', explode(',', $project['technologies']));
