@@ -151,7 +151,7 @@ require_once '../includes/header.php';
                                     </div>
                                     <div class="p-6">
                                         <h3 class="text-xl font-bold mb-2 text-dark-accent"><?php echo htmlspecialchars($project['title']); ?></h3>
-                                        <p class="text-dark-secondary mb-4"><?php echo htmlspecialchars($project['description']); ?></p>
+                                        <p class="text-dark-secondary mb-4"><?php echo strlen($project['description']) > 100 ? htmlspecialchars(substr($project['description'], 0, 100)) . '...' : htmlspecialchars($project['description']); ?></p>
                                         <div class="flex flex-wrap gap-2 mb-4">
                                             <?php foreach ($technologies as $tech_index => $tech) { 
                                                 $techColor = $techColors[$tech_index % count($techColors)];
