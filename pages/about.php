@@ -39,14 +39,14 @@ require_once '../includes/header.php';
                                 <div class="text-3xl font-bold text-brand-blue mb-2">2025</div>
                                 <p class="text-dark-secondary">Founded</p>
                             </div>
-                            <div class="text-center">
+                            <!-- <div class="text-center">
                                 <div class="text-3xl font-bold text-brand-blue mb-2">50+</div>
                                 <p class="text-dark-secondary">Projects Planned</p>
-                            </div>
-                            <div class="text-center">
+                            </div> -->
+                            <!-- <div class="text-center">
                                 <div class="text-3xl font-bold text-brand-blue mb-2">100%</div>
                                 <p class="text-dark-secondary">Client Satisfaction</p>
-                            </div>
+                            </div> -->
                             <div class="text-center">
                                 <div class="text-3xl font-bold text-brand-blue mb-2">24h</div>
                                 <p class="text-dark-secondary">Response Time</p>
