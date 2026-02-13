@@ -13,15 +13,18 @@ require_once '../includes/header.php';
                     <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
                         Your Vision, <span class="text-brand-blue">Our Code.</span>
                     </h1>
-                    <p class="text-lg text-dark-secondary mb-8 leading-relaxed">
-                        We are a Beirut-based development partner dedicated to transforming your ideas into powerful, modern, and reliable websites and applications that drive business growth.
+                    <p class="text-lg text-dark-secondary mb-4 leading-relaxed">
+                        Transform your ideas into powerful, modern, and reliable digital solutions that drive real business growth.
+                    </p>
+                    <p class="text-base text-dark-secondary mb-8 leading-relaxed">
+                        We are a Beirut-based development partner specializing in custom web development, e-commerce systems, and appointment platforms that connect you with your customers.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="pages/contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg text-center">
+                        <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg text-center">
                             Start Your Project
                         </a>
-                        <a href="pages/portfolio.php" class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-dark-secondary transition-all duration-200 text-center">
-                            View Our Work
+                        <a href="services.php" class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-200 text-center">
+                            Explore Services
                         </a>
                     </div>
                 </div>
@@ -48,6 +51,93 @@ require_once '../includes/header.php';
         </div>
     </section>
 
+    <!-- =========== How We Work Section =========== -->
+    <section id="work" class="py-20 bg-dark-tertiary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">How We Work</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Our proven three-step process ensures your project is delivered on time, within budget, and exceeding expectations.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Step 1: Consultation -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-brand-blue text-white w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold mb-6">1</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark-accent">Consultation</h3>
+                        <p class="text-dark-secondary mb-4 leading-relaxed">
+                            We start by understanding your business goals, target audience, and project requirements. This discovery phase ensures we build exactly what you need.
+                        </p>
+                        <ul class="text-sm text-dark-secondary space-y-2 text-left w-full">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Requirements gathering</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Project scoping</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Timeline & budget planning</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2: Development -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-brand-blue text-white w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold mb-6">2</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark-accent">Development</h3>
+                        <p class="text-dark-secondary mb-4 leading-relaxed">
+                            Our expert team builds your solution using modern technologies and best practices. We maintain regular communication and provide progress updates.
+                        </p>
+                        <ul class="text-sm text-dark-secondary space-y-2 text-left w-full">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Design & development</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Regular updates</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Quality assurance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3: Launch -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-brand-blue text-white w-12 h-12 rounded-full flex items-center justify-center text-lg font-bold mb-6">3</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark-accent">Launch & Support</h3>
+                        <p class="text-dark-secondary mb-4 leading-relaxed">
+                            We deploy your solution and provide comprehensive support. Your success is our success, and we're here to help you grow.
+                        </p>
+                        <ul class="text-sm text-dark-secondary space-y-2 text-left w-full">
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Deployment & testing</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Training & documentation</span>
+                            </li>
+                            <li class="flex items-start space-x-2">
+                                <span class="text-brand-blue mt-1">✓</span>
+                                <span>Ongoing support</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- =========== Services Overview =========== -->
     <section id="services" class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
@@ -66,7 +156,7 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Custom Web Development</h3>
                     <p class="text-dark-secondary text-center mb-6">Bespoke websites and applications built from the ground up to meet your unique business needs.</p>
                     <div class="text-center">
-                        <a href="pages/services.php#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services.php#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 
@@ -80,7 +170,7 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">E-Commerce Solutions</h3>
                     <p class="text-dark-secondary text-center mb-6">Powerful online stores with secure payment gateways to sell your products globally.</p>
                     <div class="text-center">
-                        <a href="pages/services.php#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services.php#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 
@@ -88,13 +178,13 @@ require_once '../includes/header.php';
                 <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
                     <div class="text-brand-blue mb-6">
                         <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10m-3 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Mobile Applications</h3>
-                    <p class="text-dark-secondary text-center mb-6">Engaging and intuitive mobile apps for iOS and Android to connect with your users on the go.</p>
+                    <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Appointment Systems</h3>
+                    <p class="text-dark-secondary text-center mb-6">Streamline bookings with automated scheduling, reminders, and customer management tools.</p>
                     <div class="text-center">
-                        <a href="pages/services.php#mobile-apps" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services.php#appointment" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
             </div>
@@ -102,7 +192,7 @@ require_once '../includes/header.php';
     </section>
 
     <!-- =========== Featured Work =========== -->
-    <section id="work" class="py-20 bg-dark-tertiary">
+    <section id="portfolio" class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Featured Work</h2>
@@ -189,7 +279,7 @@ require_once '../includes/header.php';
                 ?>
             </div>
             <div class="text-center mt-12">
-                <a href="pages/portfolio.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                <a href="portfolio.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
                     View All Projects
                 </a>
             </div>
@@ -214,7 +304,6 @@ require_once '../includes/header.php';
                     <h3 class="text-lg font-bold mb-2 text-dark-accent">Quality Code</h3>
                     <p class="text-dark-secondary">Clean, maintainable, and scalable code that stands the test of time.</p>
                 </div>
-
                 <!-- Feature 2 -->
                 <div class="text-center fade-in">
                     <div class="bg-brand-blue text-dark-secondary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -225,7 +314,6 @@ require_once '../includes/header.php';
                     <h3 class="text-lg font-bold mb-2 text-dark-accent">On-Time Delivery</h3>
                     <p class="text-dark-secondary">We respect your deadlines and deliver projects on schedule, every time.</p>
                 </div>
-
                 <!-- Feature 3 -->
                 <div class="text-center fade-in">
                     <div class="bg-brand-blue text-dark-secondary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -236,7 +324,6 @@ require_once '../includes/header.php';
                     <h3 class="text-lg font-bold mb-2 text-dark-accent">Client-Centric Approach</h3>
                     <p class="text-dark-secondary">Your vision guides our development process from start to finish.</p>
                 </div>
-
                 <!-- Feature 4 -->
                 <div class="text-center fade-in">
                     <div class="bg-brand-blue text-dark-secondary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -253,4 +340,3 @@ require_once '../includes/header.php';
 </main>
 
 <?php require_once '../includes/footer.php'; ?>
-

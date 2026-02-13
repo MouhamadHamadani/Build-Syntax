@@ -177,6 +177,7 @@ if (!defined('SITE_NAME')) {
             <div class="hidden md:flex items-center space-x-8">
                 <a href="/" class="text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'text-brand-blue font-medium' : ''; ?>">Home</a>
                 <a href="/services" class="text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'services.php' ? 'text-brand-blue font-medium' : ''; ?>">Services</a>
+                <a href="/pages/index.php#work" class="text-dark-secondary hover:text-brand-blue transition-colors duration-200">How We Work</a>
                 <a href="/portfolio" class="text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'portfolio.php' ? 'text-brand-blue font-medium' : ''; ?>">Portfolio</a>
                 <a href="/about" class="text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'text-brand-blue font-medium' : ''; ?>">About</a>
                 <a href="/blog" class="text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'text-brand-blue font-medium' : ''; ?>">Blog</a>
@@ -196,6 +197,7 @@ if (!defined('SITE_NAME')) {
             <div class="px-6 py-4 space-y-3">
                 <a href="/" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'text-brand-blue font-medium' : ''; ?>">Home</a>
                 <a href="/services" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'services.php' ? 'text-brand-blue font-medium' : ''; ?>">Services</a>
+                <a href="/pages/index.php#work" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200">How We Work</a>
                 <a href="/portfolio" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'portfolio.php' ? 'text-brand-blue font-medium' : ''; ?>">Portfolio</a>
                 <a href="/about" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'text-brand-blue font-medium' : ''; ?>">About</a>
                 <a href="/blog" class="block py-2 text-dark-secondary hover:text-brand-blue transition-colors duration-200 <?php echo basename($_SERVER['PHP_SELF']) == 'blog.php' ? 'text-brand-blue font-medium' : ''; ?>">Blog</a>
