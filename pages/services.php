@@ -148,7 +148,7 @@ require_once '../includes/header.php';
                         </li>
                     </ul>
                     
-                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
                         Request This Plan
                     </a>
                 </div>
@@ -226,7 +226,7 @@ require_once '../includes/header.php';
                         </li>
                     </ul>
                     
-                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
                         Request This Plan
                     </a>
                 </div>
@@ -300,7 +300,7 @@ require_once '../includes/header.php';
                         </li>
                     </ul>
                     
-                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
                         Request This Plan
                     </a>
                 </div>
@@ -381,7 +381,7 @@ require_once '../includes/header.php';
                         </li>
                     </ul>
                     
-                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
                         Request This Plan
                     </a>
                 </div>
@@ -453,7 +453,7 @@ require_once '../includes/header.php';
                         </li>
                     </ul>
                     
-                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
                         Request This Plan
                     </a>
                 </div>
@@ -521,7 +521,7 @@ require_once '../includes/header.php';
                         </li>
                     </ul>
                     
-                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
                         Request This Plan
                     </a>
                 </div>

@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_contact'])) {
                                 </svg>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-dark-accent mb-1">Office Location</h3>
+                                <h3 class="text-lg font-semibold text-dark-accent mb-1">Location</h3>
                                 <p class="text-dark-secondary">Beirut, Lebanon</p>
                                 <p class="text-sm text-dark-primary">Available for in-person meetings</p>
                             </div>
