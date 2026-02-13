@@ -1,6 +1,6 @@
 <?php
 $page_title = "Services";
-$page_description = "Discover our comprehensive web development services including custom websites, e-commerce solutions, and mobile applications.";
+$page_description = "Discover our comprehensive web development services including custom websites, e-commerce solutions, and appointment systems with flexible pricing tiers.";
 require_once '../includes/header.php';
 ?>
 
@@ -10,7 +10,7 @@ require_once '../includes/header.php';
         <div class="container mx-auto px-6 text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Our Services</h1>
             <p class="text-xl opacity-90 max-w-3xl mx-auto fade-in">
-                We offer comprehensive web development solutions tailored to your business needs. From concept to deployment, we're your trusted technical partner.
+                We offer comprehensive web development solutions tailored to your business needs. Choose from flexible pricing tiers designed to scale with your growth.
             </p>
         </div>
     </section>
@@ -20,33 +20,53 @@ require_once '../includes/header.php';
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
                 <div class="fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-6">What We Do</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-6">Why Choose Our Services?</h2>
                     <p class="text-lg text-dark-secondary mb-6 leading-relaxed">
                         At Build Syntax, we specialize in creating digital solutions that drive business growth. Our team combines technical expertise with creative problem-solving to deliver websites and applications that not only look great but perform exceptionally.
                     </p>
-                    <p class="text-lg text-dark-secondary leading-relaxed">
-                        Whether you're a startup looking for your first website or an established business ready to scale online, we have the skills and experience to bring your vision to life.
+                    <p class="text-lg text-dark-secondary mb-6 leading-relaxed">
+                        Whether you're a startup looking for your first system or an established business ready to scale, we have flexible pricing tiers to match your needs and budget.
                     </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Scalable architecture</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Responsive design</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Ongoing support included</span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="fade-in">
                     <div class="card-dark rounded-xl p-8">
-                        <h3 class="text-xl font-bold mb-4 text-dark-accent">Our Process</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-dark-accent">Our Process</h3>
                         <div class="space-y-4">
                             <div class="flex items-center space-x-3">
                                 <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">1</div>
-                                <span class="text-dark-accent">Discovery & Planning</span>
+                                <span class="text-dark-accent font-semibold">Consultation & Planning</span>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">2</div>
-                                <span class="text-dark-accent">Design & Development</span>
+                                <span class="text-dark-accent font-semibold">Design & Development</span>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">3</div>
-                                <span class="text-dark-accent">Testing & Optimization</span>
+                                <span class="text-dark-accent font-semibold">Testing & Optimization</span>
                             </div>
                             <div class="flex items-center space-x-3">
                                 <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">4</div>
-                                <span class="text-dark-accent">Launch & Support</span>
+                                <span class="text-dark-accent font-semibold">Launch & Support</span>
                             </div>
                         </div>
                     </div>
@@ -55,286 +75,617 @@ require_once '../includes/header.php';
         </div>
     </section>
 
-    <!-- =========== Detailed Services =========== -->
+    <!-- =========== E-Commerce Service =========== -->
+    <section id="ecommerce" class="py-20 bg-dark-tertiary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">E-Commerce Solutions</h2>
+                <p class="text-dark-secondary text-lg max-w-3xl mx-auto">Launch your online store with our comprehensive e-commerce systems. Choose the tier that fits your business needs.</p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Basic Plan -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Basic</h3>
+                        <p class="text-dark-secondary text-sm mb-4">Perfect for getting started</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
+                            <p class="text-4xl font-bold text-brand-blue">$1,200</p>
+                        </div>
+                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">User registration/login</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Product management (CRUD)</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Product categories</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Shopping cart</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Cash on delivery checkout</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Basic admin dashboard</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Responsive design</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">2 weeks support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                        Request This Plan
+                    </a>
+                </div>
+
+                <!-- Standard Plan (Most Popular) -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col border-2 border-brand-blue relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Most Popular
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Standard</h3>
+                        <p class="text-dark-secondary text-sm mb-4">Best for growing businesses</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
+                            <p class="text-4xl font-bold text-brand-blue">$2,000</p>
+                        </div>
+                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent"><strong>Everything in Basic</strong></span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Online payment integration</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Discount coupons system</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Order status tracking</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Email notifications</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Sales reports</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Stock management</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Wishlist feature</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">1 month support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                        Request This Plan
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Premium</h3>
+                        <p class="text-dark-secondary text-sm mb-4">For enterprise-level needs</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
+                            <p class="text-4xl font-bold text-brand-blue">$3,200</p>
+                        </div>
+                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent"><strong>Everything in Standard</strong></span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Multi-role admin system</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Advanced reports & charts</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Featured products system</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Product reviews & ratings</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">SEO optimization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Performance optimization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">VPS deployment</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">2 months support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                        Request This Plan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== Appointment System Service =========== -->
+    <section id="appointment" class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Appointment Systems</h2>
+                <p class="text-dark-secondary text-lg max-w-3xl mx-auto">Streamline your booking process with our appointment management systems. Select the plan that matches your business requirements.</p>
+            </div>
+
+            <!-- Pricing Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Basic Plan -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Basic</h3>
+                        <p class="text-dark-secondary text-sm mb-4">Perfect for getting started</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
+                            <p class="text-4xl font-bold text-brand-blue">$800</p>
+                        </div>
+                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">User registration/login</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Service management</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Appointment booking</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Admin panel</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Manual approval/rejection</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Calendar view</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Responsive design</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">2 weeks support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                        Request This Plan
+                    </a>
+                </div>
+
+                <!-- Standard Plan (Most Popular) -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col border-2 border-brand-blue relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        Most Popular
+                    </div>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Standard</h3>
+                        <p class="text-dark-secondary text-sm mb-4">Best for growing businesses</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
+                            <p class="text-4xl font-bold text-brand-blue">$1,400</p>
+                        </div>
+                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent"><strong>Everything in Basic</strong></span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Email/SMS reminders</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Online payment integration</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Staff role management</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Time slot management</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Service duration management</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Basic reporting</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">1 month support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                        Request This Plan
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Premium</h3>
+                        <p class="text-dark-secondary text-sm mb-4">For enterprise-level needs</p>
+                        <div class="mb-4">
+                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
+                            <p class="text-4xl font-bold text-brand-blue">$2,200</p>
+                        </div>
+                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-8 flex-grow">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent"><strong>Everything in Standard</strong></span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Multi-branch support</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Advanced reporting dashboard</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Customer history tracking</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Cancellation & reschedule logic</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Loyalty/points system</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">VPS deployment</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">2 months support</span>
+                        </li>
+                    </ul>
+                    
+                    <a href="../pages/contact.php" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                        Request This Plan
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== Hosting & Maintenance =========== -->
     <section class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
-            <!-- Web Development Service -->
-            <div id="web-development" class="mb-20">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <div class="text-brand-blue mb-4">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                            </svg>
-                        </div>
-                        <h2 class="text-3xl font-bold text-dark-accent mb-6">Custom Web Development</h2>
-                        <p class="text-lg text-dark-secondary mb-6 leading-relaxed">
-                            We build bespoke websites and web applications from the ground up, tailored specifically to your business requirements. Our development process ensures scalability, security, and optimal performance.
-                        </p>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Responsive design for all devices</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">SEO-optimized structure</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Content Management System (CMS)</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Fast loading speeds</span>
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">PHP</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Laravel</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">HTML5</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <div class="card-dark rounded-xl shadow-lg p-8">
-                            <h3 class="text-xl font-bold mb-4 text-dark-accent">What's Included:</h3>
-                            <ul class="space-y-2 text-dark-accent">
-                                <li>• Custom design and development</li>
-                                <li>• Mobile-responsive layout</li>
-                                <li>• Contact forms and integrations</li>
-                                <li>• Basic SEO setup</li>
-                                <li>• 3 months free support</li>
-                                <li>• Training on content management</li>
-                            </ul>
-                            <div class="mt-6 pt-6 border-t border-gray-200">
-                                <p class="text-sm text-white mb-2">Starting from</p>
-                                <p class="text-2xl font-bold text-brand-blue">$1,500</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Hosting & Maintenance</h2>
+                <p class="text-dark-secondary text-lg max-w-3xl mx-auto">Keep your system running smoothly with our hosting and maintenance plans.</p>
             </div>
 
-            <!-- E-Commerce Service -->
-            <div id="ecommerce" class="mb-20">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1 fade-in">
-                        <div class="card-dark rounded-xl shadow-lg p-8">
-                            <h3 class="text-xl font-bold mb-4 text-dark-accent">What's Included:</h3>
-                            <ul class="space-y-2 text-dark-accent">
-                                <li>• Product catalog management</li>
-                                <li>• Shopping cart and checkout</li>
-                                <li>• Payment gateway integration</li>
-                                <li>• Inventory management</li>
-                                <li>• Order management system</li>
-                                <li>• Customer accounts</li>
-                                <li>• Admin dashboard</li>
-                            </ul>
-                            <div class="mt-6 pt-6 border-t border-gray-200">
-                                <p class="text-sm text-white mb-2">Starting from</p>
-                                <p class="text-2xl font-bold text-brand-blue">$2,500</p>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Hosting -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <h3 class="text-2xl font-bold text-dark-accent mb-6">Hosting</h3>
+                    <div class="mb-6">
+                        <p class="text-dark-secondary mb-2">Reliable and secure hosting for your application</p>
+                        <p class="text-3xl font-bold text-brand-blue mb-2">$150 - $500/year</p>
+                        <p class="text-sm text-dark-secondary">Depending on traffic and storage requirements</p>
                     </div>
-                    <div class="order-1 lg:order-2 fade-in">
-                        <div class="text-brand-blue mb-4">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                        </div>
-                        <h2 class="text-3xl font-bold mb-6 text-dark-accent">E-Commerce Solutions</h2>
-                        <p class="text-lg text-dark-secondary mb-6 leading-relaxed">
-                            Launch your online store with our comprehensive e-commerce solutions. We build secure, scalable platforms that help you sell products and services online with confidence.
-                        </p>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Secure payment processing</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Inventory management</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Multi-language support</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Analytics and reporting</span>
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Laravel</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Livewire</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Tailwind CSS</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">JetStream</span>
-                            <!-- <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Stripe</span> -->
-                            <!-- <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">PayPal</span> -->
-                        </div>
-                    </div>
+                            <span class="text-dark-accent">99.9% uptime guarantee</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">SSL certificate included</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Daily backups</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">24/7 monitoring</span>
+                        </li>
+                    </ul>
                 </div>
-            </div>
 
-            <!-- Mobile Apps Service -->
-            <div id="mobile-apps" class="mb-20">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <div class="text-brand-blue mb-4">
-                            <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                <!-- Maintenance -->
+                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <h3 class="text-2xl font-bold text-dark-accent mb-6">Maintenance</h3>
+                    <div class="mb-6">
+                        <p class="text-dark-secondary mb-2">Ongoing support and updates for your system</p>
+                        <p class="text-3xl font-bold text-brand-blue mb-2">$200 - $800/month</p>
+                        <p class="text-sm text-dark-secondary">Depending on scope and complexity</p>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                             </svg>
-                        </div>
-                        <h2 class="text-3xl font-bold text-dark-accent mb-6">Mobile Applications</h2>
-                        <p class="text-lg text-dark-accent mb-6 leading-relaxed">
-                            Extend your reach with custom mobile applications for iOS and Android. We create engaging, user-friendly apps that connect your business with customers on their preferred devices.
-                        </p>
-                        <ul class="space-y-3 mb-6">
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Cross-platform development</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Native performance</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">Push notifications</span>
-                            </li>
-                            <li class="flex items-center space-x-3">
-                                <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                                <span class="text-white">App store deployment</span>
-                            </li>
-                        </ul>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">React Native</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Flutter</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">iOS</span>
-                            <span class="bg-brand-blue text-white text-sm px-3 py-1 rounded-full">Android</span>
-                        </div>
-                    </div>
-                    <div class="fade-in">
-                        <div class="card-dark rounded-xl shadow-lg p-8">
-                            <h3 class="text-xl font-bold mb-4 text-dark-accent">What's Included:</h3>
-                            <ul class="space-y-2 text-dark-accent">
-                                <li>• iOS and Android apps</li>
-                                <li>• Custom UI/UX design</li>
-                                <li>• Backend API development</li>
-                                <li>• User authentication</li>
-                                <li>• Push notifications</li>
-                                <li>• App store submission</li>
-                                <li>• 6 months support</li>
-                            </ul>
-                            <div class="mt-6 pt-6 border-t border-gray-200">
-                                <p class="text-sm text-white mb-2">Starting from</p>
-                                <p class="text-2xl font-bold text-brand-blue">$3,500</p>
-                            </div>
-                        </div>
-                    </div>
+                            <span class="text-dark-accent">Bug fixes and patches</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Security updates</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Performance optimization</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span class="text-dark-accent">Priority support</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- =========== Additional Services =========== -->
+    <!-- =========== FAQ Section =========== -->
     <section class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Additional Services</h2>
-                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">We also offer complementary services to support your digital presence.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Frequently Asked Questions</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Find answers to common questions about our services and pricing.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="card-dark p-6 rounded-xl fade-in">
-                    <div class="text-brand-blue mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark-accent">SEO Optimization</h3>
-                    <p class="text-dark-secondary">Improve your search engine rankings and drive organic traffic to your website.</p>
+
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="card-dark rounded-xl p-8 fade-in">
+                    <h3 class="text-xl font-bold text-dark-accent mb-3">What is the typical project timeline?</h3>
+                    <p class="text-dark-secondary leading-relaxed">
+                        Project timelines vary based on complexity and scope. Basic systems typically take 4-6 weeks, Standard systems 8-12 weeks, and Premium systems 12-16 weeks. We'll provide a detailed timeline during the consultation phase.
+                    </p>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="card-dark p-6 rounded-xl fade-in">
-                    <div class="text-brand-blue mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark-accent">Performance Optimization</h3>
-                    <p class="text-dark-secondary">Speed up your website for better user experience and search rankings.</p>
+                <!-- FAQ Item 2 -->
+                <div class="card-dark rounded-xl p-8 fade-in">
+                    <h3 class="text-xl font-bold text-dark-accent mb-3">What are your payment terms?</h3>
+                    <p class="text-dark-secondary leading-relaxed">
+                        We typically require 50% upfront to begin development and 50% upon completion. For larger projects, we can arrange milestone-based payments. All prices are in USD and do not include hosting or maintenance fees.
+                    </p>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="card-dark p-6 rounded-xl fade-in">
-                    <div class="text-brand-blue mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark-accent">Security Audits</h3>
-                    <p class="text-dark-secondary">Protect your website and customer data with comprehensive security reviews.</p>
+                <!-- FAQ Item 3 -->
+                <div class="card-dark rounded-xl p-8 fade-in">
+                    <h3 class="text-xl font-bold text-dark-accent mb-3">Is hosting included in the pricing?</h3>
+                    <p class="text-dark-secondary leading-relaxed">
+                        No, hosting is separate and billed annually. We offer reliable hosting starting from $150/year for basic setups. Maintenance plans are also optional and billed monthly, starting from $200/month.
+                    </p>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="card-dark p-6 rounded-xl fade-in">
-                    <div class="text-brand-blue mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark-accent">Maintenance & Support</h3>
-                    <p class="text-dark-secondary">Keep your website updated, secure, and running smoothly with our ongoing support.</p>
+                <!-- FAQ Item 4 -->
+                <div class="card-dark rounded-xl p-8 fade-in">
+                    <h3 class="text-xl font-bold text-dark-accent mb-3">Can I customize features beyond what's listed?</h3>
+                    <p class="text-dark-secondary leading-relaxed">
+                        Absolutely! The pricing tiers are starting points. We can customize any plan to include additional features. Contact us for a custom quote based on your specific requirements.
+                    </p>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="card-dark p-6 rounded-xl fade-in">
-                    <div class="text-brand-blue mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark-accent">Hosting & Domains</h3>
-                    <p class="text-dark-secondary">Reliable hosting solutions and domain management for your online presence.</p>
+                <!-- FAQ Item 5 -->
+                <div class="card-dark rounded-xl p-8 fade-in">
+                    <h3 class="text-xl font-bold text-dark-accent mb-3">What support is included after launch?</h3>
+                    <p class="text-dark-secondary leading-relaxed">
+                        Each plan includes free support for a specified period (2 weeks to 2 months). After that, we offer optional maintenance plans with priority support, bug fixes, and performance optimization.
+                    </p>
                 </div>
 
-                <!-- Service 6 -->
-                <div class="card-dark p-6 rounded-xl fade-in">
-                    <div class="text-brand-blue mb-4">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-dark-accent">Training Programs</h3>
-                    <p class="text-dark-secondary">Learn web development skills with our comprehensive training courses.</p>
+                <!-- FAQ Item 6 -->
+                <div class="card-dark rounded-xl p-8 fade-in">
+                    <h3 class="text-xl font-bold text-dark-accent mb-3">Do you provide training for our team?</h3>
+                    <p class="text-dark-secondary leading-relaxed">
+                        Yes! Training and documentation are included in all plans. We provide comprehensive training on system administration, content management, and basic troubleshooting to ensure your team can manage the system independently.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== Call to Action =========== -->
+    <section class="py-20 bg-brand-blue text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
+                <p class="text-xl mb-8 opacity-90">Let's discuss your project requirements and find the perfect plan for your business. Schedule a free consultation today.</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.php" class="bg-white text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">
+                        Get Free Consultation
+                    </a>
+                    <a href="contact.php" class="border-2 border-white text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-brand-blue transition-all duration-200">
+                        Request a Quote
+                    </a>
                 </div>
             </div>
         </div>
@@ -342,4 +693,3 @@ require_once '../includes/header.php';
 </main>
 
 <?php require_once '../includes/footer.php'; ?>
-
