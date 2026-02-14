@@ -1,306 +1,240 @@
 <?php
-$page_title = "Services";
-$page_description = "Discover our comprehensive web development services including custom websites, e-commerce solutions, and appointment systems with flexible pricing tiers.";
+$page_title = "Services & Pricing";
+$page_description = "Explore our comprehensive web development services including E-Commerce systems, Appointment booking platforms, and custom web solutions with transparent pricing.";
 require_once '../includes/header.php';
 ?>
 
 <main>
-    <!-- =========== Hero Section =========== -->
-    <section class="gradient-hero-dark text-white pt-32 pb-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Our Services</h1>
-            <p class="text-xl opacity-90 max-w-3xl mx-auto fade-in">
-                We offer comprehensive web development solutions tailored to your business needs. Choose from flexible pricing tiers designed to scale with your growth.
-            </p>
-        </div>
-    </section>
-
-    <!-- =========== Services Overview =========== -->
-    <section class="py-20 bg-dark-secondary">
+    <!-- =========== Services Hero Section =========== -->
+    <section class="gradient-hero-dark pt-32 pb-20">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-                <div class="fade-in">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-6">Why Choose Our Services?</h2>
-                    <p class="text-lg text-dark-secondary mb-6 leading-relaxed">
-                        At Build Syntax, we specialize in creating digital solutions that drive business growth. Our team combines technical expertise with creative problem-solving to deliver websites and applications that not only look great but perform exceptionally.
-                    </p>
-                    <p class="text-lg text-dark-secondary mb-6 leading-relaxed">
-                        Whether you're a startup looking for your first system or an established business ready to scale, we have flexible pricing tiers to match your needs and budget.
-                    </p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Scalable architecture</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Responsive design</span>
-                        </li>
-                        <li class="flex items-center space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Ongoing support included</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="fade-in">
-                    <div class="card-dark rounded-xl p-8">
-                        <h3 class="text-2xl font-bold mb-6 text-dark-accent">Our Process</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">1</div>
-                                <span class="text-dark-accent font-semibold">Consultation & Planning</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">2</div>
-                                <span class="text-dark-accent font-semibold">Design & Development</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">3</div>
-                                <span class="text-dark-accent font-semibold">Testing & Optimization</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <div class="bg-brand-blue text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">4</div>
-                                <span class="text-dark-accent font-semibold">Launch & Support</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="text-center fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+                    Services & Pricing
+                </h1>
+                <p class="text-lg text-dark-secondary max-w-3xl mx-auto leading-relaxed">
+                    Choose the perfect plan for your business. All our services come with professional support, deployment assistance, and ongoing maintenance options.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- =========== E-Commerce Service =========== -->
-    <section id="ecommerce" class="py-20 bg-dark-tertiary">
+    <!-- =========== E-Commerce System =========== -->
+    <section id="ecommerce" class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">E-Commerce Solutions</h2>
-                <p class="text-dark-secondary text-lg max-w-3xl mx-auto">Launch your online store with our comprehensive e-commerce systems. Choose the tier that fits your business needs.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">E-Commerce System</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Powerful online stores with secure payment processing and comprehensive management tools.</p>
             </div>
 
             <!-- Pricing Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <!-- Basic Plan -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Basic</h3>
-                        <p class="text-dark-secondary text-sm mb-4">Perfect for getting started</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
-                            <p class="text-4xl font-bold text-brand-blue">$1,200</p>
-                        </div>
-                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                        <p class="text-dark-secondary text-sm">Perfect for getting started</p>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8 flex-grow">
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-brand-blue">$1,200</span>
+                        <p class="text-dark-secondary text-sm mt-2">Starting from</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">User registration/login</span>
+                            <span class="text-dark-secondary">User registration & login</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Product management (CRUD)</span>
+                            <span class="text-dark-secondary">Product management (CRUD)</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Product categories</span>
+                            <span class="text-dark-secondary">Product categories</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Shopping cart</span>
+                            <span class="text-dark-secondary">Shopping cart system</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Cash on delivery checkout</span>
+                            <span class="text-dark-secondary">Cash on delivery checkout</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Basic admin dashboard</span>
+                            <span class="text-dark-secondary">Basic admin dashboard</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Responsive design</span>
+                            <span class="text-dark-secondary">Responsive design</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">2 weeks support</span>
+                            <span class="text-dark-secondary">2 weeks support included</span>
                         </li>
                     </ul>
-                    
-                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="contact.php" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
 
                 <!-- Standard Plan (Most Popular) -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col border-2 border-brand-blue relative">
+                <div class="card-dark p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in border-2 border-brand-blue relative">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-semibold">
                         Most Popular
                     </div>
-                    
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Standard</h3>
-                        <p class="text-dark-secondary text-sm mb-4">Best for growing businesses</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
-                            <p class="text-4xl font-bold text-brand-blue">$2,000</p>
-                        </div>
-                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                        <p class="text-dark-secondary text-sm">Best for growing businesses</p>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8 flex-grow">
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-brand-blue">$2,000</span>
+                        <p class="text-dark-secondary text-sm mt-2">Starting from</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent"><strong>Everything in Basic</strong></span>
+                            <span class="text-dark-secondary"><strong>Everything in Basic</strong> plus:</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Online payment integration</span>
+                            <span class="text-dark-secondary">Online payment integration</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Discount coupons system</span>
+                            <span class="text-dark-secondary">Discount coupons & promotions</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Order status tracking</span>
+                            <span class="text-dark-secondary">Order tracking system</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Email notifications</span>
+                            <span class="text-dark-secondary">Email notifications</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Sales reports</span>
+                            <span class="text-dark-secondary">Sales reports & analytics</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Stock management</span>
+                            <span class="text-dark-secondary">Stock management</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Wishlist feature</span>
+                            <span class="text-dark-secondary">Wishlist functionality</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">1 month support</span>
+                            <span class="text-dark-secondary">1 month support included</span>
                         </li>
                     </ul>
-                    
-                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="contact.php" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
 
                 <!-- Premium Plan -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Premium</h3>
-                        <p class="text-dark-secondary text-sm mb-4">For enterprise-level needs</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
-                            <p class="text-4xl font-bold text-brand-blue">$3,200</p>
-                        </div>
-                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                        <p class="text-dark-secondary text-sm">For enterprise-level stores</p>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8 flex-grow">
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-brand-blue">$3,200</span>
+                        <p class="text-dark-secondary text-sm mt-2">Starting from</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent"><strong>Everything in Standard</strong></span>
+                            <span class="text-dark-secondary"><strong>Everything in Standard</strong> plus:</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Multi-role admin system</span>
+                            <span class="text-dark-secondary">Multi-role admin system</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Advanced reports & charts</span>
+                            <span class="text-dark-secondary">Advanced reports & charts</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Featured products system</span>
+                            <span class="text-dark-secondary">Featured products system</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Product reviews & ratings</span>
+                            <span class="text-dark-secondary">Customer reviews & ratings</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">SEO optimization</span>
+                            <span class="text-dark-secondary">SEO optimization</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Performance optimization</span>
+                            <span class="text-dark-secondary">Performance optimization</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">VPS deployment</span>
+                            <span class="text-dark-secondary">VPS deployment included</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">2 months support</span>
+                            <span class="text-dark-secondary">2 months support included</span>
                         </li>
                     </ul>
-                    
-                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="contact.php" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
@@ -308,220 +242,210 @@ require_once '../includes/header.php';
         </div>
     </section>
 
-    <!-- =========== Appointment System Service =========== -->
-    <section id="appointment" class="py-20 bg-dark-secondary">
+    <!-- =========== Appointment System =========== -->
+    <section id="appointment" class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Appointment Systems</h2>
-                <p class="text-dark-secondary text-lg max-w-3xl mx-auto">Streamline your booking process with our appointment management systems. Select the plan that matches your business requirements.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Appointment System</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Streamline your booking process with automated scheduling, reminders, and customer management.</p>
             </div>
 
             <!-- Pricing Cards -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <!-- Basic Plan -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Basic</h3>
-                        <p class="text-dark-secondary text-sm mb-4">Perfect for getting started</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
-                            <p class="text-4xl font-bold text-brand-blue">$800</p>
-                        </div>
-                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                        <p class="text-dark-secondary text-sm">Perfect for small practices</p>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8 flex-grow">
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-brand-blue">$800</span>
+                        <p class="text-dark-secondary text-sm mt-2">Starting from</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">User registration/login</span>
+                            <span class="text-dark-secondary">User registration & login</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Service management</span>
+                            <span class="text-dark-secondary">Service management</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Appointment booking</span>
+                            <span class="text-dark-secondary">Appointment booking</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Admin panel</span>
+                            <span class="text-dark-secondary">Admin panel</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Manual approval/rejection</span>
+                            <span class="text-dark-secondary">Manual approval/rejection</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Calendar view</span>
+                            <span class="text-dark-secondary">Calendar view</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Responsive design</span>
+                            <span class="text-dark-secondary">Responsive design</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">2 weeks support</span>
+                            <span class="text-dark-secondary">2 weeks support included</span>
                         </li>
                     </ul>
-                    
-                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="contact.php" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
 
                 <!-- Standard Plan (Most Popular) -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col border-2 border-brand-blue relative">
+                <div class="card-dark p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in border-2 border-brand-blue relative">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-semibold">
                         Most Popular
                     </div>
-                    
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Standard</h3>
-                        <p class="text-dark-secondary text-sm mb-4">Best for growing businesses</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
-                            <p class="text-4xl font-bold text-brand-blue">$1,400</p>
-                        </div>
-                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                        <p class="text-dark-secondary text-sm">Best for growing businesses</p>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8 flex-grow">
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-brand-blue">$1,400</span>
+                        <p class="text-dark-secondary text-sm mt-2">Starting from</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent"><strong>Everything in Basic</strong></span>
+                            <span class="text-dark-secondary"><strong>Everything in Basic</strong> plus:</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Email/SMS reminders</span>
+                            <span class="text-dark-secondary">Email & SMS reminders</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Online payment integration</span>
+                            <span class="text-dark-secondary">Online payment integration</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Staff role management</span>
+                            <span class="text-dark-secondary">Staff roles management</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Time slot management</span>
+                            <span class="text-dark-secondary">Time slot management</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Service duration management</span>
+                            <span class="text-dark-secondary">Service duration management</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Basic reporting</span>
+                            <span class="text-dark-secondary">Basic reporting</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">1 month support</span>
+                            <span class="text-dark-secondary">1 month support included</span>
                         </li>
                     </ul>
-                    
-                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="contact.php" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
 
                 <!-- Premium Plan -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in flex flex-col">
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Premium</h3>
-                        <p class="text-dark-secondary text-sm mb-4">For enterprise-level needs</p>
-                        <div class="mb-4">
-                            <p class="text-sm text-dark-secondary mb-1">Starting from</p>
-                            <p class="text-4xl font-bold text-brand-blue">$2,200</p>
-                        </div>
-                        <p class="text-xs text-dark-secondary">Plus hosting and maintenance fees</p>
+                        <p class="text-dark-secondary text-sm">For enterprise deployments</p>
                     </div>
-                    
-                    <ul class="space-y-3 mb-8 flex-grow">
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-brand-blue">$2,200</span>
+                        <p class="text-dark-secondary text-sm mt-2">Starting from</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent"><strong>Everything in Standard</strong></span>
+                            <span class="text-dark-secondary"><strong>Everything in Standard</strong> plus:</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Multi-branch support</span>
+                            <span class="text-dark-secondary">Multi-branch support</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Advanced reporting dashboard</span>
+                            <span class="text-dark-secondary">Advanced reporting dashboard</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Customer history tracking</span>
+                            <span class="text-dark-secondary">Customer history tracking</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Cancellation & reschedule logic</span>
+                            <span class="text-dark-secondary">Cancellation & reschedule logic</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">Loyalty/points system</span>
+                            <span class="text-dark-secondary">Loyalty & points system</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">VPS deployment</span>
+                            <span class="text-dark-secondary">VPS deployment included</span>
                         </li>
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-accent">2 months support</span>
+                            <span class="text-dark-secondary">2 months support included</span>
                         </li>
                     </ul>
-                    
-                    <a href="/contact" class="bg-brand-blue text-white text-center px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-colors duration-200 font-semibold">
+                    <a href="contact.php" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
@@ -530,162 +454,105 @@ require_once '../includes/header.php';
     </section>
 
     <!-- =========== Hosting & Maintenance =========== -->
-    <section class="py-20 bg-dark-tertiary">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Hosting & Maintenance</h2>
-                <p class="text-dark-secondary text-lg max-w-3xl mx-auto">Keep your system running smoothly with our hosting and maintenance plans.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Hosting -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-                    <h3 class="text-2xl font-bold text-dark-accent mb-6">Hosting</h3>
-                    <div class="mb-6">
-                        <p class="text-dark-secondary mb-2">Reliable and secure hosting for your application</p>
-                        <p class="text-3xl font-bold text-brand-blue mb-2">$150 - $500/year</p>
-                        <p class="text-sm text-dark-secondary">Depending on traffic and storage requirements</p>
-                    </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">99.9% uptime guarantee</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">SSL certificate included</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Daily backups</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">24/7 monitoring</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Maintenance -->
-                <div class="card-dark rounded-xl p-8 shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-                    <h3 class="text-2xl font-bold text-dark-accent mb-6">Maintenance</h3>
-                    <div class="mb-6">
-                        <p class="text-dark-secondary mb-2">Ongoing support and updates for your system</p>
-                        <p class="text-3xl font-bold text-brand-blue mb-2">$200 - $800/month</p>
-                        <p class="text-sm text-dark-secondary">Depending on scope and complexity</p>
-                    </div>
-                    <ul class="space-y-3">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Bug fixes and patches</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Security updates</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Performance optimization</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                            </svg>
-                            <span class="text-dark-accent">Priority support</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========== FAQ Section =========== -->
     <section class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Frequently Asked Questions</h2>
-                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Find answers to common questions about our services and pricing.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Hosting & Maintenance</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Keep your website running smoothly with our professional hosting and maintenance services.</p>
             </div>
 
-            <div class="max-w-3xl mx-auto space-y-6">
-                <!-- FAQ Item 1 -->
-                <div class="card-dark rounded-xl p-8 fade-in">
-                    <h3 class="text-xl font-bold text-dark-accent mb-3">What is the typical project timeline?</h3>
-                    <p class="text-dark-secondary leading-relaxed">
-                        Project timelines vary based on complexity and scope. Basic systems typically take 4-6 weeks, Standard systems 8-12 weeks, and Premium systems 12-16 weeks. We'll provide a detailed timeline during the consultation phase.
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Hosting Section -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-brand-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-accent">Hosting Services</h3>
+                    </div>
+                    <p class="text-dark-secondary mb-6 leading-relaxed">
+                        Professional VPS hosting with enterprise-grade security, automatic backups, and 99.9% uptime guarantee.
                     </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">VPS setup & configuration</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">Security setup & SSL certificates</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">Daily automated backups</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">99.9% uptime SLA</span>
+                        </li>
+                    </ul>
+                    <div class="bg-dark-tertiary p-4 rounded-lg">
+                        <p class="text-dark-secondary text-sm">
+                            <span class="font-semibold text-dark-accent">Yearly Hosting Fee:</span> $200 - $500 (depending on traffic & storage)
+                        </p>
+                    </div>
                 </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="card-dark rounded-xl p-8 fade-in">
-                    <h3 class="text-xl font-bold text-dark-accent mb-3">What are your payment terms?</h3>
-                    <p class="text-dark-secondary leading-relaxed">
-                        We typically require 50% upfront to begin development and 50% upon completion. For larger projects, we can arrange milestone-based payments. All prices are in USD and do not include hosting or maintenance fees.
+                <!-- Maintenance Section -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-brand-blue text-white w-12 h-12 rounded-lg flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-accent">Maintenance Plans</h3>
+                    </div>
+                    <p class="text-dark-secondary mb-6 leading-relaxed">
+                        Keep your website secure, fast, and up-to-date with our comprehensive maintenance plans.
                     </p>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="card-dark rounded-xl p-8 fade-in">
-                    <h3 class="text-xl font-bold text-dark-accent mb-3">Is hosting included in the pricing?</h3>
-                    <p class="text-dark-secondary leading-relaxed">
-                        No, hosting is separate and billed annually. We offer reliable hosting starting from $150/year for basic setups. Maintenance plans are also optional and billed monthly, starting from $200/month.
-                    </p>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="card-dark rounded-xl p-8 fade-in">
-                    <h3 class="text-xl font-bold text-dark-accent mb-3">Can I customize features beyond what's listed?</h3>
-                    <p class="text-dark-secondary leading-relaxed">
-                        Absolutely! The pricing tiers are starting points. We can customize any plan to include additional features. Contact us for a custom quote based on your specific requirements.
-                    </p>
-                </div>
-
-                <!-- FAQ Item 5 -->
-                <div class="card-dark rounded-xl p-8 fade-in">
-                    <h3 class="text-xl font-bold text-dark-accent mb-3">What support is included after launch?</h3>
-                    <p class="text-dark-secondary leading-relaxed">
-                        Each plan includes free support for a specified period (2 weeks to 2 months). After that, we offer optional maintenance plans with priority support, bug fixes, and performance optimization.
-                    </p>
-                </div>
-
-                <!-- FAQ Item 6 -->
-                <div class="card-dark rounded-xl p-8 fade-in">
-                    <h3 class="text-xl font-bold text-dark-accent mb-3">Do you provide training for our team?</h3>
-                    <p class="text-dark-secondary leading-relaxed">
-                        Yes! Training and documentation are included in all plans. We provide comprehensive training on system administration, content management, and basic troubleshooting to ensure your team can manage the system independently.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- =========== Call to Action =========== -->
-    <section class="py-20 bg-brand-blue text-white">
-        <div class="container mx-auto px-6 text-center">
-            <div class="max-w-3xl mx-auto fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Get Started?</h2>
-                <p class="text-xl mb-8 opacity-90">Let's discuss your project requirements and find the perfect plan for your business. Schedule a free consultation today.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="contact.php" class="bg-white text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg">
-                        Get Free Consultation
-                    </a>
-                    <a href="contact.php" class="border-2 border-white text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-white hover:text-brand-blue transition-all duration-200">
-                        Request a Quote
-                    </a>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">Bug fixes & patches</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">Small feature adjustments</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">Security updates & monitoring</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-secondary">Performance optimization</span>
+                        </li>
+                    </ul>
+                    <div class="bg-dark-tertiary p-4 rounded-lg">
+                        <p class="text-dark-secondary text-sm">
+                            <span class="font-semibold text-dark-accent">Monthly Maintenance:</span> $150 - $400 (based on scope)
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

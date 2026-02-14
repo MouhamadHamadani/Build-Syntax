@@ -11,20 +11,20 @@ require_once '../includes/header.php';
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
                     <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
-                        Your Vision, <span class="text-brand-blue">Our Code.</span>
+                        Transform Your Business with <span class="text-brand-blue">Powerful Digital Solutions</span>
                     </h1>
                     <p class="text-lg text-dark-secondary mb-4 leading-relaxed">
-                        Transform your ideas into powerful, modern, and reliable digital solutions that drive real business growth.
+                        We build custom websites, e-commerce platforms, and appointment systems that drive real business growth and connect you with your customers.
                     </p>
                     <p class="text-base text-dark-secondary mb-8 leading-relaxed">
-                        We are a Beirut-based development partner specializing in custom web development, e-commerce systems, and appointment platforms that connect you with your customers.
+                        Trusted by businesses in Beirut and beyond. Professional development, transparent pricing, and dedicated support.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg text-center">
-                            Start Your Project
+                            Get Your Free Consultation
                         </a>
                         <a href="services.php" class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-200 text-center">
-                            Explore Services
+                            View Pricing
                         </a>
                     </div>
                 </div>
@@ -156,7 +156,7 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Custom Web Development</h3>
                     <p class="text-dark-secondary text-center mb-6">Bespoke websites and applications built from the ground up to meet your unique business needs.</p>
                     <div class="text-center">
-                        <a href="services#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services.php#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 
@@ -170,7 +170,7 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">E-Commerce Solutions</h3>
                     <p class="text-dark-secondary text-center mb-6">Powerful online stores with secure payment gateways to sell your products globally.</p>
                     <div class="text-center">
-                        <a href="services#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services.php#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 
@@ -184,110 +184,189 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Appointment Systems</h3>
                     <p class="text-dark-secondary text-center mb-6">Streamline bookings with automated scheduling, reminders, and customer management tools.</p>
                     <div class="text-center">
-                        <a href="services#appointment" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services.php#appointment" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="services.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                    View All Services & Pricing
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- =========== Featured Work =========== -->
-    <section id="portfolio" class="py-20 bg-dark-tertiary">
+    <!-- =========== Social Proof Section =========== -->
+    <section class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Featured Work</h2>
-                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Take a look at some of our recent projects that showcase our expertise and commitment to quality.</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Trusted by Businesses</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Join dozens of satisfied clients who have transformed their business with our solutions.</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <?php
-                try {
-                    $pdo = getDBConnection();
-                    if ($pdo) {
-                        $stmt = $pdo->prepare("SELECT id, title, description, category, technologies, project_url, image_url FROM portfolio_projects WHERE featured = TRUE ORDER BY created_at DESC");
-                        $stmt->execute();
-                        $projects = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        
-                        if (count($projects) > 0) {
-                            // Define gradient colors for cards
-                            $gradients = [
-                                'from-brand-blue to-blue-600',
-                                'from-green-500 to-green-600',
-                                'from-purple-500 to-purple-600',
-                                'from-pink-500 to-pink-600',
-                                'from-indigo-500 to-indigo-600',
-                                'from-yellow-500 to-yellow-600'
-                            ];
-                            
-                            // Define icons for different categories
-                            $icons = [
-                                'ecommerce' => 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
-                                'web' => 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
-                                'mobile' => 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z',
-                                'other' => 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
-                            ];
-                            
-                            foreach ($projects as $index => $project) {
-                                $gradient = $gradients[$index % count($gradients)];
-                                $icon = $icons[$project['category']] ?? $icons['other'];
-                                $technologies = array_map('trim', explode(',', $project['technologies']));
-                                $techColors = ['bg-brand-blue', 'bg-green-500', 'bg-purple-500', 'bg-pink-500', 'bg-indigo-500', 'bg-yellow-500'];
-                                ?>
-                                <!-- Project Card -->
-                                <div class="card-dark rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in">
-                                    <div class="h-48 bg-gradient-to-br <?php echo $gradient; ?> flex items-center justify-center">
-                                        <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="<?php echo $icon; ?>"/>
-                                        </svg>
-                                    </div>
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-bold mb-2 text-dark-accent"><?php echo htmlspecialchars($project['title']); ?></h3>
-                                        <p class="text-dark-secondary mb-4"><?php echo strlen($project['description']) > 100 ? htmlspecialchars(substr($project['description'], 0, 100)) . '...' : htmlspecialchars($project['description']); ?></p>
-                                        <div class="flex flex-wrap gap-2 mb-4">
-                                            <?php foreach ($technologies as $tech_index => $tech) { 
-                                                $techColor = $techColors[$tech_index % count($techColors)];
-                                            ?>
-                                                <span class="<?php echo $techColor; ?> text-white text-xs px-2 py-1 rounded"><?php echo htmlspecialchars($tech); ?></span>
-                                            <?php } ?>
-                                        </div>
-                                        <a href="portfolio.php" class="text-brand-blue font-semibold hover:underline">View Case Study →</a>
-                                    </div>
-                                </div>
-                                <?php
-                            }
-                        } else {
-                            ?>
-                            <div class="col-span-full text-center py-12">
-                                <p class="text-dark-secondary text-lg">No projects found</p>
-                            </div>
-                            <?php
-                        }
-                    } else {
-                        ?>
-                        <div class="col-span-full text-center py-12">
-                            <p class="text-dark-secondary text-lg">Unable to load projects at this time</p>
+
+            <!-- Testimonials -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Testimonial 1 -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                         </div>
-                        <?php
-                    }
-                } catch (Exception $ex) {
-                    error_log("Error fetching featured projects: " . $ex->getMessage());
-                    ?>
-                    <div class="col-span-full text-center py-12">
-                        <p class="text-dark-secondary text-lg">Unable to load projects at this time</p>
                     </div>
-                    <?php
-                }
-                ?>
+                    <p class="text-dark-secondary mb-4 italic">"Build Syntax delivered our e-commerce platform on time and within budget. The team was professional and responsive throughout the entire project."</p>
+                    <div class="border-t border-dark-secondary pt-4">
+                        <p class="font-semibold text-dark-accent">Ahmed Hassan</p>
+                        <p class="text-dark-secondary text-sm">Owner, Fashion Boutique</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-dark-secondary mb-4 italic">"The appointment system has transformed how we manage bookings. Our clients love the automated reminders and easy scheduling interface."</p>
+                    <div class="border-t border-dark-secondary pt-4">
+                        <p class="font-semibold text-dark-accent">Dr. Layla Mansour</p>
+                        <p class="text-dark-secondary text-sm">Medical Clinic Director</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex space-x-1">
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        </div>
+                    </div>
+                    <p class="text-dark-secondary mb-4 italic">"Excellent team to work with. They understood our vision and delivered a website that exceeded our expectations. Highly recommended!"</p>
+                    <div class="border-t border-dark-secondary pt-4">
+                        <p class="font-semibold text-dark-accent">Marwan Khalil</p>
+                        <p class="text-dark-secondary text-sm">CEO, Tech Startup</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- CTA after testimonials -->
+            <div class="text-center">
+                <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                    Join Our Satisfied Clients
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========== FAQ Section =========== -->
+    <section class="py-20 bg-dark-secondary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Frequently Asked Questions</h2>
+                <p class="text-dark-secondary text-lg max-w-2xl mx-auto">Have questions? We've got answers. Check out our most common questions below.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="card-dark p-6 rounded-xl fade-in">
+                    <details class="group">
+                        <summary class="flex cursor-pointer items-center justify-between font-semibold text-dark-accent hover:text-brand-blue transition-colors">
+                            <span>How long does a typical project take?</span>
+                            <svg class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-dark-secondary leading-relaxed">
+                            Project timelines vary based on complexity. A basic website typically takes 2-4 weeks, while e-commerce systems take 4-8 weeks, and appointment systems take 3-6 weeks. We provide detailed timelines during the consultation phase.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="card-dark p-6 rounded-xl fade-in">
+                    <details class="group">
+                        <summary class="flex cursor-pointer items-center justify-between font-semibold text-dark-accent hover:text-brand-blue transition-colors">
+                            <span>What are your payment terms?</span>
+                            <svg class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-dark-secondary leading-relaxed">
+                            We typically require 50% upfront to begin work and 50% upon project completion. For larger projects, we can arrange milestone-based payments. All payment terms are discussed and agreed upon before work begins.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="card-dark p-6 rounded-xl fade-in">
+                    <details class="group">
+                        <summary class="flex cursor-pointer items-center justify-between font-semibold text-dark-accent hover:text-brand-blue transition-colors">
+                            <span>Do you provide hosting?</span>
+                            <svg class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-dark-secondary leading-relaxed">
+                            Yes! We offer professional VPS hosting with security setup, SSL certificates, and daily backups. Hosting fees range from $200-$500 per year depending on your traffic and storage needs. Premium plans include VPS deployment.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="card-dark p-6 rounded-xl fade-in">
+                    <details class="group">
+                        <summary class="flex cursor-pointer items-center justify-between font-semibold text-dark-accent hover:text-brand-blue transition-colors">
+                            <span>Do you offer maintenance and support?</span>
+                            <svg class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-dark-secondary leading-relaxed">
+                            Absolutely! We offer monthly maintenance plans starting at $150 that include bug fixes, security updates, performance optimization, and small feature adjustments. Support duration is included with every service package.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="card-dark p-6 rounded-xl fade-in">
+                    <details class="group">
+                        <summary class="flex cursor-pointer items-center justify-between font-semibold text-dark-accent hover:text-brand-blue transition-colors">
+                            <span>Can the system be customized to my specific needs?</span>
+                            <svg class="h-5 w-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                            </svg>
+                        </summary>
+                        <p class="mt-4 text-dark-secondary leading-relaxed">
+                            Yes! All our services are fully customizable. The pricing tiers we offer are starting points. We can adjust features, add custom functionality, and tailor the solution to your exact business requirements. Contact us for a custom quote.
+                        </p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- CTA after FAQ -->
             <div class="text-center mt-12">
-                <a href="portfolio.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
-                    View All Projects
+                <p class="text-dark-secondary mb-6">Still have questions? We're here to help!</p>
+                <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                    Get Your Free Consultation
                 </a>
             </div>
         </div>
     </section>
 
     <!-- =========== Why Choose Us =========== -->
-    <section class="py-20 bg-dark-secondary">
+    <section class="py-20 bg-dark-tertiary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Why Choose Build Syntax?</h2>
