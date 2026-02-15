@@ -1,3 +1,4 @@
 admin/old.zip
 database/*
 /database/*
+/includes/config.php

@@ -20,10 +20,10 @@ require_once '../includes/header.php';
                         Trusted by businesses in Beirut and beyond. Professional development, transparent pricing, and dedicated support.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg text-center">
+                        <a href="contact" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg text-center">
                             Get Your Free Consultation
                         </a>
-                        <a href="services.php" class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-200 text-center">
+                        <a href="services" class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:!text-white transition-all duration-200 text-center">
                             View Pricing
                         </a>
                     </div>
@@ -156,7 +156,7 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Custom Web Development</h3>
                     <p class="text-dark-secondary text-center mb-6">Bespoke websites and applications built from the ground up to meet your unique business needs.</p>
                     <div class="text-center">
-                        <a href="services.php#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 
@@ -170,7 +170,7 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">E-Commerce Solutions</h3>
                     <p class="text-dark-secondary text-center mb-6">Powerful online stores with secure payment gateways to sell your products globally.</p>
                     <div class="text-center">
-                        <a href="services.php#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
                 
@@ -184,12 +184,12 @@ require_once '../includes/header.php';
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Appointment Systems</h3>
                     <p class="text-dark-secondary text-center mb-6">Streamline bookings with automated scheduling, reminders, and customer management tools.</p>
                     <div class="text-center">
-                        <a href="services.php#appointment" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+                        <a href="services#appointment" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="services.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                <a href="services" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
                     View All Services & Pricing
                 </a>
             </div>
@@ -263,7 +263,7 @@ require_once '../includes/header.php';
 
             <!-- CTA after testimonials -->
             <div class="text-center">
-                <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                <a href="contact" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
                     Join Our Satisfied Clients
                 </a>
             </div>
@@ -358,7 +358,7 @@ require_once '../includes/header.php';
             <!-- CTA after FAQ -->
             <div class="text-center mt-12">
                 <p class="text-dark-secondary mb-6">Still have questions? We're here to help!</p>
-                <a href="contact.php" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                <a href="contact" class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
                     Get Your Free Consultation
                 </a>
             </div>
