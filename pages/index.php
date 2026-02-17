@@ -155,6 +155,7 @@ require_once '../includes/header.php';
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Custom Web Development</h3>
                     <p class="text-dark-secondary text-center mb-6">Bespoke websites and applications built from the ground up to meet your unique business needs.</p>
+                    <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $800</h4>
                     <div class="text-center">
                         <a href="services#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
@@ -169,6 +170,7 @@ require_once '../includes/header.php';
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">E-Commerce Solutions</h3>
                     <p class="text-dark-secondary text-center mb-6">Powerful online stores with secure payment gateways to sell your products globally.</p>
+                    <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $1,200</h4>
                     <div class="text-center">
                         <a href="services#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
@@ -183,6 +185,7 @@ require_once '../includes/header.php';
                     </div>
                     <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Appointment Systems</h3>
                     <p class="text-dark-secondary text-center mb-6">Streamline bookings with automated scheduling, reminders, and customer management tools.</p>
+                    <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $800</h4>
                     <div class="text-center">
                         <a href="services#appointment" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
                     </div>
