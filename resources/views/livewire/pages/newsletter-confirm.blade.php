@@ -21,7 +21,7 @@
                                 </svg>
                             </div>
                             <h1 class="text-3xl font-bold text-dark-accent mb-4">Email Confirmed!</h1>
-                            <p class="text-dark-secondary text-lg mb-8">{{ $message }}</p>
+                            <p class="text-dark-muted text-lg mb-8">{{ $message }}</p>
                             <a href="{{ route('blog.index') }}" 
                                class="bg-brand-blue text-white px-8 py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 font-semibold inline-block">
                                 Read Our Blog
@@ -36,7 +36,7 @@
                                 </svg>
                             </div>
                             <h1 class="text-3xl font-bold text-dark-accent mb-4">Already Confirmed</h1>
-                            <p class="text-dark-secondary text-lg mb-8">{{ $message }}</p>
+                            <p class="text-dark-muted text-lg mb-8">{{ $message }}</p>
                             <a href="{{ route('home') }}" 
                                class="bg-brand-blue text-white px-8 py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 font-semibold inline-block">
                                 Go to Homepage
@@ -51,7 +51,7 @@
                                 </svg>
                             </div>
                             <h1 class="text-3xl font-bold text-dark-accent mb-4">Confirmation Failed</h1>
-                            <p class="text-dark-secondary text-lg mb-8">{{ $message }}</p>
+                            <p class="text-dark-muted text-lg mb-8">{{ $message }}</p>
                             <div class="flex space-x-4">
                                 <a href="{{ route('home') }}" 
                                    class="bg-dark-tertiary text-dark-accent px-6 py-3 rounded-lg hover:bg-dark-primary transition-all duration-200 font-semibold">

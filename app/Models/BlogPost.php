@@ -36,6 +36,23 @@ class BlogPost extends Model
         'created_at' => 'datetime',
     ];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($blog) {
+            // Generate slug using blog title
+            $slug = Str::slug($blog->title);
+
+            // Ensure the slug is unique
+            while (BlogPost::where('slug', $slug)->exists()) {
+                $slug = Str::slug($blog->title);
+            }
+
+            $blog->slug = $slug;
+        });
+    }
+
     // Activity log
     public function getActivitylogOptions(): LogOptions
     {
@@ -62,13 +79,6 @@ class BlogPost extends Model
     public function scopeDraft($query)
     {
         return $query->where('published', false);
-    }
-
-    // Mutators
-    public function setTitleAttribute($value)
-    {
-        $this->attributes['title'] = $value;
-        $this->attributes['slug'] = Str::slug($value);
     }
 
     // Accessors

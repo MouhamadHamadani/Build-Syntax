@@ -1,7 +1,5 @@
 <?php
 
-use App\Livewire\ContactForm;
-use App\Livewire\NewsletterSubscribe;
 use App\Livewire\Pages\About;
 use App\Livewire\Pages\BlogIndex;
 use App\Livewire\Pages\BlogShow;
@@ -12,17 +10,14 @@ use App\Livewire\Pages\NewsletterUnsubscribe;
 use App\Livewire\Pages\Portfolio;
 use App\Livewire\Pages\Services;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Cache\RateLimiting\Limit;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Facades\Request;
 
-RateLimiter::for('contact', function (Request $request) {
-    return Limit::perMinute(3)->by($request->ip());
-});
+// RateLimiter::for('contact', function (Request $request) {
+//     return Limit::perMinute(3)->by($request->ip());
+// });
 
-RateLimiter::for('newsletter', function (Request $request) {
-    return Limit::perMinute(2)->by($request->ip());
-});
+// RateLimiter::for('newsletter', function (Request $request) {
+//     return Limit::perMinute(2)->by($request->ip());
+// });
 
 // Public routes
 Route::get('/', Home::class)->name('home');
@@ -43,7 +38,7 @@ Route::get('/newsletter/unsubscribe/{token}', NewsletterUnsubscribe::class)->nam
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified',
+    'verified', 'admin'
 ])->prefix('admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('admin.dashboard');

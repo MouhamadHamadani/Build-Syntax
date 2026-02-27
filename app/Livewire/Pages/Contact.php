@@ -4,6 +4,7 @@ namespace App\Livewire\Pages;
 
 use App\Models\ContactSubmission;
 use App\Notifications\NewContactSubmission;
+use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\RateLimiter;
@@ -46,9 +47,10 @@ class Contact extends Component
     {
         // Rate limiting
         $key = 'contact-form:' . request()->ip();
-        
+
         if (RateLimiter::tooManyAttempts($key, 3)) {
             $this->addError('form', 'Too many submissions. Please try again later.');
+
             return;
         }
 
@@ -58,15 +60,15 @@ class Contact extends Component
             $submission = ContactSubmission::create($validated);
 
             // Send notification to admin
-            // Notification::route('mail', config('mail.admin_email'))
-            //     ->notify(new NewContactSubmission($submission));
+            Notification::route('mail', config('mail.admin_email'))
+                ->notify(new NewContactSubmission($submission));
 
             RateLimiter::hit($key, 300); // 5 minutes
 
             session()->flash('success', 'Thank you for contacting us! We\'ll get back to you within 24 hours.');
 
             $this->reset();
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->addError('form', 'Sorry, there was an error submitting your message. Please try again or email us directly.');
             Log::error('Contact form error: ' . $e->getMessage());
         }

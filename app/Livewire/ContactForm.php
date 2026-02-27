@@ -16,6 +16,7 @@ class ContactForm extends Component
     public $project_type = 'website';
     public $budget_range = '';
     public $message = '';
+    public $notes = ''; 
 
     protected $rules = [
         'name' => 'required|min:3',
@@ -25,6 +26,7 @@ class ContactForm extends Component
         'project_type' => 'required|in:website,ecommerce,mobile_app,other',
         'budget_range' => 'nullable|string',
         'message' => 'required|min:10',
+        'notes'        => 'nullable|string|max:1000',
     ];
 
     public function updated($propertyName)

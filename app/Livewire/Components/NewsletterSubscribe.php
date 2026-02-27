@@ -3,6 +3,7 @@
 namespace App\Livewire\Components;
 
 use App\Models\NewsletterSubscription;
+use App\Notifications\ConfirmNewsletterSubscription;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
@@ -30,8 +31,8 @@ class NewsletterSubscribe extends Component
 
             session()->flash('newsletter_success', 'Thank you for subscribing! Please check your email to confirm.');
 
-        // Send confirmation email
-        // $subscription->notify(new ConfirmNewsletterSubscription());
+            // Send confirmation email
+            $subscription->notify(new ConfirmNewsletterSubscription($subscription));
 
             $this->reset();
         } catch (Exception $e) {

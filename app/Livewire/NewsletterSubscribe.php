@@ -27,7 +27,7 @@ class NewsletterSubscribe extends Component
         ]);
 
         // Send confirmation email
-        // $subscription->notify(new ConfirmNewsletterSubscription());
+        $subscription->notify(new ConfirmNewsletterSubscription($subscription));
 
         session()->flash('message', 'Please check your email to confirm your subscription!');
 
