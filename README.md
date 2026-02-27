@@ -1,189 +1,59 @@
-# Build Syntax Website
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-A professional website for Build Syntax, a web development company based in Beirut, Lebanon.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-## Project Overview
+## About Laravel
 
-**Company:** Build Syntax  
-**Tagline:** "Your Vision, Our Code"  
-**Location:** Beirut, Lebanon  
-**Industry:** Web Development & Digital Solutions
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-## Technology Stack
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-- **Frontend:** HTML5, CSS3, JavaScript, jQuery
-- **Styling:** Tailwind CSS (via CDN)
-- **Backend:** PHP 7.4+
-- **Database:** MySQL 8.0+
-- **Server:** Apache/Nginx with PHP support
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Features
+## Learning Laravel
 
-### Core Pages
-- **Homepage** (`index.php` / `index.html`) - Main landing page with hero section, services overview, and portfolio highlights
-- **Services** (`pages/services.php`) - Detailed service offerings and pricing
-- **Portfolio** (`pages/portfolio.php`) - Project showcase with filtering and modal views
-- **About** (`pages/about.php`) - Company story, mission, values, and team information
-- **Contact** (`pages/contact.php`) - Contact form with database integration and FAQ section
-- **Blog** (`pages/blog.php`) - Blog listing with categories and newsletter signup
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
-### Key Features
-- **Responsive Design** - Mobile-first approach with Tailwind CSS
-- **Interactive Elements** - jQuery-powered animations and user interactions
-- **Contact Form** - PHP backend with MySQL database storage
-- **Portfolio Filtering** - Dynamic project filtering by category
-- **SEO Optimized** - Proper meta tags, structured data, and semantic HTML
-- **Performance Optimized** - Optimized images, minified assets, and fast loading times
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## File Structure
+## Laravel Sponsors
 
-```
-build-syntax-website/
-├── index.php                 # Main homepage (PHP version)
-├── index.html                # Static homepage (HTML version for testing)
-├── assets/
-│   ├── css/                  # Custom CSS files
-│   ├── js/                   # Custom JavaScript files
-│   └── images/               # Logo, icons, and images
-│       ├── BuildSyntax.png   # Main logo with text
-│       └── icon.png          # Icon/favicon
-├── includes/
-│   ├── config.php           # Database configuration
-│   ├── header.php           # Reusable header component
-│   └── footer.php           # Reusable footer component
-├── pages/
-│   ├── services.php         # Services page
-│   ├── portfolio.php        # Portfolio/work page
-│   ├── about.php           # About us page
-│   ├── contact.php         # Contact page with form
-│   └── blog.php            # Blog listing page
-├── database/
-│   └── schema.sql          # Database schema and setup
-└── README.md               # This file
-```
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-## Database Setup
+### Premium Partners
 
-1. Create a MySQL database for the website
-2. Import the schema from `database/schema.sql`
-3. Update database credentials in `includes/config.php`
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-### Required Tables
-- `contact_submissions` - Stores contact form submissions
-- `portfolio_projects` - Portfolio project data
-- `blog_posts` - Blog articles and content
+## Contributing
 
-## Installation & Setup
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-### Prerequisites
-- PHP 7.4 or higher
-- MySQL 8.0 or higher
-- Web server (Apache/Nginx)
+## Code of Conduct
 
-### Local Development
-1. Clone or download the project files
-2. Set up a local web server (XAMPP, WAMP, or similar)
-3. Create a MySQL database and import `database/schema.sql`
-4. Update database credentials in `includes/config.php`
-5. Access the website via your local server
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-### Testing with Static Version
-For quick testing without PHP/MySQL setup:
-1. Open `index.html` in a web browser
-2. Use a simple HTTP server: `python3 -m http.server 8080`
-3. Navigate to `http://localhost:8080/index.html`
+## Security Vulnerabilities
 
-## Configuration
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-### Database Configuration
-Edit `includes/config.php` with your database credentials:
+## License
 
-```php
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'buildsyntax_db');
-define('DB_USER', 'your_username');
-define('DB_PASS', 'your_password');
-```
-
-### Contact Information
-Update contact details in the following files:
-- `includes/config.php` - Email addresses and phone numbers
-- `includes/footer.php` - Footer contact information
-- `pages/contact.php` - Contact page details
-
-## Customization
-
-### Brand Colors
-The website uses Build Syntax's brand colors:
-- **Primary Blue:** #4A90E2
-- **Dark Blue:** #357ABD
-- **Gray Tones:** Various shades for text and backgrounds
-
-### Logo and Images
-- Replace `assets/images/BuildSyntax.png` with your logo
-- Replace `assets/images/icon.png` with your favicon
-- Update image paths in HTML/PHP files as needed
-
-### Content Updates
-- Edit page content directly in the PHP files
-- Update service descriptions in `pages/services.php`
-- Add portfolio projects in `pages/portfolio.php`
-- Modify company information in `pages/about.php`
-
-## Deployment
-
-### Production Deployment
-1. Upload all files to your web server
-2. Set up the MySQL database and import the schema
-3. Update `includes/config.php` with production database credentials
-4. Ensure proper file permissions (755 for directories, 644 for files)
-5. Configure your web server to serve PHP files
-
-### Security Considerations
-- Use HTTPS in production
-- Implement proper input validation and sanitization
-- Use prepared statements for database queries (already implemented)
-- Keep PHP and MySQL updated
-- Implement rate limiting for contact forms
-
-## Browser Compatibility
-
-- Chrome 90+
-- Firefox 88+
-- Safari 14+
-- Edge 90+
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance
-
-- **Tailwind CSS:** Loaded via CDN for fast delivery
-- **jQuery:** Loaded via Google CDN
-- **Images:** Optimized for web delivery
-- **Code:** Minified CSS and JavaScript in production
-
-## Support & Maintenance
-
-### Regular Updates
-- Keep PHP and MySQL updated
-- Monitor contact form submissions
-- Update portfolio with new projects
-- Add new blog posts regularly
-
-### Backup Strategy
-- Regular database backups
-- File system backups
-- Version control with Git
-
-## Contact
-
-For technical support or questions about this website:
-
-**Build Syntax**  
-Email: info@buildsyntax.com  
-Location: Beirut, Lebanon  
-Website: [Your Domain]
-
----
-
-**Build Syntax: Your Vision, Our Code**
-
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

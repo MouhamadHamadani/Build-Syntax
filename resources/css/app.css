@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+    
+    body {
+        @apply font-sans bg-gray-50 text-gray-800;
+    }
+}
+
+@layer components {
+    /* Card components */
+    .card-dark {
+        @apply bg-gradient-to-br from-dark-secondary to-dark-tertiary border border-dark-border;
+    }
+    
+    .card-dark:hover {
+        @apply border-brand-blue shadow-lg shadow-brand-blue/10;
+    }
+    
+    /* Gradient backgrounds */
+    .gradient-hero-dark {
+        @apply bg-gradient-to-br from-dark-primary to-dark-secondary;
+    }
+    
+    /* Button styles */
+    .btn-primary {
+        @apply bg-brand-blue text-white px-6 py-3 rounded-lg 
+               hover:bg-brand-blue-dark transition-all duration-200 
+               font-semibold shadow-lg;
+    }
+    
+    .btn-secondary {
+        @apply border-2 border-brand-blue text-brand-blue px-6 py-3 
+               rounded-lg hover:bg-brand-blue hover:text-white 
+               transition-all duration-200 font-semibold;
+    }
+}
+
+@layer utilities {
+    /* Animations */
+    .fade-in {
+        animation: fadeIn 0.6s ease-in;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Header scroll effect */
+    .header-scrolled {
+        @apply shadow-lg shadow-black/30;
+    }
+}
