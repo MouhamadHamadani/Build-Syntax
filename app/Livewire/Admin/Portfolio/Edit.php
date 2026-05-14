@@ -57,13 +57,13 @@ class Edit extends Component
             'featured'     => $this->featured,
         ]);
 
-        session()->flash('success', 'Project created successfully.');
+        session()->flash('success', 'Project updated successfully.');
         $this->redirect(route('admin.portfolio.index'), navigate: true);
     }
 
     public function render()
     {
-        return view('livewire.admin.portfolio.create')
+        return view('livewire.admin.portfolio.edit')
             ->layout('layouts.admin', ['title' => 'New Project']);
     }
 }

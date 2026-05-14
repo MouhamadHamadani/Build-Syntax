@@ -249,7 +249,7 @@
                                 <span class="font-medium">10:00 AM - 4:00 PM</span>
                             </div> --}}
               <div class="flex justify-between">
-                <span>Sunday</span>
+                <span>Saturday & Sunday</span>
                 <span class="font-medium">Closed</span>
               </div>
             </div>
