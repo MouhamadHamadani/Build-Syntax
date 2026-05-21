@@ -17,206 +17,179 @@
     <section id="ecommerce" class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
+                <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
+                             px-4 py-2 rounded-full mb-4">
+                    E-Commerce Platform
+                </span>
                 <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">E-Commerce System</h2>
-                <p class="text-dark-muted text-lg max-w-2xl mx-auto">Powerful online stores with secure payment processing and comprehensive management tools.</p>
+                <p class="text-dark-muted text-lg max-w-3xl mx-auto">
+                    Custom Laravel 11 / Livewire 3 online stores, fully responsive and bilingual
+                    (English + Arabic with RTL support). Built for the Lebanese market with local
+                    and international payment gateway support.
+                </p>
             </div>
 
             {{-- Pricing Cards --}}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                {{-- Basic Plan --}}
-                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-start">
+
+                {{-- BASIC --}}
+                <div class="card-dark p-8 rounded-xl shadow-md fade-in">
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Basic</h3>
-                        <p class="text-dark-muted text-sm">Perfect for getting started</p>
+                        <p class="text-dark-muted text-sm">
+                            Ideal for small businesses &amp; first-time online stores launching with a lean catalog.
+                        </p>
                     </div>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-brand-blue">$1,200</span>
-                        <p class="text-dark-muted text-sm mt-2">Starting from</p>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">$1,200</span>
+                            <span class="text-dark-muted text-sm ml-2">starting from</span>
+                        </div>
+                        <p class="text-dark-muted text-sm mt-2">
+                            <span class="inline-flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                4&ndash;6 weeks &middot; 1 month support
+                            </span>
+                        </p>
                     </div>
                     <ul class="space-y-3 mb-8">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">User registration & login</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Product management (CRUD)</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Shopping cart functionality</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Order management system</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Payment gateway integration</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Basic analytics dashboard</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Mobile responsive design</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">1 month support included</span>
-                        </li>
+                        @foreach ([
+                            'User registration &amp; login (email + social OAuth)',
+                            'Product management (CRUD, images, variants)',
+                            'Shopping cart &amp; checkout',
+                            'Order management system',
+                            'Payment gateway integration (local + international)',
+                            'Mobile-responsive design (EN + AR / RTL)',
+                            'Basic SEO setup (meta tags, sitemaps)',
+                            'Admin dashboard',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
+                    <a href="{{ route('contact') }}"
+                       class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
 
-                {{-- Standard Plan (Most Popular) --}}
-                <div class="card-dark p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 fade-in border-2 border-brand-blue relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-brand-blue text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        Most Popular
+                {{-- STANDARD (Most Popular) --}}
+                <div class="relative card-dark p-8 rounded-xl shadow-xl ring-2 ring-brand-blue
+                            md:-translate-y-4 fade-in">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-blue text-white
+                                text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
+                        <svg class="inline w-3 h-3 mr-1 -mt-0.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/>
+                        </svg>
+                        MOST POPULAR
                     </div>
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Standard</h3>
-                        <p class="text-dark-muted text-sm">Best for growing businesses</p>
+                        <p class="text-dark-muted text-sm">
+                            For growing businesses needing analytics, reviews, inventory tracking &amp; promotions.
+                        </p>
                     </div>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-brand-blue">$2,000</span>
-                        <p class="text-dark-muted text-sm mt-2">Starting from</p>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">$2,000</span>
+                            <span class="text-dark-muted text-sm ml-2">starting from</span>
+                        </div>
+                        <p class="text-dark-muted text-sm mt-2">
+                            <span class="inline-flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                7&ndash;10 weeks &middot; 2 months support
+                            </span>
+                        </p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-muted"><strong>Everything in Basic</strong> plus:</span>
+                            <span class="text-dark-muted"><strong class="text-dark-accent">Everything in Basic</strong>, plus:</span>
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Advanced analytics & reports</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Inventory management</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Email notifications</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Customer reviews system</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Discount & coupon codes</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Wishlist functionality</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">2 months support included</span>
-                        </li>
+                        @foreach ([
+                            'Advanced analytics &amp; sales reports',
+                            'Inventory management &amp; low-stock alerts',
+                            'Email notifications (order, shipping, account)',
+                            'Customer reviews &amp; ratings system',
+                            'Discount &amp; coupon codes',
+                            'Wishlist functionality',
+                            'Automated stock restoration on cancellation',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
+                    <a href="{{ route('contact') }}"
+                       class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
 
-                {{-- Premium Plan --}}
-                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+                {{-- PREMIUM --}}
+                <div class="card-dark p-8 rounded-xl shadow-md fade-in">
                     <div class="mb-6">
                         <h3 class="text-2xl font-bold text-dark-accent mb-2">Premium</h3>
-                        <p class="text-dark-muted text-sm">For enterprise deployments</p>
+                        <p class="text-dark-muted text-sm">
+                            For multi-branch retailers, agencies, or marketplace operators needing maximum features.
+                        </p>
                     </div>
                     <div class="mb-6">
-                        <span class="text-4xl font-bold text-brand-blue">$2,200</span>
-                        <p class="text-dark-muted text-sm mt-2">Starting from</p>
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">$2,200</span>
+                            <span class="text-dark-muted text-sm ml-2">starting from</span>
+                        </div>
+                        <p class="text-dark-muted text-sm mt-2">
+                            <span class="inline-flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                10&ndash;14 weeks &middot; 3 months support
+                            </span>
+                        </p>
                     </div>
                     <ul class="space-y-3 mb-8">
                         <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                            <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
                             </svg>
-                            <span class="text-dark-muted"><strong>Everything in Standard</strong> plus:</span>
+                            <span class="text-dark-muted"><strong class="text-dark-accent">Everything in Standard</strong>, plus:</span>
                         </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Multi-branch support</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Multi-vendor marketplace</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Advanced SEO tools</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Multi-currency support</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Multi-language support</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Priority support</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">3 months support included</span>
-                        </li>
+                        @foreach ([
+                            'Multi-branch / multi-location support',
+                            'Multi-vendor marketplace module',
+                            'Advanced SEO tools (structured data, schema)',
+                            'Multi-currency support',
+                            'Multi-language support (beyond EN/AR)',
+                            'Priority support',
+                            'Role-based admin permissions',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}" class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 text-center block">
+                    <a href="{{ route('contact') }}"
+                       class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
                         Request This Plan
                     </a>
                 </div>
@@ -555,87 +528,351 @@
         </div>
     </section>
 
-    {{-- Hosting & Maintenance --}}
-    <section class="py-20 bg-dark-tertiary">
+    {{-- Custom Web Development --}}
+    <section id="web-development" class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Hosting & Maintenance</h2>
-                <p class="text-dark-muted text-lg max-w-2xl mx-auto">Keep your website secure, fast, and up-to-date with our hosting and maintenance services.</p>
+                <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
+                             px-4 py-2 rounded-full mb-4">
+                    Websites &amp; Web Applications
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Custom Web Development</h2>
+                <p class="text-dark-muted text-lg max-w-3xl mx-auto">
+                    Professional branded websites and custom web applications built on modern stacks.
+                    All packages include design, development, testing, deployment assistance, and documented handover.
+                </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {{-- Hosting --}}
-                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-                    <h3 class="text-2xl font-bold text-dark-accent mb-6">Professional Hosting</h3>
-                    <p class="text-dark-muted mb-6">Reliable VPS hosting with security and performance optimization.</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">VPS setup & configuration</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Security setup & SSL certificates</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Daily automated backups</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">99.9% uptime SLA</span>
-                        </li>
-                    </ul>
-                    <div class="bg-dark-tertiary p-4 rounded-lg">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+                {{-- STARTER --}}
+                <div class="card-dark p-8 rounded-xl shadow-md fade-in">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Starter</h3>
                         <p class="text-dark-muted text-sm">
-                            <span class="font-semibold text-dark-accent">Yearly Hosting Fee:</span> $200 - $500 (depending on traffic & storage)
+                            Landing page or brochure website to establish your online presence.
                         </p>
                     </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">From&nbsp;$800</span>
+                        </div>
+                        <p class="text-dark-muted text-sm mt-2">
+                            <span class="inline-flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                2&ndash;3 weeks &middot; 1 month support
+                            </span>
+                        </p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        @foreach ([
+                            'Landing page / brochure website',
+                            'Up to 5 pages',
+                            'Template-based or semi-custom design',
+                            'WhatsApp / contact form integration',
+                            'Basic SEO &amp; Google Analytics',
+                            'Mobile responsive',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('contact') }}"
+                       class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
+                        Request This Plan
+                    </a>
                 </div>
 
-                {{-- Maintenance --}}
-                <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-                    <h3 class="text-2xl font-bold text-dark-accent mb-6">Monthly Maintenance</h3>
-                    <p class="text-dark-muted mb-6">Keep your website running smoothly with ongoing support.</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Bug fixes & updates</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Security patches</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Performance optimization</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <svg class="w-5 h-5 text-brand-blue flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                            </svg>
-                            <span class="text-dark-muted">Priority support</span>
-                        </li>
-                    </ul>
-                    <div class="bg-dark-tertiary p-4 rounded-lg">
+                {{-- PROFESSIONAL (Most Popular) --}}
+                <div class="relative card-dark p-8 rounded-xl shadow-xl ring-2 ring-brand-blue
+                            md:-translate-y-4 fade-in">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-blue text-white
+                                text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
+                        <svg class="inline w-3 h-3 mr-1 -mt-0.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/>
+                        </svg>
+                        MOST POPULAR
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Professional</h3>
                         <p class="text-dark-muted text-sm">
-                            <span class="font-semibold text-dark-accent">Monthly Fee:</span> Starting at $150/month
+                            Full corporate / business website with CMS, blog, advanced SEO &amp; bilingual support.
                         </p>
                     </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">From&nbsp;$1,500</span>
+                        </div>
+                        <p class="text-dark-muted text-sm mt-2">
+                            <span class="inline-flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                3&ndash;6 weeks &middot; 2 months support
+                            </span>
+                        </p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        @foreach ([
+                            'Full corporate / business website',
+                            '5&ndash;20 pages, fully custom design',
+                            'CMS for self-managed content',
+                            'Blog / news module',
+                            'Advanced SEO &amp; Schema markup',
+                            'Performance &amp; speed optimization',
+                            'Bilingual EN/AR support',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('contact') }}"
+                       class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue-dark transition-all duration-200 text-center block">
+                        Request This Plan
+                    </a>
+                </div>
+
+                {{-- ENTERPRISE --}}
+                <div class="card-dark p-8 rounded-xl shadow-md fade-in">
+                    <div class="mb-6">
+                        <span class="inline-block bg-yellow-400/10 text-yellow-400 text-xs font-bold
+                                     px-3 py-1 rounded-full mb-3">ENTERPRISE</span>
+                        <h3 class="text-2xl font-bold text-dark-accent mb-2">Enterprise</h3>
+                        <p class="text-dark-muted text-sm">
+                            Custom web applications &amp; portals with complex logic, API integrations &amp; dedicated support.
+                        </p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-yellow-400">Custom Quote</span>
+                        <p class="text-dark-muted text-sm mt-2">Timeline &amp; price project-specific &middot; Dedicated support plan</p>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        @foreach ([
+                            'Custom web applications &amp; portals',
+                            'Complex logic &amp; user roles',
+                            'API integrations (CRM, ERP, etc.)',
+                            'Custom dashboards &amp; reporting',
+                            'Third-party payment processing',
+                            'Scalable cloud infrastructure',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-yellow-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('contact') }}"
+                       class="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-3 rounded-lg
+                              hover:bg-yellow-400 hover:text-dark-primary transition-all duration-200 text-center block">
+                        Get a Custom Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Hosting & Maintenance --}}
+    <section id="hosting" class="py-20 bg-dark-tertiary">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
+                             px-4 py-2 rounded-full mb-4">
+                    Infrastructure &amp; Support
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Hosting &amp; Maintenance</h2>
+                <p class="text-dark-muted text-lg max-w-3xl mx-auto">
+                    Professional VPS hosting and ongoing maintenance plans to keep your platform
+                    secure, fast, and reliable. All hosting tiers include VPS setup &amp; configuration,
+                    SSL, daily backups, security hardening, monitoring, and 99.9% uptime SLA.
+                </p>
+            </div>
+
+            {{-- Hosting Tiers --}}
+            <h3 class="text-2xl font-bold text-dark-accent text-center mb-2">Professional VPS Hosting</h3>
+            <p class="text-dark-muted text-center max-w-2xl mx-auto mb-10">
+                You own the server subscription; Build Syntax handles the full configuration and hardening.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 items-start">
+                @foreach ([
+                    [
+                        'name' => 'Small Sites',
+                        'price' => '$200',
+                        'unit' => '/ year',
+                        'traffic' => 'Up to ~5,000 visits/month',
+                        'ideal' => 'Brochure / informational sites',
+                    ],
+                    [
+                        'name' => 'Medium Traffic',
+                        'price' => '$300',
+                        'unit' => '/ year',
+                        'traffic' => '5,000&ndash;20,000 visits/month',
+                        'ideal' => 'Active e-commerce &amp; booking sites',
+                    ],
+                    [
+                        'name' => 'High Traffic',
+                        'price' => '$500',
+                        'unit' => '/ year',
+                        'traffic' => '20,000+ visits/month',
+                        'ideal' => 'Enterprise / business-critical platforms',
+                    ],
+                ] as $tier)
+                    <div class="card-dark p-8 rounded-xl shadow-md fade-in">
+                        <h4 class="text-xl font-bold text-dark-accent mb-2">{{ $tier['name'] }}</h4>
+                        <div class="flex items-baseline mb-4">
+                            <span class="text-4xl font-bold text-brand-blue">{{ $tier['price'] }}</span>
+                            <span class="text-dark-muted text-sm ml-2">{{ $tier['unit'] }}</span>
+                        </div>
+                        <p class="text-dark-muted text-sm mb-4">
+                            <span class="font-semibold text-dark-accent">Traffic:</span> {!! $tier['traffic'] !!}
+                        </p>
+                        <p class="text-dark-muted text-sm">
+                            <span class="font-semibold text-dark-accent">Ideal for:</span> {!! $tier['ideal'] !!}
+                        </p>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Maintenance Plans --}}
+            <h3 class="text-2xl font-bold text-dark-accent text-center mb-2">Monthly Maintenance Plans</h3>
+            <p class="text-dark-muted text-center max-w-2xl mx-auto mb-10">
+                Keep your platform secure, fast, and up-to-date. Billed monthly &middot; minimum 3-month commitment.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+                {{-- Basic Maintenance --}}
+                <div class="card-dark p-8 rounded-xl shadow-md fade-in">
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-dark-accent mb-2">Basic Maintenance</h4>
+                        <p class="text-dark-muted text-sm">Small brochure / informational sites</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">$150</span>
+                            <span class="text-dark-muted text-sm ml-2">/ month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        @foreach ([
+                            'Bug fixes',
+                            'Security patches',
+                            'Plugin / package updates',
+                            'Monthly health report',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('contact') }}"
+                       class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
+                        Request Plan
+                    </a>
+                </div>
+
+                {{-- Standard Maintenance (Most Popular) --}}
+                <div class="relative card-dark p-8 rounded-xl shadow-xl ring-2 ring-brand-blue
+                            md:-translate-y-4 fade-in">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-blue text-white
+                                text-xs font-bold px-4 py-1 rounded-full whitespace-nowrap">
+                        <svg class="inline w-3 h-3 mr-1 -mt-0.5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.37 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.922-.755 1.688-1.54 1.118l-3.37-2.448a1 1 0 00-1.175 0l-3.37 2.448c-.784.57-1.838-.196-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.05 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69l1.286-3.957z"/>
+                        </svg>
+                        MOST POPULAR
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-dark-accent mb-2">Standard Maintenance</h4>
+                        <p class="text-dark-muted text-sm">E-commerce &amp; booking platforms in active use</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">$250</span>
+                            <span class="text-dark-muted text-sm ml-2">/ month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-muted"><strong class="text-dark-accent">Everything in Basic</strong>, plus:</span>
+                        </li>
+                        @foreach ([
+                            'Performance optimization',
+                            'Priority support response',
+                            'Minor content updates',
+                            'Uptime monitoring',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('contact') }}"
+                       class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue-dark transition-all duration-200 text-center block">
+                        Request Plan
+                    </a>
+                </div>
+
+                {{-- Premium Maintenance --}}
+                <div class="card-dark p-8 rounded-xl shadow-md fade-in">
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-dark-accent mb-2">Premium Maintenance</h4>
+                        <p class="text-dark-muted text-sm">High-traffic or business-critical platforms</p>
+                    </div>
+                    <div class="mb-6">
+                        <div class="flex items-baseline">
+                            <span class="text-4xl font-bold text-brand-blue">$400</span>
+                            <span class="text-dark-muted text-sm ml-2">/ month</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-dark-muted"><strong class="text-dark-accent">Everything in Standard</strong>, plus:</span>
+                        </li>
+                        @foreach ([
+                            'Small feature additions (&le;4 hrs/mo)',
+                            'Database optimization',
+                            'Emergency incident response',
+                            'Quarterly strategy review',
+                        ] as $feature)
+                            <li class="flex items-start space-x-3">
+                                <svg class="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                </svg>
+                                <span class="text-dark-muted">{!! $feature !!}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('contact') }}"
+                       class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
+                              hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
+                        Request Plan
+                    </a>
                 </div>
             </div>
         </div>
