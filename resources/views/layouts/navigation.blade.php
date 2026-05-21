@@ -24,12 +24,14 @@
                 <x-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')">
                     Services
                 </x-nav-link>
-                <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
+                {{-- Portfolio: uncomment when at least 2 projects exist --}}
+                {{-- <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                     Portfolio
-                </x-nav-link>
-                <x-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog.*')">
+                </x-nav-link> --}}
+                {{-- Blog: uncomment when at least 2 posts are published --}}
+                {{-- <x-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog.*')">
                     Blog
-                </x-nav-link>
+                </x-nav-link> --}}
                 <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                     About
                 </x-nav-link>
@@ -63,10 +65,20 @@
              class="md:hidden mt-4 pb-4 space-y-2">
             <a href="{{ route('home') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Home</a>
             <a href="{{ route('services') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Services</a>
-            <a href="{{ route('portfolio') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Portfolio</a>
-            <a href="{{ route('blog.index') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Blog</a>
+            {{-- Portfolio: uncomment when at least 2 projects exist --}}
+            {{-- <a href="{{ route('portfolio') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Portfolio</a> --}}
+            {{-- Blog: uncomment when at least 2 posts are published --}}
+            {{-- <a href="{{ route('blog.index') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Blog</a> --}}
             <a href="{{ route('about') }}" class="block py-2 text-dark-accent hover:text-brand-blue">About</a>
             <a href="{{ route('contact') }}" class="block py-2 text-brand-blue font-semibold">Get Started</a>
+            <a href="tel:+96171293685"
+               class="flex items-center gap-2 py-2 text-dark-muted hover:text-brand-blue transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                +961 71 293 685
+            </a>
         </div>
     </nav>
 </header>

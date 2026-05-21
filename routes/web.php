@@ -40,6 +40,10 @@ Route::get('/portfolio', Portfolio::class)->name('portfolio');
 Route::get('/about', About::class)->name('about');
 Route::get('/contact', Contact::class)->name('contact');
 
+// Legal
+Route::get('/privacy-policy', \App\Livewire\Pages\PrivacyPolicy::class)->name('privacy-policy');
+Route::get('/terms-of-service', \App\Livewire\Pages\TermsOfService::class)->name('terms-of-service');
+
 // Blog
 Route::get('/blog', BlogIndex::class)->name('blog.index');
 Route::get('/blog/{slug}', BlogShow::class)->name('blog.show');

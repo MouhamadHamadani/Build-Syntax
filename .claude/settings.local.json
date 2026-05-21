@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(anthropic-skills:docx)",
+      "Skill(anthropic-skills:docx:*)",
+      "Bash(pandoc --track-changes=all \"C:\\\\Users\\\\abama\\\\Documents\\\\Build Syntax\\\\Tymelo_Pricing_Implementation_Spec.docx\" -o \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\tymelo_spec.md\")",
+      "PowerShell(pandoc --track-changes=all \"C:\\\\Users\\\\abama\\\\Documents\\\\Build Syntax\\\\Tymelo_Pricing_Implementation_Spec.docx\" -o \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\tymelo_spec.md\")",
+      "PowerShell(python \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\extract_spec.py\" > \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\tymelo_spec.txt\")",
+      "Bash(php artisan *)",
+      "Bash(ls -la /c/wamp64/www/BuildSyntax/BuildSyntaxDev/vendor 2>&1 | head -5)",
+      "Bash(cd /c/wamp64/www/BuildSyntax/BuildSyntaxDev && pwd && ls .env 2>&1; ls node_modules 2>&1 | head -3)",
+      "PowerShell($source = \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\vendor\"; $target = \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\vendor\"; if \\(-not \\(Test-Path $target\\)\\) { New-Item -ItemType SymbolicLink -Path $target -Target $source -Force | Out-Null; \"Vendor symlinked\" } else { \"Vendor already exists\" }; $s2 = \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\node_modules\"; $t2 = \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\node_modules\"; if \\(-not \\(Test-Path $t2\\)\\) { New-Item -ItemType SymbolicLink -Path $t2 -Target $s2 -Force | Out-Null; \"node_modules symlinked\" } else { \"node_modules already exists\" }; $s3 = \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.env\"; $t3 = \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\.env\"; if \\(-not \\(Test-Path $t3\\)\\) { Copy-Item -Path $s3 -Destination $t3; \"env copied\" } else { \"env already exists\" })",
+      "Bash(cmd.exe /c 'mklink /J \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\vendor\" \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\vendor\"')",
+      "Bash(cmd.exe /c 'mklink /J \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\.claude\\\\worktrees\\\\nice-cannon-588d12\\\\node_modules\" \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\node_modules\"')",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8765/)",
+      "Bash(grep -oiE \"\\(error|exception|undefined|fatal|syntax\\)[^<>\\\\\"]{0,300}\" services_response.html)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o services_response.html -w \"STATUS: %{http_code}\\\\nSIZE: %{size_download}\\\\n\" http://127.0.0.1:8765/services)",
+      "Bash(curl -s -o home_response.html -w \"STATUS HOME: %{http_code}\\\\nSIZE HOME: %{size_download}\\\\n\" http://127.0.0.1:8765/)",
+      "Bash(grep -oE 'Tymelo[^<]{0,60}' services_response.html)",
+      "Bash(grep -oE 'From \\\\$699' services_response.html)",
+      "Bash(grep -oE '\\\\$1,299' services_response.html)",
+      "Bash(grep -oE 'From \\\\$699' home_response.html)",
+      "Bash(grep -oE 'Starting From \\\\$800' home_response.html)",
+      "Bash(grep -B1 -A2 \"From \\\\$699\" home_response.html)",
+      "Bash(grep -B1 -A1 'class=\"text-4xl font-bold text-brand-blue\">\\\\$699' services_response.html)",
+      "Bash(git stash *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(git checkout *)",
+      "Bash(git pull *)",
+      "Bash(ls -la \"C:/Users/abama/Documents/Build Syntax/BuildSyntax_Pricing_List_2026.docx\" 2>&1)",
+      "Bash(python extract_pricing.py)",
+      "Bash(php verify_blade.php)",
+      "Bash(xxd)",
+      "Bash(grep -oE 'Tymelo installation|\\\\$699|\\\\$1,299|Get Tymelo Business|frequently asked questions' -i services_response.html)",
+      "Bash(git add *)",
+      "Bash(python extract_analysis.py)",
+      "Bash(composer require *)"
+    ]
+  }
+}

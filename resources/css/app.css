@@ -10,7 +10,7 @@
     }
 
     body {
-        @apply font-sans bg-gray-50 text-gray-800;
+        @apply font-sans bg-dark-primary text-dark-accent;
     }
 
     [x-cloak] {

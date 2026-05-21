@@ -45,8 +45,8 @@
               <div>
                 <label for="name" class="block text-white font-medium mb-2">Full Name *</label>
                 <input type="text" id="name" wire:model.blur="name"
-                  class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200
-                                        {{ $errors->has('name') ? 'border-red-500 bg-red-50' : 'border-gray-300' }}"
+                  class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 bg-dark-tertiary text-dark-accent placeholder-dark-muted
+                                        {{ $errors->has('name') ? 'border-red-500 bg-red-900/20' : 'border-dark-border' }}"
                   placeholder="John Doe">
                 @error('name')
                   <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -57,8 +57,8 @@
               <div>
                 <label for="email" class="block text-white font-medium mb-2">Email Address *</label>
                 <input type="email" id="email" wire:model.blur="email"
-                  class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200
-                                        {{ $errors->has('email') ? 'border-red-500 bg-red-50' : 'border-gray-300' }}"
+                  class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 bg-dark-tertiary text-dark-accent placeholder-dark-muted
+                                        {{ $errors->has('email') ? 'border-red-500 bg-red-900/20' : 'border-dark-border' }}"
                   placeholder="john@example.com">
                 @error('email')
                   <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -71,7 +71,7 @@
               <div>
                 <label for="phone" class="block text-white font-medium mb-2">Phone Number</label>
                 <input type="tel" id="phone" wire:model="phone"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200"
+                  class="w-full px-4 py-3 border border-dark-border bg-dark-tertiary text-dark-accent placeholder-dark-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200"
                   placeholder="+961 71 123 456">
                 @error('phone')
                   <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -82,7 +82,7 @@
               <div>
                 <label for="company" class="block text-white font-medium mb-2">Company Name</label>
                 <input type="text" id="company" wire:model="company"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200"
+                  class="w-full px-4 py-3 border border-dark-border bg-dark-tertiary text-dark-accent placeholder-dark-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200"
                   placeholder="Your Company LLC">
                 @error('company')
                   <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -95,11 +95,12 @@
               <div>
                 <label for="project_type" class="block text-white font-medium mb-2">Project Type *</label>
                 <select id="project_type" wire:model="project_type"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
+                  class="w-full px-4 py-3 border border-dark-border bg-dark-tertiary text-dark-accent placeholder-dark-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
                   <option value="website">Custom Website</option>
-                  <option value="ecommerce">E-Commerce Store</option>
-                  <option value="mobile_app">Mobile App</option>
-                  <option value="other">Other</option>
+                  <option value="ecommerce">ShopNex (E-Commerce Store)</option>
+                  <option value="appointment">Tymelo (Appointment Booking)</option>
+                  <option value="pos">POS Pro (Point of Sale System)</option>
+                  <option value="other">Other / Not Sure Yet</option>
                 </select>
                 @error('project_type')
                   <p class="mt-1 text-sm text-red-500">{{ $message }}</p>
@@ -110,7 +111,7 @@
               <div>
                 <label for="budget_range" class="block text-white font-medium mb-2">Budget Range</label>
                 <select id="budget_range" wire:model="budget_range"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
+                  class="w-full px-4 py-3 border border-dark-border bg-dark-tertiary text-dark-accent placeholder-dark-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
                   <option value="">Select budget range</option>
                   <option value="under_5k">Under $5,000</option>
                   <option value="5k_15k">$5,000 - $15,000</option>
@@ -127,8 +128,8 @@
             <div>
               <label for="message" class="block text-white font-medium mb-2">Project Details *</label>
               <textarea id="message" wire:model.blur="message" rows="6"
-                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 resize-vertical resize-none
-                                    {{ $errors->has('message') ? 'border-red-500 bg-red-50' : 'border-gray-300' }}"
+                class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200 resize-vertical resize-none bg-dark-tertiary text-dark-accent placeholder-dark-muted
+                                    {{ $errors->has('message') ? 'border-red-500 bg-red-900/20' : 'border-dark-border' }}"
                 placeholder="Tell us about your project, goals, timeline, and any specific requirements..."></textarea>
               @error('message')
                 <p class="mt-1 text-sm text-red-500">{{ $message }}</p>

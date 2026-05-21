@@ -67,6 +67,29 @@
             </svg>
             <span class="hidden sm:inline text-sm whitespace-nowrap">Chat on WhatsApp</span>
         </a>
+
+        {{-- Scroll to top button --}}
+        <button
+            x-data="{ show: false }"
+            x-init="window.addEventListener('scroll', () => { show = window.scrollY > 400 })"
+            x-show="show"
+            x-cloak
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-75"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-75"
+            @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            class="fixed bottom-24 right-6 z-50 w-11 h-11 bg-dark-secondary border border-dark-border
+                   text-dark-muted hover:text-brand-blue hover:border-brand-blue
+                   rounded-full flex items-center justify-center shadow-lg
+                   transition-all duration-200 cursor-pointer"
+            aria-label="Scroll to top">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
     </div>
 
     @livewireScripts

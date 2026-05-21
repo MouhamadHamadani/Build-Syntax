@@ -10,6 +10,15 @@
     </section>
 
     {{-- Filters Section --}}
+    @php
+        $categoryLabels = [
+            'all'       => 'All Projects',
+            'web'       => 'Web Development',
+            'ecommerce' => 'ShopNex (E-Commerce)',
+            'pos'       => 'POS Pro',
+            'other'     => 'Other',
+        ];
+    @endphp
     <section class="py-12 bg-dark-secondary">
         <div class="container mx-auto px-6">
             {{-- Category Filters --}}
@@ -23,7 +32,7 @@
                     wire:target="filterByCategory,search"
                     class="px-6 py-2 rounded-lg font-medium transition-all duration-200
                         {{ $category === $cat ? 'bg-brand-blue text-white' : 'bg-dark-tertiary text-dark-accent hover:bg-dark-primary' }}">
-                    {{ ucfirst($cat) }}
+                    {{ $categoryLabels[$cat] ?? ucfirst($cat) }}
                 </button>
                 @endforeach
             </div>
@@ -79,7 +88,7 @@
                         {{-- Project Info --}}
                         <div class="p-6">
                             <div class="mb-2">
-                                <span class="text-brand-blue text-sm font-medium">{{ ucfirst($project->category) }}</span>
+                                <span class="text-brand-blue text-sm font-medium">{{ $categoryLabels[$project->category] ?? ucfirst($project->category) }}</span>
                             </div>
                             <h3 class="text-xl font-bold text-dark-accent mb-3">{{ $project->title }}</h3>
                             <p class="text-dark-muted mb-4 line-clamp-3">

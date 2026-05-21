@@ -25,7 +25,7 @@ class Contact extends Component
         'email' => 'required|email|max:150',
         'phone' => 'nullable|string|max:50',
         'company' => 'nullable|string|max:100',
-        'project_type' => 'required|in:website,ecommerce,mobile_app,other',
+        'project_type' => 'required|in:website,ecommerce,appointment,pos,other',
         'budget_range' => 'nullable|string',
         'message' => 'required|min:10',
     ];

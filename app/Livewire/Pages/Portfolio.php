@@ -62,7 +62,7 @@ class Portfolio extends Component
 
         return view('livewire.pages.portfolio', [
             'projects' => $query->paginate(12),
-            'categories' => ['all', 'web', 'ecommerce', 'mobile', 'other'],
+            'categories' => ['all', 'web', 'ecommerce', 'pos', 'other'],
         ])->layout('layouts.app', [
             'title' => 'Portfolio - Build Syntax',
             'description' => 'Explore our portfolio of successful web development projects including custom websites, e-commerce platforms, and mobile applications.'

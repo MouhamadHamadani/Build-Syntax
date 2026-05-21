@@ -12,7 +12,7 @@
             connect you with your customers.
           </p>
           <p class="text-base text-dark-muted mb-8 leading-relaxed">
-            Trusted by businesses in Beirut and beyond. Professional development, transparent pricing, and dedicated
+            Built for businesses in Beirut and beyond. Professional development, transparent pricing, and dedicated
             support.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -180,7 +180,7 @@
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">E-Commerce Systems</h3>
+          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">ShopNex &mdash; E-Commerce</h3>
           <p class="text-dark-muted text-center mb-6">Complete online stores with payment processing, inventory
             management, and customer analytics.</p>
           <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $1,200</h4>
@@ -221,7 +221,7 @@
   <section class="py-20 bg-dark-tertiary">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Why Early Clients Pick Us</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Why Clients Choose Build Syntax</h2>
         <p class="text-dark-muted text-lg max-w-2xl mx-auto">
           Honest signals while we build our portfolio &mdash; no fake testimonials, no inflated stats.
           Here's what you can actually count on from day one.
@@ -291,8 +291,9 @@
               </svg>
             </summary>
             <p class="mt-4 text-dark-muted leading-relaxed">
-              Timeline depends on project complexity. A simple website takes 2-4 weeks, while e-commerce platforms
-              typically need 6-12 weeks. We'll provide a detailed timeline during consultation.
+              Timeline depends on project complexity. A simple website takes 2&ndash;4 weeks, while
+              e-commerce platforms typically need 4&ndash;10 weeks depending on the tier. Custom web
+              applications may take longer. We'll provide a detailed timeline during consultation.
             </p>
           </details>
         </div>
