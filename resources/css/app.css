@@ -48,22 +48,38 @@
 }
 
 @layer utilities {
-    /* Animations */
+    /*
+     * Scroll-triggered fade-in.
+     * Elements start invisible; resources/js/app.js adds `.is-visible` when
+     * the element enters the viewport (IntersectionObserver). Falls back to
+     * always-visible if JS is disabled or IO is unavailable.
+     */
     .fade-in {
-        animation: fadeIn 0.6s ease-in;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-    
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+
+    .fade-in.is-visible {
+        opacity: 1;
+        transform: translateY(0);
     }
-    
+
+    /* No-JS fallback so content is never permanently hidden. */
+    .no-js .fade-in {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Hide horizontal scrollbar on the sticky tab nav (Services page). */
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
     /* Header scroll effect */
     .header-scrolled {
         @apply shadow-lg shadow-black/30;

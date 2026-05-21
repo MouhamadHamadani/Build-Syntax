@@ -27,15 +27,11 @@ use App\Livewire\Pages\NewsletterConfirm;
 use App\Livewire\Pages\NewsletterUnsubscribe;
 use App\Livewire\Pages\Portfolio;
 use App\Livewire\Pages\Services;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 
-// RateLimiter::for('contact', function (Request $request) {
-//     return Limit::perMinute(3)->by($request->ip());
-// });
-
-// RateLimiter::for('newsletter', function (Request $request) {
-//     return Limit::perMinute(2)->by($request->ip());
-// });
+// SEO
+Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 
 // Public routes
 Route::get('/', Home::class)->name('home');

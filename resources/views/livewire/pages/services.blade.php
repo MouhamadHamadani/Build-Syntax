@@ -13,6 +13,45 @@
         </div>
     </section>
 
+    {{-- Sticky service tabs --}}
+    <nav class="sticky top-16 z-30 bg-dark-secondary/95 backdrop-blur border-y border-dark-border"
+         aria-label="Service sections">
+        <div class="container mx-auto px-6">
+            <ul class="flex items-center gap-1 md:gap-6 overflow-x-auto scrollbar-hide py-3 text-sm md:text-base">
+                @foreach ([
+                    ['href' => '#ecommerce', 'label' => 'E-Commerce'],
+                    ['href' => '#appointment', 'label' => 'Tymelo (Booking)'],
+                    ['href' => '#web-development', 'label' => 'Web Development'],
+                    ['href' => '#hosting', 'label' => 'Hosting &amp; Maintenance'],
+                ] as $tab)
+                    <li class="flex-shrink-0">
+                        <a href="{{ $tab['href'] }}"
+                           class="inline-block px-4 py-2 rounded-full text-dark-muted font-medium
+                                  hover:text-brand-blue hover:bg-brand-blue/10 transition-colors whitespace-nowrap">
+                            {!! $tab['label'] !!}
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </nav>
+
+    {{-- Payment plan note --}}
+    <div class="bg-dark-primary border-b border-dark-border">
+        <div class="container mx-auto px-6 py-4 fade-in">
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-sm text-dark-muted text-center">
+                <span class="inline-flex items-center gap-2 text-brand-blue font-semibold">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                    </svg>
+                    Flexible payments
+                </span>
+                <span class="hidden sm:inline text-dark-border">|</span>
+                <span>50% deposit &middot; 30% on delivery &middot; 20% after training &mdash; available on request for all packages.</span>
+            </div>
+        </div>
+    </div>
+
     {{-- E-Commerce System --}}
     <section id="ecommerce" class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">

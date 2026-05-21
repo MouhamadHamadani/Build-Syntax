@@ -217,88 +217,54 @@
     </div>
   </section>
 
-  {{-- Social Proof Section --}}
+  {{-- Why Pick Us (honest trust signals — placeholder testimonials removed) --}}
   <section class="py-20 bg-dark-tertiary">
     <div class="container mx-auto px-6">
       <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Trusted by Businesses</h2>
-        <p class="text-dark-muted text-lg max-w-2xl mx-auto">Join dozens of satisfied clients who have transformed
-          their business with our solutions.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Why Early Clients Pick Us</h2>
+        <p class="text-dark-muted text-lg max-w-2xl mx-auto">
+          Honest signals while we build our portfolio &mdash; no fake testimonials, no inflated stats.
+          Here's what you can actually count on from day one.
+        </p>
       </div>
 
-      {{-- Testimonials --}}
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-        {{-- Testimonial 1 --}}
-        <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-          <div class="flex items-center mb-4">
-            <div class="flex space-x-1">
-              @for ($i = 0; $i < 5; $i++)
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              @endfor
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        @foreach ([
+            ['icon' => 'location', 'title' => 'Based in Beirut', 'desc' => 'Local agency, MENA timezone, USD-priced &mdash; no offshore lag.'],
+            ['icon' => 'code', 'title' => 'Laravel 12 Specialists', 'desc' => 'Modern stack: Laravel 12, Livewire 3, Tailwind &mdash; no legacy code.'],
+            ['icon' => 'globe', 'title' => 'Bilingual EN / AR', 'desc' => 'RTL support and Arabic-ready out of the box for the Lebanese market.'],
+            ['icon' => 'chat', 'title' => 'Free Consultation', 'desc' => 'A real 30-minute call &mdash; you walk away with a scoped plan, no commitment.'],
+        ] as $badge)
+          <div class="card-dark p-6 rounded-xl text-center fade-in">
+            <div class="bg-brand-blue/10 text-brand-blue w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+              @switch($badge['icon'])
+                @case('location')
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                @break
+                @case('code')
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                  </svg>
+                @break
+                @case('globe')
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.6 9h16.8M3.6 15h16.8M11.5 3a17 17 0 000 18M12.5 3a17 17 0 010 18M12 21a9 9 0 100-18 9 9 0 000 18z"/>
+                  </svg>
+                @break
+                @case('chat')
+                  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                  </svg>
+                @break
+              @endswitch
             </div>
+            <h3 class="font-bold text-dark-accent mb-2">{{ $badge['title'] }}</h3>
+            <p class="text-sm text-dark-muted leading-relaxed">{!! $badge['desc'] !!}</p>
           </div>
-          <p class="text-dark-muted mb-4 italic">"Build Syntax delivered our e-commerce platform on time and within
-            budget. The team was professional and responsive throughout the entire project."</p>
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold">JD
-            </div>
-            <div>
-              <p class="font-semibold text-dark-accent">John Doe</p>
-              <p class="text-sm text-dark-muted">CEO, TechCorp</p>
-            </div>
-          </div>
-        </div>
-
-        {{-- Testimonial 2 --}}
-        <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-          <div class="flex items-center mb-4">
-            <div class="flex space-x-1">
-              @for ($i = 0; $i < 5; $i++)
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              @endfor
-            </div>
-          </div>
-          <p class="text-dark-muted mb-4 italic">"The appointment system has transformed how we manage bookings. Our
-            no-show rate dropped by 50% thanks to the automated reminders!"</p>
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold">SK
-            </div>
-            <div>
-              <p class="font-semibold text-dark-accent">Sarah Khalil</p>
-              <p class="text-sm text-dark-muted">Owner, Dental Clinic</p>
-            </div>
-          </div>
-        </div>
-
-        {{-- Testimonial 3 --}}
-        <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
-          <div class="flex items-center mb-4">
-            <div class="flex space-x-1">
-              @for ($i = 0; $i < 5; $i++)
-                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              @endfor
-            </div>
-          </div>
-          <p class="text-dark-muted mb-4 italic">"Working with Build Syntax was a great experience. They understood our
-            needs and created a beautiful, functional website that perfectly represents our brand."</p>
-          <div class="flex items-center space-x-3">
-            <div class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold">MH
-            </div>
-            <div>
-              <p class="font-semibold text-dark-accent">Michel Hassan</p>
-              <p class="text-sm text-dark-muted">Marketing Director</p>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
@@ -409,13 +375,31 @@
         </div>
       </div>
 
-      {{-- CTA after FAQ --}}
-      <div class="text-center mt-12">
-        <p class="text-dark-muted mb-6">Still have questions? We're here to help!</p>
-        <a href="{{ route('contact') }}"
-          class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg inline-block">
-          Get Your Free Consultation
-        </a>
+      {{-- Free Consultation definition + CTA --}}
+      <div class="max-w-3xl mx-auto mt-12">
+        <div class="card-dark p-8 rounded-xl border border-brand-blue/30 fade-in">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="bg-brand-blue/10 text-brand-blue w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-dark-accent mb-2">What &ldquo;Free Consultation&rdquo; actually means</h3>
+              <p class="text-dark-muted leading-relaxed">
+                A 30-minute video or in-person call. No sales pressure. You walk away with a clear project
+                scope and budget &mdash; whether you decide to work with us or not.
+              </p>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="{{ route('contact') }}"
+              class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg
+                     hover:bg-brand-blue-dark transition-all duration-200 shadow-lg inline-block">
+              Book Your Free Consultation
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
