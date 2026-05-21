@@ -201,7 +201,7 @@
           <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Appointment Systems</h3>
           <p class="text-dark-muted text-center mb-6">Streamline bookings with automated scheduling, reminders, and
             customer management tools.</p>
-          <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $800</h4>
+          <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">From $699</h4>
           <div class="text-center">
             <a href="{{ route('services') }}#appointment" class="text-brand-blue font-semibold hover:underline">Learn
               More →</a>
