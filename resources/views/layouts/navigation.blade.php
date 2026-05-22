@@ -25,9 +25,9 @@
                     Services
                 </x-nav-link>
                 {{-- Portfolio: uncomment when at least 2 projects exist --}}
-                {{-- <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
+                <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                     Portfolio
-                </x-nav-link> --}}
+                </x-nav-link>
                 {{-- Blog: uncomment when at least 2 posts are published --}}
                 {{-- <x-nav-link href="{{ route('blog.index') }}" :active="request()->routeIs('blog.*')">
                     Blog
@@ -66,7 +66,7 @@
             <a href="{{ route('home') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Home</a>
             <a href="{{ route('services') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Services</a>
             {{-- Portfolio: uncomment when at least 2 projects exist --}}
-            {{-- <a href="{{ route('portfolio') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Portfolio</a> --}}
+            <a href="{{ route('portfolio') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Portfolio</a>
             {{-- Blog: uncomment when at least 2 posts are published --}}
             {{-- <a href="{{ route('blog.index') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Blog</a> --}}
             <a href="{{ route('about') }}" class="block py-2 text-dark-accent hover:text-brand-blue">About</a>
