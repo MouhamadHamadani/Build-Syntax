@@ -59,7 +59,7 @@
     <section id="ecommerce" class="py-20 bg-dark-secondary">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
-                <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
+                <span class="inline-block bg-orange-400/10 text-orange-400 text-sm font-semibold
                              px-4 py-2 rounded-full mb-4">
                     E-Commerce Platform
                 </span>
@@ -245,7 +245,7 @@
 
             {{-- Section header --}}
             <div class="text-center mb-16 fade-in">
-                <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
+                <span class="inline-block bg-teal-400/10 text-teal-400 text-sm font-semibold
                              px-4 py-2 rounded-full mb-4">
                     Appointment Booking System
                 </span>
@@ -733,7 +733,7 @@
 
             {{-- Section header --}}
             <div class="text-center mb-12 fade-in">
-                <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
+                <span class="inline-block bg-purple-400/10 text-purple-400 text-sm font-semibold
                              px-4 py-2 rounded-full mb-4">
                     Point of Sale
                 </span>

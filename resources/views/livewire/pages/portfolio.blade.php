@@ -99,9 +99,7 @@
                             @if($project->technologies)
                             <div class="flex flex-wrap gap-2 mb-4">
                                 @foreach($project->technologies as $tech)
-                                <span class="bg-dark-primary text-dark-muted text-xs px-2 py-1 rounded">
-                                    {{ $tech }}
-                                </span>
+                                    <x-tech-icon :tech="$tech" variant="chip" />
                                 @endforeach
                             </div>
                             @endif
@@ -184,49 +182,12 @@
                 <p class="text-dark-muted text-lg max-w-2xl mx-auto">We leverage modern technologies to build robust, scalable solutions.</p>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
-                <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">PHP</div>
-                    </div>
-                    <p class="text-sm text-white">PHP</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">L</div>
-                    </div>
-                    <p class="text-sm text-white">Laravel</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">JS</div>
-                    </div>
-                    <p class="text-sm text-white">JavaScript</p>
-                </div>
-                {{-- <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">⚛</div>
-                    </div>
-                    <p class="text-sm text-white">React</p>
-                </div> --}}
-                {{-- Livewire --}}
-                <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">LW</div>
-                    </div>
-                    <p class="text-sm text-white">Livewire</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">DB</div>
-                    </div>
-                    <p class="text-sm text-white">MySQL</p>
-                </div>
-                <div class="text-center fade-in">
-                    <div class="card-dark rounded-lg p-6 mb-3 hover:bg-brand-blue text-dark-muted hover:text-white transition-all duration-200">
-                        <div class="text-4xl font-bold">TW</div>
-                    </div>
-                    <p class="text-sm text-white">Tailwind</p>
-                </div>
+                <x-tech-icon tech="PHP" variant="card" />
+                <x-tech-icon tech="Laravel" variant="card" />
+                <x-tech-icon tech="Livewire" variant="card" />
+                <x-tech-icon tech="Tailwind" variant="card" />
+                <x-tech-icon tech="Alpine.js" variant="card" />
+                <x-tech-icon tech="MySQL" variant="card" />
             </div>
         </div>
     </section>
@@ -281,9 +242,7 @@
                         <h3 class="text-lg font-bold text-dark-accent mb-3">Technologies Used</h3>
                         <div class="flex flex-wrap gap-2">
                             @foreach($selectedProject->technologies as $tech)
-                            <span class="bg-dark-primary text-dark-accent px-3 py-1 rounded">
-                                {{ $tech }}
-                            </span>
+                                <x-tech-icon :tech="$tech" variant="chip" />
                             @endforeach
                         </div>
                     </div>

@@ -183,7 +183,7 @@
           <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">ShopNex &mdash; E-Commerce</h3>
           <p class="text-dark-muted text-center mb-6">Complete online stores with payment processing, inventory
             management, and customer analytics.</p>
-          <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $1,200</h4>
+          <h4 class="text-orange-400 mb-5 text-center font-bold text-lg">Starting From $1,200</h4>
           <div class="text-center">
             <a href="{{ route('services') }}#ecommerce" class="text-brand-blue font-semibold hover:underline">Learn
               More →</a>
@@ -198,10 +198,10 @@
                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Appointment Systems</h3>
+          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Tymelo &mdash; Appointment Systems</h3>
           <p class="text-dark-muted text-center mb-6">Streamline bookings with automated scheduling, reminders, and
             customer management tools.</p>
-          <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">From $699</h4>
+          <h4 class="text-teal-400 mb-5 text-center font-bold text-lg">From $699</h4>
           <div class="text-center">
             <a href="{{ route('services') }}#appointment" class="text-brand-blue font-semibold hover:underline">Learn
               More →</a>
