@@ -42,18 +42,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3T57KTE79H"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  {{-- Google tag (gtag.js) — production only, so dev/CI traffic never pollutes analytics --}}
+  @production
+    @if ($gaId = config('services.google_analytics.id'))
+      <link rel="preconnect" href="https://www.googletagmanager.com">
+      <script async src="https://www.googletagmanager.com/gtag/js?id={{ $gaId }}"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    gtag('config', 'G-3T57KTE79H');
-  </script>
+        gtag('config', '{{ $gaId }}', { 'anonymize_ip': true });
+      </script>
+    @endif
+  @endproduction
 
   <!-- Scripts -->
   @vite(['resources/css/app.css', 'resources/js/app.js'])
