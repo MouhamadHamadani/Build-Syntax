@@ -36,7 +36,8 @@
       "Bash(grep -oE 'Tymelo installation|\\\\$699|\\\\$1,299|Get Tymelo Business|frequently asked questions' -i services_response.html)",
       "Bash(git add *)",
       "Bash(python extract_analysis.py)",
-      "Bash(composer require *)"
+      "Bash(composer require *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }
