@@ -11,7 +11,7 @@ class About extends Component
         return view('livewire.pages.about')
             ->layout('layouts.app', [
                 'title' => 'About Us - Build Syntax',
-                'description' => 'Learn about Build Syntax, our mission, values, and the team behind your next web development project.'
+                'description' => 'Learn about Build Syntax, our mission, our values, and how we approach your next web development project.'
             ]);
     }
 }

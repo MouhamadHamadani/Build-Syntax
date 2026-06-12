@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BlogPost;
 use Carbon\Carbon;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
@@ -23,7 +22,8 @@ class SitemapController extends Controller
             ['url' => route('portfolio'),        'priority' => 0.8, 'frequency' => Url::CHANGE_FREQUENCY_WEEKLY],
             ['url' => route('about'),            'priority' => 0.7, 'frequency' => Url::CHANGE_FREQUENCY_MONTHLY],
             ['url' => route('contact'),          'priority' => 0.7, 'frequency' => Url::CHANGE_FREQUENCY_MONTHLY],
-            ['url' => route('blog.index'),       'priority' => 0.8, 'frequency' => Url::CHANGE_FREQUENCY_WEEKLY],
+            ['url' => route('privacy-policy'),   'priority' => 0.3, 'frequency' => Url::CHANGE_FREQUENCY_YEARLY],
+            ['url' => route('terms-of-service'), 'priority' => 0.3, 'frequency' => Url::CHANGE_FREQUENCY_YEARLY],
         ];
 
         foreach ($staticPages as $page) {
@@ -35,20 +35,8 @@ class SitemapController extends Controller
             );
         }
 
-        // Published blog posts.
-        BlogPost::query()
-            ->where('published', true)
-            ->whereNotNull('slug')
-            ->orderByDesc('published_at')
-            ->get(['slug', 'published_at', 'updated_at'])
-            ->each(function (BlogPost $post) use ($sitemap) {
-                $sitemap->add(
-                    Url::create(route('blog.show', ['slug' => $post->slug]))
-                        ->setPriority(0.6)
-                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                        ->setLastModificationDate($post->updated_at ?? $post->published_at ?? Carbon::now())
-                );
-            });
+        // Blog URLs (index + published posts) intentionally omitted while the
+        // blog is unlinked from the navigation — re-add when the blog goes live.
 
         return response($sitemap->render(), 200, [
             'Content-Type' => 'application/xml',

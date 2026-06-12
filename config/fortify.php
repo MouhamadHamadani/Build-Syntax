@@ -144,7 +144,7 @@ return [
     */
 
     'features' => [
-        Features::registration(),
+        // Features::registration(), // Disabled: admin-only site, no public signups.
         Features::resetPasswords(),
         // Features::emailVerification(),
         Features::updateProfileInformation(),

@@ -18,15 +18,18 @@ class Edit extends Component
     public string $image_url    = '';
     public bool   $featured     = false;
 
-    protected $rules = [
-        'title'       => 'required|string|max:255',
-        'description' => 'required|string',
-        'category'    => 'required|string|max:100',
-        'technologies'=> 'nullable|string',
-        'project_url' => 'nullable|url',
-        'image_url'   => 'nullable|url',
-        'featured'    => 'boolean',
-    ];
+    protected function rules(): array
+    {
+        return [
+            'title'       => 'required|string|max:255',
+            'description' => 'required|string',
+            'category'    => 'required|in:' . implode(',', config('products.portfolio_categories')),
+            'technologies'=> 'nullable|string',
+            'project_url' => 'nullable|url',
+            'image_url'   => 'nullable|url',
+            'featured'    => 'boolean',
+        ];
+    }
 
     public function mount(int $id): void
     {
@@ -36,8 +39,8 @@ class Edit extends Component
         $this->description      = $this->portfolio->description;
         $this->category         = $this->portfolio->category;
         $this->technologies     = is_array($this->portfolio->technologies) ? implode(', ', $this->portfolio->technologies) : '';
-        $this->project_url      = $this->portfolio->project_url;
-        $this->image_url        = $this->portfolio->image_url;
+        $this->project_url      = $this->portfolio->project_url ?? '';
+        $this->image_url        = $this->portfolio->image_url ?? '';
         $this->featured         = $this->portfolio->featured;
     }
 
@@ -64,6 +67,6 @@ class Edit extends Component
     public function render()
     {
         return view('livewire.admin.portfolio.edit')
-            ->layout('layouts.admin', ['title' => 'New Project']);
+            ->layout('layouts.admin', ['title' => 'Edit Project']);
     }
 }

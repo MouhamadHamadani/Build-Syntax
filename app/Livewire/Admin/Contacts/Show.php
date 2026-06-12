@@ -23,6 +23,12 @@ class Show extends Component
 
     public function update(): void
     {
+        $this->validate([
+            'status'   => 'required|in:new,contacted,in_progress,completed,declined',
+            'priority' => 'required|in:low,medium,high,urgent',
+            'notes'    => 'nullable|string|max:5000',
+        ]);
+
         $this->submission->update([
             'status'   => $this->status,
             'priority' => $this->priority,

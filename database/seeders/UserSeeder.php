@@ -14,7 +14,8 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
+        // forceCreate: is_admin is intentionally not mass-assignable.
+        User::forceCreate([
             'name' => 'Admin User',
             'email' => 'admin@buildsyntax.com',
             'password' => Hash::make('password'),

@@ -154,7 +154,7 @@
         <p class="text-dark-muted text-lg max-w-2xl mx-auto">We build solutions that power your business and connect you
           with your customers.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
         {{-- Service Card 1 --}}
         <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
           <div class="text-brand-blue mb-6">
@@ -168,7 +168,7 @@
             your business needs and brand identity.</p>
           <h4 class="text-brand-blue mb-5 text-center font-bold text-lg">Starting From $1,500</h4>
           <div class="text-center">
-            <a href="{{ route('services') }}" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+            <a href="{{ route('services') }}#web-development" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
           </div>
         </div>
 
@@ -201,9 +201,27 @@
           <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">Tymelo &mdash; Appointment Systems</h3>
           <p class="text-dark-muted text-center mb-6">Streamline bookings with automated scheduling, reminders, and
             customer management tools.</p>
-          <h4 class="text-teal-400 mb-5 text-center font-bold text-lg">From $699</h4>
+          <h4 class="text-teal-400 mb-5 text-center font-bold text-lg">From $699 + $49/mo</h4>
           <div class="text-center">
             <a href="{{ route('services') }}#appointment" class="text-brand-blue font-semibold hover:underline">Learn
+              More →</a>
+          </div>
+        </div>
+
+        {{-- Service Card 4 --}}
+        <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+          <div class="text-brand-blue mb-6">
+            <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">POS Pro &mdash; Point of Sale</h3>
+          <p class="text-dark-muted text-center mb-6">Custom point-of-sale for Lebanese retail and food businesses.
+            Works offline, no monthly SaaS fees.</p>
+          <h4 class="text-purple-400 mb-5 text-center font-bold text-lg">From $800</h4>
+          <div class="text-center">
+            <a href="{{ route('services') }}#pos" class="text-brand-blue font-semibold hover:underline">Learn
               More →</a>
           </div>
         </div>
@@ -349,7 +367,7 @@
               </svg>
             </summary>
             <p class="mt-4 text-dark-muted leading-relaxed">
-              Absolutely! We offer monthly maintenance plans starting at $150 that include bug fixes, security updates,
+              Absolutely! We offer monthly maintenance plans starting at $79 that include bug fixes, security updates,
               performance optimization, and small feature adjustments. Support duration is included with every service
               package.
             </p>
@@ -405,71 +423,9 @@
     </div>
   </section>
 
-  {{-- Why Choose Us --}}
-  <section class="py-20 bg-dark-tertiary">
-    <div class="container mx-auto px-6">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Why Choose Build Syntax?</h2>
-        <p class="text-dark-muted text-lg max-w-2xl mx-auto">We combine technical expertise with a client-focused
-          approach to deliver exceptional results.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {{-- Feature 1 --}}
-        <div class="text-center fade-in">
-          <div
-            class="bg-brand-blue text-dark-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-dark-accent">Quality Code</h3>
-          <p class="text-dark-muted">Clean, maintainable, and scalable code that stands the test of time.</p>
-        </div>
-        {{-- Feature 2 --}}
-        <div class="text-center fade-in">
-          <div
-            class="bg-brand-blue text-dark-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-dark-accent">On-Time Delivery</h3>
-          <p class="text-dark-muted">We respect your deadlines and deliver projects on schedule, every time.</p>
-        </div>
-        {{-- Feature 3 --}}
-        <div class="text-center fade-in">
-          <div
-            class="bg-brand-blue text-dark-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-dark-accent">Client-Centric Approach</h3>
-          <p class="text-dark-muted">Your vision guides our development process from start to finish.</p>
-        </div>
-        {{-- Feature 4 --}}
-        <div class="text-center fade-in">
-          <div
-            class="bg-brand-blue text-dark-muted w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2 text-dark-accent">Ongoing Support</h3>
-          <p class="text-dark-muted">Comprehensive maintenance and support to keep your website running smoothly.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   {{-- Newsletter component --}}
-  <div class="py-20 bg-dark-secondary">
-    <div class="container w-1/2 mx-auto px-6">
+  <div class="py-20 bg-dark-tertiary">
+    <div class="w-full max-w-2xl mx-auto px-6">
       <livewire:components.newsletter-subscribe />
     </div>
   </div>

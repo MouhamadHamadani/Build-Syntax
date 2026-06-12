@@ -25,8 +25,8 @@
                         class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 @error('category') border-red-400 @enderror">
                     <option value="">Select category</option>
                     <option value="web">Web Development</option>
-                    <option value="ecommerce">E-Commerce</option>
-                    <option value="mobile">Mobile App</option>
+                    <option value="ecommerce">ShopNex (E-Commerce)</option>
+                    <option value="pos">POS Pro (Point of Sale)</option>
                     <option value="other">Other</option>
                 </select>
                 @error('category') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror

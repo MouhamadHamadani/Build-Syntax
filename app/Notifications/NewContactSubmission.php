@@ -24,10 +24,11 @@ class NewContactSubmission extends Notification implements ShouldQueue
     public function toMail(object $notifiable): MailMessage
     {
         $projectTypeLabels = [
-            'website'    => 'Website',
-            'ecommerce'  => 'E-Commerce',
-            'mobile_app' => 'Mobile App',
-            'other'      => 'Other',
+            'website'     => 'Website',
+            'ecommerce'   => 'ShopNex (E-Commerce)',
+            'appointment' => 'Tymelo (Appointment Booking)',
+            'pos'         => 'POS Pro (Point of Sale)',
+            'other'       => 'Other',
         ];
 
         $projectType = $projectTypeLabels[$this->submission->project_type] ?? $this->submission->project_type;
