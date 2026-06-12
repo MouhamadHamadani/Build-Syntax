@@ -12,7 +12,7 @@
                         <span class="text-brand-blue">Build</span>
                         <span class="text-gray-300">Syntax</span>
                     </span>
-                    <span class="text-xs text-gray-500 hidden sm:block">Your Vision, Our Code</span>
+                    <span class="text-xs text-dark-muted hidden sm:block">Your Vision, Our Code</span>
                 </div>
             </a>
 
@@ -36,7 +36,7 @@
                     About
                 </x-nav-link>
                 <a href="tel:+96171293685"
-                   class="hidden lg:inline-flex items-center gap-1.5 text-sm font-medium text-gray-300
+                   class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-gray-300
                           hover:text-brand-blue transition-colors"
                    aria-label="Call us">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,7 +51,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button @click="open = !open" class="md:hidden text-dark-accent">
+            <button @click="open = !open" aria-label="Toggle menu" :aria-expanded="open" class="md:hidden text-dark-accent">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -70,7 +70,7 @@
             {{-- Blog: uncomment when at least 2 posts are published --}}
             {{-- <a href="{{ route('blog.index') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Blog</a> --}}
             <a href="{{ route('about') }}" class="block py-2 text-dark-accent hover:text-brand-blue">About</a>
-            <a href="{{ route('contact') }}" class="block py-2 text-brand-blue font-semibold">Get Started</a>
+            <a href="{{ route('contact') }}" class="block py-2 text-brand-blue font-semibold">Get a Free Quote</a>
             <a href="tel:+96171293685"
                class="flex items-center gap-2 py-2 text-dark-muted hover:text-brand-blue transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

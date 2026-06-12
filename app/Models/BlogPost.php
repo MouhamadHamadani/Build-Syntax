@@ -42,11 +42,13 @@ class BlogPost extends Model
 
         static::creating(function ($blog) {
             // Generate slug using blog title
-            $slug = Str::slug($blog->title);
+            $baseSlug = Str::slug($blog->title);
+            $slug = $baseSlug;
+            $suffix = 2;
 
-            // Ensure the slug is unique
+            // Ensure the slug is unique (base, base-2, base-3, ...)
             while (BlogPost::where('slug', $slug)->exists()) {
-                $slug = Str::slug($blog->title);
+                $slug = $baseSlug . '-' . $suffix++;
             }
 
             $blog->slug = $slug;

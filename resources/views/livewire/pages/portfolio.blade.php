@@ -68,7 +68,7 @@
                         {{-- Project Image --}}
                         <div class="h-48 bg-gradient-to-br from-brand-blue to-blue-600 relative overflow-hidden">
                             @if($project->image_url)
-                                <img src="{{ Storage::url($project->image_url) }}" 
+                                <img src="{{ $project->image_url }}"
                                      alt="{{ $project->title }}"
                                      class="w-full h-full object-cover">
                             @else
@@ -112,8 +112,9 @@
                                     View Details →
                                 </button>
                                 @if($project->project_url)
-                                <a href="{{ $project->project_url }}" 
+                                <a href="{{ $project->project_url }}"
                                    target="_blank"
+                                   aria-label="Visit live site"
                                    class="text-gray-400 hover:text-brand-blue transition-colors">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -205,9 +206,11 @@
 
         {{-- Modal --}}
         <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="relative bg-dark-secondary rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl">
+            <div class="relative bg-dark-secondary rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
+                 role="dialog" aria-modal="true" aria-label="Project details">
                 {{-- Close Button --}}
                 <button @click="$wire.closeModal()"
+                        aria-label="Close project details"
                         class="absolute top-4 right-4 text-dark-muted hover:text-white z-10">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -218,7 +221,7 @@
                 <div class="p-8">
                     @if($selectedProject->image_url)
                     <div class="h-64 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg mb-6">
-                        <img src="{{ Storage::url($selectedProject->image_url) }}" 
+                        <img src="{{ $selectedProject->image_url }}"
                              alt="{{ $selectedProject->title }}"
                              class="w-full h-full object-cover rounded-lg">
                     </div>
@@ -231,7 +234,7 @@
                     @endif
 
                     <h2 class="text-3xl font-bold text-dark-accent mb-2">{{ $selectedProject->title }}</h2>
-                    <p class="text-brand-blue mb-6">{{ ucfirst($selectedProject->category) }}</p>
+                    <p class="text-brand-blue mb-6">{{ $categoryLabels[$selectedProject->category] ?? ucfirst($selectedProject->category) }}</p>
 
                     <div class="prose prose-invert max-w-none mb-6">
                         <p class="text-dark-muted">{{ $selectedProject->description }}</p>

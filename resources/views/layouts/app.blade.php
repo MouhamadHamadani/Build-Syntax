@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="no-js">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  {{-- Remove the no-js hook ASAP (before CSS loads) so .fade-in stays hidden only when JS runs --}}
+  <script>document.documentElement.classList.remove('no-js')</script>
 
   @php
     $pageTitle = $title ?? config('app.name', 'Build Syntax');

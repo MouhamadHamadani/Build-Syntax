@@ -11,7 +11,7 @@ class Services extends Component
         return view('livewire.pages.services')
             ->layout('layouts.app', [
                 'title' => 'Services & Pricing - Build Syntax',
-                'description' => 'Explore our comprehensive web development services including E-Commerce systems, Appointment booking platforms, and custom web solutions with transparent pricing.'
+                'description' => 'Explore our services with transparent pricing: ShopNex e-commerce platforms, Tymelo appointment booking, POS Pro point of sale systems, and custom websites.'
             ]);
     }
 }

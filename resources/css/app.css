@@ -11,6 +11,8 @@
 
     body {
         @apply font-sans bg-dark-primary text-dark-accent;
+        /* Native form controls (selects, scrollbars) render dark on Windows */
+        color-scheme: dark;
     }
 
     [x-cloak] {
