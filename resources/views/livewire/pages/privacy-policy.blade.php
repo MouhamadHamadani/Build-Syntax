@@ -6,7 +6,7 @@
             <p class="text-lg opacity-90 max-w-3xl mx-auto fade-in">
                 How Build Syntax collects, uses, and protects your information.
             </p>
-            <p class="text-sm text-dark-muted mt-4 fade-in">Last updated: May 2026</p>
+            <p class="text-sm text-dark-muted mt-4 fade-in">Last updated: June 2026</p>
         </div>
     </section>
 
@@ -48,21 +48,35 @@
 
                 <section>
                     <h2 class="text-2xl font-bold text-dark-accent mb-4">4. Data Storage &amp; Sharing</h2>
-                    <p>
+                    <p class="mb-3">
                         Your data is stored on secure servers managed by Build Syntax. We
                         <strong class="text-dark-accent">do not sell, rent, or share</strong> your personal
                         information with third parties. Where transactional email delivery requires a
                         provider (e.g. SMTP service), we share only what is strictly required to deliver
                         the message.
                     </p>
+                    <p>
+                        We use <strong class="text-dark-accent">Google Analytics 4</strong> (provided by
+                        Google LLC) as a third-party processor to understand site usage in aggregate.
+                        Analytics runs <strong class="text-dark-accent">only on our production website</strong>,
+                        and IP anonymization is enabled, so Google does not receive your full IP address
+                        from us. You can learn how Google handles this data in
+                        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+                           class="text-brand-blue hover:underline">Google&rsquo;s Privacy Policy</a>.
+                    </p>
                 </section>
 
                 <section>
                     <h2 class="text-2xl font-bold text-dark-accent mb-4">5. Cookies</h2>
-                    <p>
+                    <p class="mb-3">
                         We use a minimal set of cookies for session management (CSRF protection,
-                        flash messages) and may use analytics cookies to understand site usage in
-                        aggregate. No cross-site advertising trackers are installed.
+                        flash messages). No cross-site advertising trackers are installed.
+                    </p>
+                    <p>
+                        In production, Google Analytics 4 sets first-party
+                        <strong class="text-dark-accent"><code>_ga</code></strong> cookies to distinguish
+                        visitors and measure site usage in aggregate. These analytics cookies are used
+                        with IP anonymization enabled and are not used for advertising.
                     </p>
                 </section>
 

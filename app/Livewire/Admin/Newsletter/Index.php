@@ -27,8 +27,8 @@ class Index extends Component
     public function render()
     {
         $subscribers = NewsletterSubscription::latest('subscribed_at')
-            ->when($this->search, fn($q) => $q->where('email', 'like', "%{$this->search}%")
-                                              ->orWhere('name', 'like', "%{$this->search}%"))
+            ->when($this->search, fn($q) => $q->where(fn($sub) => $sub->where('email', 'like', "%{$this->search}%")
+                                                                      ->orWhere('name', 'like', "%{$this->search}%")))
             ->when($this->status, fn($q) => $q->where('status', $this->status))
             ->paginate(25);
 

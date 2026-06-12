@@ -14,7 +14,7 @@
     </section>
 
     {{-- Sticky service tabs --}}
-    <nav class="sticky top-16 z-30 bg-dark-secondary/95 backdrop-blur border-y border-dark-border"
+    <nav class="sticky top-[72px] z-30 bg-dark-secondary/95 backdrop-blur border-y border-dark-border"
          aria-label="Service sections">
         <div class="container mx-auto px-6">
             <ul class="flex items-center gap-1 md:gap-6 overflow-x-auto scrollbar-hide py-3 text-sm md:text-base">
@@ -56,7 +56,7 @@
     </div>
 
     {{-- E-Commerce System --}}
-    <section id="ecommerce" class="py-20 bg-dark-secondary">
+    <section id="ecommerce" class="py-20 bg-dark-secondary scroll-mt-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <span class="inline-block bg-orange-400/10 text-orange-400 text-sm font-semibold
@@ -65,7 +65,7 @@
                 </span>
                 <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">ShopNex &mdash; E-Commerce Platform</h2>
                 <p class="text-dark-muted text-lg max-w-3xl mx-auto">
-                    Custom Laravel 11 / Livewire 3 online stores, fully responsive and bilingual
+                    Custom Laravel 12 / Livewire 3 online stores, fully responsive and bilingual
                     (English + Arabic with RTL support). Built for the Lebanese market with local
                     and international payment gateway support.
                 </p>
@@ -115,7 +115,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'ecommerce', 'plan' => 'Basic']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
                         Request This Plan
@@ -176,7 +176,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'ecommerce', 'plan' => 'Standard']) }}"
                        class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
                               hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
@@ -229,7 +229,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'ecommerce', 'plan' => 'Premium']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
                         Request This Plan
@@ -240,7 +240,7 @@
     </section>
 
     {{-- Appointment Systems (Tymelo) --}}
-    <section id="appointment" class="py-20 bg-dark-primary">
+    <section id="appointment" class="py-20 bg-dark-primary scroll-mt-32">
         <div class="container mx-auto px-6">
 
             {{-- Section header --}}
@@ -363,18 +363,18 @@
                                         </svg>
                                         <span class="text-dark-muted">{!! $feature['text'] !!}</span>
                                     @else
-                                        <svg class="w-5 h-5 text-gray-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                        <svg class="w-5 h-5 text-dark-muted/70 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span class="text-gray-600 line-through">{!! $feature['text'] !!}</span>
+                                        <span class="text-dark-muted/70 line-through">{!! $feature['text'] !!}</span>
                                     @endif
                                 </li>
                             @endforeach
                         </ul>
-                        <a href="{{ route('contact') }}"
+                        <a href="{{ route('contact', ['type' => 'appointment', 'plan' => 'Starter']) }}"
                            class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                                   hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
-                            Get Started
+                            Request This Plan
                         </a>
                     </div>
 
@@ -443,10 +443,10 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <a href="{{ route('contact') }}"
+                        <a href="{{ route('contact', ['type' => 'appointment', 'plan' => 'Business']) }}"
                            class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
                                   hover:bg-brand-blue-dark transition-all duration-200 text-center block">
-                            Get Tymelo Business
+                            Request This Plan
                         </a>
                     </div>
 
@@ -479,7 +479,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <a href="{{ route('contact') }}"
+                        <a href="{{ route('contact', ['type' => 'appointment', 'plan' => 'Enterprise']) }}"
                            class="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-3 rounded-lg
                                   hover:bg-yellow-400 hover:text-dark-primary transition-all duration-200 text-center block">
                             Get a Custom Quote
@@ -495,7 +495,7 @@
                     <p class="text-dark-muted">Enhance your Tymelo plan without changing tiers.</p>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="w-full card-dark rounded-xl overflow-hidden">
+                    <table class="w-full min-w-[640px] card-dark rounded-xl overflow-hidden">
                         <thead class="bg-dark-tertiary">
                             <tr>
                                 <th class="text-left text-dark-accent font-semibold px-6 py-4">Add-on</th>
@@ -542,7 +542,7 @@
                         ['q' => 'How long does it take to go live?', 'a' => 'Typically 3&ndash;5 business days for Starter and Business (branding, domain setup, service configuration, testing). Enterprise projects are scoped individually &mdash; typically 2&ndash;4 weeks depending on the features required.'],
                         ['q' => 'What if I am already using Booksy or another system?', 'a' => 'We offer a data migration add-on ($199) to import your existing client list and appointment history from any major system (Booksy, Appointy, Acuity, or a CSV export). Your history comes with you.'],
                         ['q' => 'Do my clients need to create an account to book?', 'a' => 'No. Tymelo supports guest booking &mdash; clients can book without registering. If they do register, they get a full appointment history, rebooking, and waitlist features.'],
-                        ['q' => 'Is there a free trial?', 'a' => 'There is no free trial, but there is a live demo you can explore. If you would like a personalised walkthrough, book a 30-minute call with us &mdash; free, no commitment.'],
+                        ['q' => 'Is there a free trial?', 'a' => 'There is no free trial, but we offer a free 30-minute personalised walkthrough of Tymelo &mdash; no commitment required. <a href="'.route('contact', ['type' => 'appointment']).'" class="text-brand-blue hover:underline">Reach out via our contact page</a> and we will schedule your session.'],
                     ] as $i => $item)
                         <div class="card-dark rounded-xl overflow-hidden">
                             <button type="button"
@@ -571,7 +571,7 @@
     </section>
 
     {{-- Custom Web Development --}}
-    <section id="web-development" class="py-20 bg-dark-secondary">
+    <section id="web-development" class="py-20 bg-dark-secondary scroll-mt-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
@@ -625,7 +625,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'website', 'plan' => 'Starter']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
                         Request This Plan
@@ -679,7 +679,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'website', 'plan' => 'Professional']) }}"
                        class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
                               hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
@@ -717,7 +717,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'website', 'plan' => 'Enterprise']) }}"
                        class="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-3 rounded-lg
                               hover:bg-yellow-400 hover:text-dark-primary transition-all duration-200 text-center block">
                         Get a Custom Quote
@@ -728,7 +728,7 @@
     </section>
 
     {{-- POS Pro --}}
-    <section id="pos" class="py-20 bg-dark-primary">
+    <section id="pos" class="py-20 bg-dark-primary scroll-mt-32">
         <div class="container mx-auto px-6">
 
             {{-- Section header --}}
@@ -822,7 +822,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'pos', 'plan' => 'Starter']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
                         Request This Plan
@@ -881,7 +881,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'pos', 'plan' => 'Business']) }}"
                        class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
                               hover:bg-brand-blue-dark transition-all duration-200 text-center block">
                         Request This Plan
@@ -917,7 +917,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'pos', 'plan' => 'Enterprise']) }}"
                        class="w-full border-2 border-yellow-400 text-yellow-400 font-semibold py-3 rounded-lg
                               hover:bg-yellow-400 hover:text-dark-primary transition-all duration-200 text-center block">
                         Get a Custom Quote
@@ -928,7 +928,7 @@
     </section>
 
     {{-- Hosting & Maintenance --}}
-    <section id="hosting" class="py-20 bg-dark-tertiary">
+    <section id="hosting" class="py-20 bg-dark-tertiary scroll-mt-32">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16 fade-in">
                 <span class="inline-block bg-brand-blue/10 text-brand-blue text-sm font-semibold
@@ -1027,10 +1027,10 @@
                     <p class="text-xs text-dark-muted italic mb-4">
                         Does not include feature changes or bug fixes. Upgrade to Standard or Premium for those.
                     </p>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'other', 'plan' => 'Maintenance-Essential']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
-                        Get Started
+                        Request This Plan
                     </a>
                 </div>
 
@@ -1061,10 +1061,10 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'other', 'plan' => 'Maintenance-Basic']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
-                        Request Plan
+                        Request This Plan
                     </a>
                 </div>
 
@@ -1109,10 +1109,10 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'other', 'plan' => 'Maintenance-Standard']) }}"
                        class="w-full bg-brand-blue text-white font-semibold py-3 rounded-lg
                               hover:bg-brand-blue-dark transition-all duration-200 text-center block">
-                        Request Plan
+                        Request This Plan
                     </a>
                 </div>
 
@@ -1149,10 +1149,10 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}"
+                    <a href="{{ route('contact', ['type' => 'other', 'plan' => 'Maintenance-Premium']) }}"
                        class="w-full border-2 border-brand-blue text-brand-blue font-semibold py-3 rounded-lg
                               hover:bg-brand-blue hover:text-white transition-all duration-200 text-center block">
-                        Request Plan
+                        Request This Plan
                     </a>
                 </div>
             </div>

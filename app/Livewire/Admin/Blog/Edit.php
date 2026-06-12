@@ -19,17 +19,20 @@ class Edit extends Component
     public string $tags_input   = '';
     public bool   $published    = false;
 
-    protected $rules = [
-        'title'            => 'required|string|max:255',
-        'slug'             => 'required|string|max:255',
-        'excerpt'          => 'nullable|string|max:500',
-        'content'          => 'required|string',
-        'author'           => 'nullable|string|max:100',
-        'meta_title'       => 'nullable|string|max:255',
-        'meta_description' => 'nullable|string|max:320',
-        'tags_input'       => 'nullable|string',
-        'published'        => 'boolean',
-    ];
+    protected function rules(): array
+    {
+        return [
+            'title'            => 'required|string|max:255',
+            'slug'             => 'required|alpha_dash|max:255|unique:blog_posts,slug,' . $this->post->id,
+            'excerpt'          => 'nullable|string|max:500',
+            'content'          => 'required|string',
+            'author'           => 'nullable|string|max:100',
+            'meta_title'       => 'nullable|string|max:255',
+            'meta_description' => 'nullable|string|max:320',
+            'tags_input'       => 'nullable|string',
+            'published'        => 'boolean',
+        ];
+    }
 
     public function mount(int $id): void
     {

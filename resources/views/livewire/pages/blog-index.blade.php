@@ -18,7 +18,7 @@
                     {{-- Featured Image --}}
                     <div class="h-64 lg:h-auto bg-gradient-to-br from-brand-blue to-blue-600">
                         @if($featuredPost->featured_image)
-                            <img src="{{ Storage::url($featuredPost->featured_image) }}" 
+                            <img src="{{ $featuredPost->featured_image }}"
                                  alt="{{ $featuredPost->title }}"
                                  class="w-full h-full object-cover">
                         @else
@@ -72,7 +72,7 @@
                         type="text" 
                         wire:model.live.debounce.300ms="search"
                         placeholder="Search articles..."
-                        class="w-full px-6 py-4 pl-12 bg-dark-secondary border border-dark-border rounded-lg text-dark-accent placeholder-dark-secondary focus:ring-2 focus:ring-brand-blue focus:border-transparent">
+                        class="w-full px-6 py-4 pl-12 bg-dark-secondary border border-dark-border rounded-lg text-dark-accent placeholder-dark-muted focus:ring-2 focus:ring-brand-blue focus:border-transparent">
                     <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-dark-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
                     </svg>
@@ -91,7 +91,7 @@
                         {{-- Post Image --}}
                         <div class="h-48 bg-gradient-to-br from-brand-blue to-blue-600 relative">
                             @if($post->featured_image)
-                                <img src="{{ Storage::url($post->featured_image) }}" 
+                                <img src="{{ $post->featured_image }}"
                                      alt="{{ $post->title }}"
                                      class="w-full h-full object-cover">
                             @else
@@ -142,7 +142,16 @@
                     <svg class="w-16 h-16 text-dark-muted mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                     </svg>
-                    <p class="text-dark-muted text-lg">No articles found matching your search.</p>
+                    @if ($search)
+                        <p class="text-dark-muted text-lg">No articles found matching your search.</p>
+                    @else
+                        <p class="text-dark-muted text-lg">Articles are coming soon.</p>
+                    @endif
+                    <a href="{{ route('services') }}"
+                       class="inline-block mt-8 border-2 border-brand-blue text-brand-blue font-semibold px-6 py-3 rounded-lg
+                              hover:bg-brand-blue hover:text-white transition-all duration-200">
+                        Explore Our Services
+                    </a>
                 </div>
             @endif
         </div>

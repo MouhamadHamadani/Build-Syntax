@@ -292,12 +292,12 @@
                 <span class="text-brand-blue font-bold">Weekly</span>
               </div>
               <div class="flex items-center justify-between p-4 bg-dark-tertiary rounded-lg">
-                <span class="font-medium text-dark-accent">Free Support</span>
-                <span class="text-brand-blue font-bold">3 months</span>
+                <span class="font-medium text-dark-accent">Support</span>
+                <span class="text-brand-blue font-bold">1&ndash;3 months per plan</span>
               </div>
               <div class="flex items-center justify-between p-4 bg-dark-tertiary rounded-lg">
-                <span class="font-medium text-dark-accent">Satisfaction</span>
-                <span class="text-brand-blue font-bold">Guaranteed</span>
+                <span class="font-medium text-dark-accent">Warranty</span>
+                <span class="text-brand-blue font-bold">Defect-free guarantee</span>
               </div>
             </div>
           </div>

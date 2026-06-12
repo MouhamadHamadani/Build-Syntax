@@ -8,8 +8,9 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -17,8 +18,11 @@
         <!-- Styles -->
         @livewireStyles
     </head>
-    <body class="bg-gray-100 text-gray-900">
-        <div class="font-sans text-gray-900 antialiased">
+    <body class="bg-dark-primary text-dark-accent">
+        {{-- Jetstream auth cards ship light (a full-screen bg-gray-100 wrapper around a bg-white card).
+             Neutralise that wrapper here so the white card sits on the dark brand background,
+             without rewriting the Jetstream component internals. --}}
+        <div class="font-sans antialiased min-h-screen [&_.bg-gray-100]:bg-transparent">
             {{ $slot }}
         </div>
 

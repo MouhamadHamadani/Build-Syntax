@@ -23,8 +23,8 @@ class Index extends Component
     public function render()
     {
         $submissions = ContactSubmission::latest()
-            ->when($this->search, fn($q) => $q->where('name', 'like', "%{$this->search}%")
-                                              ->orWhere('email', 'like', "%{$this->search}%"))
+            ->when($this->search, fn($q) => $q->where(fn($sub) => $sub->where('name', 'like', "%{$this->search}%")
+                                                                      ->orWhere('email', 'like', "%{$this->search}%")))
             ->when($this->status,   fn($q) => $q->where('status', $this->status))
             ->when($this->priority, fn($q) => $q->where('priority', $this->priority))
             ->paginate(20);

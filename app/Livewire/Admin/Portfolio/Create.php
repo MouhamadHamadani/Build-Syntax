@@ -16,15 +16,18 @@ class Create extends Component
     public string $image_url    = '';
     public bool   $featured     = false;
 
-    protected $rules = [
-        'title'       => 'required|string|max:255',
-        'description' => 'required|string',
-        'category'    => 'required|in:web,ecommerce,mobile,other',
-        'technologies'=> 'nullable|string',
-        'project_url' => 'nullable|url',
-        'image_url'   => 'nullable|url',
-        'featured'    => 'boolean',
-    ];
+    protected function rules(): array
+    {
+        return [
+            'title'       => 'required|string|max:255',
+            'description' => 'required|string',
+            'category'    => 'required|in:' . implode(',', config('products.portfolio_categories')),
+            'technologies'=> 'nullable|string',
+            'project_url' => 'nullable|url',
+            'image_url'   => 'nullable|url',
+            'featured'    => 'boolean',
+        ];
+    }
 
     public function save(): void
     {

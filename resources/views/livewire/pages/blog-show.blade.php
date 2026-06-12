@@ -55,7 +55,7 @@
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto">
                 <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img src="{{ Storage::url($post->featured_image) }}" 
+                    <img src="{{ $post->featured_image }}"
                          alt="{{ $post->title }}"
                          class="w-full h-auto">
                 </div>
@@ -138,7 +138,7 @@
                         {{-- Post Image --}}
                         <div class="h-48 bg-gradient-to-br from-brand-blue to-blue-600">
                             @if($relatedPost->featured_image)
-                                <img src="{{ Storage::url($relatedPost->featured_image) }}" 
+                                <img src="{{ $relatedPost->featured_image }}"
                                      alt="{{ $relatedPost->title }}"
                                      class="w-full h-full object-cover">
                             @else

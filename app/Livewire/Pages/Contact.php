@@ -20,15 +20,18 @@ class Contact extends Component
     public $budget_range = '';
     public $message = '';
 
-    protected $rules = [
-        'name' => 'required|min:3|max:100',
-        'email' => 'required|email|max:150',
-        'phone' => 'nullable|string|max:50',
-        'company' => 'nullable|string|max:100',
-        'project_type' => 'required|in:website,ecommerce,appointment,pos,other',
-        'budget_range' => 'nullable|string',
-        'message' => 'required|min:10',
-    ];
+    protected function rules(): array
+    {
+        return [
+            'name' => 'required|min:3|max:100',
+            'email' => 'required|email|max:150',
+            'phone' => 'nullable|string|max:50',
+            'company' => 'nullable|string|max:100',
+            'project_type' => 'required|in:' . implode(',', config('products.project_types')),
+            'budget_range' => 'nullable|in:under_1k,1k_2.5k,2.5k_5k,5k_plus',
+            'message' => 'required|min:10',
+        ];
+    }
 
     protected $messages = [
         'name.required' => 'Please enter your name.',
@@ -37,6 +40,26 @@ class Contact extends Component
         'message.required' => 'Please tell us about your project.',
         'message.min' => 'Please provide more details about your project (at least 10 characters).',
     ];
+
+    public function mount()
+    {
+        // CTA context prefill (e.g. /contact?type=ecommerce&plan=Standard).
+        $type = request()->query('type');
+
+        if (is_string($type) && in_array($type, config('products.project_types'), true)) {
+            $this->project_type = $type;
+        }
+
+        $plan = request()->query('plan');
+
+        if (
+            $this->message === ''
+            && is_string($plan)
+            && preg_match('/^[A-Za-z0-9][A-Za-z0-9 _.\-]{0,49}$/', $plan)
+        ) {
+            $this->message = "I'm interested in the {$plan} plan.";
+        }
+    }
 
     public function updated($propertyName)
     {
