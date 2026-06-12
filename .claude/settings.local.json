@@ -37,7 +37,10 @@
       "Bash(git add *)",
       "Bash(python extract_analysis.py)",
       "Bash(composer require *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(dir /b C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev)",
+      "PowerShell(Get-ChildItem \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\app\" -Recurse -Depth 2 | Where-Object { !$_.PSIsContainer } | Select-Object FullName | ForEach-Object { $_.FullName.Replace\\(\"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\\", \"\"\\) })",
+      "PowerShell(Get-ChildItem \"C:\\\\wamp64\\\\www\\\\BuildSyntax\\\\BuildSyntaxDev\\\\resources\\\\views\" -Recurse | Where-Object { !$_.PSIsContainer } | Select-Object Name | ForEach-Object { $_.Name })"
     ]
   }
 }
