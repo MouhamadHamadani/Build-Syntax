@@ -98,6 +98,7 @@
                   class="w-full px-4 py-3 border border-dark-border bg-dark-tertiary text-dark-accent placeholder-dark-muted rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-blue focus:border-transparent transition-all duration-200">
                   <option value="website">Custom Website</option>
                   <option value="ecommerce">ShopNex (E-Commerce Store)</option>
+                  <option value="cartenex">CarteNex (Digital Menu)</option>
                   <option value="appointment">Tymelo (Appointment Booking)</option>
                   <option value="pos">POS Pro (Point of Sale System)</option>
                   <option value="other">Other / Not Sure Yet</option>

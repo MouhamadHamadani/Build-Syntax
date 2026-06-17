@@ -26,6 +26,7 @@ class NewContactSubmission extends Notification implements ShouldQueue
         $projectTypeLabels = [
             'website'     => 'Website',
             'ecommerce'   => 'ShopNex (E-Commerce)',
+            'cartenex'    => 'CarteNex (Digital Menu)',
             'appointment' => 'Tymelo (Appointment Booking)',
             'pos'         => 'POS Pro (Point of Sale)',
             'other'       => 'Other',
