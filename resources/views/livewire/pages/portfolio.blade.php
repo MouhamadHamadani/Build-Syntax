@@ -14,7 +14,7 @@
         $categoryLabels = [
             'all'       => 'All Projects',
             'ecommerce' => 'ShopNex (E-Commerce)',
-            'digita_menu' => 'CarteNex (Digital Menu)',
+            'digital_menu' => 'CarteNex (Digital Menu)',
             'appointment' => 'Tymelo (Appointment Booking)',
             'web'       => 'Web Development',
             'pos'       => 'POS Pro',

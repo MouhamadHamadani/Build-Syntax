@@ -15,5 +15,5 @@
 
 return [
     'project_types' => ['website', 'ecommerce', 'cartenex', 'appointment', 'pos', 'other'],
-    'portfolio_categories' => ['web', 'ecommerce', 'pos', 'other'],
+    'portfolio_categories' => ['web', 'ecommerce', 'digital_menu', 'appointment', 'pos', 'other'],
 ];
