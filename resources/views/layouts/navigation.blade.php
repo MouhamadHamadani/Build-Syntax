@@ -24,6 +24,27 @@
                 <x-nav-link href="{{ route('services') }}" :active="request()->routeIs('services')">
                     Services
                 </x-nav-link>
+
+                {{-- Products dropdown --}}
+                <div class="relative" x-data="{ productsOpen: false }" @click.outside="productsOpen = false">
+                    <button @click="productsOpen = !productsOpen"
+                            class="flex items-center gap-1 text-dark-muted hover:text-brand-blue transition-colors"
+                            :aria-expanded="productsOpen" aria-label="Products menu">
+                        Products
+                        <svg class="w-4 h-4 transition-transform" :class="productsOpen && 'rotate-180'"
+                             fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div x-show="productsOpen" x-transition x-cloak
+                         class="absolute right-0 mt-2 w-56 card-dark rounded-xl shadow-lg py-2 z-50">
+                        <a href="https://shopnex.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">ShopNex — E-Commerce</a>
+                        <a href="https://cartenex.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">CarteNex — Digital Menus</a>
+                        <a href="https://tymelo.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">Tymelo — Booking</a>
+                        <a href="{{ route('services') }}#pos" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">POS Pro — Early Access</a>
+                    </div>
+                </div>
+
                 {{-- Portfolio: uncomment when at least 2 projects exist --}}
                 <x-nav-link href="{{ route('portfolio') }}" :active="request()->routeIs('portfolio')">
                     Portfolio
@@ -65,6 +86,26 @@
              class="md:hidden mt-4 pb-4 space-y-2">
             <a href="{{ route('home') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Home</a>
             <a href="{{ route('services') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Services</a>
+
+            {{-- Products group (collapsible) --}}
+            <div x-data="{ productsOpen: false }">
+                <button @click="productsOpen = !productsOpen"
+                        class="w-full flex items-center justify-between py-2 text-dark-accent hover:text-brand-blue"
+                        :aria-expanded="productsOpen" aria-label="Products menu">
+                    <span>Products</span>
+                    <svg class="w-4 h-4 transition-transform" :class="productsOpen && 'rotate-180'"
+                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div x-show="productsOpen" x-transition x-cloak class="pl-4 space-y-1 border-l border-dark-border ml-1">
+                    <a href="https://shopnex.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">ShopNex — E-Commerce</a>
+                    <a href="https://cartenex.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">CarteNex — Digital Menus</a>
+                    <a href="https://tymelo.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">Tymelo — Booking</a>
+                    <a href="{{ route('services') }}#pos" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">POS Pro — Early Access</a>
+                </div>
+            </div>
+
             {{-- Portfolio: uncomment when at least 2 projects exist --}}
             <a href="{{ route('portfolio') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Portfolio</a>
             {{-- Blog: uncomment when at least 2 posts are published --}}
