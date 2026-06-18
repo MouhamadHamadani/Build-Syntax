@@ -154,7 +154,7 @@
         <p class="text-dark-muted text-lg max-w-2xl mx-auto">We build solutions that power your business and connect you
           with your customers.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {{-- Service Card 1 --}}
         <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
           <div class="text-brand-blue mb-6">
@@ -190,6 +190,21 @@
           </div>
         </div>
 
+        {{-- Service Card: CarteNex --}}
+        <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
+          <div class="text-brand-blue mb-6">
+            <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h10" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">CarteNex &mdash; Digital Menus</h3>
+          <p class="text-dark-muted text-center mb-6">QR-code digital menus for restaurants &amp; cafés. Update items and prices in seconds.</p>
+          <h4 class="text-rose-400 mb-5 text-center font-bold text-lg">From $15/mo</h4>
+          <div class="text-center">
+            <a href="https://cartenex.build-syntax.com" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+          </div>
+        </div>
+
         {{-- Service Card 3 --}}
         <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
           <div class="text-brand-blue mb-6">
@@ -219,6 +234,9 @@
           <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">POS Pro &mdash; Point of Sale</h3>
           <p class="text-dark-muted text-center mb-6">Custom point-of-sale for Lebanese retail and food businesses.
             Works offline, no monthly SaaS fees.</p>
+          <div class="text-center">
+            <span class="inline-block bg-purple-400/10 text-purple-400 text-xs font-semibold px-3 py-1 rounded-full mb-3">Early Access</span>
+          </div>
           <h4 class="text-purple-400 mb-5 text-center font-bold text-lg">From $800</h4>
           <div class="text-center">
             <a href="{{ route('services') }}#pos" class="text-brand-blue font-semibold hover:underline">Learn
