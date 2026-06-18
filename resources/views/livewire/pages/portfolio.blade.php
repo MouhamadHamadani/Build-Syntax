@@ -13,8 +13,10 @@
     @php
         $categoryLabels = [
             'all'       => 'All Projects',
-            'web'       => 'Web Development',
             'ecommerce' => 'ShopNex (E-Commerce)',
+            'digita_menu' => 'CarteNex (Digital Menu)',
+            'appointment' => 'Tymelo (Appointment Booking)',
+            'web'       => 'Web Development',
             'pos'       => 'POS Pro',
             'other'     => 'Other',
         ];
