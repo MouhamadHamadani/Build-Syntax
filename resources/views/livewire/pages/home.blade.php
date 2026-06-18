@@ -26,23 +26,29 @@
             </a>
           </div>
         </div>
+        {{-- Hero visual: code-editor panel --}}
         <div class="fade-in">
-          <div class="relative">
-            <div class="bg-brand-blue rounded-lg p-8 shadow-2xl transform rotate-3">
-              <div class="bg-dark-secondary rounded-lg p-6 transform -rotate-3">
-                <div class="flex items-center space-x-2 mb-4">
-                  <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                  <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                  <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                </div>
-                <div class="space-y-2">
-                  <div class="h-2 bg-dark-tertiary rounded w-3/4"></div>
-                  <div class="h-2 bg-dark-tertiary rounded w-1/2"></div>
-                  <div class="h-2 bg-brand-blue rounded w-2/3"></div>
-                  <div class="h-2 bg-dark-tertiary rounded w-1/3"></div>
-                </div>
-              </div>
+          <div class="relative rounded-xl border border-white/10 bg-[#0b1220] shadow-2xl ring-1 ring-brand-blue/20 overflow-hidden">
+            {{-- Window chrome --}}
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-white/5">
+              <span class="w-3 h-3 rounded-full bg-red-400/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-400/80"></span>
+              <span class="ml-3 text-xs text-dark-muted font-mono">build-syntax.js</span>
             </div>
+            {{-- Code body --}}
+            <pre class="p-5 sm:p-6 text-[13px] sm:text-sm leading-relaxed font-mono overflow-x-auto"><code><span class="text-purple-400">const</span> <span class="text-sky-300">buildSyntax</span> <span class="text-gray-400">=</span> <span class="text-gray-400">{</span>
+  <span class="text-blue-300">studio</span><span class="text-gray-400">:</span>   <span class="text-emerald-300">"Build Syntax"</span><span class="text-gray-400">,</span>
+  <span class="text-blue-300">location</span><span class="text-gray-400">:</span> <span class="text-emerald-300">"Beirut, Lebanon"</span><span class="text-gray-400">,</span>
+  <span class="text-blue-300">products</span><span class="text-gray-400">:</span> <span class="text-gray-400">[</span>
+    <span class="text-emerald-300">"ShopNex"</span><span class="text-gray-400">,</span>   <span class="text-gray-500">// e-commerce</span>
+    <span class="text-emerald-300">"Tymelo"</span><span class="text-gray-400">,</span>    <span class="text-gray-500">// booking</span>
+    <span class="text-emerald-300">"CarteNex"</span><span class="text-gray-400">,</span>  <span class="text-gray-500">// digital menus</span>
+    <span class="text-emerald-300">"POS Pro"</span><span class="text-gray-400">,</span>   <span class="text-gray-500">// point of sale</span>
+  <span class="text-gray-400">],</span>
+  <span class="text-blue-300">stack</span><span class="text-gray-400">:</span>    <span class="text-gray-400">[</span><span class="text-emerald-300">"Laravel"</span><span class="text-gray-400">,</span> <span class="text-emerald-300">"Livewire"</span><span class="text-gray-400">,</span> <span class="text-emerald-300">"Tailwind"</span><span class="text-gray-400">],</span>
+  <span class="text-blue-300">ship</span><span class="text-gray-400">:</span>     <span class="text-gray-400">()</span> <span class="text-purple-400">=&gt;</span> <span class="text-yellow-300">launch</span><span class="text-gray-400">(</span><span class="text-sky-300">yourBusiness</span><span class="text-gray-400">)</span><span class="text-gray-400">,</span>
+<span class="text-gray-400">}</span><span class="text-gray-400">;</span><span class="inline-block w-2 h-4 ml-1 align-middle bg-brand-blue animate-pulse"></span></code></pre>
           </div>
         </div>
       </div>

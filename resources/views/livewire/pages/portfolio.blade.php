@@ -197,8 +197,7 @@
 
     {{-- Project Modal --}}
     @if($selectedProject)
-    <div x-data="{ open: @entangle('selectedProject').live }" 
-         x-show="open"
+    <div x-data
          x-cloak
          class="fixed inset-0 z-50 overflow-y-auto"
          @keydown.escape.window="$wire.closeModal()">

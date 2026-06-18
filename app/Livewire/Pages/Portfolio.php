@@ -37,7 +37,6 @@ class Portfolio extends Component
     public function viewProject($id)
     {
         $this->selectedProject = PortfolioProject::with('creator')->find($id);
-        $this->dispatch('open-modal', 'project-modal');
     }
 
     public function closeModal()
