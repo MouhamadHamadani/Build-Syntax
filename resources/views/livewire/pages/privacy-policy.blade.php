@@ -95,7 +95,7 @@
                     <p class="mb-3">For any privacy-related questions:</p>
                     <ul class="list-disc list-inside space-y-2 ml-2">
                         <li>Email: <a href="mailto:buildsyntax.dev@gmail.com" class="text-brand-blue hover:underline">buildsyntax.dev@gmail.com</a></li>
-                        <li>WhatsApp: <a href="https://wa.me/96171293685" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:underline">+961 71 293 685</a></li>
+                        <li>WhatsApp: <a href="https://wa.me/9613876822" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:underline">+961 71 293 685</a></li>
                         <li>Location: Beirut, Lebanon</li>
                     </ul>
                 </section>

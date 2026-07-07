@@ -56,7 +56,7 @@
                 <x-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                     About
                 </x-nav-link>
-                <a href="tel:+96171293685"
+                <a href="tel:+9613876822"
                    class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-gray-300
                           hover:text-brand-blue transition-colors"
                    aria-label="Call us">
@@ -112,7 +112,7 @@
             {{-- <a href="{{ route('blog.index') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Blog</a> --}}
             <a href="{{ route('about') }}" class="block py-2 text-dark-accent hover:text-brand-blue">About</a>
             <a href="{{ route('contact') }}" class="block py-2 text-brand-blue font-semibold">Get a Free Quote</a>
-            <a href="tel:+96171293685"
+            <a href="tel:+9613876822"
                class="flex items-center gap-2 py-2 text-dark-muted hover:text-brand-blue transition-colors">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

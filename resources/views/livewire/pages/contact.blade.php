@@ -177,7 +177,7 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-dark-accent mb-1">WhatsApp</h4>
-                  <a href="https://wa.me/96171293685?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                  <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
                     target="_blank" rel="noopener noreferrer"
                     class="text-dark-muted hover:text-brand-blue transition-colors">
                     +961 71 293 685 &mdash; chat with us directly
@@ -216,7 +216,7 @@
                 </div>
                 <div>
                   <h4 class="font-semibold text-dark-accent mb-1">Phone</h4>
-                  <a href="tel:+96171293685" class="text-dark-muted hover:text-brand-blue transition-colors">
+                  <a href="tel:+9613876822" class="text-dark-muted hover:text-brand-blue transition-colors">
                     +961 71 293 685
                   </a>
                 </div>

@@ -80,7 +80,7 @@
     @include('layouts.footer')
 
     {{-- Floating WhatsApp button (Lebanese market: WhatsApp-first business culture) --}}
-    <a href="https://wa.me/96171293685?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
+    <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
       target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
       class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57]
                   text-white font-semibold px-4 py-3 rounded-full shadow-2xl
