@@ -135,7 +135,7 @@ return [
     */
 
     'email' => env('CONTACT_EMAIL', 'buildsyntax.dev@gmail.com'),
-    'phone' => env('CONTACT_PHONE', '+961 71 293 685'),
+    'phone' => env('CONTACT_PHONE', '+961 3 876 822'),
     'address' => env('CONTACT_ADDRESS', 'Beirut, Lebanon'),
 
 ];

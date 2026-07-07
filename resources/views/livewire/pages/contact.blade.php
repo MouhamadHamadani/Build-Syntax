@@ -180,7 +180,7 @@
                   <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
                     target="_blank" rel="noopener noreferrer"
                     class="text-dark-muted hover:text-brand-blue transition-colors">
-                    +961 71 293 685 &mdash; chat with us directly
+                    +961 3 876 822 &mdash; chat with us directly
                   </a>
                 </div>
               </div>
@@ -217,7 +217,7 @@
                 <div>
                   <h4 class="font-semibold text-dark-accent mb-1">Phone</h4>
                   <a href="tel:+9613876822" class="text-dark-muted hover:text-brand-blue transition-colors">
-                    +961 71 293 685
+                    +961 3 876 822
                   </a>
                 </div>
               </div>

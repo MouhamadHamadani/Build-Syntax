@@ -86,7 +86,7 @@
                     <h2 class="text-2xl font-bold text-dark-accent mb-4">7. Contact</h2>
                     <ul class="list-disc list-inside space-y-2 ml-2">
                         <li>Email: <a href="mailto:buildsyntax.dev@gmail.com" class="text-brand-blue hover:underline">buildsyntax.dev@gmail.com</a></li>
-                        <li>Phone / WhatsApp: <a href="tel:+9613876822" class="text-brand-blue hover:underline">+961 71 293 685</a></li>
+                        <li>Phone / WhatsApp: <a href="tel:+9613876822" class="text-brand-blue hover:underline">+961 3 876 822</a></li>
                     </ul>
                 </section>
             </article>
