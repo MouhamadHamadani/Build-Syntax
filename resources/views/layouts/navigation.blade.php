@@ -17,7 +17,7 @@
             </a>
 
             <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden lg:flex items-center gap-x-4 xl:gap-x-7">
                 <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
                     Home
                 </x-nav-link>
@@ -57,7 +57,7 @@
                     About
                 </x-nav-link>
                 <a href="tel:+9613876822"
-                   class="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-gray-300
+                   class="hidden xl:inline-flex items-center gap-1.5 text-sm font-medium text-gray-300
                           hover:text-brand-blue transition-colors"
                    aria-label="Call us">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button @click="open = !open" aria-label="Toggle menu" :aria-expanded="open" class="md:hidden text-dark-accent">
+            <button @click="open = !open" aria-label="Toggle menu" :aria-expanded="open" class="lg:hidden text-dark-accent">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
@@ -83,7 +83,7 @@
         <!-- Mobile Navigation -->
         <div x-show="open" 
              x-transition
-             class="md:hidden mt-4 pb-4 space-y-2">
+             class="lg:hidden mt-4 pb-4 space-y-2">
             <a href="{{ route('home') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Home</a>
             <a href="{{ route('services') }}" class="block py-2 text-dark-accent hover:text-brand-blue">Services</a>
 
