@@ -85,7 +85,7 @@
                     <p>
                         You can request a copy of the personal data we hold about you, ask for
                         corrections, or request deletion at any time. Email us at
-                        <a href="mailto:buildsyntax.dev@gmail.com" class="text-brand-blue hover:underline">buildsyntax.dev@gmail.com</a>
+                        <a href="mailto:info@build-syntax.com" class="text-brand-blue hover:underline">info@build-syntax.com</a>
                         and we&rsquo;ll respond within 7 business days.
                     </p>
                 </section>
@@ -94,7 +94,7 @@
                     <h2 class="text-2xl font-bold text-dark-accent mb-4">7. Contact</h2>
                     <p class="mb-3">For any privacy-related questions:</p>
                     <ul class="list-disc list-inside space-y-2 ml-2">
-                        <li>Email: <a href="mailto:buildsyntax.dev@gmail.com" class="text-brand-blue hover:underline">buildsyntax.dev@gmail.com</a></li>
+                        <li>Email: <a href="mailto:info@build-syntax.com" class="text-brand-blue hover:underline">info@build-syntax.com</a></li>
                         <li>WhatsApp: <a href="https://wa.me/9613876822" target="_blank" rel="noopener noreferrer" class="text-brand-blue hover:underline">+961 3 876 822</a></li>
                         <li>Location: Beirut, Lebanon</li>
                     </ul>
