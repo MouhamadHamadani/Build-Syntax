@@ -49,7 +49,7 @@
                     Flexible payments
                 </span>
                 <span class="hidden sm:inline text-dark-border">|</span>
-                <span>50% deposit &middot; 30% on delivery &middot; 20% after training &mdash; available on request for all packages.</span>
+                <span>50% deposit &middot; 30% on delivery &middot; 20% after training &mdash; available on request for custom development projects. LebaSouk POS: no deposit, payment on completion of installation.</span>
                 <span class="hidden sm:inline text-dark-border">|</span>
                 <span>All prices in <strong class="text-dark-accent">USD</strong> &middot; LBP equivalent accepted at current market rate</span>
             </div>

@@ -32,4 +32,12 @@ class LebaSoukPagesTest extends TestCase
             $this->assertStringContainsString($needle, $text);
         }
     }
+
+    public function test_services_payment_note_no_longer_claims_all_packages(): void
+    {
+        $text = $this->pageText('/services');
+
+        $this->assertStringContainsString('50% deposit &middot; 30% on delivery &middot; 20% after training &mdash; available on request for custom development projects. LebaSouk POS: no deposit, payment on completion of installation.', $text);
+        $this->assertStringNotContainsString('available on request for all packages', $text);
+    }
 }
