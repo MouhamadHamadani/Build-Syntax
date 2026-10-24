@@ -64,7 +64,7 @@ class Portfolio extends Component
             'categories' => array_merge(['all'], config('products.portfolio_categories')),
         ])->layout('layouts.app', [
             'title' => 'Portfolio - Build Syntax',
-            'description' => 'Explore our portfolio of successful web development projects including custom websites, ShopNex e-commerce stores, and POS Pro point-of-sale systems.'
+            'description' => 'Explore our portfolio of successful web development projects including custom websites, ShopNex e-commerce stores, and LebaSouk POS point-of-sale systems.'
         ]);
     }
 }
