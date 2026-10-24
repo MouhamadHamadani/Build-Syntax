@@ -44,7 +44,7 @@
     <span class="text-emerald-300">"ShopNex"</span><span class="text-gray-400">,</span>   <span class="text-gray-500">// e-commerce</span>
     <span class="text-emerald-300">"Tymelo"</span><span class="text-gray-400">,</span>    <span class="text-gray-500">// booking</span>
     <span class="text-emerald-300">"CarteNex"</span><span class="text-gray-400">,</span>  <span class="text-gray-500">// digital menus</span>
-    <span class="text-emerald-300">"POS Pro"</span><span class="text-gray-400">,</span>   <span class="text-gray-500">// point of sale</span>
+    <span class="text-emerald-300">"LebaSouk POS"</span><span class="text-gray-400">,</span> <span class="text-gray-500">// point of sale</span>
   <span class="text-gray-400">],</span>
   <span class="text-blue-300">stack</span><span class="text-gray-400">:</span>    <span class="text-gray-400">[</span><span class="text-emerald-300">"Laravel"</span><span class="text-gray-400">,</span> <span class="text-emerald-300">"Livewire"</span><span class="text-gray-400">,</span> <span class="text-emerald-300">"Tailwind"</span><span class="text-gray-400">],</span>
   <span class="text-blue-300">ship</span><span class="text-gray-400">:</span>     <span class="text-gray-400">()</span> <span class="text-purple-400">=&gt;</span> <span class="text-yellow-300">launch</span><span class="text-gray-400">(</span><span class="text-sky-300">yourBusiness</span><span class="text-gray-400">)</span><span class="text-gray-400">,</span>
@@ -229,7 +229,7 @@
           </div>
         </div>
 
-        {{-- Service Card 4 --}}
+        {{-- Service Card: LebaSouk POS — one-time license; canonical pricing lives on lebasouk.build-syntax.com --}}
         <div class="card-dark p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in">
           <div class="text-brand-blue mb-6">
             <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,16 +237,25 @@
                 d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">POS Pro &mdash; Point of Sale</h3>
-          <p class="text-dark-muted text-center mb-6">Custom point-of-sale for Lebanese retail and food businesses.
-            Works offline, no monthly SaaS fees.</p>
-          <div class="text-center">
-            <span class="inline-block bg-purple-400/10 text-purple-400 text-xs font-semibold px-3 py-1 rounded-full mb-3">Early Access</span>
-          </div>
-          <h4 class="text-purple-400 mb-5 text-center font-bold text-lg">From $800</h4>
-          <div class="text-center">
-            <a href="{{ route('services') }}#pos" class="text-brand-blue font-semibold hover:underline">Learn
-              More →</a>
+          <h3 class="text-xl font-bold mb-4 text-center text-dark-accent">LebaSouk POS &mdash; Point of Sale</h3>
+          <p class="text-dark-muted text-center mb-6">The point of sale that runs your shop, with or without the internet.</p>
+          <ul class="text-sm text-dark-muted space-y-2 text-left mb-6">
+            @foreach ([
+              'Offline-first, with automatic local backups',
+              'Barcode scan-to-sell',
+              'USD and LBP on the same receipt',
+              'Arabic &amp; English, full right-to-left',
+            ] as $point)
+              <li class="flex items-start space-x-2">
+                <span class="text-brand-blue mt-1">✓</span>
+                <span>{!! $point !!}</span>
+              </li>
+            @endforeach
+          </ul>
+          <h4 class="text-lebasouk mb-5 text-center font-bold text-lg">From $600 one-time</h4>
+          <div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <a href="https://lebasouk.build-syntax.com" class="text-brand-blue font-semibold hover:underline">Learn More →</a>
+            <a href="https://lebasouk.build-syntax.com/pricing" class="text-brand-blue font-semibold hover:underline">See Pricing →</a>
           </div>
         </div>
       </div>
