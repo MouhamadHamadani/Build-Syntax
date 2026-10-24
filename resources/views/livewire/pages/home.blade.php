@@ -42,8 +42,8 @@
   <span class="text-blue-300">location</span><span class="text-gray-400">:</span> <span class="text-emerald-300">"Beirut, Lebanon"</span><span class="text-gray-400">,</span>
   <span class="text-blue-300">products</span><span class="text-gray-400">:</span> <span class="text-gray-400">[</span>
     <span class="text-emerald-300">"ShopNex"</span><span class="text-gray-400">,</span>   <span class="text-gray-500">// e-commerce</span>
-    <span class="text-emerald-300">"Tymelo"</span><span class="text-gray-400">,</span>    <span class="text-gray-500">// booking</span>
     <span class="text-emerald-300">"CarteNex"</span><span class="text-gray-400">,</span>  <span class="text-gray-500">// digital menus</span>
+    <span class="text-emerald-300">"Tymelo"</span><span class="text-gray-400">,</span>    <span class="text-gray-500">// booking</span>
     <span class="text-emerald-300">"LebaSouk POS"</span><span class="text-gray-400">,</span> <span class="text-gray-500">// point of sale</span>
   <span class="text-gray-400">],</span>
   <span class="text-blue-300">stack</span><span class="text-gray-400">:</span>    <span class="text-gray-400">[</span><span class="text-emerald-300">"Laravel"</span><span class="text-gray-400">,</span> <span class="text-emerald-300">"Livewire"</span><span class="text-gray-400">,</span> <span class="text-emerald-300">"Tailwind"</span><span class="text-gray-400">],</span>
