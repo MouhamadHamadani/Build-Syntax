@@ -222,7 +222,7 @@
                 <a href="https://lebasouk.build-syntax.com/pricing"
                    class="inline-block bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg
                           hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
-                    View LebaSouk POS Pricing →
+                    View LebaSouk Pricing →
                 </a>
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm mt-4">
                     <a href="https://lebasouk.build-syntax.com" class="text-dark-muted hover:text-brand-blue transition-colors">Visit lebasouk.build-syntax.com</a>
