@@ -226,6 +226,7 @@
                 </a>
                 <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm mt-4">
                     <a href="https://lebasouk.build-syntax.com" class="text-dark-muted hover:text-brand-blue transition-colors">Visit lebasouk.build-syntax.com</a>
+                    <a href="https://lebasouk.build-syntax.com/?lang=ar" lang="ar" class="text-dark-muted hover:text-brand-blue transition-colors">العربية</a>
                     <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20know%20more%20about%20LebaSouk%20POS."
                        target="_blank" rel="noopener noreferrer"
                        class="text-dark-muted hover:text-brand-blue transition-colors">Ask on WhatsApp</a>
