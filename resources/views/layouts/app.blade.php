@@ -40,6 +40,30 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
 
+  {{-- Organization structured data: company facts only (no products, prices or people).
+       sameAs URLs mirror the footer social links; keep them in sync. --}}
+  @php
+    $organizationSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'Build Syntax',
+        'url' => 'https://build-syntax.com',
+        'logo' => 'https://build-syntax.com/images/icon.png',
+        'telephone' => '+9613876822',
+        'email' => 'info@build-syntax.com',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressLocality' => 'Beirut',
+            'addressCountry' => 'LB',
+        ],
+        'sameAs' => [
+            'https://www.facebook.com/profile.php?id=61590554412690',
+            'https://www.instagram.com/buildsyntax.dev',
+        ],
+    ];
+  @endphp
+  <script type="application/ld+json">{!! json_encode($organizationSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

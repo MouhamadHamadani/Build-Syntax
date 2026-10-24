@@ -62,6 +62,35 @@ class LebaSoukPagesTest extends TestCase
         );
     }
 
+    public function test_each_public_page_has_exactly_one_valid_organization_json_ld_block(): void
+    {
+        foreach (['/', '/services', '/contact'] as $uri) {
+            $html = $this->get($uri)->getContent();
+
+            $this->assertSame(1, preg_match_all('#<script type="application/ld\+json">(.*?)</script>#s', $html, $blocks), "{$uri}: expected one JSON-LD block");
+
+            $data = json_decode($blocks[1][0], true, flags: JSON_THROW_ON_ERROR);
+
+            $this->assertSame('https://schema.org', $data['@context']);
+            $this->assertSame('Organization', $data['@type']);
+            $this->assertSame('Build Syntax', $data['name']);
+            $this->assertSame('https://build-syntax.com', $data['url']);
+            $this->assertSame('https://build-syntax.com/images/icon.png', $data['logo']);
+            $this->assertSame('+9613876822', $data['telephone']);
+            $this->assertSame('info@build-syntax.com', $data['email']);
+            $this->assertSame(['@type' => 'PostalAddress', 'addressLocality' => 'Beirut', 'addressCountry' => 'LB'], $data['address']);
+            $this->assertSame([
+                'https://www.facebook.com/profile.php?id=61590554412690',
+                'https://www.instagram.com/buildsyntax.dev',
+            ], $data['sameAs']);
+
+            // Company facts only: no offers, products or people.
+            foreach (['offers', 'hasOfferCatalog', 'founder', 'employee', 'makesOffer'] as $key) {
+                $this->assertArrayNotHasKey($key, $data);
+            }
+        }
+    }
+
     public function test_services_meta_description_is_short_and_names_every_product(): void
     {
         preg_match('/<meta name="description" content="([^"]*)"/', $this->get('/services')->getContent(), $m);
