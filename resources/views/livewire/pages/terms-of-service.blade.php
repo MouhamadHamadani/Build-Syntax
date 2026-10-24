@@ -6,7 +6,7 @@
             <p class="text-lg opacity-90 max-w-3xl mx-auto fade-in">
                 The terms that govern projects and services delivered by Build Syntax.
             </p>
-            <p class="text-sm text-dark-muted mt-4 fade-in">Last updated: May 2026</p>
+            <p class="text-sm text-dark-muted mt-4 fade-in">Last updated: October 2026</p>
         </div>
     </section>
 
@@ -31,14 +31,19 @@
                     <ul class="list-disc list-inside space-y-2 ml-2">
                         <li>Custom web development (websites and web applications)</li>
                         <li><strong class="text-dark-accent">ShopNex</strong> &mdash; e-commerce platforms</li>
+                        <li><strong class="text-dark-accent">CarteNex</strong> &mdash; digital menu platform (monthly subscription)</li>
                         <li><strong class="text-dark-accent">Tymelo</strong> &mdash; appointment booking systems</li>
-                        <li><strong class="text-dark-accent">LebaSouk POS</strong> &mdash; point-of-sale systems</li>
+                        <li><strong class="text-dark-accent">LebaSouk POS</strong> &mdash; point-of-sale software (one-time license)</li>
                         <li>Hosting &amp; maintenance plans</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2 class="text-2xl font-bold text-dark-accent mb-4">3. Payment Terms</h2>
+                    <p class="mb-3">
+                        The 50% / 30% / 20% schedule below applies to custom development and project-based
+                        platform work. It does not apply to LebaSouk POS or CarteNex.
+                    </p>
                     <ul class="list-disc list-inside space-y-2 ml-2">
                         <li><strong class="text-dark-accent">50%</strong> deposit due before development begins.</li>
                         <li><strong class="text-dark-accent">30%</strong> on project delivery.</li>
@@ -46,6 +51,16 @@
                         <li>Hosting plans are billed annually; maintenance plans are billed monthly with a 3-month minimum.</li>
                         <li>All prices are quoted and payable in <strong class="text-dark-accent">USD</strong>. LBP equivalents accepted at the current market rate on the day of payment.</li>
                     </ul>
+                    <p class="mt-4">
+                        <strong class="text-dark-accent">LebaSouk POS</strong> is sold as a one-time license with no
+                        upfront deposit. Payment is due once installation is complete. Any custom system or feature
+                        requested beyond the standard installation is quoted and billed separately under the schedule
+                        above.
+                    </p>
+                    <p class="mt-3">
+                        <strong class="text-dark-accent">CarteNex</strong> is billed as a monthly subscription; its
+                        price and billing terms are shown on its own site at the time of sign-up.
+                    </p>
                 </section>
 
                 <section>
