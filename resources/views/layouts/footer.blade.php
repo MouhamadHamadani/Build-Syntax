@@ -85,6 +85,14 @@
             {{-- <li><a href="{{ route('blog.index') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Blog</a></li> --}}
             <li><a href="{{ route('contact') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Contact</a></li>
           </ul>
+
+          <h3 class="text-lg font-semibold mt-8 mb-4">Products</h3>
+          <ul class="space-y-2">
+            <li><a href="https://shopnex.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">ShopNex</a></li>
+            <li><a href="https://cartenex.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">CarteNex</a></li>
+            <li><a href="https://tymelo.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">Tymelo</a></li>
+            <li><a href="https://lebasouk.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">LebaSouk POS</a></li>
+          </ul>
         </div>
 
         <!-- Contact Info -->
