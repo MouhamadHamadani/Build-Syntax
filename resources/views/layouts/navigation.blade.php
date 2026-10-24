@@ -41,7 +41,7 @@
                         <a href="https://shopnex.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">ShopNex — E-Commerce</a>
                         <a href="https://cartenex.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">CarteNex — Digital Menus</a>
                         <a href="https://tymelo.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">Tymelo — Booking</a>
-                        <a href="{{ route('services') }}#pos" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">POS Pro — Early Access</a>
+                        <a href="https://lebasouk.build-syntax.com" class="block px-4 py-2 text-dark-muted hover:text-brand-blue hover:bg-brand-blue/10">LebaSouk POS</a>
                     </div>
                 </div>
 
@@ -102,7 +102,7 @@
                     <a href="https://shopnex.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">ShopNex — E-Commerce</a>
                     <a href="https://cartenex.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">CarteNex — Digital Menus</a>
                     <a href="https://tymelo.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">Tymelo — Booking</a>
-                    <a href="{{ route('services') }}#pos" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">POS Pro — Early Access</a>
+                    <a href="https://lebasouk.build-syntax.com" class="block py-2 text-sm text-dark-muted hover:text-brand-blue">LebaSouk POS</a>
                 </div>
             </div>
 
