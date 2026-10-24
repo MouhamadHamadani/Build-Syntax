@@ -40,4 +40,36 @@ class LebaSoukPagesTest extends TestCase
         $this->assertStringContainsString('50% deposit &middot; 30% on delivery &middot; 20% after training &mdash; available on request for custom development projects. LebaSouk POS: no deposit, payment on completion of installation.', $text);
         $this->assertStringNotContainsString('available on request for all packages', $text);
     }
+
+    public function test_hero_panel_lists_products_in_site_order(): void
+    {
+        $text = $this->pageText('/');
+
+        preg_match('/products: \[(.*?)\]/', $text, $m);
+        preg_match_all('/"([^"]+)"/', $m[1] ?? '', $names);
+
+        $this->assertSame(['ShopNex', 'CarteNex', 'Tymelo', 'LebaSouk POS'], $names[1]);
+    }
+
+    public function test_lebasouk_teaser_links_to_the_arabic_site_like_other_product_links(): void
+    {
+        $html = $this->get('/services')->getContent();
+
+        // Plain link: lang="ar", no target/rel, same as the other product links.
+        $this->assertMatchesRegularExpression(
+            '#<a href="https://lebasouk\.build-syntax\.com/\?lang=ar" lang="ar" class="[^"]*">العربية</a>#u',
+            $html
+        );
+    }
+
+    public function test_services_meta_description_is_short_and_names_every_product(): void
+    {
+        preg_match('/<meta name="description" content="([^"]*)"/', $this->get('/services')->getContent(), $m);
+        $description = html_entity_decode($m[1] ?? '');
+
+        $this->assertLessThanOrEqual(155, mb_strlen($description));
+        foreach (['custom web development', 'ShopNex', 'CarteNex', 'Tymelo', 'LebaSouk POS'] as $name) {
+            $this->assertStringContainsString($name, $description);
+        }
+    }
 }
