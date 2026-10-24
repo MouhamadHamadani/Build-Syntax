@@ -32,7 +32,7 @@
                         <li>Custom web development (websites and web applications)</li>
                         <li><strong class="text-dark-accent">ShopNex</strong> &mdash; e-commerce platforms</li>
                         <li><strong class="text-dark-accent">Tymelo</strong> &mdash; appointment booking systems</li>
-                        <li><strong class="text-dark-accent">POS Pro</strong> &mdash; point-of-sale systems</li>
+                        <li><strong class="text-dark-accent">LebaSouk POS</strong> &mdash; point-of-sale systems</li>
                         <li>Hosting &amp; maintenance plans</li>
                     </ul>
                 </section>
