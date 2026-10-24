@@ -100,7 +100,7 @@
                   <option value="ecommerce">ShopNex (E-Commerce Store)</option>
                   <option value="cartenex">CarteNex (Digital Menu)</option>
                   <option value="appointment">Tymelo (Appointment Booking)</option>
-                  <option value="pos">POS Pro (Point of Sale System)</option>
+                  <option value="pos">LebaSouk POS (Point of Sale)</option>
                   <option value="other">Other / Not Sure Yet</option>
                 </select>
                 @error('project_type')
