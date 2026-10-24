@@ -24,6 +24,8 @@ export default {
                     dark: '#357ABD',
                     light: '#4A90E2',
                 },
+                // LebaSouk POS product accent (matches lebasouk.build-syntax.com --color-accent)
+                'lebasouk': '#e2673f',
                 // Dark theme colors
                 'dark': {
                     primary: '#0F0F23',
