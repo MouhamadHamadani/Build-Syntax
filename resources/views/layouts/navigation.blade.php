@@ -6,7 +6,7 @@
 {{-- Fixed header, 61px tall at every width (60px bar + 1px border). The home hero pads for it. --}}
 <header x-data="{ open: false, scrolled: false }"
         @scroll.window="scrolled = window.pageYOffset > 50"
-        :class="{ 'header-scrolled': scrolled }"
+        :class="{ 'header-scrolled': scrolled, '!bg-dark-primary': open }"
         class="fixed top-0 z-50 w-full border-b border-dark-line bg-dark-primary/[.88] backdrop-blur-[10px] transition-shadow duration-300">
     <nav class="wrap" aria-label="Main">
         <div class="flex h-[60px] items-center justify-between gap-4">

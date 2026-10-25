@@ -26,7 +26,7 @@
               {{-- Already on the contact page: don't self-link — offer the WhatsApp channel instead --}}
               <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
                 target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white text-lg font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg">
+                class="inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-[#1ebe57] text-whatsapp-ink text-lg font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg">
                 <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="{{ $waPath }}" />
                 </svg>

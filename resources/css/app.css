@@ -267,7 +267,7 @@
         overflow-wrap: anywhere;
     }
     .copy-row button {
-        @apply flex-none cursor-pointer rounded-md border border-current bg-transparent px-2.5 py-1.5 font-sans text-[12px] font-semibold opacity-90;
+        @apply flex-none cursor-pointer rounded-md border border-current bg-transparent px-2.5 py-1.5 font-sans text-[12px] font-semibold;
     }
 }
 
