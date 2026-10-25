@@ -4,8 +4,8 @@
     $footerLink = 'transition-colors hover:text-dark-accent';
 @endphp
 <div>
-  {{-- Closing call to action on every page except the home page, which has its own contact block (same #contact id) --}}
-  @unless (request()->routeIs('home'))
+  {{-- Closing call to action on every page except home and services, which end with their own contact block --}}
+  @unless (request()->routeIs('home', 'services'))
     <section id="contact" class="py-20 gradient-hero-dark border-y border-brand-blue/30">
       <div class="container mx-auto px-6 text-center">
         <div class="max-w-3xl mx-auto fade-in">

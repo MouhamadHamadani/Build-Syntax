@@ -3,13 +3,13 @@
     $phoneIcon = 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z';
     $link = 'py-1.5 text-[14px] font-medium transition-colors hover:text-dark-accent';
 @endphp
-{{-- Fixed header, 61px tall at every width (60px bar + 1px border). The home hero pads for it. --}}
+{{-- Fixed header, --header-h tall (61px) at every width. The home hero pads for it; the Services sub-nav sticks under it. --}}
 <header x-data="{ open: false, scrolled: false }"
         @scroll.window="scrolled = window.pageYOffset > 50"
         :class="{ 'header-scrolled': scrolled, '!bg-dark-primary': open }"
         class="fixed top-0 z-50 w-full border-b border-dark-line bg-dark-primary/[.88] backdrop-blur-[10px] transition-shadow duration-300">
     <nav class="wrap" aria-label="Main">
-        <div class="flex h-[60px] items-center justify-between gap-4">
+        <div class="flex h-[calc(var(--header-h)-1px)] items-center justify-between gap-4">
             <!-- Logo -->
             <a href="{{ route('home') }}" class="flex-none" aria-label="Build Syntax, home">
                 <img src="{{ asset('images/brand/build-syntax-logo-dark.svg') }}" alt="Build Syntax" width="138" height="34" class="h-[34px] w-auto">
@@ -72,7 +72,7 @@
 
         <!-- Mobile Navigation -->
         <div x-show="open" x-transition x-cloak
-             class="max-h-[calc(100vh-61px)] space-y-1 overflow-y-auto pb-4 lg:hidden">
+             class="max-h-[calc(100vh-var(--header-h))] space-y-1 overflow-y-auto pb-4 lg:hidden">
             <a href="{{ route('home') }}" class="block py-2 text-dark-accent hover:text-brand-blue-light">Home</a>
             <a href="{{ route('services') }}" class="block py-2 text-dark-accent hover:text-brand-blue-light">Services</a>
 

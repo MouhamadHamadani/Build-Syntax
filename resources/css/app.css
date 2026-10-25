@@ -17,6 +17,11 @@
         display: none !important;
     }
 
+    /* Fixed header: 60px bar + 1px border. The header, the Services sub-nav and anchor offsets all read it. */
+    :root {
+        --header-h: 61px;
+    }
+
     /* Visible keyboard focus everywhere; utilities such as focus:ring still win. */
     :focus-visible {
         outline: 2px solid theme('colors.brand-blue.light');
@@ -268,6 +273,96 @@
     }
     .copy-row button {
         @apply flex-none cursor-pointer rounded-md border border-current bg-transparent px-2.5 py-1.5 font-sans text-[12px] font-semibold;
+    }
+
+    /* ------------------------------------------------------------------
+     * Services page
+     * ------------------------------------------------------------------ */
+    .band {
+        @apply border-y border-dark-line bg-dark-tertiary;
+    }
+
+    /* Button in the section's accent colour (--c) */
+    .btn-c {
+        @apply text-[#0b0b14];
+        background: var(--c);
+    }
+
+    /* Sticky sub-navigation, directly under the fixed header */
+    .subnav {
+        @apply sticky z-40 border-y border-dark-line bg-dark-primary/[.92] backdrop-blur-[10px];
+        top: var(--header-h);
+    }
+    .subnav-link {
+        @apply inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-transparent px-3.5 py-2 text-[14px] font-medium text-dark-muted no-underline;
+    }
+    .subnav-link::before {
+        @apply h-2 w-2 rounded-full;
+        content: '';
+        background: var(--c, theme('colors.brand-blue.light'));
+    }
+    .subnav-link:hover,
+    .subnav-link[aria-current] {
+        @apply border-dark-line bg-dark-secondary text-dark-accent;
+    }
+
+    /* Payment terms strip under the page title */
+    .terms {
+        @apply mt-8 grid rounded-[14px] border border-dark-line bg-dark-secondary;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .terms > div {
+        @apply min-w-0 px-5 py-[18px] text-[14px] text-dark-muted;
+    }
+    .terms > div + div {
+        @apply border-l border-dark-line;
+    }
+    .terms b {
+        @apply mb-1.5 block font-mono text-[11px] font-medium uppercase leading-[normal] tracking-[.1em] text-brand-blue-light;
+    }
+    @media (max-width: 860px) {
+        .terms {
+            grid-template-columns: 1fr 1fr;
+        }
+        .terms > div:nth-child(3) {
+            @apply border-l-0;
+        }
+        .terms > div:nth-child(n+3) {
+            @apply border-t border-dark-line;
+        }
+    }
+    @media (max-width: 480px) {
+        .terms {
+            grid-template-columns: 1fr;
+        }
+        .terms > div + div {
+            @apply border-l-0 border-t border-dark-line;
+        }
+    }
+
+    /* Pricing card */
+    .pcard {
+        @apply relative flex min-w-0 flex-col gap-3 rounded-[14px] border border-dark-line bg-dark-secondary p-[26px];
+    }
+    .pcard-pop {
+        border-color: var(--c);
+        box-shadow: 0 0 0 1px var(--c);
+    }
+    .pcard-badge {
+        @apply absolute -top-[11px] left-[22px] rounded-full px-2.5 py-1.5 font-mono text-[11px] font-medium uppercase leading-none tracking-[.1em] text-[#0b0b14];
+        background: var(--c);
+    }
+    .pcard-amount {
+        @apply text-[38px] font-extrabold leading-[1.1] tracking-[-0.03em] tabular-nums;
+    }
+    .pcard-amount small {
+        @apply text-[14px] font-medium tracking-normal text-dark-muted;
+    }
+    .pcard .ticks {
+        @apply flex-1 content-start border-t border-dashed border-dark-line pt-3 text-[14.5px];
+    }
+    .pcard .btn {
+        @apply mt-1.5 w-full;
     }
 }
 
