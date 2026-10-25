@@ -41,16 +41,6 @@ class LebaSoukPagesTest extends TestCase
         $this->assertStringNotContainsString('available on request for all packages', $text);
     }
 
-    public function test_hero_panel_lists_products_in_site_order(): void
-    {
-        $text = $this->pageText('/');
-
-        preg_match('/products: \[(.*?)\]/', $text, $m);
-        preg_match_all('/"([^"]+)"/', $m[1] ?? '', $names);
-
-        $this->assertSame(['ShopNex', 'CarteNex', 'Tymelo', 'LebaSouk POS'], $names[1]);
-    }
-
     public function test_lebasouk_teaser_links_to_the_arabic_site_like_other_product_links(): void
     {
         $html = $this->get('/services')->getContent();

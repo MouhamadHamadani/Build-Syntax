@@ -1,10 +1,22 @@
-@if ($compact)
-    {{-- One-line footer form --}}
-    <div>
-        @if (session()->has('newsletter_success'))
-            <p class="mb-2 text-[13px] text-emerald-400" role="status">{{ session('newsletter_success') }}</p>
-        @endif
+{{-- Single root element: Livewire attaches its wire:id to the first tag, so the compact/full switch lives inside it. --}}
+<div @class(['bg-brand-blue rounded-lg p-8' => ! $compact])>
+    @unless ($compact)
+        <h3 class="text-2xl font-bold text-white mb-4">Subscribe to Our Newsletter</h3>
+        <p class="text-white opacity-90 mb-6">Get the latest updates on web development trends and tips delivered to your inbox.</p>
+    @endunless
 
+    @if (session()->has('newsletter_success'))
+        @if ($compact)
+            <p class="mb-2 text-[13px] text-emerald-400" role="status">{{ session('newsletter_success') }}</p>
+        @else
+            <div class="bg-green-500 text-white px-4 py-3 rounded-lg mb-4">
+                {{ session('newsletter_success') }}
+            </div>
+        @endif
+    @endif
+
+    @if ($compact)
+        {{-- One-line footer form --}}
         <form wire:submit.prevent="subscribe" class="flex gap-2">
             <input
                 type="email"
@@ -23,18 +35,7 @@
         @error('email')
             <p class="mt-1 text-[13px] text-red-300">{{ $message }}</p>
         @enderror
-    </div>
-@else
-    <div class="bg-brand-blue rounded-lg p-8">
-        <h3 class="text-2xl font-bold text-white mb-4">Subscribe to Our Newsletter</h3>
-        <p class="text-white opacity-90 mb-6">Get the latest updates on web development trends and tips delivered to your inbox.</p>
-
-        @if (session()->has('newsletter_success'))
-            <div class="bg-green-500 text-white px-4 py-3 rounded-lg mb-4">
-                {{ session('newsletter_success') }}
-            </div>
-        @endif
-
+    @else
         <form wire:submit.prevent="subscribe" class="space-y-4">
             <div>
                 <input
@@ -55,5 +56,5 @@
                 <span wire:loading>Subscribing...</span>
             </button>
         </form>
-    </div>
-@endif
+    @endif
+</div>
