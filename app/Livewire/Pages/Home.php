@@ -19,10 +19,12 @@ class Home extends Component
 
     public function render()
     {
-        return view('livewire.pages.home')
-            ->layout('layouts.app', [
-                'title' => 'Home - Build Syntax',
-                'description' => 'Build Syntax is a Beirut-based development partner dedicated to transforming your ideas into powerful, modern, and reliable websites and applications.'
-            ]);
+        return view('livewire.pages.home', [
+            'products' => config('products.catalog'),
+            'custom' => config('products.custom'),
+        ])->layout('layouts.app', [
+            'title' => 'Home - Build Syntax',
+            'description' => 'Build Syntax is a Beirut web studio. CarteNex menus, ShopNex stores, Tymelo bookings and LebaSouk POS, plus custom development, with prices up front.',
+        ]);
     }
 }

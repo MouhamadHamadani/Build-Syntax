@@ -77,6 +77,11 @@
         @apply font-mono text-[12px] uppercase tracking-[.12em] text-brand-blue-light;
     }
 
+    /* Eyebrow above a section heading. The reference renders these larger and muted (it styles them as .head p), so match that. */
+    .eyebrow-section {
+        @apply mt-3.5 font-mono text-[17px] uppercase tracking-[.12em] text-dark-muted;
+    }
+
     .heading {
         @apply text-balance leading-[1.12] tracking-[-0.02em];
     }
@@ -113,7 +118,7 @@
         box-shadow: 0 24px 50px -24px rgba(5, 8, 25, .6);
     }
     .showcase-bar {
-        @apply flex items-center gap-1.5 border-b border-dark-line bg-dark-tertiary px-3 py-2 font-mono text-[11px] font-medium text-dark-muted;
+        @apply flex items-center gap-1.5 border-b border-dark-line bg-dark-tertiary px-3 py-2 font-mono text-[11px] font-medium leading-[normal] text-dark-muted;
     }
     .showcase-bar i {
         @apply h-[9px] w-[9px] flex-none rounded-full bg-dark-line;
@@ -204,8 +209,9 @@
     .plan .plan-price small {
         @apply inline text-[13px] font-medium text-dark-muted;
     }
+    /* my-[13px]: the reference keeps the browser default <pre> margin (1em at 13px) */
     .code-block {
-        @apply min-w-0 overflow-x-auto whitespace-pre rounded-[10px] border border-dark-line bg-dark-primary px-[18px] py-4 font-mono text-[13px] font-normal leading-[1.7] text-dark-muted min-[901px]:flex-[0_1_340px];
+        @apply my-[13px] min-w-0 overflow-x-auto whitespace-pre rounded-[10px] border border-dark-line bg-dark-primary px-[18px] py-4 font-mono text-[13px] font-normal leading-[1.7] text-dark-muted min-[901px]:flex-[0_1_340px];
     }
 
     /* How we work */
@@ -254,14 +260,14 @@
         @apply grid items-center gap-10 rounded-[22px] bg-brand-blue-light px-[22px] py-9 text-ink min-[861px]:grid-cols-[1.2fr_1fr] min-[861px]:px-10 min-[861px]:py-14;
     }
     .copy-row {
-        @apply flex items-center justify-between gap-3 rounded-[10px] border border-ink/25 bg-ink/[.14] px-3.5 py-3 font-mono text-[14px];
+        @apply flex items-center justify-between gap-3 rounded-[10px] border border-ink/25 bg-ink/[.14] px-3.5 py-3 font-mono text-[14px] leading-[normal];
     }
     .copy-row span {
         @apply min-w-0 select-all break-words;
         overflow-wrap: anywhere;
     }
     .copy-row button {
-        @apply flex-none cursor-pointer rounded-md border border-current bg-transparent px-2.5 py-1.5 text-[12px] font-semibold opacity-90;
+        @apply flex-none cursor-pointer rounded-md border border-current bg-transparent px-2.5 py-1.5 font-sans text-[12px] font-semibold opacity-90;
     }
 }
 

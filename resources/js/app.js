@@ -1,4 +1,5 @@
 import './bootstrap';
+import './home';
 
 // ---------------------------------------------------------------------------
 // Scroll-triggered fade-in
