@@ -1,106 +1,118 @@
+@php
+    $products = config('products.catalog');
+    $waPath = 'M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z';
+    $footerLink = 'transition-colors hover:text-dark-accent';
+@endphp
 <div>
-  <!-- =========== Call to Action =========== -->
-  <section id="contact" class="py-20 gradient-hero-dark border-y border-brand-blue/30">
-    <div class="container mx-auto px-6 text-center">
-      <div class="max-w-3xl mx-auto fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-accent">Ready to Bring Your Vision to Life?</h2>
-        <p class="text-xl mb-8 text-dark-muted">Let's discuss your project and create something amazing together. Get a
-          free consultation and project quote today.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          @if (!request()->routeIs('contact'))
-            <a href="{{ route('contact') }}"
-              class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
-              Get Free Consultation
-            </a>
-            <a href="{{ route('services') }}"
-              class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-200">
-              View Services
-            </a>
-          @else
-            {{-- Already on the contact page: don't self-link — offer the WhatsApp channel instead --}}
-            <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
-              target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white text-lg font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg">
-              <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              Chat on WhatsApp
-            </a>
-          @endif
+  {{-- Closing call to action on every page except the home page, which has its own contact block (same #contact id) --}}
+  @unless (request()->routeIs('home'))
+    <section id="contact" class="py-20 gradient-hero-dark border-y border-brand-blue/30">
+      <div class="container mx-auto px-6 text-center">
+        <div class="max-w-3xl mx-auto fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-accent">Ready to Bring Your Vision to Life?</h2>
+          <p class="text-xl mb-8 text-dark-muted">Let's discuss your project and create something amazing together. Get a
+            free consultation and project quote today.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            @if (!request()->routeIs('contact'))
+              <a href="{{ route('contact') }}"
+                class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
+                Get Free Consultation
+              </a>
+              <a href="{{ route('services') }}"
+                class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-200">
+                View Services
+              </a>
+            @else
+              {{-- Already on the contact page: don't self-link — offer the WhatsApp channel instead --}}
+              <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white text-lg font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg">
+                <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="{{ $waPath }}" />
+                </svg>
+                Chat on WhatsApp
+              </a>
+            @endif
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  @endunless
 
   <!-- =========== Footer =========== -->
-  <footer class="bg-dark-primary text-white">
-    <div class="container mx-auto px-6 py-12">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+  <footer class="pb-14 pt-10 text-[14px] text-dark-muted">
+    <div class="wrap">
+      <div class="grid gap-10 md:grid-cols-12">
         <!-- Company Info -->
-        <div class="md:col-span-2">
-          <div class="flex items-center space-x-3 mb-4">
-            <img src="{{ asset('images/icon.png') }}" alt="Build Syntax Icon" class="h-8 w-8">
-            <span class="text-xl font-bold">Build Syntax</span>
+        <div class="md:col-span-5">
+          <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+            <a href="{{ route('home') }}" aria-label="Build Syntax, home">
+              <img src="{{ asset('images/brand/build-syntax-logo-dark.svg') }}" alt="Build Syntax" width="114" height="28" class="h-7 w-auto">
+            </a>
+            <span class="text-[14px] font-medium">Your Vision, Our Code.</span>
           </div>
-          <p class="text-dark-muted mb-4 max-w-md">
-            Your Vision, Our Code. We are a Beirut-based development partner dedicated to transforming your ideas into
-            powerful, modern, and reliable digital solutions.
-          </p>
           {{-- Primary contact channel for Lebanese market. Add real social URLs here when accounts go live. --}}
           <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
              target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold transition-colors">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+             class="mt-5 inline-flex items-center gap-2 font-semibold text-green-400 transition-colors hover:text-green-300">
+            <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="{{ $waPath }}" />
             </svg>
             Chat on WhatsApp
           </a>
           {{-- Social Media --}}
-          <div class="flex items-center space-x-4 mt-4">
+          <div class="mt-4 flex items-center gap-4">
             <a href="https://www.facebook.com/profile.php?id=61590554412690#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-               class="text-dark-muted hover:text-white transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+               class="{{ $footerLink }}">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562v1.875h2.773l-.443 2.89h-2.33V21.878C18.343 21.128 22 16.991 22 12z"/>
               </svg>
             </a>
             <a href="https://www.instagram.com/buildsyntax.dev" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-               class="text-dark-muted hover:text-white transition-colors">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+               class="{{ $footerLink }}">
+              <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.5 2a1 1 0 110 2 1 1 0 010-2zm-4.25 1.75a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.5a4 4 0 100 8 4 4 0 000-8z"/>
               </svg>
             </a>
           </div>
+          {{-- Compact newsletter. The blog pages already embed the full form, so skip it there. --}}
+          @unless (request()->routeIs('blog.*'))
+            <div class="mt-6 max-w-sm">
+              <livewire:components.newsletter-subscribe :compact="true" />
+            </div>
+          @endunless
         </div>
 
         <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-          <ul class="space-y-2">
-            <li><a href="{{ route('home') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Home</a></li>
-            <li><a href="{{ route('services') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Services</a></li>
-            <li><a href="{{ route('portfolio') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Portfolio</a></li>
-            <li><a href="{{ route('about') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>About</a></li>
+        <nav class="md:col-span-2" aria-label="Footer">
+          <p class="font-mono text-[12px] uppercase tracking-[.12em] text-dark-accent">Quick Links</p>
+          <ul class="mt-4 space-y-2">
+            <li><a href="{{ route('home') }}" class="{{ $footerLink }}" wire:navigate>Home</a></li>
+            <li><a href="{{ route('services') }}" class="{{ $footerLink }}" wire:navigate>Services</a></li>
+            <li><a href="{{ route('portfolio') }}" class="{{ $footerLink }}" wire:navigate>Portfolio</a></li>
+            <li><a href="{{ route('about') }}" class="{{ $footerLink }}" wire:navigate>About</a></li>
             {{-- Blog: uncomment when at least 2 posts are published --}}
-            {{-- <li><a href="{{ route('blog.index') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Blog</a></li> --}}
-            <li><a href="{{ route('contact') }}" class="text-dark-muted hover:text-white transition-colors" wire:navigate>Contact</a></li>
+            {{-- <li><a href="{{ route('blog.index') }}" class="{{ $footerLink }}" wire:navigate>Blog</a></li> --}}
+            <li><a href="{{ route('contact') }}" class="{{ $footerLink }}" wire:navigate>Contact</a></li>
           </ul>
+        </nav>
 
-          <h3 class="text-lg font-semibold mt-8 mb-4">Products</h3>
-          <ul class="space-y-2">
-            <li><a href="https://shopnex.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">ShopNex</a></li>
-            <li><a href="https://cartenex.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">CarteNex</a></li>
-            <li><a href="https://tymelo.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">Tymelo</a></li>
-            <li><a href="https://lebasouk.build-syntax.com" class="text-dark-muted hover:text-white transition-colors">LebaSouk POS</a></li>
+        <!-- Products -->
+        <nav class="md:col-span-2" aria-label="Products">
+          <p class="font-mono text-[12px] uppercase tracking-[.12em] text-dark-accent">Products</p>
+          <ul class="mt-4 space-y-2">
+            @foreach ($products as $product)
+              <li><a href="{{ $product['site'] }}" class="{{ $footerLink }}">{{ $product['name'] }}</a></li>
+            @endforeach
           </ul>
-        </div>
+        </nav>
 
         <!-- Contact Info -->
-        <div>
-          <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
-          <ul class="space-y-2 text-dark-muted">
-            <li class="flex items-center space-x-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="md:col-span-3">
+          <p class="font-mono text-[12px] uppercase tracking-[.12em] text-dark-accent">Contact Info</p>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -108,39 +120,37 @@
               </svg>
               <span>Beirut, Lebanon</span>
             </li>
-            <li class="flex items-center space-x-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               <span>{{ config('app.email') }}</span>
             </li>
-            <li class="flex items-center space-x-2">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-none" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <a href="tel:+9613876822" class="hover:text-white transition-colors">+961 3 876 822</a>
+              <a href="tel:+9613876822" class="{{ $footerLink }}">+961 3 876 822</a>
             </li>
-            <li class="flex items-center space-x-2">
-              <svg class="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            <li class="flex items-center gap-2">
+              <svg class="h-4 w-4 flex-none text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="{{ $waPath }}" />
               </svg>
               <a href="https://wa.me/9613876822" target="_blank" rel="noopener noreferrer"
-                 class="hover:text-white transition-colors">WhatsApp</a>
+                 class="{{ $footerLink }}">WhatsApp</a>
             </li>
           </ul>
         </div>
       </div>
 
       <!-- Bottom Bar -->
-      <div class="border-t border-dark-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <p class="text-dark-muted text-sm">
-          &copy; {{ date('Y') }} Build Syntax. All rights reserved.
-        </p>
-        <div class="flex space-x-6 mt-4 md:mt-0">
-          <a href="{{ route('privacy-policy') }}" class="text-dark-muted hover:text-white text-sm transition-colors" wire:navigate>Privacy Policy</a>
-          <a href="{{ route('terms-of-service') }}" class="text-dark-muted hover:text-white text-sm transition-colors" wire:navigate>Terms of Service</a>
+      <div class="mt-10 flex flex-col items-start justify-between gap-4 border-t border-dark-line pt-5 text-[13px] md:flex-row md:items-center">
+        <p>&copy; {{ date('Y') }} Build Syntax. Beirut, Lebanon.</p>
+        <div class="flex gap-6">
+          <a href="{{ route('privacy-policy') }}" class="{{ $footerLink }}" wire:navigate>Privacy Policy</a>
+          <a href="{{ route('terms-of-service') }}" class="{{ $footerLink }}" wire:navigate>Terms of Service</a>
         </div>
       </div>
     </div>

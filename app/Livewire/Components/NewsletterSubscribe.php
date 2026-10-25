@@ -7,12 +7,17 @@ use App\Notifications\ConfirmNewsletterSubscription;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\RateLimiter;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 class NewsletterSubscribe extends Component
 {
     public $email = '';
     public $name = '';
+
+    /** One-line layout for the footer; the blog pages use the full card. */
+    #[Locked]
+    public bool $compact = false;
 
     protected $rules = [
         'email' => 'required|email|max:255',
