@@ -14,7 +14,7 @@ class HomePageTest extends TestCase
     /** The four products plus custom development, in page order. */
     private function offers(): array
     {
-        return [...array_values(config('products.catalog')), config('products.custom')];
+        return [...array_values(config('catalog.products')), config('catalog.custom')];
     }
 
     public function test_home_renders_every_product_name_and_headline_price_from_config(): void
