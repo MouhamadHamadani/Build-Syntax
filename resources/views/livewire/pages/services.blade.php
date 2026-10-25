@@ -14,7 +14,7 @@
     </section>
 
     {{-- Sticky service tabs --}}
-    <nav class="sticky top-[72px] z-30 bg-dark-secondary/95 backdrop-blur border-y border-dark-border"
+    <nav class="sticky top-[61px] z-30 bg-dark-secondary/95 backdrop-blur border-y border-dark-border"
          aria-label="Service sections">
         <div class="container mx-auto px-6">
             <ul class="flex items-center gap-1 md:gap-6 overflow-x-auto scrollbar-hide py-3 text-sm md:text-base">
