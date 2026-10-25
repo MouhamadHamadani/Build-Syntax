@@ -5,17 +5,45 @@
 | Product Catalog — Single Source of Truth for the public site
 |--------------------------------------------------------------------------
 |
-| Marketing copy, features and prices for the four products and custom
-| development. The home page cards read it today, the Services page next.
-| Every claim here was checked against that product's code and demo: do not
-| add features that are not built.
+| Copy, features, plans and prices for the four products, custom development,
+| hosting and maintenance. The home page cards and the Services page both read
+| this file, so a price is edited in exactly one place: the $prices block
+| below. Everything else that shows a price is built from it.
 |
-| 'accent' is the Tailwind accent-* class suffix, 'project_type' is the value
-| the contact form understands (?type=, see config/products.php), 'site' is the
-| product's own homepage. 'showcase' files live in public/images/showcase
-| (screens) and public/images/brand (tab logos).
+| Every claim here was checked against that product's code and demo: do not
+| add features that are not built. (Custom development tiers, VPS hosting and
+| maintenance plans were carried over from the old Services page and have not
+| been checked against a product report.)
+|
+| Keys used by the home page cards:
+|   accent        Tailwind accent-* class suffix (see tailwind.config.js safelist)
+|   project_type  value the contact form understands (?type=, see config/products.php)
+|   site          the product's own homepage
+|   showcase      hero screens (public/images/showcase) and tab logos (public/images/brand)
+|   plans[]       name, price, unit, featured, description
+| Keys used by the Services page: plans[].summary / period / billing / features /
+| meta / cta, plus the product-level 'service' block.
 |
 */
+
+// All prices on the site. Display strings, shown exactly as written.
+$prices = [
+    'menu' => ['basic' => '$19', 'pro' => '$49', 'premium' => '$99'],
+    'menu_year' => ['basic' => '$190', 'pro' => '$490', 'premium' => '$990'],
+    'shop' => ['basic' => '$1,200', 'standard' => '$2,000', 'premium' => '$2,200'],
+    'booking_setup' => ['starter' => '$349', 'business' => '$749'],
+    'booking_month' => ['starter' => '$35', 'business' => '$69'],
+    'booking_year' => ['starter' => '$350', 'business' => '$690'],
+    'booking_extra_calendar' => '$10',
+    'pos' => ['starter' => '$600', 'standard' => '$850'],
+    'web' => ['starter' => '$800', 'professional' => '$1,500'],
+    'vps' => ['small' => '$200', 'medium' => '$300', 'high' => '$500'],
+    'care' => ['essential' => '$79', 'basic' => '$150', 'standard' => '$250', 'premium' => '$400'],
+];
+
+$shopNote = ['strong' => 'All prices start from, paid once.', 'text' => 'Payment is 50% to start, 30% on delivery and 20% after training. Other terms on request.'];
+$posNote = ['strong' => 'You pay once it is installed, with no deposit.', 'text' => 'We install it for you and set up your account. Want to try it first? Contact us and we will install the demo for you.'];
+$customIntro = 'Company websites, admin dashboards and management systems, built on Laravel and Livewire and shaped around how your team already works.';
 
 return [
     'products' => [
@@ -36,21 +64,53 @@ return [
             'for' => 'cafés, restaurants, clinics and services.',
             'for_extra' => '14-day free trial, no card.',
             'for_extra_strong' => true,
-            'price' => ['from' => '$19', 'unit' => ' / month'],
+            'price' => ['from' => $prices['menu']['basic'], 'unit' => ' / month'],
             'site' => 'https://cartenex.build-syntax.com',
             'demo' => ['url' => 'https://cartenex.build-syntax.com/olea', 'label' => 'See a demo menu'],
             'plans_label' => 'CarteNex plans',
             'plans' => [
-                ['name' => 'Basic', 'price' => '$19', 'unit' => '/mo', 'featured' => false, 'description' => '50 items, 1 staff account'],
-                ['name' => 'Pro', 'price' => '$49', 'unit' => '/mo', 'featured' => true, 'description' => '300 items, 5 staff accounts, your own accent colour, no “Powered by” badge, view analytics'],
-                ['name' => 'Premium', 'price' => '$99', 'unit' => '/mo', 'featured' => false, 'description' => 'Everything in Pro, with unlimited items and staff'],
+                [
+                    'name' => 'Basic', 'featured' => false,
+                    'price' => $prices['menu']['basic'], 'unit' => '/mo', 'period' => ' / month',
+                    'billing' => 'or ' . $prices['menu_year']['basic'] . ' a year',
+                    'summary' => 'Everything you need for a small menu.',
+                    'description' => '50 items, 1 staff account',
+                    'features' => ['50 items', '1 staff account'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Pro', 'featured' => true,
+                    'price' => $prices['menu']['pro'], 'unit' => '/mo', 'period' => ' / month',
+                    'billing' => 'or ' . $prices['menu_year']['pro'] . ' a year',
+                    'summary' => 'For menus that need your own look.',
+                    'description' => '300 items, 5 staff accounts, your own accent colour, no “Powered by” badge, view analytics',
+                    'features' => ['300 items', '5 staff accounts', 'Your own accent colour', 'No “Powered by” badge', 'View analytics'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Premium', 'featured' => false,
+                    'price' => $prices['menu']['premium'], 'unit' => '/mo', 'period' => ' / month',
+                    'billing' => 'or ' . $prices['menu_year']['premium'] . ' a year',
+                    'summary' => 'No limits.',
+                    'description' => 'Everything in Pro, with unlimited items and staff',
+                    'features' => ['Everything in Pro', 'Unlimited items', 'Unlimited staff accounts'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
             ],
-            'note' => 'Pay yearly and get 2 months free: $190, $490 or $990 a year.',
+            'note' => 'Pay yearly and get 2 months free: ' . $prices['menu_year']['basic'] . ', ' . $prices['menu_year']['pro'] . ' or ' . $prices['menu_year']['premium'] . ' a year.',
             'showcase' => [
                 'title' => 'CarteNex · OLEA demo menu',
                 'laptop' => ['file' => 'cartenex-laptop.webp', 'width' => 1100, 'height' => 688, 'alt' => 'CarteNex demo menu for the OLEA café on a laptop'],
                 'phone' => ['file' => 'cartenex-phone.webp', 'width' => 380, 'height' => 676, 'alt' => 'CarteNex menu on a phone'],
                 'tab' => ['logo' => 'cartenex-lockup.svg', 'width' => 113, 'height' => 24, 'wordmark' => null],
+            ],
+            'service' => [
+                'anchor' => 'cartenex',
+                'legacy_anchors' => ['menus'],
+                // Heading logo; when 'wordmark' is set the logo is decorative (alt "") and the word is live text.
+                'logo' => ['file' => 'cartenex-lockup.svg', 'width' => 226, 'height' => 48, 'alt' => 'CarteNex', 'wordmark' => null],
+                'secondary_cta' => ['label' => 'Start the free trial', 'plan' => 'Free trial'],
+                'note' => ['strong' => 'Pay yearly and get 2 months free.', 'text' => 'Every plan starts with a 14-day free trial, no card needed.'],
             ],
         ],
 
@@ -72,21 +132,49 @@ return [
             'for' => 'boutiques, food brands, retailers.',
             'for_extra' => 'Online card payments are not available yet.',
             'for_extra_strong' => false,
-            'price' => ['from' => '$1,200', 'unit' => ' one-off'],
+            'price' => ['from' => $prices['shop']['basic'], 'unit' => ' one-off'],
             'site' => 'https://shopnex.build-syntax.com',
             'demo' => ['url' => 'https://shopnex.build-syntax.com', 'label' => 'See the demo store'],
             'plans_label' => 'ShopNex packages',
             'plans' => [
-                ['name' => 'Basic', 'price' => '$1,200', 'unit' => null, 'featured' => false, 'description' => 'Products, cart and checkout, orders, admin dashboard, basic SEO. 4 to 6 weeks, 1 month of support.'],
-                ['name' => 'Standard', 'price' => '$2,000', 'unit' => null, 'featured' => true, 'description' => 'Adds analytics, low-stock alerts, email notifications, reviews, coupons and wishlist. 7 to 10 weeks, 2 months of support.'],
-                ['name' => 'Premium', 'price' => '$2,200', 'unit' => null, 'featured' => false, 'description' => 'Adds multi-currency display (USD and LBP), role permissions and priority support. 10 to 14 weeks, 3 months of support.'],
+                [
+                    'name' => 'Basic', 'featured' => false,
+                    'price' => $prices['shop']['basic'], 'unit' => null, 'period' => ' one-off', 'billing' => null,
+                    'summary' => 'Your store, live and taking orders.',
+                    'description' => 'Products, cart and checkout, orders, admin dashboard, basic SEO. 4 to 6 weeks, 1 month of support.',
+                    'features' => ['Products, cart and checkout', 'Orders and admin dashboard', 'Basic SEO'],
+                    'meta' => '4 to 6 weeks · 1 month of support', 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Standard', 'featured' => true,
+                    'price' => $prices['shop']['standard'], 'unit' => null, 'period' => ' one-off', 'billing' => null,
+                    'summary' => 'Adds the tools that save you time.',
+                    'description' => 'Adds analytics, low-stock alerts, email notifications, reviews, coupons and wishlist. 7 to 10 weeks, 2 months of support.',
+                    'features' => ['Everything in Basic', 'Analytics', 'Low-stock alerts', 'Email notifications', 'Reviews, coupons and wishlist'],
+                    'meta' => '7 to 10 weeks · 2 months of support', 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Premium', 'featured' => false,
+                    'price' => $prices['shop']['premium'], 'unit' => null, 'period' => ' one-off', 'billing' => null,
+                    'summary' => 'For larger catalogues and teams.',
+                    'description' => 'Adds multi-currency display (USD and LBP), role permissions and priority support. 10 to 14 weeks, 3 months of support.',
+                    'features' => ['Everything in Standard', 'Multi-currency display (USD and LBP)', 'Role permissions', 'Priority support'],
+                    'meta' => '10 to 14 weeks · 3 months of support', 'cta' => 'Request this plan',
+                ],
             ],
-            'note' => 'All prices start from, paid once. Payment is 50% to start, 30% on delivery and 20% after training. Other terms on request.',
+            'note' => $shopNote['strong'] . ' ' . $shopNote['text'],
             'showcase' => [
                 'title' => 'ShopNex · demo store',
                 'laptop' => ['file' => 'shopnex-laptop.webp', 'width' => 1100, 'height' => 688, 'alt' => 'ShopNex demo store, Fashion category'],
                 'phone' => ['file' => 'shopnex-phone.webp', 'width' => 380, 'height' => 822, 'alt' => 'ShopNex product page on a phone'],
                 'tab' => ['logo' => 'shopnex-logo.svg', 'width' => 83, 'height' => 24, 'wordmark' => null],
+            ],
+            'service' => [
+                'anchor' => 'shopnex',
+                'legacy_anchors' => ['ecommerce'],
+                'logo' => ['file' => 'shopnex-logo.svg', 'width' => 440, 'height' => 128, 'alt' => 'ShopNex', 'wordmark' => null],
+                'secondary_cta' => null,
+                'note' => $shopNote,
             ],
         ],
 
@@ -108,21 +196,55 @@ return [
             'for' => 'clinics, salons, studios.',
             'for_extra' => 'The demo is a sample skin clinic. Payments and deposits are recorded by you (Whish, OMT or cash).',
             'for_extra_strong' => false,
-            'price' => ['from' => '$349', 'unit' => ' setup + $35 / month'],
+            'price' => ['from' => $prices['booking_setup']['starter'], 'unit' => ' setup + ' . $prices['booking_month']['starter'] . ' / month'],
             'site' => 'https://tymelo.build-syntax.com',
             'demo' => ['url' => 'https://tymelo.build-syntax.com/book-guest', 'label' => 'Try the booking page'],
             'plans_label' => 'Tymelo plans',
             'plans' => [
-                ['name' => 'Starter', 'price' => '$349', 'unit' => ' + $35/mo', 'featured' => false, 'description' => 'Install, branding, hosting, backups and SSL included. Unlimited services, 1 staff calendar, guest booking, email confirmations and reminders, WhatsApp buttons. 30-minute handover, 72-hour support.'],
-                ['name' => 'Business', 'price' => '$749', 'unit' => ' + $69/mo', 'featured' => true, 'description' => 'Everything in Starter, plus approval mode, waitlist, intake forms, deposit tracking (unpaid holds release after 2 hours), a booking widget for your site, custom domain, client notes and tags, no-show heatmap, performance dashboard, CSV export. 1-hour onboarding, 24-hour support.'],
+                [
+                    'name' => 'Starter', 'featured' => false,
+                    'price' => $prices['booking_setup']['starter'], 'unit' => ' + ' . $prices['booking_month']['starter'] . '/mo', 'period' => ' setup',
+                    'billing' => 'then ' . $prices['booking_month']['starter'] . ' a month · or ' . $prices['booking_year']['starter'] . ' a year',
+                    'summary' => 'Install, branding, hosting, backups and SSL included.',
+                    'description' => 'Install, branding, hosting, backups and SSL included. Unlimited services, 1 staff calendar, guest booking, email confirmations and reminders, WhatsApp buttons. 30-minute handover, 72-hour support.',
+                    'features' => ['Unlimited services, 1 staff calendar', 'Guest booking', 'Email confirmations and reminders', 'WhatsApp buttons'],
+                    'meta' => '30-minute handover · 72-hour support', 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Business', 'featured' => true,
+                    'price' => $prices['booking_setup']['business'], 'unit' => ' + ' . $prices['booking_month']['business'] . '/mo', 'period' => ' setup',
+                    'billing' => 'then ' . $prices['booking_month']['business'] . ' a month · or ' . $prices['booking_year']['business'] . ' a year',
+                    'summary' => 'Everything in Starter, plus the tools for busier places.',
+                    'description' => 'Everything in Starter, plus approval mode, waitlist, intake forms, deposit tracking (unpaid holds release after 2 hours), a booking widget for your site, custom domain, client notes and tags, no-show heatmap, performance dashboard, CSV export. 1-hour onboarding, 24-hour support.',
+                    'features' => [
+                        'Approval mode and waitlist',
+                        'Intake forms',
+                        'Deposit tracking (unpaid holds release after 2 hours)',
+                        'A booking widget for your site, and a custom domain',
+                        'Client notes and tags',
+                        'No-show heatmap and performance dashboard',
+                        'CSV export',
+                    ],
+                    'meta' => '1-hour onboarding · 24-hour support', 'cta' => 'Request this plan',
+                ],
             ],
-            'note' => 'Setup is paid once, then monthly. Pay yearly and get 2 months free: $350 or $690 a year. Extra staff calendars are $10 a month each. Larger setups get a custom quote.',
+            'note' => 'Setup is paid once, then monthly. Pay yearly and get 2 months free: ' . $prices['booking_year']['starter'] . ' or ' . $prices['booking_year']['business'] . ' a year. Extra staff calendars are ' . $prices['booking_extra_calendar'] . ' a month each. Larger setups get a custom quote.',
             'showcase' => [
                 'title' => 'Tymelo · demo clinic booking',
                 'laptop' => ['file' => 'tymelo-laptop.webp', 'width' => 1100, 'height' => 688, 'alt' => 'Tymelo booking page choosing a time'],
                 'phone' => ['file' => 'tymelo-phone.webp', 'width' => 380, 'height' => 822, 'alt' => 'Tymelo booking page on a phone'],
                 // The mark has no text: the "Tymelo" wordmark next to it is live text in Plus Jakarta Sans.
                 'tab' => ['logo' => 'tymelo-mark.svg', 'width' => 24, 'height' => 24, 'wordmark' => 'Tymelo', 'jakarta' => true],
+            ],
+            'service' => [
+                'anchor' => 'tymelo',
+                'legacy_anchors' => ['appointment'],
+                'logo' => ['file' => 'tymelo-mark.svg', 'width' => 32, 'height' => 32, 'alt' => '', 'wordmark' => 'Tymelo', 'jakarta' => true],
+                'secondary_cta' => null,
+                'note' => [
+                    'strong' => 'Setup is paid once, then monthly.',
+                    'text' => 'Pay yearly and get 2 months free. Extra staff calendars are ' . $prices['booking_extra_calendar'] . ' a month each. Larger setups get a custom quote.',
+                ],
             ],
         ],
 
@@ -146,22 +268,50 @@ return [
             'for' => 'shops, minimarkets, food businesses.',
             'for_extra' => 'Runs on one Windows PC per shop for now.',
             'for_extra_strong' => false,
-            'price' => ['from' => '$600', 'unit' => ' paid once, no deposit'],
+            'price' => ['from' => $prices['pos']['starter'], 'unit' => ' paid once, no deposit'],
             'site' => 'https://lebasouk.build-syntax.com',
             'demo' => ['url' => 'https://lebasouk.build-syntax.com/pricing', 'label' => 'See pricing'],
             'plans_label' => 'LebaSouk POS plans',
             'plans' => [
-                ['name' => 'Starter', 'price' => '$600', 'unit' => null, 'featured' => false, 'description' => '1 user with Manager and Cashier roles, expenses and stock movements.'],
-                ['name' => 'Standard', 'price' => '$850', 'unit' => null, 'featured' => true, 'description' => '3 users and four roles. Adds returns with manager approval, suppliers and purchase orders, and reports by product, stock level and profit and loss.'],
-                // No price yet: shown as a "Contact us" link.
-                ['name' => 'Premium', 'price' => null, 'unit' => 'Contact us', 'featured' => false, 'description' => 'Unlimited users. Contact us for a quote.'],
+                [
+                    'name' => 'Starter', 'featured' => false,
+                    'price' => $prices['pos']['starter'], 'unit' => null, 'period' => ' paid once', 'billing' => null,
+                    'summary' => 'Run one counter.',
+                    'description' => '1 user with Manager and Cashier roles, expenses and stock movements.',
+                    'features' => ['1 user with Manager and Cashier roles', 'Expenses and stock movements'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Standard', 'featured' => true,
+                    'price' => $prices['pos']['standard'], 'unit' => null, 'period' => ' paid once', 'billing' => null,
+                    'summary' => 'For shops with a team.',
+                    'description' => '3 users and four roles. Adds returns with manager approval, suppliers and purchase orders, and reports by product, stock level and profit and loss.',
+                    'features' => ['3 users and four roles', 'Returns with manager approval', 'Suppliers and purchase orders', 'Reports by product, stock level and profit and loss'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+                // No price yet: both pages show "Contact us" in its place.
+                [
+                    'name' => 'Premium', 'featured' => false,
+                    'price' => null, 'unit' => 'Contact us', 'period' => null, 'billing' => null,
+                    'summary' => 'Unlimited users.',
+                    'description' => 'Unlimited users. Contact us for a quote.',
+                    'features' => ['Unlimited users', 'Quoted for your shop'],
+                    'meta' => null, 'cta' => 'Contact us',
+                ],
             ],
-            'note' => 'You pay once it is installed, with no deposit. We install it for you and set up your account. Want to try it first? Contact us and we will install the demo for you.',
+            'note' => $posNote['strong'] . ' ' . $posNote['text'],
             'showcase' => [
                 'title' => 'LebaSouk POS · demo data',
                 'laptop' => ['file' => 'lebasouk-laptop.webp', 'width' => 1100, 'height' => 688, 'alt' => 'LebaSouk POS sales screen with items in the cart'],
                 'phone' => null,
                 'tab' => ['logo' => 'lebasouk-mark.svg', 'width' => 26, 'height' => 26, 'wordmark' => 'LebaSouk'],
+            ],
+            'service' => [
+                'anchor' => 'pos',
+                'legacy_anchors' => [],
+                'logo' => ['file' => 'lebasouk-mark.svg', 'width' => 100, 'height' => 100, 'alt' => '', 'wordmark' => 'LebaSouk POS'],
+                'secondary_cta' => ['label' => 'Ask for the demo', 'plan' => 'Demo'],
+                'note' => $posNote,
             ],
         ],
     ],
@@ -173,10 +323,100 @@ return [
         'project_type' => 'website',
         'tagline' => 'Custom development',
         'headline' => 'Something that does not exist yet?',
-        'description' => 'Company websites, admin dashboards and management systems, built on Laravel and Livewire and shaped around how your team already works.',
-        'price' => ['from' => '$1,500', 'unit' => null],
+        'description' => $customIntro,
+        'price' => ['from' => $prices['web']['professional'], 'unit' => null],
         'cta' => 'Describe your project',
         // Shown in a code-style block under a "Stack" label; the last line is highlighted.
         'stack' => ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js', 'Arabic + English, RTL'],
+
+        // Services page section
+        'service' => [
+            'anchor' => 'web-development',
+            'heading' => 'Websites and web applications',
+            'intro' => $customIntro . ' Every package includes design, development, testing, deployment assistance and a documented handover.',
+            'points' => [
+                'Laravel and Livewire',
+                'Tailwind CSS and Alpine.js',
+                'Arabic and English, right-to-left',
+                'Priced per project, billed in stages we agree in writing',
+            ],
+            'plans' => [
+                [
+                    'name' => 'Starter', 'featured' => false,
+                    'prefix' => 'From ', 'price' => $prices['web']['starter'], 'unit' => null, 'period' => null, 'billing' => null,
+                    'summary' => 'Landing page or brochure website to establish your online presence.',
+                    'features' => ['Landing page or brochure website', 'Up to 5 pages', 'Template-based or semi-custom design', 'WhatsApp and contact form integration', 'Basic SEO and Google Analytics', 'Mobile responsive'],
+                    'meta' => '2 to 3 weeks · 1 month of support', 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Professional', 'featured' => true,
+                    'prefix' => 'From ', 'price' => $prices['web']['professional'], 'unit' => null, 'period' => null, 'billing' => null,
+                    'summary' => 'Full business website with a CMS, a blog, advanced SEO and bilingual support.',
+                    'features' => ['5 to 20 pages, fully custom design', 'CMS for self-managed content', 'Blog or news module', 'Advanced SEO and schema markup', 'Performance and speed optimisation', 'Arabic and English support'],
+                    'meta' => '3 to 6 weeks · 2 months of support', 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Enterprise', 'featured' => false,
+                    'price' => null, 'unit' => 'Custom quote', 'period' => null, 'billing' => null,
+                    'summary' => 'Custom web applications and portals with complex logic and dedicated support.',
+                    'features' => ['Custom web applications and portals', 'Complex logic and user roles', 'API integrations (CRM, ERP and others)', 'Custom dashboards and reporting', 'Third-party payment processing', 'Scalable cloud infrastructure'],
+                    'meta' => 'Timeline and price set per project · dedicated support plan', 'cta' => 'Get a custom quote',
+                ],
+            ],
+        ],
+    ],
+
+    'hosting' => [
+        'anchor' => 'hosting',
+        'tag' => 'Infrastructure and support',
+        'heading' => 'Hosting and maintenance',
+        'intro' => 'Hosting and ongoing care to keep your platform secure, fast and up to date.',
+        // Contact form type for hosting and maintenance enquiries
+        'project_type' => 'other',
+
+        'vps' => [
+            'heading' => 'VPS hosting',
+            'intro' => 'You own the server subscription. We handle the full configuration and hardening. Every tier includes VPS setup and configuration, SSL, daily backups, security hardening and monitoring.',
+            'tiers' => [
+                ['name' => 'Small sites', 'price' => $prices['vps']['small'], 'period' => ' / year', 'features' => ['Traffic: up to about 5,000 visits a month', 'Ideal for: brochure and informational sites']],
+                ['name' => 'Medium traffic', 'price' => $prices['vps']['medium'], 'period' => ' / year', 'features' => ['Traffic: 5,000 to 20,000 visits a month', 'Ideal for: active e-commerce and booking sites']],
+                ['name' => 'High traffic', 'price' => $prices['vps']['high'], 'period' => ' / year', 'features' => ['Traffic: 20,000+ visits a month', 'Ideal for: business-critical platforms']],
+            ],
+        ],
+
+        'maintenance' => [
+            'heading' => 'Monthly maintenance',
+            'intro' => 'Billed monthly, with a minimum 3-month commitment.',
+            'plans' => [
+                [
+                    'name' => 'Essential', 'plan_key' => 'Maintenance-Essential', 'featured' => false,
+                    'price' => $prices['care']['essential'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                    'summary' => 'Keep-the-lights-on for live brochure sites.',
+                    'features' => ['Security and dependency updates', 'Uptime monitoring', 'SSL certificate renewal', 'Monthly health report', 'Email support (48-hour response)'],
+                    'meta' => 'Does not include feature changes or bug fixes.', 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Basic', 'plan_key' => 'Maintenance-Basic', 'featured' => false,
+                    'price' => $prices['care']['basic'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                    'summary' => 'Small brochure and informational sites.',
+                    'features' => ['Bug fixes', 'Security patches', 'Plugin and package updates', 'Monthly health report'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Standard', 'plan_key' => 'Maintenance-Standard', 'featured' => true,
+                    'price' => $prices['care']['standard'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                    'summary' => 'E-commerce and booking platforms in active use.',
+                    'features' => ['Everything in Basic', 'Performance optimisation', 'Priority support response', 'Minor content updates', 'Uptime monitoring'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+                [
+                    'name' => 'Premium', 'plan_key' => 'Maintenance-Premium', 'featured' => false,
+                    'price' => $prices['care']['premium'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                    'summary' => 'High-traffic or business-critical platforms.',
+                    'features' => ['Everything in Standard', 'Small feature additions (up to 4 hours a month)', 'Database optimisation', 'Emergency incident response', 'Quarterly strategy review'],
+                    'meta' => null, 'cta' => 'Request this plan',
+                ],
+            ],
+        ],
     ],
 ];
