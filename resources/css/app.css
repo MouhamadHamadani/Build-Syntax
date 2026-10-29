@@ -364,6 +364,106 @@
     .pcard .btn {
         @apply mt-1.5 w-full;
     }
+
+    /* ------------------------------------------------------------------
+     * About, Portfolio and Contact pages
+     * ------------------------------------------------------------------ */
+
+    /* Fact tile on About */
+    .stat-tile {
+        @apply rounded-[14px] border border-dark-line bg-dark-secondary p-5;
+    }
+    .stat-tile b {
+        @apply block text-[28px] font-extrabold tracking-[-.02em] text-brand-blue-light;
+    }
+    .stat-tile span {
+        @apply block text-[14px] text-dark-muted;
+    }
+
+    /* Body text column on About */
+    .story p {
+        @apply max-w-[62ch] text-[17px] text-dark-muted;
+    }
+    .story p + p {
+        @apply mt-4;
+    }
+
+    /* Portfolio: product demo card and client project card (accent via accent-*) */
+    .demo-card {
+        @apply flex min-w-0 flex-col overflow-hidden rounded-[14px] border border-dark-line bg-dark-secondary transition-[border-color,transform] duration-200 hover:-translate-y-0.5;
+    }
+    .demo-card:hover {
+        border-color: var(--c);
+    }
+    .demo-card-shot {
+        @apply bg-dark-tertiary;
+        border-top: 3px solid var(--c);
+    }
+
+    /* Portfolio: filter chips, search, empty state, stack list */
+    .chip {
+        @apply cursor-pointer rounded-full border border-dark-line bg-dark-secondary px-4 py-[9px] text-[14px] font-medium text-dark-muted;
+    }
+    .chip[aria-pressed='true'] {
+        @apply border-brand-blue-light bg-brand-blue-soft text-dark-accent;
+    }
+    .search-input {
+        @apply w-full max-w-[380px] rounded-[10px] border border-dark-line bg-dark-secondary px-3.5 py-3 text-[15px] font-normal text-dark-accent placeholder:text-dark-muted;
+    }
+    .empty-state {
+        @apply rounded-[14px] border border-dashed border-dark-line bg-dark-secondary p-10;
+    }
+    .stack-chip {
+        @apply rounded-lg border border-dark-line bg-dark-secondary px-3 py-2 font-mono text-[13px] font-medium leading-[normal];
+    }
+
+    /* Contact form (also reusable elsewhere): a field is a label, an optional hint, the control and an error */
+    .form-card {
+        @apply grid gap-4 rounded-[14px] border border-dark-line bg-dark-secondary p-7;
+    }
+    .form-row {
+        @apply grid items-end gap-4 min-[561px]:grid-cols-2;
+    }
+    .field {
+        @apply grid gap-1.5 text-[14px] font-medium;
+    }
+    .field-hint {
+        @apply text-[13px] font-normal text-dark-muted;
+    }
+    .field-error {
+        @apply text-[13px] font-normal text-red-300;
+    }
+    .field-input {
+        @apply w-full rounded-[10px] border border-dark-line bg-dark-primary px-3.5 py-3 text-[16px] font-normal leading-[normal] text-dark-accent placeholder:text-dark-muted;
+    }
+    textarea.field-input {
+        @apply min-h-[150px] resize-y;
+    }
+    .field-input:focus {
+        @apply border-dark-line shadow-none;
+    }
+    .field-input:focus-visible {
+        outline: 2px solid theme('colors.brand-blue.light');
+        outline-offset: 1px;
+    }
+    .field-input[aria-invalid='true'] {
+        @apply border-red-400;
+    }
+    .info-list {
+        @apply grid rounded-[14px] border border-dark-line bg-dark-secondary;
+    }
+    .info-list > div {
+        @apply flex justify-between gap-4 px-5 py-4 text-[15px];
+    }
+    .info-list > div + div {
+        @apply border-t border-dark-line;
+    }
+    .info-list span {
+        @apply text-dark-muted;
+    }
+    .info-list b {
+        @apply text-right font-semibold;
+    }
 }
 
 @layer utilities {

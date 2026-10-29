@@ -1,10 +1,4 @@
 @php
-  $steps = [
-      ['title' => 'Consultation', 'text' => 'We learn how your business runs and what you need the system to do.', 'points' => ['Free 30-minute call', 'Requirements review', 'Written scope and price']],
-      ['title' => 'Development', 'text' => 'We build it and show you progress as it comes together, so nothing is a surprise.', 'points' => ['Regular progress updates', 'Testing before handover', 'Your feedback built in']],
-      ['title' => 'Launch and support', 'text' => 'We put it live, show your team how to use it, and stay reachable afterwards.', 'points' => ['Deployment and testing', 'Training and documentation', 'Ongoing support']],
-  ];
-
   $reasons = [
       ['title' => 'Based in Beirut', 'text' => 'Same time zone, same market, priced in USD.'],
       ['title' => 'Modern, maintained code', 'text' => 'Laravel and Livewire, not a tangle of plugins.'],
@@ -116,20 +110,7 @@
           <p class="eyebrow-section">How we work</p>
           <h2 class="heading mt-3 text-[clamp(28px,4vw,42px)] font-bold">From first call to launch in three steps.</h2>
         </div>
-        <div class="grid gap-7 min-[801px]:grid-cols-3 min-[801px]:gap-0">
-          @foreach ($steps as $step)
-            <div class="step">
-              <p class="font-mono text-[12px] font-medium uppercase leading-[normal] tracking-[.1em] text-brand-blue-light">Step {{ $loop->iteration }}</p>
-              <h3 class="heading my-2.5 text-[22px] font-bold">{{ $step['title'] }}</h3>
-              <p class="text-[15px] text-dark-muted">{{ $step['text'] }}</p>
-              <ul class="arrows mt-3.5 grid list-none gap-1.5 p-0 text-[14px]">
-                @foreach ($step['points'] as $point)
-                  <li>{{ $point }}</li>
-                @endforeach
-              </ul>
-            </div>
-          @endforeach
-        </div>
+        <x-process-steps />
       </div>
     </section>
   </div>
@@ -160,35 +141,12 @@
         <p class="eyebrow-section">Questions</p>
         <h2 class="heading mt-3 text-[clamp(28px,4vw,42px)] font-bold">Before you message us.</h2>
       </div>
-      <div class="max-w-[780px]">
-        @foreach ($faqs as $faq)
-          <details class="faq-item" @if ($loop->first) open @endif>
-            <summary>{{ $faq['q'] }}</summary>
-            <p>{{ $faq['a'] }}</p>
-          </details>
-        @endforeach
-      </div>
+      <x-faq :items="$faqs" />
     </div>
   </section>
 
   {{-- Contact --}}
   <div id="contact" class="wrap scroll-mt-20 pb-[72px]">
-    <div class="contact-card fade-in">
-      <div>
-        <h2 class="heading text-[clamp(28px,4vw,42px)] font-extrabold">Tell us what you sell. We will tell you what fits.</h2>
-        <p class="mt-3.5 max-w-[46ch] opacity-85">Message us on WhatsApp for the quickest answer, or send an email.</p>
-      </div>
-      <div class="grid gap-2.5">
-        <a class="btn btn-wa btn-lg" href="https://wa.me/9613876822" target="_blank" rel="noopener">Chat on WhatsApp</a>
-        <div class="copy-row" x-data="copyButton('+961 3 876 822')">
-          <span>+961 3 876 822</span>
-          <button type="button" @click="copy()" x-text="label">Copy</button>
-        </div>
-        <div class="copy-row" x-data="copyButton('info@build-syntax.com')">
-          <span>info@build-syntax.com</span>
-          <button type="button" @click="copy()" x-text="label">Copy</button>
-        </div>
-      </div>
-    </div>
+    <x-contact-card class="fade-in" />
   </div>
 </div>

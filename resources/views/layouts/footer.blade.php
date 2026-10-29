@@ -5,41 +5,6 @@
     $footerLink = 'transition-colors hover:text-dark-accent';
 @endphp
 <div>
-  {{-- Closing call to action on every page except home and services, which end with their own contact block --}}
-  @unless (request()->routeIs('home', 'services'))
-    <section id="contact" class="py-20 gradient-hero-dark border-y border-brand-blue/30">
-      <div class="container mx-auto px-6 text-center">
-        <div class="max-w-3xl mx-auto fade-in">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark-accent">Ready to Bring Your Vision to Life?</h2>
-          <p class="text-xl mb-8 text-dark-muted">Let's discuss your project and create something amazing together. Get a
-            free consultation and project quote today.</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            @if (!request()->routeIs('contact'))
-              <a href="{{ route('contact') }}"
-                class="bg-brand-blue text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
-                Get Free Consultation
-              </a>
-              <a href="{{ route('services') }}"
-                class="border-2 border-brand-blue text-brand-blue text-lg font-semibold px-8 py-4 rounded-lg hover:bg-brand-blue hover:text-white transition-all duration-200">
-                View Services
-              </a>
-            @else
-              {{-- Already on the contact page: don't self-link — offer the WhatsApp channel instead --}}
-              <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
-                target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 bg-whatsapp hover:bg-[#1ebe57] text-whatsapp-ink text-lg font-semibold px-8 py-4 rounded-lg transition-all duration-200 shadow-lg">
-                <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="{{ $waPath }}" />
-                </svg>
-                Chat on WhatsApp
-              </a>
-            @endif
-          </div>
-        </div>
-      </div>
-    </section>
-  @endunless
-
   <!-- =========== Footer =========== -->
   <footer class="pb-14 pt-10 text-[14px] text-dark-muted">
     <div class="wrap">

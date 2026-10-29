@@ -31,6 +31,7 @@ export default {
                     DEFAULT: '#347dbe',
                     dark: '#357ABD',
                     light: '#4A90E2',
+                    soft: '#1A2A4A',
                 },
                 // LebaSouk POS product accent (matches lebasouk.build-syntax.com --color-accent)
                 'lebasouk': '#e2673f',

@@ -41,11 +41,39 @@ $prices = [
     'care' => ['essential' => '$79', 'basic' => '$150', 'standard' => '$250', 'premium' => '$400'],
 ];
 
+// Timelines and support periods are typed once here: [min weeks, max weeks, support months].
+$time = [
+    'shop_basic' => [4, 6, 1], 'shop_standard' => [7, 10, 2], 'shop_premium' => [10, 14, 3],
+    'web_starter' => [2, 3, 1], 'web_professional' => [3, 6, 2],
+];
+$weeks = fn (string $key) => $time[$key][0] . ' to ' . $time[$key][1] . ' weeks';
+$support = fn (string $key) => $time[$key][2] . ' ' . ($time[$key][2] === 1 ? 'month' : 'months') . ' of support';
+
 $shopNote = ['strong' => 'All prices start from, paid once.', 'text' => 'Payment is 50% to start, 30% on delivery and 20% after training. Other terms on request.'];
 $posNote = ['strong' => 'You pay once it is installed, with no deposit.', 'text' => 'We install it for you and set up your account. Want to try it first? Contact us and we will install the demo for you.'];
 $customIntro = 'Company websites, admin dashboards and management systems, built on Laravel and Livewire and shaped around how your team already works.';
 
 return [
+    // Contact form: label for each value of config/products.php 'project_types'
+    'project_type_labels' => [
+        'website' => 'Custom website',
+        'ecommerce' => 'ShopNex online store',
+        'cartenex' => 'CarteNex digital menu',
+        'appointment' => 'Tymelo booking',
+        'pos' => 'LebaSouk POS',
+        'other' => 'Other or not sure yet',
+    ],
+
+    // Portfolio filter: label for each value of config/products.php 'portfolio_categories', in chip order
+    'portfolio_category_labels' => [
+        'digital_menu' => 'CarteNex',
+        'ecommerce' => 'ShopNex',
+        'appointment' => 'Tymelo',
+        'pos' => 'LebaSouk POS',
+        'web' => 'Custom development',
+        'other' => 'Other',
+    ],
+
     'products' => [
         'cartenex' => [
             'name' => 'CarteNex',
@@ -53,6 +81,7 @@ return [
             'accent' => 'saffron',
             'project_type' => 'cartenex',
             'tagline' => 'Digital menus',
+            'blurb' => 'A QR menu customers open on their phone, in Arabic and English.', 'card_unit' => ' / month',
             'description' => 'A QR menu your customers open on their phone. Change items, prices and photos from your own phone, in Arabic and English, and the menu updates straight away.',
             'features' => [
                 'Download your QR code, ready to print',
@@ -120,6 +149,7 @@ return [
             'accent' => 'emerald',
             'project_type' => 'ecommerce',
             'tagline' => 'Online store',
+            'blurb' => 'A bilingual online store with orders, stock and delivery in one dashboard.', 'card_unit' => null,
             'description' => 'A bilingual online store with orders, stock and delivery in one dashboard. Give customers a proper place to order, instead of selling through DMs.',
             'features' => [
                 'Products with size options',
@@ -141,25 +171,25 @@ return [
                     'name' => 'Basic', 'featured' => false,
                     'price' => $prices['shop']['basic'], 'unit' => null, 'period' => ' one-off', 'billing' => null,
                     'summary' => 'Your store, live and taking orders.',
-                    'description' => 'Products, cart and checkout, orders, admin dashboard, basic SEO. 4 to 6 weeks, 1 month of support.',
+                    'description' => 'Products, cart and checkout, orders, admin dashboard, basic SEO. ' . $weeks('shop_basic') . ', ' . $support('shop_basic') . '.',
                     'features' => ['Products, cart and checkout', 'Orders and admin dashboard', 'Basic SEO'],
-                    'meta' => '4 to 6 weeks · 1 month of support', 'cta' => 'Request this plan',
+                    'weeks' => [$time['shop_basic'][0], $time['shop_basic'][1]], 'meta' => $weeks('shop_basic') . ' · ' . $support('shop_basic'), 'cta' => 'Request this plan',
                 ],
                 [
                     'name' => 'Standard', 'featured' => true,
                     'price' => $prices['shop']['standard'], 'unit' => null, 'period' => ' one-off', 'billing' => null,
                     'summary' => 'Adds the tools that save you time.',
-                    'description' => 'Adds analytics, low-stock alerts, email notifications, reviews, coupons and wishlist. 7 to 10 weeks, 2 months of support.',
+                    'description' => 'Adds analytics, low-stock alerts, email notifications, reviews, coupons and wishlist. ' . $weeks('shop_standard') . ', ' . $support('shop_standard') . '.',
                     'features' => ['Everything in Basic', 'Analytics', 'Low-stock alerts', 'Email notifications', 'Reviews, coupons and wishlist'],
-                    'meta' => '7 to 10 weeks · 2 months of support', 'cta' => 'Request this plan',
+                    'weeks' => [$time['shop_standard'][0], $time['shop_standard'][1]], 'meta' => $weeks('shop_standard') . ' · ' . $support('shop_standard'), 'cta' => 'Request this plan',
                 ],
                 [
                     'name' => 'Premium', 'featured' => false,
                     'price' => $prices['shop']['premium'], 'unit' => null, 'period' => ' one-off', 'billing' => null,
                     'summary' => 'For larger catalogues and teams.',
-                    'description' => 'Adds multi-currency display (USD and LBP), role permissions and priority support. 10 to 14 weeks, 3 months of support.',
+                    'description' => 'Adds multi-currency display (USD and LBP), role permissions and priority support. ' . $weeks('shop_premium') . ', ' . $support('shop_premium') . '.',
                     'features' => ['Everything in Standard', 'Multi-currency display (USD and LBP)', 'Role permissions', 'Priority support'],
-                    'meta' => '10 to 14 weeks · 3 months of support', 'cta' => 'Request this plan',
+                    'weeks' => [$time['shop_premium'][0], $time['shop_premium'][1]], 'meta' => $weeks('shop_premium') . ' · ' . $support('shop_premium'), 'cta' => 'Request this plan',
                 ],
             ],
             'note' => $shopNote['strong'] . ' ' . $shopNote['text'],
@@ -184,6 +214,7 @@ return [
             'accent' => 'tymelo',
             'project_type' => 'appointment',
             'tagline' => 'Appointments',
+            'blurb' => 'Online booking with working hours, reminders and a client list.', 'card_unit' => ' setup',
             'description' => 'Clients pick a free slot and book themselves, with or without an account. You see every booking, client and time off in one admin.',
             'features' => [
                 'A 4-step booking page: service, time, your details, confirm',
@@ -254,6 +285,7 @@ return [
             'accent' => 'terracotta',
             'project_type' => 'pos',
             'tagline' => 'Point of sale',
+            'blurb' => 'A Windows point of sale that works offline, in USD and LBP.', 'card_unit' => null,
             'description' => 'A point of sale that runs on your shop\'s own Windows PC, with no internet needed to sell and no monthly software fee. English screens for now.',
             'features' => [
                 'Product grid with search, categories, and retail, wholesale and VIP prices',
@@ -346,14 +378,14 @@ return [
                     'prefix' => 'From ', 'price' => $prices['web']['starter'], 'unit' => null, 'period' => null, 'billing' => null,
                     'summary' => 'Landing page or brochure website to establish your online presence.',
                     'features' => ['Landing page or brochure website', 'Up to 5 pages', 'Template-based or semi-custom design', 'WhatsApp and contact form integration', 'Basic SEO and Google Analytics', 'Mobile responsive'],
-                    'meta' => '2 to 3 weeks · 1 month of support', 'cta' => 'Request this plan',
+                    'weeks' => [$time['web_starter'][0], $time['web_starter'][1]], 'support_months' => $time['web_starter'][2], 'meta' => $weeks('web_starter') . ' · ' . $support('web_starter'), 'cta' => 'Request this plan',
                 ],
                 [
                     'name' => 'Professional', 'featured' => true,
                     'prefix' => 'From ', 'price' => $prices['web']['professional'], 'unit' => null, 'period' => null, 'billing' => null,
                     'summary' => 'Full business website with a CMS, a blog, advanced SEO and bilingual support.',
                     'features' => ['5 to 20 pages, fully custom design', 'CMS for self-managed content', 'Blog or news module', 'Advanced SEO and schema markup', 'Performance and speed optimisation', 'Arabic and English support'],
-                    'meta' => '3 to 6 weeks · 2 months of support', 'cta' => 'Request this plan',
+                    'weeks' => [$time['web_professional'][0], $time['web_professional'][1]], 'support_months' => $time['web_professional'][2], 'meta' => $weeks('web_professional') . ' · ' . $support('web_professional'), 'cta' => 'Request this plan',
                 ],
                 [
                     'name' => 'Enterprise', 'featured' => false,
@@ -380,6 +412,7 @@ return [
     // Monthly maintenance plans (Services page)
     'maintenance' => [
         'heading' => 'Monthly maintenance',
+        'minimum_months' => 3,
         'intro' => 'Billed monthly, with a minimum 3-month commitment.',
         // Contact form type for hosting and maintenance enquiries
         'project_type' => 'other',

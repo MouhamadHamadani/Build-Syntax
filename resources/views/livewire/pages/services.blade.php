@@ -157,22 +157,6 @@
 
   {{-- Contact --}}
   <div class="wrap py-[72px]">
-    <div class="contact-card">
-      <div>
-        <h2 class="heading text-[clamp(28px,4vw,42px)] font-extrabold">Not sure which one fits?</h2>
-        <p class="mt-3.5 max-w-[46ch] opacity-85">Tell us what you sell. We will tell you what fits, and what it costs.</p>
-      </div>
-      <div class="grid gap-2.5">
-        <a class="btn btn-wa btn-lg" href="https://wa.me/9613876822" target="_blank" rel="noopener">Chat on WhatsApp</a>
-        <div class="copy-row" x-data="copyButton('+961 3 876 822')">
-          <span>+961 3 876 822</span>
-          <button type="button" @click="copy()" x-text="label">Copy</button>
-        </div>
-        <div class="copy-row" x-data="copyButton('info@build-syntax.com')">
-          <span>info@build-syntax.com</span>
-          <button type="button" @click="copy()" x-text="label">Copy</button>
-        </div>
-      </div>
-    </div>
+    <x-contact-card title="Not sure which one fits?" text="Tell us what you sell. We will tell you what fits, and what it costs." />
   </div>
 </div>

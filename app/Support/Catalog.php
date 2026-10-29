@@ -27,6 +27,12 @@ namespace App\Support;
  *  hosting(): heading, intro, tiers[]{name, price, period, features[]}
  *  maintenance(): heading, intro, project_type, plans[]  (Plan shape)
  *  projectTypes(): string[]   the contact form types, config/products.php
+ *  projectTypeLabels(): array<string, string>      label for each project type
+ *  portfolioCategories(): array<string, string>    label for each portfolio category, in chip order
+ *
+ * Plans with a timeline also carry 'weeks' => [min, max]; custom plans carry 'support_months';
+ * maintenance() carries 'minimum_months'; products carry 'blurb' (one line) and 'card_unit'
+ * (suffix for the portfolio card price).
  */
 class Catalog
 {
@@ -64,5 +70,17 @@ class Catalog
     public function projectTypes(): array
     {
         return config('products.project_types');
+    }
+
+    /** Contact form option labels, keyed by project type. */
+    public function projectTypeLabels(): array
+    {
+        return config('catalog.project_type_labels');
+    }
+
+    /** Portfolio filter labels, keyed by category value, in chip order. */
+    public function portfolioCategories(): array
+    {
+        return config('catalog.portfolio_category_labels');
     }
 }
