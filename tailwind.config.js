@@ -10,10 +10,12 @@ export default {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        // Badge and accent class names kept in PHP (see Support/Enquiry.php)
+        './app/Support/*.php',
     ],
 
     // accent-* is built from config/products.php ('accent' key), so Tailwind cannot see it in the views
-    safelist: ['accent-brand', 'accent-saffron', 'accent-emerald', 'accent-tymelo', 'accent-terracotta'],
+    safelist: ['accent-brand', 'accent-saffron', 'accent-emerald', 'accent-tymelo', 'accent-terracotta', 'accent-neutral'],
 
     theme: {
         extend: {
@@ -32,6 +34,8 @@ export default {
                     dark: '#357ABD',
                     light: '#4A90E2',
                     soft: '#1A2A4A',
+                    // Links and small accents on dark surfaces (AA on dark.primary and dark.secondary)
+                    link: '#7FB2EE',
                 },
                 // LebaSouk POS product accent (matches lebasouk.build-syntax.com --color-accent)
                 'lebasouk': '#e2673f',
@@ -56,6 +60,10 @@ export default {
                     muted: '#9CA3AF',
                     border: '#374151',
                     line: '#2C3050',
+                    // Admin panel: sidebar surface, row hover, secondary text
+                    sidebar: '#12122A',
+                    hover: '#1F2038',
+                    soft: '#B4BAC6',
                 }
             },
         },
