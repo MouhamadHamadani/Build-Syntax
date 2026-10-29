@@ -2,16 +2,23 @@
 
 namespace App\Livewire\Pages;
 
+use App\Support\Catalog;
 use Livewire\Component;
 
 class Services extends Component
 {
     public function render()
     {
-        return view('livewire.pages.services')
-            ->layout('layouts.app', [
-                'title' => 'Services & Pricing - Build Syntax',
-                'description' => 'Explore our services with transparent pricing: ShopNex e-commerce platforms, Tymelo appointment booking, POS Pro point of sale systems, and custom websites.'
-            ]);
+        $catalog = app(Catalog::class);
+
+        return view('livewire.pages.services', [
+            'products' => $catalog->products(),
+            'custom' => $catalog->custom(),
+            'hosting' => $catalog->hosting(),
+            'maintenance' => $catalog->maintenance(),
+        ])->layout('layouts.app', [
+            'title' => 'Services and pricing | Build Syntax',
+            'description' => 'Prices for CarteNex digital menus, ShopNex online stores, Tymelo booking, LebaSouk POS, custom websites, hosting and maintenance.',
+        ]);
     }
 }

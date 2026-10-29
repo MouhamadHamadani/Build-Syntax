@@ -1,0 +1,440 @@
+<title>Build Syntax Homepage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap">
+<style>
+/* Layout concept: one studio, four products. Hero pairs the promise with three live-looking product panels
+   (menu, store, booking) so a café owner sees their own world, not a code window. Brand kept: charcoal, #347dbe, Poppins. */
+:root {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #eaeff6;
+  --line: #d7dfeb;
+  --fg: #0d1422;
+  --muted: #55627a;
+  --brand: #2a6aa5;
+  --brand-fg: #ffffff;
+  --brand-soft: #dcebf8;
+  --saffron: #8a6100;
+  --emerald: #047857;
+  --green: #0b7a5a;
+  --terracotta: #b4441f;
+  --wa: #14a44d;
+  --font-body: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --radius: 14px;
+  --lg-light: block; --lg-dark: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f0f23; --surface: #1a1a2e; --surface-2: #16213e; --line: #2c3050;
+    --fg: #f3f4f6; --muted: #9ca3af; --brand: #4a90e2; --brand-fg: #06101c; --brand-soft: #1a2a4a;
+    --saffron: #e5a526; --emerald: #10b981; --green: #1d9e75; --terracotta: #e2673f; --wa: #25d366;
+    --lg-light: none; --lg-dark: block; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f0f23; --surface: #1a1a2e; --surface-2: #16213e; --line: #2c3050;
+  --fg: #f3f4f6; --muted: #9ca3af; --brand: #4a90e2; --brand-fg: #06101c; --brand-soft: #1a2a4a;
+  --saffron: #e5a526; --emerald: #10b981; --green: #1d9e75; --terracotta: #e2673f; --wa: #25d366;
+  --lg-light: none; --lg-dark: block; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.6; margin: 0; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+a { color: inherit; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.12; margin: 0; letter-spacing: -0.02em; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--brand); }
+
+/* header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 19px; }
+.logo img { width: auto; }
+.lg-light { display: var(--lg-light); }
+.lg-dark { display: var(--lg-dark); }
+.logo b { color: var(--brand); font-weight: 700; }
+nav.links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; color: var(--muted); }
+nav.links a { text-decoration: none; padding: 6px 0; }
+nav.links a:hover { color: var(--fg); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: 600 15px/1 var(--font-body); padding: 14px 22px; border-radius: 10px; text-decoration: none; border: 1px solid transparent; cursor: pointer; transition: transform .15s, background .15s; }
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--brand); color: var(--brand-fg); }
+.btn-wa { background: var(--wa); color: #04150a; }
+.btn-ghost { border-color: var(--line); background: var(--surface); color: var(--fg); }
+.btn-sm { padding: 10px 16px; font-size: 14px; }
+@media (max-width: 760px) { nav.links { display: none; } }
+
+/* hero */
+.hero { padding-block: 64px 56px; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(36px, 5.4vw, 62px); font-weight: 800; margin-top: 18px; }
+.hero h1 em { font-style: normal; color: var(--brand); }
+.hero .lead { margin-top: 22px; font-size: 18px; color: var(--muted); max-width: 52ch; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--muted); }
+.facts span::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--brand); margin-right: 8px; vertical-align: middle; }
+
+/* hero showcase: real screens from each product demo, one at a time */
+.showcase { min-width: 0; width: 100%; }
+.stage { display: grid; margin-bottom: 22px; }
+.slide { grid-area: 1 / 1; position: relative; opacity: 0; pointer-events: none; transition: opacity .45s ease; }
+.slide.on { opacity: 1; pointer-events: auto; }
+.win { margin: 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 24px 50px -24px rgba(5, 8, 25, .6); border-top: 3px solid var(--c); }
+.win-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; background: var(--surface-2); border-bottom: 1px solid var(--line); font: 500 11px var(--font-mono); color: var(--muted); }
+.win-bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
+.win-bar span { margin-left: 8px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.win img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; }
+.phone { position: absolute; right: 3%; bottom: -22px; width: 25%; margin: 0; border: 4px solid #0b0b14; border-radius: 20px; overflow: hidden; background: #0b0b14; box-shadow: 0 22px 40px -16px rgba(5, 8, 25, .75); }
+.phone img { display: block; width: 100%; height: auto; }
+.tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.tab { display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; min-width: 0; padding: 0 10px; background: #fff; border: 2px solid transparent; border-radius: 10px; cursor: pointer; opacity: .72; transition: opacity .2s, border-color .2s; }
+.tab:hover { opacity: 1; }
+.tab.on { opacity: 1; border-color: var(--c); }
+.tab img { height: 24px; width: auto; max-width: 100%; }
+.tab b { font: 700 15px/1 var(--font-body); color: #124f4a; }
+.tab b.ty { font-family: "Plus Jakarta Sans", var(--font-body); color: #085041; font-size: 16px; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .hero { padding-block: 40px; } }
+@media (max-width: 560px) { .tabs { grid-template-columns: 1fr 1fr; } .phone { bottom: -14px; } }
+
+/* sections */
+section { padding-block: 72px; }
+.head { max-width: 640px; margin-bottom: 40px; }
+.head h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; margin-top: 12px; }
+.head p { margin-top: 14px; color: var(--muted); font-size: 17px; }
+
+/* products */
+.products { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+.card { grid-column: span 4; position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 14px; min-width: 0; --c: var(--brand); transition: border-color .2s, transform .2s; }
+.card:hover { border-color: var(--c); transform: translateY(-2px); }
+.card.saffron { --c: var(--saffron); } .card.emerald { --c: var(--emerald); } .card.green { --c: var(--green); } .card.terracotta { --c: var(--terracotta); }
+.tag { align-self: flex-start; font: 500 11px/1 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--c); border: 1px solid color-mix(in srgb, var(--c) 50%, transparent); padding: 6px 9px; border-radius: 6px; }
+.card h3 { font-size: 26px; font-weight: 700; }
+.card p { color: var(--muted); }
+.for { font-size: 13.5px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 12px; }
+.for b { color: var(--fg); font-weight: 600; }
+.foot { margin-top: auto; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-top: 6px; }
+.price { font-size: 22px; font-weight: 700; color: var(--c); font-variant-numeric: tabular-nums; }
+.price small { font-size: 13px; font-weight: 500; color: var(--muted); }
+.more { font-size: 14px; font-weight: 600; text-decoration: none; color: var(--fg); border-bottom: 2px solid var(--c); padding-bottom: 2px; }
+.card.wide { grid-column: span 12; flex-direction: row; align-items: center; gap: 32px; background: var(--surface-2); }
+.card.wide .txt { flex: 1; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card.wide .foot { margin: 0; flex-direction: column; align-items: flex-start; }
+.card.single { grid-column: span 12; }
+.card.single p { max-width: 70ch; }
+.card.feature { grid-column: span 12; flex-direction: row; gap: 40px; align-items: stretch; }
+.feature .txt { flex: 1.15; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.ticks { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 15px; color: var(--muted); }
+.ticks li::before { content: "\2713  "; color: var(--c); font-weight: 700; }
+.plans { flex: 1; display: flex; flex-direction: column; gap: 10px; min-width: 0; justify-content: center; }
+.plan { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.plan.mid { border-color: var(--c); }
+.plan b { font-weight: 600; }
+.plan small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; line-height: 1.45; margin-top: 2px; }
+.plan .pr { font-size: 22px; font-weight: 700; color: var(--c); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.plan .pr small { display: inline; font-size: 13px; font-weight: 500; color: var(--muted); }
+.plans .note { font-size: 13.5px; color: var(--muted); padding-top: 4px; }
+.code { font: 400 13px/1.7 var(--font-mono); color: var(--muted); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; flex: 0 1 340px; min-width: 0; overflow-x: auto; white-space: pre; }
+.code .k { color: var(--brand); } .code .s { color: var(--green); }
+@media (max-width: 900px) { .card, .card.single { grid-column: span 12; padding: 22px; } .card.wide, .card.feature { flex-direction: column; align-items: stretch; gap: 24px; } .code { flex-basis: auto; } }
+
+/* process */
+.alt { background: var(--surface-2); border-block: 1px solid var(--line); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; counter-reset: s; }
+.step { padding: 0 28px 0 0; position: relative; min-width: 0; }
+.step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
+.step::before { counter-increment: s; content: "Step " counter(s); font: 500 12px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--brand); }
+.step h3 { font-size: 22px; margin: 10px 0; }
+.step p { color: var(--muted); font-size: 15px; }
+.step ul { margin: 14px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14px; }
+.step li::before { content: "→ "; color: var(--brand); }
+@media (max-width: 800px) { .steps { grid-template-columns: 1fr; gap: 28px; } .step, .step + .step { padding: 0; border: 0; } .step + .step { padding-top: 28px; border-top: 1px solid var(--line); } }
+
+/* why */
+.why { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; align-items: start; }
+.why .head { margin: 0; }
+.why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+.why-list h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+.why-list p { margin-top: 6px; color: var(--muted); font-size: 15px; }
+.why-list div { padding-top: 16px; border-top: 2px solid var(--brand); min-width: 0; }
+@media (max-width: 860px) { .why { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 520px) { .why-list { grid-template-columns: 1fr; } }
+
+/* faq */
+.faq { max-width: 780px; }
+details { border-top: 1px solid var(--line); }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { list-style: none; cursor: pointer; padding: 20px 0; font-size: 18px; font-weight: 600; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font: 400 26px/1 var(--font-mono); color: var(--brand); flex: none; }
+details[open] summary::after { content: "–"; }
+details p { padding: 0 40px 22px 0; color: var(--muted); }
+
+/* contact */
+.contact { background: var(--brand); color: var(--brand-fg); border-radius: 22px; padding: 56px 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+.contact h2 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; }
+.contact p.sub { margin-top: 14px; opacity: .85; max-width: 46ch; }
+.reach { display: grid; gap: 10px; }
+.reach .btn-wa { padding: 18px 22px; font-size: 17px; }
+.copy { display: flex; align-items: center; justify-content: space-between; gap: 12px; background: color-mix(in srgb, var(--brand-fg) 14%, transparent); border: 1px solid color-mix(in srgb, var(--brand-fg) 25%, transparent); border-radius: 10px; padding: 12px 14px; font: 400 14px var(--font-mono); color: inherit; }
+.copy span { min-width: 0; overflow-wrap: anywhere; user-select: all; }
+.copy button { flex: none; font: 600 12px var(--font-body); color: inherit; background: transparent; border: 1px solid currentColor; border-radius: 6px; padding: 6px 10px; cursor: pointer; opacity: .9; }
+@media (max-width: 860px) { .contact { grid-template-columns: 1fr; padding: 36px 22px; } }
+
+footer { padding-block: 40px 56px; color: var(--muted); font-size: 14px; }
+.fgrid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-start; }
+.fgrid nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+.fgrid a { text-decoration: none; }
+.fgrid a:hover { color: var(--fg); }
+.legal { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Build Syntax, home"><img class="lg-dark" src="assets/brand/build-syntax-logo-dark.svg" alt="Build Syntax" style="height:34px"><img class="lg-light" src="assets/brand/build-syntax-logo-light.svg" alt="Build Syntax" style="height:34px"></a>
+    <nav class="links" aria-label="Main">
+      <a href="#products">Products</a>
+      <a href="#process">How we work</a>
+      <a href="#why">Why us</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="#contact">Get a free quote</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Web studio · Beirut, Lebanon</p>
+        <h1>Websites and systems that <em>run your business.</em></h1>
+        <p class="lead">We build online stores, QR menus, booking systems and point of sale for businesses in Lebanon and the region. Arabic and English, with prices listed up front.</p>
+        <div class="cta-row">
+          <a class="btn btn-wa" href="https://wa.me/9613876822" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a class="btn btn-ghost" href="#products">See products and prices</a>
+        </div>
+        <div class="facts">
+          <span>Based in Beirut</span>
+          <span>Arabic + English, RTL ready</span>
+          <span>Prices in USD</span>
+          <span>Free 30-minute consultation</span>
+        </div>
+      </div>
+
+      <div class="showcase" id="showcase"><div class="stage"><div class="slide on" id="slide-0" role="tabpanel" aria-labelledby="tab-0" style="--c:var(--saffron)"><figure class="win"><div class="win-bar"><i></i><i></i><i></i><span>CarteNex · OLEA demo menu</span></div><img src="assets/showcase/cartenex-laptop.webp" alt="CarteNex demo menu for the OLEA café on a laptop" width="1100"></figure><figure class="phone"><img src="assets/showcase/cartenex-phone.webp" alt="CarteNex menu on a phone" width="380"></figure></div><div class="slide" id="slide-1" role="tabpanel" aria-labelledby="tab-1" style="--c:var(--emerald)" aria-hidden="true"><figure class="win"><div class="win-bar"><i></i><i></i><i></i><span>ShopNex · demo store</span></div><img src="assets/showcase/shopnex-laptop.webp" alt="ShopNex demo store, Fashion category" width="1100"></figure><figure class="phone"><img src="assets/showcase/shopnex-phone.webp" alt="ShopNex product page on a phone" width="380"></figure></div><div class="slide" id="slide-2" role="tabpanel" aria-labelledby="tab-2" style="--c:var(--green)" aria-hidden="true"><figure class="win"><div class="win-bar"><i></i><i></i><i></i><span>Tymelo · demo clinic booking</span></div><img src="assets/showcase/tymelo-laptop.webp" alt="Tymelo booking page choosing a time" width="1100"></figure><figure class="phone"><img src="assets/showcase/tymelo-phone.webp" alt="Tymelo booking page on a phone" width="380"></figure></div><div class="slide" id="slide-3" role="tabpanel" aria-labelledby="tab-3" style="--c:var(--terracotta)" aria-hidden="true"><figure class="win"><div class="win-bar"><i></i><i></i><i></i><span>LebaSouk POS · demo data</span></div><img src="assets/showcase/lebasouk-laptop.webp" alt="LebaSouk POS sales screen with items in the cart" width="1100"></figure></div></div><div class="tabs" role="tablist" aria-label="Our products"><button class="tab on" id="tab-0" role="tab" aria-selected="true" aria-controls="slide-0" aria-label="CarteNex" style="--c:var(--saffron)" type="button"><img src="assets/brand/cartenex-lockup.svg" alt=""></button><button class="tab" id="tab-1" role="tab" aria-selected="false" aria-controls="slide-1" aria-label="ShopNex" style="--c:var(--emerald)" type="button"><img src="assets/brand/shopnex-logo.svg" alt=""></button><button class="tab" id="tab-2" role="tab" aria-selected="false" aria-controls="slide-2" aria-label="Tymelo" style="--c:var(--green)" type="button"><img src="assets/brand/tymelo-mark.svg" alt="" style="height:24px"><b class="ty">Tymelo</b></button><button class="tab" id="tab-3" role="tab" aria-selected="false" aria-controls="slide-3" aria-label="LebaSouk" style="--c:var(--terracotta)" type="button"><img src="assets/brand/lebasouk-mark.svg" alt="" style="height:26px"><b>LebaSouk</b></button></div></div>
+    </div>
+  </div>
+
+  <section id="products" class="wrap">
+    <div class="head">
+      <p class="eyebrow">What we build</p>
+      <h2>Pick the system that fits your business.</h2>
+      <p>Each product is ready to install and priced openly. If none fits, we build it custom.</p>
+    </div>
+    <div class="products">
+      <article class="card saffron feature">
+        <div class="txt">
+          <span class="tag">Digital menus</span>
+          <h3>CarteNex</h3>
+          <p>A QR menu your customers open on their phone. Change items, prices and photos from your own phone, in Arabic and English, and the menu updates straight away.</p>
+          <ul class="ticks">
+            <li>Download your QR code, ready to print</li>
+            <li>Categories, photos, dietary tags and size options with their own prices</li>
+            <li>Search and category filters for your guests</li>
+            <li>Mark items sold out or featured with one tap</li>
+            <li>Arabic and English menu, right-to-left, with a language toggle</li>
+          </ul>
+          <p class="for"><b>For:</b> cafés, restaurants, clinics and services. <b>14-day free trial, no card.</b></p>
+          <div class="foot"><span class="price">From $19<small> / month</small></span><a class="more" href="https://cartenex.build-syntax.com/olea" target="_blank" rel="noopener">See a demo menu</a></div>
+        </div>
+        <div class="plans" aria-label="CarteNex plans">
+          <div class="plan"><div><b>Basic</b><small>50 items, 1 staff account</small></div><span class="pr">$19<small>/mo</small></span></div>
+          <div class="plan mid"><div><b>Pro</b><small>300 items, 5 staff accounts, your own accent colour, no “Powered by” badge, view analytics</small></div><span class="pr">$49<small>/mo</small></span></div>
+          <div class="plan"><div><b>Premium</b><small>Everything in Pro, with unlimited items and staff</small></div><span class="pr">$99<small>/mo</small></span></div>
+          <p class="note">Pay yearly and get 2 months free: $190, $490 or $990 a year.</p>
+        </div>
+      </article>
+      <article class="card emerald feature">
+        <div class="txt">
+          <span class="tag">Online store</span>
+          <h3>ShopNex</h3>
+          <p>A bilingual online store with orders, stock and delivery in one dashboard. Give customers a proper place to order, instead of selling through DMs.</p>
+          <ul class="ticks">
+            <li>Products with size options</li>
+            <li>Stock goes down when an order comes in and back up when it is cancelled or returned</li>
+            <li>Orders dashboard with a returns workflow</li>
+            <li>Guest checkout, with pay on delivery or pickup</li>
+            <li>Delivery zones and fees you set, with free shipping above an amount you choose</li>
+            <li>Arabic and English, right-to-left</li>
+          </ul>
+          <p class="for"><b>For:</b> boutiques, food brands, retailers. Online card payments are not available yet.</p>
+          <div class="foot"><span class="price">From $1,200<small> one-off</small></span><a class="more" href="https://shopnex.build-syntax.com" target="_blank" rel="noopener">See the demo store</a></div>
+        </div>
+        <div class="plans" aria-label="ShopNex packages">
+          <div class="plan"><div><b>Basic</b><small>Products, cart and checkout, orders, admin dashboard, basic SEO. 4 to 6 weeks, 1 month of support.</small></div><span class="pr">$1,200</span></div>
+          <div class="plan mid"><div><b>Standard</b><small>Adds analytics, low-stock alerts, email notifications, reviews, coupons and wishlist. 7 to 10 weeks, 2 months of support.</small></div><span class="pr">$2,000</span></div>
+          <div class="plan"><div><b>Premium</b><small>Adds multi-currency display (USD and LBP), role permissions and priority support. 10 to 14 weeks, 3 months of support.</small></div><span class="pr">$2,200</span></div>
+          <p class="note">All prices start from, paid once. Payment is 50% to start, 30% on delivery and 20% after training. Other terms on request.</p>
+        </div>
+      </article>
+      <article class="card green feature">
+        <div class="txt">
+          <span class="tag">Appointments</span>
+          <h3>Tymelo</h3>
+          <p>Clients pick a free slot and book themselves, with or without an account. You see every booking, client and time off in one admin.</p>
+          <ul class="ticks">
+            <li>A 4-step booking page: service, time, your details, confirm</li>
+            <li>Working hours, breaks, days off and closures</li>
+            <li>Email once you confirm a booking, and a reminder 24 hours before</li>
+            <li>Clients cancel or reschedule within a window you set</li>
+            <li>A client list, with WhatsApp buttons to message them</li>
+            <li>Arabic and English, right-to-left</li>
+          </ul>
+          <p class="for"><b>For:</b> clinics, salons, studios. The demo is a sample skin clinic. Payments and deposits are recorded by you (Whish, OMT or cash).</p>
+          <div class="foot"><span class="price">From $349<small> setup + $35 / month</small></span><a class="more" href="https://tymelo.build-syntax.com/book-guest" target="_blank" rel="noopener">Try the booking page</a></div>
+        </div>
+        <div class="plans" aria-label="Tymelo plans">
+          <div class="plan"><div><b>Starter</b><small>Install, branding, hosting, backups and SSL included. Unlimited services, 1 staff calendar, guest booking, email confirmations and reminders, WhatsApp buttons. 30-minute handover, 72-hour support.</small></div><span class="pr">$349<small> + $35/mo</small></span></div>
+          <div class="plan mid"><div><b>Business</b><small>Everything in Starter, plus approval mode, waitlist, intake forms, deposit tracking (unpaid holds release after 2 hours), a booking widget for your site, custom domain, client notes and tags, no-show heatmap, performance dashboard, CSV export. 1-hour onboarding, 24-hour support.</small></div><span class="pr">$749<small> + $69/mo</small></span></div>
+          <p class="note">Setup is paid once, then monthly. Pay yearly and get 2 months free: $350 or $690 a year. Extra staff calendars are $10 a month each. Larger setups get a custom quote.</p>
+        </div>
+      </article>
+      <article class="card terracotta feature">
+        <div class="txt">
+          <span class="tag">Point of sale</span>
+          <h3>LebaSouk POS</h3>
+          <p>A point of sale that runs on your shop's own Windows PC, with no internet needed to sell and no monthly software fee. English screens for now.</p>
+          <ul class="ticks">
+            <li>Product grid with search, categories, and retail, wholesale and VIP prices</li>
+            <li>Hold a sale and recall it later</li>
+            <li>Prices in USD, with LBP worked out from the rate you set</li>
+            <li>Pay one sale part in USD and part in LBP, with change in either</li>
+            <li>Stock counts, stock movements and manual adjustments</li>
+            <li>Open and close shifts with USD and LBP cash counts</li>
+            <li>Thermal receipts and A4 invoices, printed through Windows</li>
+            <li>Daily sales, stock, expense and profit reports</li>
+          </ul>
+          <p class="for"><b>For:</b> shops, minimarkets, food businesses. Runs on one Windows PC per shop for now.</p>
+          <div class="foot"><span class="price">From $600<small> paid once, no deposit</small></span><a class="more" href="https://lebasouk.build-syntax.com/pricing" target="_blank" rel="noopener">See pricing</a></div>
+        </div>
+        <div class="plans" aria-label="LebaSouk POS plans">
+          <div class="plan"><div><b>Starter</b><small>1 user with Manager and Cashier roles, expenses and stock movements.</small></div><span class="pr">$600</span></div>
+          <div class="plan mid"><div><b>Standard</b><small>3 users and four roles. Adds returns with manager approval, suppliers and purchase orders, and reports by product, stock level and profit and loss.</small></div><span class="pr">$850</span></div>
+          <div class="plan"><div><b>Premium</b><small>Unlimited users. Contact us for a quote.</small></div><span class="pr"><small>Contact us</small></span></div>
+          <p class="note">You pay once it is installed, with no deposit. We install it for you and set up your account. Want to try it first? Contact us and we will install the demo for you.</p>
+        </div>
+      </article>
+      <article class="card wide">
+        <div class="txt">
+          <span class="tag">Custom development</span>
+          <h3>Something that does not exist yet?</h3>
+          <p>Company websites, admin dashboards and management systems, built on Laravel and Livewire and shaped around how your team already works.</p>
+          <div class="foot"><span class="price">From $800</span><a class="more" href="#contact">Describe your project</a></div>
+        </div>
+<pre class="code"><span class="k">Stack</span>
+Laravel
+Livewire
+Tailwind CSS
+Alpine.js
+<span class="s">Arabic + English, RTL</span></pre>
+      </article>
+    </div>
+  </section>
+
+  <div class="alt" id="process">
+    <section class="wrap">
+      <div class="head">
+        <p class="eyebrow">How we work</p>
+        <h2>From first call to launch in three steps.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>Consultation</h3><p>We learn how your business runs and what you need the system to do.</p><ul><li>Free 30-minute call</li><li>Requirements review</li><li>Written scope and price</li></ul></div>
+        <div class="step"><h3>Development</h3><p>We build it and show you progress as it comes together, so nothing is a surprise.</p><ul><li>Regular progress updates</li><li>Testing before handover</li><li>Your feedback built in</li></ul></div>
+        <div class="step"><h3>Launch and support</h3><p>We put it live, show your team how to use it, and stay reachable afterwards.</p><ul><li>Deployment and testing</li><li>Training and documentation</li><li>Ongoing support</li></ul></div>
+      </div>
+    </section>
+  </div>
+
+  <section id="why" class="wrap">
+    <div class="why">
+      <div class="head">
+        <p class="eyebrow">Why Build Syntax</p>
+        <h2>A local studio you can reach on WhatsApp.</h2>
+        <p>No offshore delays and no surprise invoices.</p>
+      </div>
+      <div class="why-list">
+        <div><h3>Based in Beirut</h3><p>Same time zone, same market, priced in USD.</p></div>
+        <div><h3>Modern, maintained code</h3><p>Laravel and Livewire, not a tangle of plugins.</p></div>
+        <div><h3>Arabic and English</h3><p>Menus, stores and booking pages work in Arabic, right-to-left.</p></div>
+        <div><h3>Prices you can see</h3><p>Every product lists what it costs before you call.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="wrap">
+    <div class="head"><p class="eyebrow">Questions</p><h2>Before you message us.</h2></div>
+    <div class="faq">
+      <details open><summary>What happens in the free consultation?</summary><p>A 30-minute video or in-person call. You leave with a clear scope and budget, whether or not you decide to work with us.</p></details>
+      <details><summary>Do you work with businesses outside Beirut?</summary><p>Yes. We build for businesses across Lebanon and the region, and most of the work happens online.</p></details>
+      <details><summary>Will my site or menu work in Arabic?</summary><p>Yes for menus, stores, booking pages and custom websites: CarteNex, ShopNex, Tymelo and our custom work support Arabic with right-to-left layouts. The LebaSouk POS screens are English for now.</p></details>
+      <details><summary>How do payments work?</summary><p>CarteNex is a monthly subscription. LebaSouk POS has no deposit and is paid once installed. Custom projects are billed in stages, which we agree in writing before we start.</p></details>
+    </div>
+  </section>
+
+  <div class="wrap" id="contact" style="padding-bottom:72px">
+    <div class="contact">
+      <div>
+        <h2>Tell us what you sell. We will tell you what fits.</h2>
+        <p class="sub">Message us on WhatsApp for the quickest answer, or send an email.</p>
+      </div>
+      <div class="reach">
+        <a class="btn btn-wa" href="https://wa.me/9613876822" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <div class="copy"><span>+961 3 876 822</span><button type="button" data-copy="+961 3 876 822">Copy</button></div>
+        <div class="copy"><span>info@build-syntax.com</span><button type="button" data-copy="info@build-syntax.com">Copy</button></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="logo"><img class="lg-dark" src="assets/brand/build-syntax-logo-dark.svg" alt="Build Syntax" style="height:28px"><img class="lg-light" src="assets/brand/build-syntax-logo-light.svg" alt="Build Syntax" style="height:28px"><span style="font-size:14px;font-weight:500;color:var(--muted)">Your Vision, Our Code.</span></div>
+      <nav aria-label="Footer"><a href="#products">Products</a><a href="#process">How we work</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+    </div>
+    <p class="legal">© 2026 Build Syntax. Beirut, Lebanon.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('#showcase .tab'));
+  var slides = Array.prototype.slice.call(document.querySelectorAll('#showcase .slide'));
+  var cur = 0, timer = null;
+  function show(n) {
+    cur = n;
+    tabs.forEach(function (t, i) { t.classList.toggle('on', i === n); t.setAttribute('aria-selected', i === n ? 'true' : 'false'); });
+    slides.forEach(function (sl, i) { sl.classList.toggle('on', i === n); if (i === n) sl.removeAttribute('aria-hidden'); else sl.setAttribute('aria-hidden', 'true'); });
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { if (timer) { clearInterval(timer); timer = null; } show(i); });
+  });
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) timer = setInterval(function () { show((cur + 1) % slides.length); }, 5000);
+})();
+document.querySelectorAll('[data-copy]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var t = b.getAttribute('data-copy');
+    var done = function () { b.textContent = 'Copied'; setTimeout(function () { b.textContent = 'Copy'; }, 1500); };
+    try { navigator.clipboard.writeText(t).then(done, function () { b.textContent = 'Select text'; }); }
+    catch (e) { b.textContent = 'Select text'; }
+  });
+});
+</script>

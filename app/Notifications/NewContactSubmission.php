@@ -28,7 +28,7 @@ class NewContactSubmission extends Notification implements ShouldQueue
             'ecommerce'   => 'ShopNex (E-Commerce)',
             'cartenex'    => 'CarteNex (Digital Menu)',
             'appointment' => 'Tymelo (Appointment Booking)',
-            'pos'         => 'POS Pro (Point of Sale)',
+            'pos'         => 'LebaSouk POS (Point of Sale)',
             'other'       => 'Other',
         ];
 

@@ -46,7 +46,7 @@
         </div>
 
         <div class="footer">
-            <p>You're receiving this because you signed up at <strong>buildsyntax.dev</strong>.</p>
+            <p>You're receiving this because you signed up at <strong>build-syntax.com</strong>.</p>
             <p>Build Syntax &mdash; Beirut, Lebanon</p>
         </div>
     </div>

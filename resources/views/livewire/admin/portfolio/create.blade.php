@@ -26,7 +26,7 @@
                     <option value="">Select category</option>
                     <option value="web">Web Development</option>
                     <option value="ecommerce">ShopNex (E-Commerce)</option>
-                    <option value="pos">POS Pro (Point of Sale)</option>
+                    <option value="pos">LebaSouk POS (Point of Sale)</option>
                     <option value="other">Other</option>
                 </select>
                 @error('category') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror

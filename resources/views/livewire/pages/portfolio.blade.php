@@ -1,269 +1,186 @@
-<div>
-    {{-- Hero Section --}}
-    <section class="gradient-hero-dark text-white pt-32 pb-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in text-brand-blue">Our Portfolio</h1>
-            <p class="text-xl opacity-90 max-w-3xl mx-auto fade-in">
-                Discover the projects we've built for our clients. Each project represents our commitment to quality, innovation, and client satisfaction.
-            </p>
-        </div>
-    </section>
+<div class="leading-[1.6]">
+  <x-page-hero eyebrow="Portfolio" title="What we have built."
+    lead="Four products we built and run ourselves, each with a live demo you can open. Client projects appear below as they launch." />
 
-    {{-- Filters Section --}}
-    @php
-        $categoryLabels = [
-            'all'       => 'All Projects',
-            'ecommerce' => 'ShopNex (E-Commerce)',
-            'digital_menu' => 'CarteNex (Digital Menu)',
-            'appointment' => 'Tymelo (Appointment Booking)',
-            'web'       => 'Web Development',
-            'pos'       => 'POS Pro',
-            'other'     => 'Other',
-        ];
-    @endphp
-    <section class="py-12 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            {{-- Category Filters --}}
-            <div class="flex flex-wrap justify-center gap-4 mb-8">
-                @foreach($categories as $cat)
-                <button
-                    type="button"
-                    wire:click="filterByCategory('{{ $cat }}')"
-                    wire:loading.attr="disabled"
-                    wire:loading.class="opacity-60 cursor-wait"
-                    wire:target="filterByCategory,search"
-                    class="px-6 py-2 rounded-lg font-medium transition-all duration-200
-                        {{ $category === $cat ? 'bg-brand-blue text-white' : 'bg-dark-tertiary text-dark-accent hover:bg-dark-primary' }}">
-                    {{ $categoryLabels[$cat] ?? ucfirst($cat) }}
-                </button>
-                @endforeach
+  {{-- Built by us: one card per product, from the Catalog --}}
+  <section class="wrap py-[72px]">
+    <h2 class="sr-only">Built by us</h2>
+    <div class="grid gap-4 min-[761px]:grid-cols-2">
+      @foreach ($products as $product)
+        @php($shot = $product['showcase']['laptop'])
+        <article class="demo-card accent-{{ $product['accent'] }}">
+          <div class="demo-card-shot">
+            <img src="{{ asset('images/showcase/' . $shot['file']) }}" alt="{{ $product['name'] }} demo screen"
+              width="{{ $shot['width'] }}" height="{{ $shot['height'] }}" loading="lazy" decoding="async"
+              class="block aspect-[16/10] h-auto w-full object-cover object-left-top">
+          </div>
+          <div class="flex flex-1 flex-col gap-2.5 p-[22px]">
+            <h3 class="heading text-[22px] font-bold">{{ $product['name'] }}</h3>
+            <p class="text-[15px] text-dark-muted">{{ $product['blurb'] }}</p>
+            <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-2.5">
+              <span class="product-price">From {{ $product['price']['from'] }}{{ $product['card_unit'] }}</span>
+              <a class="btn btn-ghost btn-sm" href="{{ $product['demo']['url'] }}" target="_blank" rel="noopener">Open the demo<span class="sr-only"> for {{ $product['name'] }} (opens in a new tab)</span></a>
             </div>
-
-            {{-- Search Bar with inline loading spinner --}}
-            <div class="max-w-md mx-auto relative">
-                <input
-                    type="text"
-                    wire:model.live.debounce.300ms="search"
-                    placeholder="Search projects..."
-                    class="w-full px-4 py-3 pr-10 bg-dark-tertiary border border-dark-border rounded-lg text-dark-accent placeholder-dark-muted focus:ring-2 focus:ring-brand-blue focus:border-transparent">
-                <div wire:loading wire:target="search,filterByCategory"
-                     class="absolute right-3 top-1/2 -translate-y-1/2 text-brand-blue">
-                    <svg class="animate-spin w-5 h-5" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Projects Grid --}}
-    <section class="py-20 bg-dark-tertiary">
-        <div class="container mx-auto px-6"
-             wire:loading.class="opacity-50 transition-opacity"
-             wire:target="filterByCategory,search">
-            @if($projects->count() > 0)
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach($projects as $project)
-                    <div class="card-dark rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 fade-in"
-                         data-category="{{ $project->category }}">
-                        {{-- Project Image --}}
-                        <div class="h-48 bg-gradient-to-br from-brand-blue to-blue-600 relative overflow-hidden">
-                            @if($project->image_url)
-                                <img src="{{ $project->image_url }}"
-                                     alt="{{ $project->title }}"
-                                     class="w-full h-full object-cover">
-                            @else
-                                <div class="flex items-center justify-center h-full">
-                                    <svg class="w-24 h-24 text-white opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                                    </svg>
-                                </div>
-                            @endif
-                            @if($project->featured)
-                                <div class="absolute top-4 right-4 bg-yellow-500 text-yellow-900 px-3 py-1 rounded-full text-xs font-bold">
-                                    Featured
-                                </div>
-                            @endif
-                        </div>
-
-                        {{-- Project Info --}}
-                        <div class="p-6">
-                            <div class="mb-2">
-                                <span class="text-brand-blue text-sm font-medium">{{ $categoryLabels[$project->category] ?? ucfirst($project->category) }}</span>
-                            </div>
-                            <h3 class="text-xl font-bold text-dark-accent mb-3">{{ $project->title }}</h3>
-                            <p class="text-dark-muted mb-4 line-clamp-3">
-                                {{ $project->description }}
-                            </p>
-                            
-                            {{-- Technologies --}}
-                            @if($project->technologies)
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                @foreach($project->technologies as $tech)
-                                    <x-tech-icon :tech="$tech" variant="chip" />
-                                @endforeach
-                            </div>
-                            @endif
-
-                            {{-- Actions --}}
-                            <div class="flex justify-between items-center">
-                                <button 
-                                    wire:click="viewProject({{ $project->id }})"
-                                    class="text-brand-blue font-semibold hover:underline">
-                                    View Details →
-                                </button>
-                                @if($project->project_url)
-                                <a href="{{ $project->project_url }}"
-                                   target="_blank"
-                                   aria-label="Visit live site"
-                                   class="text-gray-400 hover:text-brand-blue transition-colors">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                </a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-
-                {{-- Pagination --}}
-                <div class="mt-12">
-                    {{ $projects->links() }}
-                </div>
-            @else
-                {{-- Friendly empty state --}}
-                <div class="max-w-xl mx-auto text-center py-16 fade-in">
-                    <div class="bg-brand-blue/10 text-brand-blue w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                        </svg>
-                    </div>
-                    @if ($search || $category !== 'all')
-                        <h3 class="text-2xl font-bold text-dark-accent mb-3">No projects match those filters</h3>
-                        <p class="text-dark-muted mb-8 leading-relaxed">
-                            Try clearing the search or picking a different category &mdash; or talk to us directly
-                            about a project we haven't built yet.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                            <button type="button" wire:click="$set('search', ''); $set('category', 'all')"
-                                    class="border-2 border-brand-blue text-brand-blue font-semibold px-6 py-3 rounded-lg
-                                           hover:bg-brand-blue hover:text-white transition-all duration-200">
-                                Clear filters
-                            </button>
-                            <a href="{{ route('contact') }}"
-                               class="bg-brand-blue text-white font-semibold px-6 py-3 rounded-lg
-                                      hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
-                                Start a Project
-                            </a>
-                        </div>
-                    @else
-                        <h3 class="text-2xl font-bold text-dark-accent mb-3">Portfolio coming soon</h3>
-                        <p class="text-dark-muted mb-8 leading-relaxed">
-                            We're a new agency &mdash; case studies are being added as we launch our first clients.
-                            Want to be one of them? Get in touch and we'll walk you through similar work in progress.
-                        </p>
-                        <a href="{{ route('contact') }}"
-                           class="inline-block bg-brand-blue text-white font-semibold px-8 py-4 rounded-lg
-                                  hover:bg-brand-blue-dark transition-all duration-200 shadow-lg">
-                            Become a Founding Client
-                        </a>
-                    @endif
-                </div>
-            @endif
-        </div>
-    </section>
-
-    {{-- Technologies We Use --}}
-    <section class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold text-dark-accent mb-4">Technologies We Use</h2>
-                <p class="text-dark-muted text-lg max-w-2xl mx-auto">We leverage modern technologies to build robust, scalable solutions.</p>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
-                <x-tech-icon tech="PHP" variant="card" />
-                <x-tech-icon tech="Laravel" variant="card" />
-                <x-tech-icon tech="Livewire" variant="card" />
-                <x-tech-icon tech="Tailwind" variant="card" />
-                <x-tech-icon tech="Alpine.js" variant="card" />
-                <x-tech-icon tech="MySQL" variant="card" />
-            </div>
-        </div>
-    </section>
-
-    {{-- Project Modal --}}
-    @if($selectedProject)
-    <div x-data
-         x-cloak
-         class="fixed inset-0 z-50 overflow-y-auto"
-         @keydown.escape.window="$wire.closeModal()">
-        {{-- Backdrop --}}
-        <div class="fixed inset-0 bg-black bg-opacity-75 transition-opacity"
-             @click="$wire.closeModal()"></div>
-
-        {{-- Modal --}}
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="relative bg-dark-secondary rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-xl"
-                 role="dialog" aria-modal="true" aria-label="Project details">
-                {{-- Close Button --}}
-                <button @click="$wire.closeModal()"
-                        aria-label="Close project details"
-                        class="absolute top-4 right-4 text-dark-muted hover:text-white z-10">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-
-                {{-- Modal Content --}}
-                <div class="p-8">
-                    @if($selectedProject->image_url)
-                    <div class="h-64 bg-gradient-to-br from-brand-blue to-blue-600 rounded-lg mb-6">
-                        <img src="{{ $selectedProject->image_url }}"
-                             alt="{{ $selectedProject->title }}"
-                             class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    @endif
-
-                    @if($selectedProject->featured)
-                    <div class="inline-block bg-yellow-500 text-yellow-900 px-3 py-1 rounded-full text-sm font-bold mb-4">
-                        ⭐ Featured Project
-                    </div>
-                    @endif
-
-                    <h2 class="text-3xl font-bold text-dark-accent mb-2">{{ $selectedProject->title }}</h2>
-                    <p class="text-brand-blue mb-6">{{ $categoryLabels[$selectedProject->category] ?? ucfirst($selectedProject->category) }}</p>
-
-                    <div class="prose prose-invert max-w-none mb-6">
-                        <p class="text-dark-muted">{{ $selectedProject->description }}</p>
-                    </div>
-
-                    @if($selectedProject->technologies)
-                    <div class="mb-6">
-                        <h3 class="text-lg font-bold text-dark-accent mb-3">Technologies Used</h3>
-                        <div class="flex flex-wrap gap-2">
-                            @foreach($selectedProject->technologies as $tech)
-                                <x-tech-icon :tech="$tech" variant="chip" />
-                            @endforeach
-                        </div>
-                    </div>
-                    @endif
-
-                    @if($selectedProject->project_url)
-                    <div>
-                        <a href="{{ $selectedProject->project_url }}" 
-                           target="_blank"
-                           class="bg-brand-blue text-white px-6 py-3 rounded-lg hover:bg-brand-blue-dark transition-all inline-block">
-                            Visit Live Site →
-                        </a>
-                    </div>
-                    @endif
-                </div>
-            </div>
-        </div>
+          </div>
+        </article>
+      @endforeach
     </div>
-    @endif
+  </section>
+
+  {{-- Client projects: published rows from the admin, with the category filter, search and detail modal --}}
+  <section id="clients" class="wrap py-[72px]">
+    <x-section-head eyebrow="Client projects" title="Delivered for clients." />
+
+    <div class="mb-5 flex flex-wrap gap-2" role="group" aria-label="Filter projects">
+      <button type="button" class="chip" aria-pressed="{{ $category === 'all' ? 'true' : 'false' }}"
+        wire:click="filterByCategory('all')" wire:loading.attr="disabled" wire:target="filterByCategory">All projects</button>
+      @foreach ($categoryLabels as $value => $label)
+        <button type="button" class="chip" aria-pressed="{{ $category === $value ? 'true' : 'false' }}"
+          wire:click="filterByCategory('{{ $value }}')" wire:loading.attr="disabled" wire:target="filterByCategory">{{ $label }}</button>
+      @endforeach
+    </div>
+
+    <div class="relative mb-6 max-w-[380px]">
+      <input type="search" wire:model.live.debounce.300ms="search" placeholder="Search projects" aria-label="Search projects"
+        class="search-input pr-10">
+      <div wire:loading wire:target="search,filterByCategory" class="absolute right-3 top-1/2 -translate-y-1/2 text-brand-blue-light" aria-hidden="true">
+        <svg class="h-5 w-5 animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <div wire:loading.class="opacity-50 transition-opacity" wire:target="filterByCategory,search">
+      @if ($projects->count() > 0)
+        <div class="grid gap-4 min-[761px]:grid-cols-2 min-[1101px]:grid-cols-3">
+          @foreach ($projects as $project)
+            <article class="demo-card accent-brand" wire:key="project-{{ $project->id }}" data-category="{{ $project->category }}">
+              <div class="demo-card-shot">
+                @if ($project->image_url)
+                  <img src="{{ $project->image_url }}" alt="{{ $project->title }}" width="1100" height="688" loading="lazy" decoding="async"
+                    class="block aspect-[16/10] h-auto w-full object-cover object-left-top">
+                @else
+                  <div class="flex aspect-[16/10] items-center justify-center text-dark-muted" aria-hidden="true">
+                    <svg class="h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                  </div>
+                @endif
+              </div>
+              <div class="flex flex-1 flex-col gap-2.5 p-[22px]">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="product-tag">{{ $categoryLabels[$project->category] ?? $project->category }}</span>
+                  @if ($project->featured)
+                    <span class="product-tag">Featured</span>
+                  @endif
+                </div>
+                <h3 class="heading text-[22px] font-bold">{{ $project->title }}</h3>
+                <p class="line-clamp-3 text-[15px] text-dark-muted">{{ $project->description }}</p>
+                @if ($project->technologies)
+                  <div class="flex flex-wrap gap-2">
+                    @foreach ($project->technologies as $tech)
+                      <x-tech-icon :tech="$tech" variant="chip" />
+                    @endforeach
+                  </div>
+                @endif
+                <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-2.5">
+                  <button type="button" wire:click="viewProject({{ $project->id }})" class="btn btn-ghost btn-sm">View details<span class="sr-only"> of {{ $project->title }}</span></button>
+                  @if ($project->project_url)
+                    <a href="{{ $project->project_url }}" target="_blank" rel="noopener" class="product-more">Visit live site<span class="sr-only"> (opens in a new tab)</span></a>
+                  @endif
+                </div>
+              </div>
+            </article>
+          @endforeach
+        </div>
+
+        <div class="mt-10">
+          {{ $projects->links('pagination.site', ['noun' => 'projects', 'scrollTo' => 'clients']) }}
+        </div>
+      @elseif ($search || $category !== 'all')
+        <div class="empty-state">
+          <h3 class="heading text-[22px] font-bold">No projects match those filters</h3>
+          <p class="mt-2 max-w-[60ch] text-dark-muted">Try clearing the search or picking a different category, or talk to us directly about a project we have not built yet.</p>
+          <div class="mt-[18px] flex flex-wrap gap-3">
+            <button type="button" wire:click="clearFilters" class="btn btn-ghost">Clear filters</button>
+            <a class="btn btn-brand" href="{{ route('contact') }}">Start a project</a>
+          </div>
+        </div>
+      @else
+        <div class="empty-state">
+          <h3 class="heading text-[22px] font-bold">Client case studies are on the way.</h3>
+          <p class="mt-2 max-w-[60ch] text-dark-muted">We are adding projects here as they launch. Want yours to be one of the first? Tell us what you need and we will show you the closest product demo.</p>
+          <a class="btn btn-brand mt-[18px]" href="{{ route('contact') }}">Start a project</a>
+        </div>
+      @endif
+    </div>
+  </section>
+
+  {{-- Stack --}}
+  <section class="band py-[72px]">
+    <div class="wrap">
+      <x-section-head eyebrow="Stack" title="What we build with." />
+      <ul class="m-0 flex list-none flex-wrap gap-2.5 p-0">
+        @foreach (['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js', 'MySQL'] as $tool)
+          <li class="stack-chip">{{ $tool }}</li>
+        @endforeach
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap py-[72px]">
+    <x-contact-card />
+  </div>
+
+  {{-- Project detail modal: focus moves in on open and returns to the button that opened it, Escape closes,
+       the page behind is inert and cannot scroll. --}}
+  @if ($selectedProject)
+    <div x-data x-trap.noscroll.inert="true" x-cloak class="fixed inset-0 z-50 overflow-y-auto" @keydown.escape.window="$wire.closeModal()">
+      <div class="fixed inset-0 bg-black/75" @click="$wire.closeModal()" aria-hidden="true"></div>
+
+      <div class="flex min-h-screen items-center justify-center p-4">
+        <div class="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[14px] border border-dark-line bg-dark-secondary shadow-xl"
+          role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+          <button type="button" @click="$wire.closeModal()" aria-label="Close project details"
+            class="absolute right-4 top-4 z-10 rounded-full bg-dark-primary/80 p-1.5 text-dark-accent transition-colors hover:bg-dark-primary">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <div class="p-8">
+            @if ($selectedProject->image_url)
+              <img src="{{ $selectedProject->image_url }}" alt="{{ $selectedProject->title }}" width="1100" height="688"
+                class="mb-6 aspect-[16/10] h-auto w-full rounded-xl object-cover object-left-top">
+            @endif
+
+            <div class="accent-brand mb-3 flex flex-wrap items-center gap-2">
+              <span class="product-tag">{{ $categoryLabels[$selectedProject->category] ?? $selectedProject->category }}</span>
+              @if ($selectedProject->featured)
+                <span class="product-tag">Featured</span>
+              @endif
+            </div>
+            <h2 id="project-modal-title" class="heading mb-4 pr-8 text-[clamp(26px,4vw,34px)] font-bold">{{ $selectedProject->title }}</h2>
+            <p class="mb-6 max-w-[70ch] text-[17px] text-dark-muted">{{ $selectedProject->description }}</p>
+
+            @if ($selectedProject->technologies)
+              <div class="mb-6">
+                <h3 class="heading mb-3 text-[18px] font-semibold">Technologies used</h3>
+                <div class="flex flex-wrap gap-2">
+                  @foreach ($selectedProject->technologies as $tech)
+                    <x-tech-icon :tech="$tech" variant="chip" />
+                  @endforeach
+                </div>
+              </div>
+            @endif
+
+            @if ($selectedProject->project_url)
+              <a href="{{ $selectedProject->project_url }}" target="_blank" rel="noopener" class="btn btn-brand">Visit live site<span class="sr-only"> (opens in a new tab)</span></a>
+            @endif
+          </div>
+        </div>
+      </div>
+    </div>
+  @endif
 </div>

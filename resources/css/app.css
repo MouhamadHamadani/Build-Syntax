@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,6 +16,24 @@
     [x-cloak] {
         display: none !important;
     }
+
+    /* Fixed header: 60px bar + 1px border. The header, the Services sub-nav and anchor offsets all read it. */
+    :root {
+        --header-h: 61px;
+    }
+
+    /* Visible keyboard focus everywhere; utilities such as focus:ring still win. */
+    :focus-visible {
+        outline: 2px solid theme('colors.brand-blue.light');
+        outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            transition: none !important;
+            scroll-behavior: auto !important;
+        }
+    }
 }
 
 @layer components {
@@ -25,27 +41,488 @@
     .card-dark {
         @apply bg-gradient-to-br from-dark-secondary to-dark-tertiary border border-dark-border;
     }
-    
+
     .card-dark:hover {
         @apply border-brand-blue shadow-lg shadow-brand-blue/10;
     }
-    
+
     /* Gradient backgrounds */
     .gradient-hero-dark {
         @apply bg-gradient-to-br from-dark-primary to-dark-secondary;
     }
-    
+
     /* Button styles */
     .btn-primary {
-        @apply bg-brand-blue text-white px-6 py-3 rounded-lg 
-               hover:bg-brand-blue-dark transition-all duration-200 
+        @apply bg-brand-blue text-white px-6 py-3 rounded-lg
+               hover:bg-brand-blue-dark transition-all duration-200
                font-semibold shadow-lg;
     }
-    
+
     .btn-secondary {
-        @apply border-2 border-brand-blue text-brand-blue px-6 py-3 
-               rounded-lg hover:bg-brand-blue hover:text-white 
+        @apply border-2 border-brand-blue text-brand-blue px-6 py-3
+               rounded-lg hover:bg-brand-blue hover:text-white
                transition-all duration-200 font-semibold;
+    }
+
+    /* ------------------------------------------------------------------
+     * Redesigned home page (and the shared header/footer around it).
+     * Product accent: add one accent-* class; children read it as var(--c).
+     * ------------------------------------------------------------------ */
+    .accent-brand      { --c: theme('colors.brand-blue.light'); }
+    .accent-saffron    { --c: theme('colors.saffron'); }
+    .accent-emerald    { --c: theme('colors.emerald.DEFAULT'); }
+    .accent-tymelo     { --c: theme('colors.tymelo'); }
+    .accent-terracotta { --c: theme('colors.terracotta'); }
+
+    .wrap {
+        @apply mx-auto w-full max-w-[1160px] px-4;
+    }
+
+    .eyebrow {
+        @apply font-mono text-[12px] uppercase tracking-[.12em] text-brand-blue-light;
+    }
+
+    /* Eyebrow above a section heading. The reference renders these larger and muted (it styles them as .head p), so match that. */
+    .eyebrow-section {
+        @apply mt-3.5 font-mono text-[17px] uppercase tracking-[.12em] text-dark-muted;
+    }
+
+    .heading {
+        @apply text-balance leading-[1.12] tracking-[-0.02em];
+    }
+
+    /* Buttons (the older .btn-primary / .btn-secondary stay for the other pages) */
+    .btn {
+        @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-[10px] border border-transparent px-[22px] py-[14px] text-[15px] font-semibold leading-none transition-[transform,background-color] duration-150 hover:-translate-y-px;
+    }
+    .btn-brand  { @apply bg-brand-blue-light text-ink; }
+    .btn-wa     { @apply bg-whatsapp text-whatsapp-ink; }
+    .btn-ghost  { @apply border-dark-line bg-dark-secondary text-dark-accent; }
+    .btn-sm     { @apply px-4 py-[10px] text-[14px]; }
+    .btn-lg     { @apply px-[22px] py-[18px] text-[17px]; }
+
+    .fact::before {
+        @apply mr-2 inline-block h-1.5 w-1.5 rounded-full bg-brand-blue-light align-middle;
+        content: '';
+    }
+
+    /* Hero showcase: one product screen at a time, crossfade */
+    .showcase-stage {
+        @apply mb-[22px] grid;
+    }
+    .showcase-slide {
+        @apply pointer-events-none relative opacity-0 transition-opacity duration-[450ms] ease-in-out;
+        grid-area: 1 / 1;
+    }
+    .showcase-slide:not([aria-hidden]) {
+        @apply pointer-events-auto opacity-100;
+    }
+    .showcase-win {
+        @apply overflow-hidden rounded-xl border border-dark-line bg-dark-secondary;
+        border-top: 3px solid var(--c);
+        box-shadow: 0 24px 50px -24px rgba(5, 8, 25, .6);
+    }
+    .showcase-bar {
+        @apply flex items-center gap-1.5 border-b border-dark-line bg-dark-tertiary px-3 py-2 font-mono text-[11px] font-medium leading-[normal] text-dark-muted;
+    }
+    .showcase-bar i {
+        @apply h-[9px] w-[9px] flex-none rounded-full bg-dark-line;
+    }
+    .showcase-bar span {
+        @apply ml-2 min-w-0 truncate;
+    }
+    .showcase-phone {
+        @apply absolute bottom-[-14px] right-[3%] w-1/4 overflow-hidden rounded-[20px] border-4 border-[#0b0b14] bg-[#0b0b14] min-[561px]:bottom-[-22px];
+        box-shadow: 0 22px 40px -16px rgba(5, 8, 25, .75);
+    }
+    .showcase-tab {
+        @apply flex h-[46px] min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[10px] border-2 border-transparent bg-white px-2.5 opacity-[.72] transition-[opacity,border-color] duration-200 hover:opacity-100;
+    }
+    .showcase-tab[aria-selected='true'] {
+        @apply opacity-100;
+        border-color: var(--c);
+    }
+    .showcase-tab img {
+        @apply h-6 w-auto max-w-full;
+    }
+
+    /* Product cards */
+    .product-card {
+        @apply relative flex min-w-0 flex-col gap-[14px] rounded-[14px] border border-dark-line bg-dark-secondary p-[22px] transition-[border-color,transform] duration-200 hover:-translate-y-0.5 min-[901px]:p-7;
+    }
+    .product-card:hover {
+        border-color: var(--c);
+    }
+    .product-feature {
+        @apply gap-6 min-[901px]:flex-row min-[901px]:items-stretch min-[901px]:gap-10;
+    }
+    .product-wide {
+        @apply gap-6 bg-dark-tertiary min-[901px]:flex-row min-[901px]:items-center min-[901px]:gap-8;
+    }
+    .product-tag {
+        @apply self-start rounded-md border px-[9px] py-1.5 font-mono text-[11px] font-medium uppercase leading-none tracking-[.1em];
+        color: var(--c);
+        border-color: color-mix(in srgb, var(--c) 50%, transparent);
+    }
+    .product-for {
+        @apply border-t border-dashed border-dark-line pt-3 text-[13.5px] text-dark-muted;
+    }
+    .product-for b {
+        @apply font-semibold text-dark-accent;
+    }
+    .product-foot {
+        @apply mt-auto flex flex-wrap items-baseline justify-between gap-3 pt-1.5;
+    }
+    .product-wide .product-foot {
+        @apply m-0 flex-col items-start;
+    }
+    .product-price {
+        @apply text-[22px] font-bold tabular-nums;
+        color: var(--c);
+    }
+    .product-price small {
+        @apply text-[13px] font-medium text-dark-muted;
+    }
+    .product-more {
+        @apply border-b-2 pb-0.5 text-[14px] font-semibold text-dark-accent no-underline;
+        border-bottom-color: var(--c);
+    }
+    .ticks {
+        @apply m-0 grid list-none gap-2 p-0 text-[15px] text-dark-muted;
+    }
+    .ticks li::before {
+        @apply font-bold;
+        content: '\2713  ';
+        color: var(--c);
+    }
+    .plan {
+        @apply flex items-center justify-between gap-4 rounded-xl border border-dark-line bg-dark-primary px-[18px] py-4;
+    }
+    .plan.is-featured {
+        border-color: var(--c);
+    }
+    .plan b {
+        @apply font-semibold;
+    }
+    .plan small {
+        @apply mt-0.5 block text-[13px] font-normal leading-[1.45] text-dark-muted;
+    }
+    .plan-price {
+        @apply whitespace-nowrap text-[22px] font-bold tabular-nums;
+        color: var(--c);
+    }
+    .plan .plan-price small {
+        @apply inline text-[13px] font-medium text-dark-muted;
+    }
+    /* my-[13px]: the reference keeps the browser default <pre> margin (1em at 13px) */
+    .code-block {
+        @apply my-[13px] min-w-0 overflow-x-auto whitespace-pre rounded-[10px] border border-dark-line bg-dark-primary px-[18px] py-4 font-mono text-[13px] font-normal leading-[1.7] text-dark-muted min-[901px]:flex-[0_1_340px];
+    }
+
+    /* How we work */
+    .arrows li::before {
+        @apply text-brand-blue-light;
+        content: '→ ';
+    }
+    .step {
+        @apply min-w-0 border-dark-line;
+    }
+    .step + .step {
+        @apply border-t pt-7;
+    }
+    @media (min-width: 801px) {
+        .step {
+            @apply pr-7;
+        }
+        .step + .step {
+            @apply border-l border-t-0 pl-7 pt-0;
+        }
+    }
+
+    /* FAQ */
+    .faq-item {
+        @apply border-t border-dark-line last-of-type:border-b;
+    }
+    .faq-item summary {
+        @apply flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[18px] font-semibold;
+    }
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
+    .faq-item summary::after {
+        @apply flex-none font-mono text-[26px] font-normal leading-none text-brand-blue-light;
+        content: '+';
+    }
+    .faq-item[open] summary::after {
+        content: '–';
+    }
+    .faq-item p {
+        @apply pb-[22px] pr-10 text-dark-muted;
+    }
+
+    /* Contact block */
+    .contact-card {
+        @apply grid items-center gap-10 rounded-[22px] bg-brand-blue-light px-[22px] py-9 text-ink min-[861px]:grid-cols-[1.2fr_1fr] min-[861px]:px-10 min-[861px]:py-14;
+    }
+    .copy-row {
+        @apply flex items-center justify-between gap-3 rounded-[10px] border border-ink/25 bg-ink/[.14] px-3.5 py-3 font-mono text-[14px] leading-[normal];
+    }
+    .copy-row span {
+        @apply min-w-0 select-all break-words;
+        overflow-wrap: anywhere;
+    }
+    .copy-row button {
+        @apply flex-none cursor-pointer rounded-md border border-current bg-transparent px-2.5 py-1.5 font-sans text-[12px] font-semibold;
+    }
+
+    /* ------------------------------------------------------------------
+     * Services page
+     * ------------------------------------------------------------------ */
+    .band {
+        @apply border-y border-dark-line bg-dark-tertiary;
+    }
+
+    /* Button in the section's accent colour (--c) */
+    .btn-c {
+        @apply text-[#0b0b14];
+        background: var(--c);
+    }
+
+    /* Sticky sub-navigation, directly under the fixed header */
+    .subnav {
+        @apply sticky z-40 border-y border-dark-line bg-dark-primary/[.92] backdrop-blur-[10px];
+        top: var(--header-h);
+    }
+    .subnav-link {
+        @apply inline-flex items-center gap-2 whitespace-nowrap rounded-full border border-transparent px-3.5 py-2 text-[14px] font-medium text-dark-muted no-underline;
+    }
+    .subnav-link::before {
+        @apply h-2 w-2 rounded-full;
+        content: '';
+        background: var(--c, theme('colors.brand-blue.light'));
+    }
+    .subnav-link:hover,
+    .subnav-link[aria-current] {
+        @apply border-dark-line bg-dark-secondary text-dark-accent;
+    }
+
+    /* Payment terms strip under the page title */
+    .terms {
+        @apply mt-8 grid rounded-[14px] border border-dark-line bg-dark-secondary;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .terms > div {
+        @apply min-w-0 px-5 py-[18px] text-[14px] text-dark-muted;
+    }
+    .terms > div + div {
+        @apply border-l border-dark-line;
+    }
+    .terms b {
+        @apply mb-1.5 block font-mono text-[11px] font-medium uppercase leading-[normal] tracking-[.1em] text-brand-blue-light;
+    }
+    @media (max-width: 860px) {
+        .terms {
+            grid-template-columns: 1fr 1fr;
+        }
+        .terms > div:nth-child(3) {
+            @apply border-l-0;
+        }
+        .terms > div:nth-child(n+3) {
+            @apply border-t border-dark-line;
+        }
+    }
+    @media (max-width: 480px) {
+        .terms {
+            grid-template-columns: 1fr;
+        }
+        .terms > div + div {
+            @apply border-l-0 border-t border-dark-line;
+        }
+    }
+
+    /* Pricing card */
+    .pcard {
+        @apply relative flex min-w-0 flex-col gap-3 rounded-[14px] border border-dark-line bg-dark-secondary p-[26px];
+    }
+    .pcard-pop {
+        border-color: var(--c);
+        box-shadow: 0 0 0 1px var(--c);
+    }
+    .pcard-badge {
+        @apply absolute -top-[11px] left-[22px] rounded-full px-2.5 py-1.5 font-mono text-[11px] font-medium uppercase leading-none tracking-[.1em] text-[#0b0b14];
+        background: var(--c);
+    }
+    .pcard-amount {
+        @apply text-[38px] font-extrabold leading-[1.1] tracking-[-0.03em] tabular-nums;
+    }
+    .pcard-amount small {
+        @apply text-[14px] font-medium tracking-normal text-dark-muted;
+    }
+    .pcard .ticks {
+        @apply flex-1 content-start border-t border-dashed border-dark-line pt-3 text-[14.5px];
+    }
+    .pcard .btn {
+        @apply mt-1.5 w-full;
+    }
+
+    /* ------------------------------------------------------------------
+     * About, Portfolio and Contact pages
+     * ------------------------------------------------------------------ */
+
+    /* Fact tile on About */
+    .stat-tile {
+        @apply rounded-[14px] border border-dark-line bg-dark-secondary p-5;
+    }
+    .stat-tile b {
+        @apply block text-[28px] font-extrabold tracking-[-.02em] text-brand-blue-light;
+    }
+    .stat-tile span {
+        @apply block text-[14px] text-dark-muted;
+    }
+
+    /* Body text column on About */
+    .story p {
+        @apply max-w-[62ch] text-[17px] text-dark-muted;
+    }
+    .story p + p {
+        @apply mt-4;
+    }
+
+    /* Portfolio: product demo card and client project card (accent via accent-*) */
+    .demo-card {
+        @apply flex min-w-0 flex-col overflow-hidden rounded-[14px] border border-dark-line bg-dark-secondary transition-[border-color,transform] duration-200 hover:-translate-y-0.5;
+    }
+    .demo-card:hover {
+        border-color: var(--c);
+    }
+    .demo-card-shot {
+        @apply bg-dark-tertiary;
+        border-top: 3px solid var(--c);
+    }
+
+    /* Portfolio: filter chips, search, empty state, stack list */
+    .chip {
+        @apply cursor-pointer rounded-full border border-dark-line bg-dark-secondary px-4 py-[9px] text-[14px] font-medium leading-[normal] text-dark-muted;
+    }
+    .chip[aria-pressed='true'] {
+        @apply border-brand-blue-light bg-brand-blue-soft text-dark-accent;
+    }
+    .search-input {
+        @apply w-full max-w-[380px] rounded-[10px] border border-dark-line bg-dark-secondary px-3.5 py-3 text-[15px] font-normal leading-[normal] text-dark-accent placeholder:text-dark-muted;
+    }
+    .empty-state {
+        @apply rounded-[14px] border border-dashed border-dark-line bg-dark-secondary p-10;
+    }
+    .stack-chip {
+        @apply rounded-lg border border-dark-line bg-dark-secondary px-3 py-2 font-mono text-[13px] font-medium leading-[normal];
+    }
+
+    /* Contact form (also reusable elsewhere): a field is a label, an optional hint, the control and an error */
+    .form-card {
+        @apply grid gap-4 rounded-[14px] border border-dark-line bg-dark-secondary p-7;
+    }
+    .form-row {
+        @apply grid items-end gap-4 min-[561px]:grid-cols-2;
+    }
+    .field {
+        @apply grid gap-1.5 text-[14px] font-medium;
+    }
+    .field-hint {
+        @apply text-[13px] font-normal text-dark-muted;
+    }
+    .field-error {
+        @apply text-[13px] font-normal text-red-300;
+    }
+    .field-input {
+        @apply w-full rounded-[10px] border border-dark-line bg-dark-primary px-3.5 py-3 text-[16px] font-normal leading-[normal] text-dark-accent placeholder:text-dark-muted;
+    }
+    textarea.field-input {
+        @apply min-h-[150px] resize-y;
+    }
+    /* a native select renders shorter than a text input: match the input height (51px) */
+    select.field-input {
+        @apply min-h-[51px];
+    }
+    .field-input:focus {
+        @apply border-dark-line shadow-none;
+    }
+    .field-input:focus-visible {
+        outline: 2px solid theme('colors.brand-blue.light');
+        outline-offset: 1px;
+    }
+    .field-input[aria-invalid='true'] {
+        @apply border-red-400;
+    }
+    .info-list {
+        @apply grid rounded-[14px] border border-dark-line bg-dark-secondary;
+    }
+    .info-list > div {
+        @apply flex justify-between gap-4 px-5 py-4 text-[15px];
+    }
+    .info-list > div + div {
+        @apply border-t border-dark-line;
+    }
+    .info-list span {
+        @apply text-dark-muted;
+    }
+    .info-list b {
+        @apply text-right font-semibold;
+    }
+
+    /* ------------------------------------------------------------------
+     * Blog post body and legal pages
+     * ------------------------------------------------------------------ */
+    .post-body {
+        @apply max-w-[70ch] text-[17px] leading-[1.75] text-dark-muted;
+    }
+    .post-body > * + * {
+        @apply mt-5;
+    }
+    .post-body h2,
+    .post-body h3,
+    .post-body h4 {
+        @apply mt-10 font-bold leading-[1.2] tracking-[-0.01em] text-dark-accent;
+    }
+    .post-body h2 { @apply text-[28px]; }
+    .post-body h3 { @apply text-[22px]; }
+    .post-body h4 { @apply text-[18px]; }
+    .post-body a {
+        @apply text-brand-blue-light underline underline-offset-2 transition-colors hover:text-dark-accent;
+    }
+    .post-body strong {
+        @apply font-semibold text-dark-accent;
+    }
+    .post-body ul {
+        @apply list-disc pl-6;
+    }
+    .post-body ol {
+        @apply list-decimal pl-6;
+    }
+    .post-body li + li {
+        @apply mt-2;
+    }
+    .post-body code {
+        @apply rounded border border-dark-line bg-dark-secondary px-1.5 py-0.5 font-mono text-[.9em] text-dark-accent;
+    }
+    .post-body pre {
+        @apply overflow-x-auto rounded-[10px] border border-dark-line bg-dark-primary p-4 font-mono text-[13px] leading-[1.7];
+    }
+    .post-body pre code {
+        @apply border-0 bg-transparent p-0 text-[inherit];
+    }
+    .post-body blockquote {
+        @apply border-l-4 border-brand-blue-light pl-5 italic text-dark-accent;
+    }
+    .post-body hr {
+        @apply border-dark-line;
+    }
+    .post-body img {
+        @apply rounded-[10px];
+    }
+
+    /* Legal pages: links in running text */
+    .doc a {
+        @apply text-brand-blue-light underline underline-offset-2 transition-colors hover:text-dark-accent;
     }
 }
 
@@ -55,6 +532,7 @@
      * Elements start invisible; resources/js/app.js adds `.is-visible` when
      * the element enters the viewport (IntersectionObserver). Falls back to
      * always-visible if JS is disabled or IO is unavailable.
+     * Never use it above the fold.
      */
     .fade-in {
         opacity: 0;
@@ -71,6 +549,13 @@
     .no-js .fade-in {
         opacity: 1;
         transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .fade-in {
+            opacity: 1;
+            transform: none;
+        }
     }
 
     /* Hide horizontal scrollbar on the sticky tab nav (Services page). */

@@ -116,6 +116,6 @@ return [
     ],
 
 
-    'admin_email' => env('CONTACT_ADMIN_EMAIL', 'hello@buildsyntax.dev'),
+    'admin_email' => env('CONTACT_ADMIN_EMAIL', 'info@build-syntax.com'),
 
 ];

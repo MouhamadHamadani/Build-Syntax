@@ -40,10 +40,34 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="{{ asset('images/icon.png') }}">
 
+  {{-- Organization structured data: company facts only (no products, prices or people).
+       sameAs URLs mirror the footer social links; keep them in sync. --}}
+  @php
+    $organizationSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'Build Syntax',
+        'url' => 'https://build-syntax.com',
+        'logo' => 'https://build-syntax.com/images/icon.png',
+        'telephone' => '+9613876822',
+        'email' => 'info@build-syntax.com',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressLocality' => 'Beirut',
+            'addressCountry' => 'LB',
+        ],
+        'sameAs' => [
+            'https://www.facebook.com/profile.php?id=61590554412690',
+            'https://www.instagram.com/buildsyntax.dev',
+        ],
+    ];
+  @endphp
+  <script type="application/ld+json">{!! json_encode($organizationSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) !!}</script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@700&display=swap" rel="stylesheet">
 
   {{-- Google tag (gtag.js) — production only, so dev/CI traffic never pollutes analytics --}}
   @production
@@ -82,8 +106,8 @@
     {{-- Floating WhatsApp button (Lebanese market: WhatsApp-first business culture) --}}
     <a href="https://wa.me/9613876822?text=Hi%20Build%20Syntax%2C%20I%27d%20like%20to%20discuss%20a%20project."
       target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"
-      class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57]
-                  text-white font-semibold px-4 py-3 rounded-full shadow-2xl
+      class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-whatsapp hover:bg-[#1ebe57]
+                  text-whatsapp-ink font-semibold px-4 py-3 rounded-full shadow-2xl
                   transition-all duration-200 hover:scale-105 group">
       <svg class="w-6 h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path
