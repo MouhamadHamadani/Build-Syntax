@@ -1,3 +1,9 @@
 @props(['disabled' => false])
 
-<input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) !!}>
+@php
+    // Error key: the field name, or its id for Livewire inputs that only carry wire:model.
+    $key = $attributes->get('name') ?? $attributes->get('id');
+    $invalid = $key && $errors->has($key);
+@endphp
+
+<input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'field-input disabled:opacity-60'])->merge($invalid ? ['aria-invalid' => 'true', 'aria-describedby' => $key.'-error'] : []) !!}>
