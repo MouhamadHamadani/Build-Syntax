@@ -4,6 +4,7 @@ namespace App\Livewire\Pages;
 
 use App\Models\ContactSubmission;
 use App\Notifications\NewContactSubmission;
+use App\Support\Catalog;
 use Exception;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Notification;
@@ -97,9 +98,43 @@ class Contact extends Component
         }
     }
 
+    /** FAQ items; timelines, support periods and the maintenance range come from the Catalog. */
+    private function faqs(Catalog $catalog): array
+    {
+        [$starter, $professional] = $catalog->custom()['service']['plans'];
+        $shopWeeks = array_column($catalog->product('shopnex')['plans'], 'weeks');
+        $care = $catalog->maintenance();
+        $carePrices = array_column($care['plans'], 'price');
+
+        return [
+            [
+                'q' => 'How long does a project take?',
+                'a' => "A starter website takes {$starter['weeks'][0]} to {$starter['weeks'][1]} weeks and a professional one {$professional['weeks'][0]} to {$professional['weeks'][1]}. A ShopNex store takes " . min(array_column($shopWeeks, 0)) . ' to ' . max(array_column($shopWeeks, 1)) . ' weeks depending on the plan. We confirm the timeline in writing before we start.',
+            ],
+            [
+                'q' => 'What is included in a website project?',
+                'a' => "Design, development, testing, deployment help and a documented handover, plus a support period of {$starter['support_months']} to {$professional['support_months']} months depending on the package. The exact list is on the Services page.",
+            ],
+            [
+                'q' => 'Do you offer maintenance after launch?',
+                'a' => "Yes. Maintenance plans run from {$carePrices[0]} to " . end($carePrices) . " a month, with a minimum of {$care['minimum_months']} months. Details are on the Services page.",
+            ],
+            [
+                'q' => 'Can you work with businesses outside Lebanon?',
+                'a' => 'Yes. Most of the work happens online, and we work with businesses across the region.',
+            ],
+        ];
+    }
+
     public function render()
     {
-        return view('livewire.pages.contact')
+        $catalog = app(Catalog::class);
+
+        return view('livewire.pages.contact', [
+            'types' => $catalog->projectTypes(),
+            'typeLabels' => $catalog->projectTypeLabels(),
+            'faqs' => $this->faqs($catalog),
+        ])
             ->layout('layouts.app', [
                 'title' => 'Contact Us - Build Syntax',
                 'description' => 'Get in touch with Build Syntax for your web development needs. Contact us for a free consultation and project quote.'

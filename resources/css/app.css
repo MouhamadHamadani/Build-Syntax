@@ -439,6 +439,10 @@
     textarea.field-input {
         @apply min-h-[150px] resize-y;
     }
+    /* a native select renders shorter than a text input: match the input height (51px) */
+    select.field-input {
+        @apply min-h-[51px];
+    }
     .field-input:focus {
         @apply border-dark-line shadow-none;
     }
