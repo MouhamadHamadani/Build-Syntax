@@ -1,5 +1,10 @@
 @props(['products'])
 
+@php
+  // A product added in the admin has no screens yet: it stays out of the showcase until it has.
+  $products = array_values(array_filter($products, fn ($product) => $product['showcase']['laptop'] ?? null));
+@endphp
+
 {{-- Hero showcase: one real product screen at a time. State and autoplay live in resources/js/home.js.
      Rendered server-side with slide 1 showing, so it reads correctly before Alpine starts. --}}
 <div class="w-full min-w-0" x-data="showcase({{ count($products) }})">

@@ -28,7 +28,7 @@ class Contact extends Component
             'email' => 'required|email|max:150',
             'phone' => 'nullable|string|max:50',
             'company' => 'nullable|string|max:100',
-            'project_type' => 'required|in:' . implode(',', config('products.project_types')),
+            'project_type' => 'required|in:' . implode(',', app(Catalog::class)->projectTypes()),
             'budget_range' => 'nullable|in:under_1k,1k_2.5k,2.5k_5k,5k_plus',
             'message' => 'required|min:10',
         ];
@@ -47,7 +47,7 @@ class Contact extends Component
         // CTA context prefill (e.g. /contact?type=ecommerce&plan=Standard).
         $type = request()->query('type');
 
-        if (is_string($type) && in_array($type, config('products.project_types'), true)) {
+        if (is_string($type) && in_array($type, app(Catalog::class)->projectTypes(), true)) {
             $this->project_type = $type;
         }
 
@@ -101,15 +101,19 @@ class Contact extends Component
     /** FAQ items; timelines, support periods and the maintenance range come from the Catalog. */
     private function faqs(Catalog $catalog): array
     {
-        [$starter, $professional] = $catalog->custom()['service']['plans'];
-        $shopWeeks = array_column($catalog->product('shopnex')['plans'], 'weeks');
+        // The two timed custom packages, and the product whose plans carry a timeline (ShopNex today).
+        [$starter, $professional] = array_values(array_filter($catalog->custom()['service']['plans'], fn ($plan) => isset($plan['weeks'])));
+        $shop = collect($catalog->products())->first(fn ($product) => array_column($product['plans'], 'weeks'));
+        $shopWeeks = $shop ? array_column($shop['plans'], 'weeks') : [];
         $care = $catalog->maintenance();
         $carePrices = array_column($care['plans'], 'price');
 
         return [
             [
                 'q' => 'How long does a project take?',
-                'a' => "A starter website takes {$starter['weeks'][0]} to {$starter['weeks'][1]} weeks and a professional one {$professional['weeks'][0]} to {$professional['weeks'][1]}. A ShopNex store takes " . min(array_column($shopWeeks, 0)) . ' to ' . max(array_column($shopWeeks, 1)) . ' weeks depending on the plan. We confirm the timeline in writing before we start.',
+                'a' => "A starter website takes {$starter['weeks'][0]} to {$starter['weeks'][1]} weeks and a professional one {$professional['weeks'][0]} to {$professional['weeks'][1]}."
+                    . ($shopWeeks ? " A {$shop['name']} store takes " . min(array_column($shopWeeks, 0)) . ' to ' . max(array_column($shopWeeks, 1)) . ' weeks depending on the plan.' : '')
+                    . ' We confirm the timeline in writing before we start.',
             ],
             [
                 'q' => 'What is included in a website project?',

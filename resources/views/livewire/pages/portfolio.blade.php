@@ -7,13 +7,15 @@
     <h2 class="sr-only">Built by us</h2>
     <div class="grid gap-4 min-[761px]:grid-cols-2">
       @foreach ($products as $product)
-        @php($shot = $product['showcase']['laptop'])
+        @php($shot = $product['showcase']['laptop'] ?? null)
         <article class="demo-card accent-{{ $product['accent'] }}">
-          <div class="demo-card-shot">
-            <img src="{{ asset('images/showcase/' . $shot['file']) }}" alt="{{ $product['name'] }} demo screen"
-              width="{{ $shot['width'] }}" height="{{ $shot['height'] }}" loading="lazy" decoding="async"
-              class="block aspect-[16/10] h-auto w-full object-cover object-left-top">
-          </div>
+          @if ($shot)
+            <div class="demo-card-shot">
+              <img src="{{ asset('images/showcase/' . $shot['file']) }}" alt="{{ $product['name'] }} demo screen"
+                width="{{ $shot['width'] }}" height="{{ $shot['height'] }}" loading="lazy" decoding="async"
+                class="block aspect-[16/10] h-auto w-full object-cover object-left-top">
+            </div>
+          @endif
           <div class="flex flex-1 flex-col gap-2.5 p-[22px]">
             <h3 class="heading text-[22px] font-bold">{{ $product['name'] }}</h3>
             <p class="text-[15px] text-dark-muted">{{ $product['blurb'] }}</p>
