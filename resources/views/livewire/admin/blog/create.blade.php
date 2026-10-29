@@ -1,84 +1,73 @@
-<div class="max-w-8xl space-y-6">
+<div class="flex flex-col gap-[22px]">
 
-    <div class="flex items-center gap-4">
-        <a href="{{ route('admin.blog.index') }}" class="text-sm text-gray-500 hover:text-gray-800">← Back</a>
-    </div>
+    <a href="{{ route('admin.blog.index') }}" wire:navigate class="admin-link self-start text-sm font-medium">← All posts</a>
 
-    <div class="grid lg:grid-cols-3 gap-6">
+    <header>
+        <p class="mono-label">Website · Blog</p>
+        <h1 class="admin-h1">New post</h1>
+    </header>
+
+    <form wire:submit="save" class="flex flex-wrap items-start gap-5">
 
         {{-- Main form --}}
-        <div class="lg:col-span-2 space-y-4">
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4">
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Title *</label>
-                    <input wire:model="title" type="text" placeholder="Post title..."
-                           class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 @error('title') border-red-400 @enderror">
-                    @error('title') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+        <div class="flex min-w-0 flex-[2_1_520px] flex-col gap-5">
+            <div class="panel flex flex-col gap-[18px] p-6">
+                <div class="field">
+                    <label for="title">Title *</label>
+                    <input id="title" wire:model="title" type="text" placeholder="Post title..." class="field-input" @error('title') aria-invalid="true" aria-describedby="title-error" @enderror>
+                    @error('title') <p id="title-error" class="field-error">{{ $message }}</p> @enderror
                 </div>
 
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Excerpt</label>
-                    <textarea wire:model="excerpt" rows="2" placeholder="Short summary shown on blog index..."
-                              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                <div class="field">
+                    <label for="excerpt">Excerpt</label>
+                    <textarea id="excerpt" wire:model="excerpt" rows="2" placeholder="Short summary shown on blog index..." class="field-input !min-h-0"></textarea>
                 </div>
 
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Content *</label>
-                    <textarea wire:model="content" rows="18" placeholder="Write your post content here..."
-                              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm font-mono focus:outline-none focus:ring-2 focus:ring-blue-500 @error('content') border-red-400 @enderror"></textarea>
-                    @error('content') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+                <div class="field">
+                    <label for="content">Content *</label>
+                    <textarea id="content" wire:model="content" rows="18" placeholder="Write your post content here..." class="field-input font-mono !text-sm" @error('content') aria-invalid="true" aria-describedby="content-error" @enderror></textarea>
+                    @error('content') <p id="content-error" class="field-error">{{ $message }}</p> @enderror
                 </div>
             </div>
 
             {{-- SEO --}}
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4">
-                <h3 class="font-semibold text-gray-700 text-sm uppercase tracking-wider">SEO</h3>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Meta Title</label>
-                    <input wire:model="meta_title" type="text" placeholder="Leave blank to use post title"
-                           class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <div class="panel flex flex-col gap-[18px] p-6">
+                <h2 class="mono-label">SEO</h2>
+                <div class="field">
+                    <label for="meta_title">Meta title</label>
+                    <input id="meta_title" wire:model="meta_title" type="text" placeholder="Leave blank to use post title" class="field-input">
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Meta Description</label>
-                    <textarea wire:model="meta_description" rows="2"
-                              placeholder="Short description for search engines (max 320 chars)"
-                              class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+                <div class="field">
+                    <label for="meta_description">Meta description</label>
+                    <textarea id="meta_description" wire:model="meta_description" rows="2" placeholder="Short description for search engines (max 320 chars)" class="field-input !min-h-0"></textarea>
                 </div>
             </div>
         </div>
 
         {{-- Sidebar --}}
-        <div class="space-y-4">
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4">
-                <h3 class="font-semibold text-gray-700 text-sm uppercase tracking-wider">Publish</h3>
+        <div class="panel flex min-w-0 flex-[1_1_280px] flex-col gap-[18px] p-6">
+            <h2 class="mono-label">Publish</h2>
 
-                <label class="flex items-center gap-3 cursor-pointer">
-                    <input wire:model="published" type="checkbox"
-                           class="w-4 h-4 rounded text-blue-600 focus:ring-blue-500">
-                    <span class="text-sm text-gray-700">Publish immediately</span>
-                </label>
+            <label class="flex cursor-pointer items-center gap-3 text-sm">
+                <input wire:model="published" type="checkbox" role="switch" class="switch">
+                Publish immediately
+            </label>
 
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Author</label>
-                    <input wire:model="author" type="text"
-                           class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1">Tags</label>
-                    <input wire:model="tags_input" type="text" placeholder="laravel, php, web..."
-                           class="w-full border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <p class="text-xs text-gray-400 mt-1">Comma-separated</p>
-                </div>
-
-                <button wire:click="save"
-                        wire:loading.attr="disabled"
-                        class="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors">
-                    <span wire:loading.remove>Save Post</span>
-                    <span wire:loading>Saving...</span>
-                </button>
+            <div class="field">
+                <label for="author">Author</label>
+                <input id="author" wire:model="author" type="text" class="field-input">
             </div>
+
+            <div class="field">
+                <label for="tags_input">Tags</label>
+                <input id="tags_input" wire:model="tags_input" type="text" placeholder="laravel, php, web..." aria-describedby="tags-hint" class="field-input">
+                <span id="tags-hint" class="field-hint">Comma-separated</span>
+            </div>
+
+            <button type="submit" wire:loading.attr="disabled" class="btn btn-brand disabled:opacity-50">
+                <span wire:loading.remove wire:target="save">Save post</span>
+                <span wire:loading wire:target="save">Saving...</span>
+            </button>
         </div>
-    </div>
+    </form>
 </div>

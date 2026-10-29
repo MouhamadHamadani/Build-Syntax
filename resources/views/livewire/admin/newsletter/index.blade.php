@@ -1,82 +1,91 @@
-<div class="space-y-4">
+<div class="flex flex-col gap-[22px]">
 
-    {{-- Stats --}}
-    <div class="grid grid-cols-3 gap-4">
-        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
-            <div class="text-2xl font-bold text-green-600">{{ $totals['active'] }}</div>
-            <div class="text-xs text-gray-500 mt-1">Active Subscribers</div>
+    <header class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+            <p class="mono-label">Sales</p>
+            <h1 class="admin-h1">Newsletter</h1>
         </div>
-        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
-            <div class="text-2xl font-bold text-yellow-500">{{ $totals['unconfirmed'] }}</div>
-            <div class="text-xs text-gray-500 mt-1">Awaiting Confirmation</div>
+    </header>
+
+    {{-- Totals --}}
+    <section aria-label="Totals" class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-4">
+        <div class="panel p-5">
+            <p class="mono-label">Active subscribers</p>
+            <p class="mt-2.5 text-4xl font-extrabold text-emerald-400">{{ $totals['active'] }}</p>
         </div>
-        <div class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
-            <div class="text-2xl font-bold text-gray-400">{{ $totals['unsubscribed'] }}</div>
-            <div class="text-xs text-gray-500 mt-1">Unsubscribed</div>
+        <div class="panel p-5">
+            <p class="mono-label">Awaiting confirmation</p>
+            <p class="mt-2.5 text-4xl font-extrabold text-[#F0C25B]">{{ $totals['unconfirmed'] }}</p>
         </div>
-    </div>
+        <div class="panel p-5">
+            <p class="mono-label">Unsubscribed</p>
+            <p class="mt-2.5 text-4xl font-extrabold">{{ $totals['unsubscribed'] }}</p>
+        </div>
+    </section>
 
     {{-- Filters --}}
-    <div class="flex items-center gap-3">
-        <input wire:model.live.debounce.300ms="search" type="text" placeholder="Search email or name..."
-               class="border border-gray-200 rounded-lg px-4 py-2 text-sm w-64 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <select wire:model.live="status"
-                class="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">All</option>
-            <option value="active">Active</option>
-            <option value="unsubscribed">Unsubscribed</option>
-        </select>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <nav class="flex flex-wrap gap-1.5" aria-label="Status">
+            <button type="button" wire:click="$set('status', '')" class="chip" aria-pressed="{{ $status === '' ? 'true' : 'false' }}">All</button>
+            <button type="button" wire:click="$set('status', 'active')" class="chip" aria-pressed="{{ $status === 'active' ? 'true' : 'false' }}">Active</button>
+            <button type="button" wire:click="$set('status', 'unsubscribed')" class="chip" aria-pressed="{{ $status === 'unsubscribed' ? 'true' : 'false' }}">Unsubscribed</button>
+        </nav>
+        <input wire:model.live.debounce.300ms="search" type="search" placeholder="Search email or name" aria-label="Search subscribers"
+               class="field-input !w-auto min-w-[240px] !py-[11px] !text-sm">
     </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <table class="w-full text-sm">
-            <thead class="bg-gray-50 border-b border-gray-100">
+    <section class="panel">
+        <table class="tbl">
+            <caption class="sr-only">Newsletter subscribers</caption>
+            <thead>
                 <tr>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Email</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Name</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Status</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Confirmed</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Subscribed</th>
-                    <th class="px-5 py-3"></th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Confirmed</th>
+                    <th scope="col">Subscribed</th>
+                    <th scope="col"><span class="sr-only">Actions</span></th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-50">
+            <tbody>
                 @forelse($subscribers as $subscriber)
-                    <tr class="hover:bg-gray-50 transition-colors">
-                        <td class="px-5 py-3 font-medium text-gray-800">{{ $subscriber->email }}</td>
-                        <td class="px-5 py-3 text-gray-600">{{ $subscriber->name ?? '—' }}</td>
-                        <td class="px-5 py-3">
+                    <tr wire:key="subscriber-{{ $subscriber->id }}">
+                        <td class="min-w-0 break-all font-semibold">{{ $subscriber->email }}</td>
+                        <td data-label="Name" class="text-dark-soft">{{ $subscriber->name ?? '—' }}</td>
+                        <td data-label="Status">
                             @if($subscriber->status === 'active')
-                                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-full">Active</span>
+                                <span class="bd bd-done">Active</span>
                             @elseif($subscriber->status === 'unsubscribed')
-                                <span class="bg-gray-100 text-gray-500 text-xs font-semibold px-2 py-1 rounded-full">Unsubscribed</span>
+                                <span class="bd bd-neutral">Unsubscribed</span>
                             @else
-                                <span class="bg-yellow-100 text-yellow-700 text-xs font-semibold px-2 py-1 rounded-full">{{ $subscriber->status }}</span>
+                                <span class="bd bd-warn">{{ $subscriber->status }}</span>
                             @endif
                         </td>
-                        <td class="px-5 py-3">
+                        <td data-label="Confirmed">
                             @if($subscriber->confirmed)
-                                <span class="text-green-600">✓</span>
+                                <span class="text-emerald-400"><span aria-hidden="true">✓</span><span class="sr-only">Confirmed</span></span>
                             @else
-                                <span class="text-yellow-500 text-xs">Pending</span>
+                                <span class="bd bd-warn">Pending</span>
                             @endif
                         </td>
-                        <td class="px-5 py-3 text-gray-500">{{ $subscriber->subscribed_at->format('M d, Y') }}</td>
-                        <td class="px-5 py-3 text-right">
+                        <td data-label="Subscribed" class="text-dark-muted">{{ $subscriber->subscribed_at?->format('j M Y') }}</td>
+                        <td data-actions>
                             @if($subscriber->status !== 'unsubscribed')
-                                <button wire:click="unsubscribe({{ $subscriber->id }})"
+                                <button type="button" wire:click="unsubscribe({{ $subscriber->id }})"
                                         wire:confirm="Unsubscribe this user?"
-                                        class="text-xs px-3 py-1 rounded border border-red-300 text-red-600 hover:bg-red-50 transition-colors">
+                                        class="btn-row btn-row-danger ml-auto">
                                     Remove
                                 </button>
                             @endif
                         </td>
                     </tr>
                 @empty
-                    <tr><td colspan="6" class="text-center py-12 text-gray-400">No subscribers found.</td></tr>
+                    <tr class="is-empty"><td colspan="6" class="!py-12 text-center text-dark-muted">No subscribers found.</td></tr>
                 @endforelse
             </tbody>
         </table>
-        <div class="px-5 py-4 border-t border-gray-100">{{ $subscribers->links() }}</div>
-    </div>
+        @if($subscribers->hasPages())
+            <div class="border-t border-dark-line px-5 py-4">{{ $subscribers->links('pagination.site', ['noun' => 'subscribers']) }}</div>
+        @endif
+    </section>
 </div>

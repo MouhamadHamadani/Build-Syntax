@@ -54,6 +54,9 @@ $posNote = ['strong' => 'You pay once it is installed, with no deposit.', 'text'
 $customIntro = 'Company websites, admin dashboards and management systems, built on Laravel and Livewire and shaped around how your team already works.';
 
 return [
+    // Where App\Support\Catalog reads from: "config" (this file) or "database" (catalog_* tables, edited in the admin). See CATALOG.md.
+    'source' => env('CATALOG_SOURCE', 'config'),
+
     // Contact form: label for each value of config/products.php 'project_types'
     'project_type_labels' => [
         'website' => 'Custom website',

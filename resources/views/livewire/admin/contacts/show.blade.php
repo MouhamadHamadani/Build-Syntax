@@ -1,74 +1,113 @@
-<div class="max-w-8xl space-y-4">
+@php
+    $whatsapp = \App\Support\Phone::whatsapp($submission->phone);
+    $received = $submission->created_at;
+@endphp
 
-    <a href="{{ route('admin.contacts.index') }}" class="text-sm text-gray-500 hover:text-gray-800">← Back to contacts</a>
+<div class="flex flex-col gap-[22px]">
 
-    <div class="grid lg:grid-cols-3 gap-6">
+    <a href="{{ route('admin.contacts.index') }}" wire:navigate class="admin-link self-start text-sm font-medium">← All contacts</a>
 
-        {{-- Submission details --}}
-        <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4">
-            <h2 class="font-semibold text-gray-800 text-lg">Submission Details</h2>
+    <header class="flex flex-wrap items-end justify-between gap-4">
+        <div class="flex items-center gap-4">
+            <span class="grid h-[52px] w-[52px] flex-none place-items-center rounded-full bg-brand-blue-soft text-xl font-bold text-brand-blue-link" aria-hidden="true">{{ strtoupper(mb_substr($submission->name, 0, 1)) }}</span>
+            <div class="min-w-0">
+                <h1 class="break-words text-[28px] font-bold leading-tight">{{ $submission->name }}</h1>
+                <p class="mt-0.5 text-sm text-dark-muted">Received {{ $received->isToday() ? 'today' : $received->format('j M Y') }} at {{ $received->format('H:i') }} · reply within {{ $overdueHours }} hours</p>
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-2.5">
+            @if($whatsapp)
+                <a href="https://wa.me/{{ $whatsapp }}" target="_blank" rel="noopener" class="btn btn-wa">Reply on WhatsApp</a>
+            @endif
+            <a href="mailto:{{ $submission->email }}" class="btn btn-ghost">Reply by email</a>
+        </div>
+    </header>
 
-            <div class="grid grid-cols-2 gap-4 text-sm">
-                <div><span class="text-gray-400">Name</span><p class="font-medium text-gray-800">{{ $submission->name }}</p></div>
-                <div><span class="text-gray-400">Email</span><p class="font-medium"><a href="mailto:{{ $submission->email }}" class="text-blue-600 hover:underline">{{ $submission->email }}</a></p></div>
+    <div class="flex flex-wrap items-start gap-5">
+
+        {{-- Enquiry --}}
+        <section class="panel flex-[1.6_1_480px]" aria-labelledby="enquiry-h">
+            <div class="px-[22px] py-[18px]"><h2 id="enquiry-h" class="text-[18px] font-semibold">Enquiry</h2></div>
+            <dl>
+                <div class="grid grid-cols-[110px_1fr] gap-3 border-t border-dark-line px-[22px] py-3.5 text-[15px] sm:grid-cols-[140px_1fr]">
+                    <dt class="text-dark-muted">Wants</dt>
+                    <dd class="accent-{{ $product['accent'] }}"><span class="dot mr-1.5" aria-hidden="true"></span>{{ $product['name'] }}{{ $plan ? ' · '.$plan.' plan' : '' }}</dd>
+                </div>
+                <div class="grid grid-cols-[110px_1fr] gap-3 border-t border-dark-line px-[22px] py-3.5 text-[15px] sm:grid-cols-[140px_1fr]">
+                    <dt class="text-dark-muted">Email</dt>
+                    <dd class="min-w-0 break-all"><a href="mailto:{{ $submission->email }}" class="admin-link">{{ $submission->email }}</a></dd>
+                </div>
                 @if($submission->phone)
-                <div><span class="text-gray-400">Phone</span><p class="font-medium">{{ $submission->phone }}</p></div>
+                    <div class="grid grid-cols-[110px_1fr] gap-3 border-t border-dark-line px-[22px] py-3.5 text-[15px] sm:grid-cols-[140px_1fr]">
+                        <dt class="text-dark-muted">Phone</dt>
+                        <dd>{{ $submission->phone }}</dd>
+                    </div>
                 @endif
                 @if($submission->company)
-                <div><span class="text-gray-400">Company</span><p class="font-medium">{{ $submission->company }}</p></div>
+                    <div class="grid grid-cols-[110px_1fr] gap-3 border-t border-dark-line px-[22px] py-3.5 text-[15px] sm:grid-cols-[140px_1fr]">
+                        <dt class="text-dark-muted">Company</dt>
+                        <dd>{{ $submission->company }}</dd>
+                    </div>
                 @endif
-                <div><span class="text-gray-400">Project Type</span><p class="font-medium">{{ ucfirst(str_replace('_',' ',$submission->project_type)) }}</p></div>
                 @if($submission->budget_range)
-                <div><span class="text-gray-400">Budget</span><p class="font-medium">{{ $submission->budget_range }}</p></div>
+                    <div class="grid grid-cols-[110px_1fr] gap-3 border-t border-dark-line px-[22px] py-3.5 text-[15px] sm:grid-cols-[140px_1fr]">
+                        <dt class="text-dark-muted">Budget</dt>
+                        <dd>{{ $budgets[$submission->budget_range] ?? $submission->budget_range }}</dd>
+                    </div>
                 @endif
-                <div><span class="text-gray-400">Received</span><p class="font-medium">{{ $submission->created_at->format('M d, Y H:i') }}</p></div>
+            </dl>
+            <div class="border-t border-dark-line px-[22px] py-4">
+                <h3 class="mono-label mb-2">Message</h3>
+                <p class="whitespace-pre-wrap text-[15.5px] leading-[1.65] text-[#E1E4EA]">{{ $submission->message }}</p>
             </div>
+        </section>
 
-            <div>
-                <span class="text-sm text-gray-400">Message</span>
-                <div class="mt-2 bg-gray-50 rounded-lg p-4 text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{{ $submission->message }}</div>
-            </div>
-        </div>
+        {{-- Follow-up --}}
+        <section class="panel flex-[1_1_320px]" aria-labelledby="followup-h">
+            <form wire:submit="update" class="flex flex-col gap-5 p-[22px]">
+                <h2 id="followup-h" class="text-[18px] font-semibold">Follow-up</h2>
 
-        {{-- Update form --}}
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 space-y-4">
-            <h3 class="font-semibold text-gray-700 text-sm uppercase tracking-wider">Manage</h3>
+                <fieldset>
+                    <legend class="mono-label pb-2.5">Status</legend>
+                    <div class="seg">
+                        @foreach($statuses as $value => [$label])
+                            <label>
+                                <input type="radio" wire:model="status" name="status" value="{{ $value }}" class="peer sr-only">
+                                <span class="seg-chip">{{ $label }}</span>
+                            </label>
+                        @endforeach
+                    </div>
+                    @error('status') <p class="field-error mt-2">{{ $message }}</p> @enderror
+                </fieldset>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
-                <select wire:model="status"
-                        class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="new">New</option>
-                    <option value="contacted">Contacted</option>
-                    <option value="in_progress">In Progress</option>
-                    <option value="completed">Completed</option>
-                    <option value="declined">Declined</option>
-                </select>
-            </div>
+                <fieldset>
+                    <legend class="mono-label pb-2.5">Priority</legend>
+                    <div class="seg">
+                        @foreach($priorities as $value => [$label])
+                            <label>
+                                <input type="radio" wire:model="priority" name="priority" value="{{ $value }}" class="peer sr-only">
+                                <span class="seg-chip">{{ $label }}</span>
+                            </label>
+                        @endforeach
+                    </div>
+                    @error('priority') <p class="field-error mt-2">{{ $message }}</p> @enderror
+                </fieldset>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Priority</label>
-                <select wire:model="priority"
-                        class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                    <option value="urgent">Urgent</option>
-                </select>
-            </div>
+                <div class="field">
+                    <label for="notes" class="mono-label">Internal notes</label>
+                    <textarea id="notes" wire:model="notes" rows="5" placeholder="Only you can see this." class="field-input !min-h-[120px] !text-[15px]"
+                              @error('notes') aria-invalid="true" aria-describedby="notes-error" @enderror></textarea>
+                    @error('notes') <p id="notes-error" class="field-error">{{ $message }}</p> @enderror
+                </div>
 
-            <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1">Internal Notes</label>
-                <textarea wire:model="notes" rows="5"
-                          placeholder="Add notes about this lead..."
-                          class="w-full border border-gray-200 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
-            </div>
+                <button type="submit" wire:loading.attr="disabled" class="btn btn-brand disabled:opacity-50">
+                    <span wire:loading.remove wire:target="update">Save changes</span>
+                    <span wire:loading wire:target="update">Saving...</span>
+                </button>
+                <x-action-message on="saved">Saved.</x-action-message>
 
-            <button wire:click="update" wire:loading.attr="disabled"
-                    class="w-full bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-semibold py-2.5 rounded-lg text-sm transition-colors">
-                <span wire:loading.remove>Save Changes</span>
-                <span wire:loading>Saving...</span>
-            </button>
-        </div>
+                <p class="text-[13px] text-dark-muted">Status and note changes are logged, so you can see who changed what and when.</p>
+            </form>
+        </section>
     </div>
 </div>

@@ -3,51 +3,33 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Laravel\Fortify\Features;
-use Laravel\Jetstream\Jetstream;
 use Tests\TestCase;
 
+/** There is no public sign-up: admin accounts are created with UserSeeder or tinker. */
 class RegistrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_registration_screen_can_be_rendered(): void
+    public function test_registration_screen_is_not_available(): void
     {
-        if (! Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is not enabled.');
-        }
-
-        $response = $this->get('/register');
-
-        $response->assertStatus(200);
+        $this->get('/register')->assertNotFound();
     }
 
-    public function test_registration_screen_cannot_be_rendered_if_support_is_disabled(): void
+    public function test_registration_cannot_be_posted(): void
     {
-        if (Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is enabled.');
-        }
-
-        $response = $this->get('/register');
-
-        $response->assertStatus(404);
-    }
-
-    public function test_new_users_can_register(): void
-    {
-        if (! Features::enabled(Features::registration())) {
-            $this->markTestSkipped('Registration support is not enabled.');
-        }
-
-        $response = $this->post('/register', [
+        $this->post('/register', [
             'name' => 'Test User',
             'email' => 'test@example.com',
             'password' => 'password',
             'password_confirmation' => 'password',
-            'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature(),
-        ]);
+        ])->assertNotFound();
 
-        $this->assertAuthenticated();
-        $response->assertRedirect(route('dashboard', absolute: false));
+        $this->assertGuest();
+        $this->assertDatabaseMissing('users', ['email' => 'test@example.com']);
+    }
+
+    public function test_login_page_has_no_register_link(): void
+    {
+        $this->get('/login')->assertOk()->assertDontSee('/register');
     }
 }

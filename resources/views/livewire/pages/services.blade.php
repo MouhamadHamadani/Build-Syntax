@@ -61,12 +61,16 @@
           <div>
             <span class="product-tag mb-4 table">{{ $product['tagline'] }}</span>
             <h2 class="heading flex flex-wrap items-center gap-[14px] text-[clamp(28px,4vw,40px)] font-bold">
-              <img src="{{ asset('images/brand/' . $logo['file']) }}" alt="{{ $logo['alt'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}"
-                @class(['h-[34px] w-auto rounded-lg bg-white py-1', 'px-2' => ! $logo['wordmark'], 'px-1.5' => $logo['wordmark']])>
+              @if ($logo['file'])
+                <img src="{{ asset('images/brand/' . $logo['file']) }}" alt="{{ $logo['alt'] }}" width="{{ $logo['width'] }}" height="{{ $logo['height'] }}"
+                  @class(['h-[34px] w-auto rounded-lg bg-white py-1', 'px-2' => ! $logo['wordmark'], 'px-1.5' => $logo['wordmark']])>
+              @endif
               @if ($logo['wordmark'])<span @class(['font-jakarta' => $logo['jakarta'] ?? false])>{{ $logo['wordmark'] }}</span>@endif
             </h2>
             <p class="mt-[14px] max-w-[56ch] text-[17px] text-dark-muted">{{ $product['description'] }}</p>
-            <p class="product-for mt-4 max-w-[56ch] !text-[17px]"><b>For:</b> {{ $product['for'] }} {{ $product['for_extra'] }}</p>
+            @if ($product['for'])
+              <p class="product-for mt-4 max-w-[56ch] !text-[17px]"><b>For:</b> {{ $product['for'] }} {{ $product['for_extra'] }}</p>
+            @endif
             <div class="mt-[22px] flex flex-wrap gap-3">
               <a class="btn btn-c" href="{{ $product['demo']['url'] }}" target="_blank" rel="noopener">{{ $product['demo']['label'] }}</a>
               @if ($service['secondary_cta'])
@@ -86,7 +90,9 @@
             <x-services.plan-card :plan="$plan" :type="$product['project_type']" />
           @endforeach
         </div>
-        <p class="mt-5 max-w-[80ch] text-[14px] text-dark-muted"><b class="font-semibold text-dark-accent">{{ $service['note']['strong'] }}</b> {{ $service['note']['text'] }}</p>
+        @if ($service['note']['strong'] || $service['note']['text'])
+          <p class="mt-5 max-w-[80ch] text-[14px] text-dark-muted"><b class="font-semibold text-dark-accent">{{ $service['note']['strong'] }}</b> {{ $service['note']['text'] }}</p>
+        @endif
       </div>
     </section>
   @endforeach

@@ -2,12 +2,15 @@
 
 namespace App\Livewire\Admin\Portfolio;
 
+use App\Livewire\Admin\Portfolio\Concerns\ListsCategories;
 use App\Models\PortfolioProject;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Edit extends Component
 {
+    use ListsCategories;
+
     public PortfolioProject $portfolio;
 
     public string $title        = '';
@@ -66,7 +69,7 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.admin.portfolio.edit')
+        return view('livewire.admin.portfolio.edit', ['categories' => $this->categories()])
             ->layout('layouts.admin', ['title' => 'Edit Project']);
     }
 }

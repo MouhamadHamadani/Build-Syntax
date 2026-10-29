@@ -58,7 +58,9 @@
                 <li>{{ $feature }}</li>
               @endforeach
             </ul>
+            @if ($product['for'])
             <p class="product-for"><b>For:</b> {{ $product['for'] }} @if ($product['for_extra_strong'])<b>{{ $product['for_extra'] }}</b>@else{{ $product['for_extra'] }}@endif</p>
+            @endif
             <div class="product-foot">
               <span class="product-price">From {{ $product['price']['from'] }}<small>{{ $product['price']['unit'] }}</small></span>
               <a class="product-more" href="{{ $product['demo']['url'] }}" target="_blank" rel="noopener">{{ $product['demo']['label'] }}</a>

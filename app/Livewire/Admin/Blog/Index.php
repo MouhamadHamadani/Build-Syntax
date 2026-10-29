@@ -48,8 +48,12 @@ class Index extends Component
             $query->where('published', false);
         }
 
+        $published = BlogPost::where('published', true)->count();
+        $total = BlogPost::count();
+
         return view('livewire.admin.blog.index', [
             'posts' => $query->paginate(15),
-        ])->layout('layouts.admin', ['title' => 'Blog Posts']);
+            'counts' => ['all' => $total, 'published' => $published, 'draft' => $total - $published],
+        ])->layout('layouts.admin', ['title' => 'Blog posts']);
     }
 }

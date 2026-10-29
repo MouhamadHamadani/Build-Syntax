@@ -32,7 +32,10 @@ class NewContactSubmission extends Notification implements ShouldQueue
             'other'       => 'Other',
         ];
 
-        $projectType = $projectTypeLabels[$this->submission->project_type] ?? $this->submission->project_type;
+        // A type added in the admin is not in the list above: use its Catalog label.
+        $projectType = $projectTypeLabels[$this->submission->project_type]
+            ?? app(\App\Support\Catalog::class)->projectTypeLabels()[$this->submission->project_type]
+            ?? $this->submission->project_type;
 
         return (new MailMessage)
             ->subject("🔔 New Contact Submission from {$this->submission->name}")
