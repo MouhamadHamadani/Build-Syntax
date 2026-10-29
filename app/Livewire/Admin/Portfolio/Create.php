@@ -2,12 +2,15 @@
 
 namespace App\Livewire\Admin\Portfolio;
 
+use App\Livewire\Admin\Portfolio\Concerns\ListsCategories;
 use App\Models\PortfolioProject;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class Create extends Component
 {
+    use ListsCategories;
+
     public string $title        = '';
     public string $description  = '';
     public string $category     = '';
@@ -52,7 +55,7 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.admin.portfolio.create')
+        return view('livewire.admin.portfolio.create', ['categories' => $this->categories()])
             ->layout('layouts.admin', ['title' => 'New Project']);
     }
 }

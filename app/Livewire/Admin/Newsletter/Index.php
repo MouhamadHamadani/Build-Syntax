@@ -39,6 +39,6 @@ class Index extends Component
         ];
 
         return view('livewire.admin.newsletter.index', compact('subscribers', 'totals'))
-            ->layout('layouts.admin', ['title' => 'Newsletter Subscribers']);
+            ->layout('layouts.admin', ['title' => 'Newsletter']);
     }
 }

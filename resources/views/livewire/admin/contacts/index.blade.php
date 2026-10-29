@@ -1,69 +1,90 @@
-<div class="space-y-4">
+<div class="flex flex-col gap-[22px]">
+
+    <header class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+            <p class="mono-label">Sales</p>
+            <h1 class="admin-h1">Contacts</h1>
+        </div>
+        <p class="text-sm text-dark-muted">{{ $total }} {{ Str::plural('enquiry', $total) }} · {{ $counts['new'] ?? 0 }} new</p>
+    </header>
 
     {{-- Filters --}}
-    <div class="flex flex-wrap items-center gap-3">
-        <input wire:model.live.debounce.300ms="search" type="text" placeholder="Search name or email..."
-               class="border border-gray-200 rounded-lg px-4 py-2 text-sm w-56 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        <select wire:model.live="status"
-                class="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">All Statuses</option>
-            <option value="new">New</option>
-            <option value="contacted">Contacted</option>
-            <option value="in_progress">In Progress</option>
-            <option value="completed">Completed</option>
-            <option value="declined">Declined</option>
-        </select>
-        <select wire:model.live="priority"
-                class="border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-            <option value="">All Priorities</option>
-            <option value="urgent">Urgent</option>
-            <option value="high">High</option>
-            <option value="medium">Medium</option>
-            <option value="low">Low</option>
-        </select>
+    <div class="flex flex-wrap items-center justify-between gap-3">
+        <nav class="flex flex-wrap gap-1.5" aria-label="Status">
+            <button type="button" wire:click="setStatus('')" class="chip" aria-pressed="{{ $status === '' ? 'true' : 'false' }}">All · {{ $total }}</button>
+            @foreach(\App\Support\Enquiry::STATUSES as $value => [$label])
+                <button type="button" wire:click="setStatus('{{ $value }}')" class="chip" aria-pressed="{{ $status === $value ? 'true' : 'false' }}">{{ $label }} · {{ $counts[$value] ?? 0 }}</button>
+            @endforeach
+        </nav>
+
+        <div class="flex flex-wrap gap-2.5">
+            <select wire:model.live="product" aria-label="Product" class="field-input !w-auto !py-[11px] !text-sm">
+                <option value="">All products</option>
+                @foreach($productLabels as $value => $label)
+                    <option value="{{ $value }}">{{ $label }}</option>
+                @endforeach
+            </select>
+            <select wire:model.live="priority" aria-label="Priority" class="field-input !w-auto !py-[11px] !text-sm">
+                <option value="">All priorities</option>
+                @foreach(array_reverse(\App\Support\Enquiry::PRIORITIES, true) as $value => [$label])
+                    <option value="{{ $value }}">{{ $label }}</option>
+                @endforeach
+            </select>
+            <input wire:model.live.debounce.300ms="search" type="search" placeholder="Search name, email or company" aria-label="Search"
+                   class="field-input !w-auto min-w-[240px] !py-[11px] !text-sm">
+        </div>
     </div>
 
-    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <table class="w-full text-sm">
-            <thead class="bg-gray-50 border-b border-gray-100">
+    <section class="panel">
+        <table class="tbl">
+            <caption class="sr-only">Contact form enquiries</caption>
+            <thead>
                 <tr>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Client</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Project</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Status</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Priority</th>
-                    <th class="text-left px-5 py-3 font-semibold text-gray-600">Date</th>
-                    <th class="px-5 py-3"></th>
+                    <th scope="col">Client</th>
+                    <th scope="col">Product and plan</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Received</th>
+                    <th scope="col"><span class="sr-only">Actions</span></th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-50">
+            <tbody>
                 @forelse($submissions as $submission)
-                    <tr class="hover:bg-gray-50 transition-colors">
-                        <td class="px-5 py-3">
-                            <div class="font-medium text-gray-800">{{ $submission->name }}</div>
-                            <div class="text-xs text-gray-400">{{ $submission->email }}</div>
-                        </td>
-                        <td class="px-5 py-3 text-gray-600">{{ ucfirst(str_replace('_', ' ', $submission->project_type)) }}</td>
-                        <td class="px-5 py-3">
-                            <span class="text-xs font-semibold px-2 py-1 rounded-full {{ $submission->status_badge_class }}">
-                                {{ str_replace('_', ' ', $submission->status) }}
+                    @php
+                        $product = \App\Support\Enquiry::product($submission->project_type);
+                        $plan = \App\Support\Enquiry::plan($submission);
+                        [$statusLabel, $statusBadge] = \App\Support\Enquiry::STATUSES[$submission->status] ?? [ucfirst(str_replace('_', ' ', $submission->status)), 'bd-neutral'];
+                        [$priorityLabel, $priorityBadge] = \App\Support\Enquiry::PRIORITIES[$submission->priority] ?? [ucfirst($submission->priority), 'bd-neutral'];
+                    @endphp
+                    <tr wire:key="contact-{{ $submission->id }}">
+                        <td>
+                            <span class="flex min-w-0 items-center gap-3">
+                                <span class="avatar" aria-hidden="true">{{ strtoupper(mb_substr($submission->name, 0, 1)) }}</span>
+                                <span class="min-w-0">
+                                    <a href="{{ route('admin.contacts.show', $submission->id) }}" wire:navigate class="block truncate font-semibold text-dark-accent no-underline hover:underline">{{ $submission->name }}</a>
+                                    <span class="sub truncate">{{ $submission->email }}</span>
+                                </span>
                             </span>
                         </td>
-                        <td class="px-5 py-3">
-                            <span class="text-xs font-semibold px-2 py-1 rounded-full {{ $submission->priority_badge_class }}">
-                                {{ $submission->priority }}
-                            </span>
+                        <td data-label="Product and plan">
+                            <span class="accent-{{ $product['accent'] }} inline-flex items-center gap-2"><span class="dot" aria-hidden="true"></span>{{ $product['name'] }}{{ $plan ? ' · '.$plan : '' }}</span>
                         </td>
-                        <td class="px-5 py-3 text-gray-500">{{ $submission->created_at->format('M d, Y') }}</td>
-                        <td class="px-5 py-3 text-right">
-                            <a href="{{ route('admin.contacts.show', $submission->id) }}"
-                               class="text-xs px-3 py-1 rounded border border-gray-300 text-gray-600 hover:bg-gray-100 transition-colors">View</a>
+                        <td data-label="Status"><span class="bd {{ $statusBadge }}">{{ $statusLabel }}</span></td>
+                        <td data-label="Priority"><span class="bd {{ $priorityBadge }}">{{ $priorityLabel }}</span></td>
+                        <td data-label="Received" class="text-dark-muted">{{ \App\Support\Enquiry::received($submission->created_at) }}</td>
+                        <td class="text-right">
+                            <a href="{{ route('admin.contacts.show', $submission->id) }}" wire:navigate class="admin-link font-semibold" aria-label="View {{ $submission->name }}">View</a>
                         </td>
                     </tr>
                 @empty
-                    <tr><td colspan="6" class="text-center py-12 text-gray-400">No submissions found.</td></tr>
+                    <tr class="is-empty"><td colspan="6" class="!py-12 text-center text-dark-muted">No enquiries found.</td></tr>
                 @endforelse
             </tbody>
         </table>
-        <div class="px-5 py-4 border-t border-gray-100">{{ $submissions->links() }}</div>
-    </div>
+        @if($submissions->hasPages())
+            <div class="border-t border-dark-line px-5 py-4">{{ $submissions->links('pagination.site', ['noun' => 'enquiries']) }}</div>
+        @endif
+    </section>
+
+    <p class="text-[13px] text-dark-muted">The product and plan come from the type and plan the Services buttons send to the contact form.</p>
 </div>

@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Contacts;
 
 use App\Models\ContactSubmission;
+use App\Support\Enquiry;
 use Livewire\Component;
 
 class Show extends Component
@@ -35,11 +36,18 @@ class Show extends Component
             'notes'    => $this->notes,
         ]);
         session()->flash('success', 'Submission updated.');
+        $this->dispatch('saved');
     }
 
     public function render()
     {
-        return view('livewire.admin.contacts.show')
-            ->layout('layouts.admin', ['title' => 'Contact: ' . $this->submission->name]);
+        return view('livewire.admin.contacts.show', [
+            'product' => Enquiry::product($this->submission->project_type),
+            'plan' => Enquiry::plan($this->submission),
+            'statuses' => Enquiry::STATUSES,
+            'priorities' => Enquiry::PRIORITIES,
+            'budgets' => Enquiry::BUDGETS,
+            'overdueHours' => Enquiry::OVERDUE_HOURS,
+        ])->layout('layouts.admin', ['title' => 'Contact: ' . $this->submission->name]);
     }
 }

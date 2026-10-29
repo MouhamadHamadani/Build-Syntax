@@ -2,13 +2,14 @@
 
 namespace App\Livewire\Admin\Portfolio;
 
+use App\Livewire\Admin\Portfolio\Concerns\ListsCategories;
 use App\Models\PortfolioProject;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination;
+    use ListsCategories, WithPagination;
 
     public string $search = '';
 
@@ -33,7 +34,7 @@ class Index extends Component
             ->when($this->search, fn($q) => $q->where('title', 'like', "%{$this->search}%"))
             ->paginate(15);
 
-        return view('livewire.admin.portfolio.index', compact('projects'))
+        return view('livewire.admin.portfolio.index', ['projects' => $projects, 'categories' => $this->categories()])
             ->layout('layouts.admin', ['title' => 'Portfolio']);
     }
 }
