@@ -3,6 +3,7 @@
 namespace App\Livewire\Pages;
 
 use App\Models\PortfolioProject;
+use App\Support\Catalog;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -32,6 +33,13 @@ class Portfolio extends Component
     public function filterByCategory($category)
     {
         $this->category = $category;
+        $this->resetPage();
+    }
+
+    public function clearFilters()
+    {
+        $this->reset(['search', 'category']);
+        $this->resetPage();
     }
 
     public function viewProject($id)
@@ -59,12 +67,15 @@ class Portfolio extends Component
             });
         }
 
+        $catalog = app(Catalog::class);
+
         return view('livewire.pages.portfolio', [
             'projects' => $query->paginate(12),
-            'categories' => array_merge(['all'], config('products.portfolio_categories')),
+            'categoryLabels' => $catalog->portfolioCategories(),
+            'products' => $catalog->products(),
         ])->layout('layouts.app', [
             'title' => 'Portfolio - Build Syntax',
-            'description' => 'Explore our portfolio of successful web development projects including custom websites, ShopNex e-commerce stores, and LebaSouk POS point-of-sale systems.'
+            'description' => 'Our portfolio: CarteNex, ShopNex, Tymelo and LebaSouk POS, four products we built with live demos, plus client projects as they launch.'
         ]);
     }
 }
