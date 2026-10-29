@@ -6,9 +6,9 @@
 |--------------------------------------------------------------------------
 |
 | Copy, features, plans and prices for the four products, custom development,
-| hosting and maintenance. The home page cards and the Services page both read
-| this file, so a price is edited in exactly one place: the $prices block
-| below. Everything else that shows a price is built from it.
+| hosting and maintenance. Read it through App\Support\Catalog only (views, Livewire
+| components and tests never call config('catalog')). A price is edited in exactly one
+| place: the $prices block below. Everything else that shows a price is built from it.
 |
 | Every claim here was checked against that product's code and demo: do not
 | add features that are not built. (Custom development tiers, VPS hosting and
@@ -366,56 +366,51 @@ return [
         ],
     ],
 
+    // VPS hosting tiers (Services page)
     'hosting' => [
-        'anchor' => 'hosting',
-        'tag' => 'Infrastructure and support',
-        'heading' => 'Hosting and maintenance',
-        'intro' => 'Hosting and ongoing care to keep your platform secure, fast and up to date.',
+        'heading' => 'VPS hosting',
+        'intro' => 'You own the server subscription. We handle the full configuration and hardening. Every tier includes VPS setup and configuration, SSL, daily backups, security hardening and monitoring.',
+        'tiers' => [
+            ['name' => 'Small sites', 'price' => $prices['vps']['small'], 'period' => ' / year', 'features' => ['Traffic: up to about 5,000 visits a month', 'Ideal for: brochure and informational sites']],
+            ['name' => 'Medium traffic', 'price' => $prices['vps']['medium'], 'period' => ' / year', 'features' => ['Traffic: 5,000 to 20,000 visits a month', 'Ideal for: active e-commerce and booking sites']],
+            ['name' => 'High traffic', 'price' => $prices['vps']['high'], 'period' => ' / year', 'features' => ['Traffic: 20,000+ visits a month', 'Ideal for: business-critical platforms']],
+        ],
+    ],
+
+    // Monthly maintenance plans (Services page)
+    'maintenance' => [
+        'heading' => 'Monthly maintenance',
+        'intro' => 'Billed monthly, with a minimum 3-month commitment.',
         // Contact form type for hosting and maintenance enquiries
         'project_type' => 'other',
-
-        'vps' => [
-            'heading' => 'VPS hosting',
-            'intro' => 'You own the server subscription. We handle the full configuration and hardening. Every tier includes VPS setup and configuration, SSL, daily backups, security hardening and monitoring.',
-            'tiers' => [
-                ['name' => 'Small sites', 'price' => $prices['vps']['small'], 'period' => ' / year', 'features' => ['Traffic: up to about 5,000 visits a month', 'Ideal for: brochure and informational sites']],
-                ['name' => 'Medium traffic', 'price' => $prices['vps']['medium'], 'period' => ' / year', 'features' => ['Traffic: 5,000 to 20,000 visits a month', 'Ideal for: active e-commerce and booking sites']],
-                ['name' => 'High traffic', 'price' => $prices['vps']['high'], 'period' => ' / year', 'features' => ['Traffic: 20,000+ visits a month', 'Ideal for: business-critical platforms']],
+        'plans' => [
+            [
+                'name' => 'Essential', 'plan_key' => 'Maintenance-Essential', 'featured' => false,
+                'price' => $prices['care']['essential'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                'summary' => 'Keep-the-lights-on for live brochure sites.',
+                'features' => ['Security and dependency updates', 'Uptime monitoring', 'SSL certificate renewal', 'Monthly health report', 'Email support (48-hour response)'],
+                'meta' => 'Does not include feature changes or bug fixes.', 'cta' => 'Request this plan',
             ],
-        ],
-
-        'maintenance' => [
-            'heading' => 'Monthly maintenance',
-            'intro' => 'Billed monthly, with a minimum 3-month commitment.',
-            'plans' => [
-                [
-                    'name' => 'Essential', 'plan_key' => 'Maintenance-Essential', 'featured' => false,
-                    'price' => $prices['care']['essential'], 'unit' => null, 'period' => ' / month', 'billing' => null,
-                    'summary' => 'Keep-the-lights-on for live brochure sites.',
-                    'features' => ['Security and dependency updates', 'Uptime monitoring', 'SSL certificate renewal', 'Monthly health report', 'Email support (48-hour response)'],
-                    'meta' => 'Does not include feature changes or bug fixes.', 'cta' => 'Request this plan',
-                ],
-                [
-                    'name' => 'Basic', 'plan_key' => 'Maintenance-Basic', 'featured' => false,
-                    'price' => $prices['care']['basic'], 'unit' => null, 'period' => ' / month', 'billing' => null,
-                    'summary' => 'Small brochure and informational sites.',
-                    'features' => ['Bug fixes', 'Security patches', 'Plugin and package updates', 'Monthly health report'],
-                    'meta' => null, 'cta' => 'Request this plan',
-                ],
-                [
-                    'name' => 'Standard', 'plan_key' => 'Maintenance-Standard', 'featured' => true,
-                    'price' => $prices['care']['standard'], 'unit' => null, 'period' => ' / month', 'billing' => null,
-                    'summary' => 'E-commerce and booking platforms in active use.',
-                    'features' => ['Everything in Basic', 'Performance optimisation', 'Priority support response', 'Minor content updates', 'Uptime monitoring'],
-                    'meta' => null, 'cta' => 'Request this plan',
-                ],
-                [
-                    'name' => 'Premium', 'plan_key' => 'Maintenance-Premium', 'featured' => false,
-                    'price' => $prices['care']['premium'], 'unit' => null, 'period' => ' / month', 'billing' => null,
-                    'summary' => 'High-traffic or business-critical platforms.',
-                    'features' => ['Everything in Standard', 'Small feature additions (up to 4 hours a month)', 'Database optimisation', 'Emergency incident response', 'Quarterly strategy review'],
-                    'meta' => null, 'cta' => 'Request this plan',
-                ],
+            [
+                'name' => 'Basic', 'plan_key' => 'Maintenance-Basic', 'featured' => false,
+                'price' => $prices['care']['basic'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                'summary' => 'Small brochure and informational sites.',
+                'features' => ['Bug fixes', 'Security patches', 'Plugin and package updates', 'Monthly health report'],
+                'meta' => null, 'cta' => 'Request this plan',
+            ],
+            [
+                'name' => 'Standard', 'plan_key' => 'Maintenance-Standard', 'featured' => true,
+                'price' => $prices['care']['standard'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                'summary' => 'E-commerce and booking platforms in active use.',
+                'features' => ['Everything in Basic', 'Performance optimisation', 'Priority support response', 'Minor content updates', 'Uptime monitoring'],
+                'meta' => null, 'cta' => 'Request this plan',
+            ],
+            [
+                'name' => 'Premium', 'plan_key' => 'Maintenance-Premium', 'featured' => false,
+                'price' => $prices['care']['premium'], 'unit' => null, 'period' => ' / month', 'billing' => null,
+                'summary' => 'High-traffic or business-critical platforms.',
+                'features' => ['Everything in Standard', 'Small feature additions (up to 4 hours a month)', 'Database optimisation', 'Emergency incident response', 'Quarterly strategy review'],
+                'meta' => null, 'cta' => 'Request this plan',
             ],
         ],
     ],

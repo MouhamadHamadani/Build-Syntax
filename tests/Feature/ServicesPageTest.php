@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Support\Catalog;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -9,7 +10,7 @@ class ServicesPageTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** Every price string in config/catalog.php (plan prices, tier prices, headline prices). */
+    /** Every price string in the Catalog (plan prices, tier prices, headline prices). */
     private function catalogPrices(): array
     {
         $prices = [];
@@ -24,7 +25,8 @@ class ServicesPageTest extends TestCase
                 }
             }
         };
-        $walk(config('catalog'));
+        $catalog = app(Catalog::class);
+        $walk(['products' => $catalog->products(), 'custom' => $catalog->custom(), 'hosting' => $catalog->hosting(), 'maintenance' => $catalog->maintenance()]);
 
         return array_values(array_unique($prices));
     }
@@ -33,7 +35,7 @@ class ServicesPageTest extends TestCase
     {
         $html = $this->get('/services')->assertOk()->getContent();
 
-        foreach (config('catalog.products') as $product) {
+        foreach (app(Catalog::class)->products() as $product) {
             $this->assertStringContainsString($product['name'], $html);
             foreach ($product['plans'] as $plan) {
                 $this->assertStringContainsString($plan['name'], $html);
@@ -52,7 +54,7 @@ class ServicesPageTest extends TestCase
         $home = $this->get('/')->getContent();
         $services = $this->get('/services')->getContent();
 
-        foreach (config('catalog.products') as $product) {
+        foreach (app(Catalog::class)->products() as $product) {
             foreach ($product['plans'] as $plan) {
                 if ($plan['price'] === null) {
                     continue;
@@ -86,7 +88,7 @@ class ServicesPageTest extends TestCase
         foreach ($planLinks as $href) {
             parse_str(parse_url(html_entity_decode($href), PHP_URL_QUERY), $query);
 
-            $this->assertContains($query['type'] ?? null, config('products.project_types'), $href);
+            $this->assertContains($query['type'] ?? null, app(Catalog::class)->projectTypes(), $href);
             $this->assertMatchesRegularExpression('/^[A-Za-z0-9][A-Za-z0-9 _.\-]{0,49}$/', $query['plan'] ?? '', $href);
         }
     }

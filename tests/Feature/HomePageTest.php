@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Livewire\Components\NewsletterSubscribe;
+use App\Support\Catalog;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
 use Tests\TestCase;
@@ -14,10 +15,10 @@ class HomePageTest extends TestCase
     /** The four products plus custom development, in page order. */
     private function offers(): array
     {
-        return [...array_values(config('catalog.products')), config('catalog.custom')];
+        return [...array_values(app(Catalog::class)->products()), app(Catalog::class)->custom()];
     }
 
-    public function test_home_renders_every_product_name_and_headline_price_from_config(): void
+    public function test_home_renders_every_product_name_and_headline_price_from_the_catalog(): void
     {
         $html = $this->get('/')->assertOk()->getContent();
 

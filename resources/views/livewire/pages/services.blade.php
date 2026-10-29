@@ -1,5 +1,5 @@
 @php
-  // Static page copy. Plans, prices, features, hosting and maintenance come from config/catalog.php.
+  // Static page copy. Plans, prices, features, hosting and maintenance come from the Catalog class (App\Support\Catalog).
   $terms = [
       ['Currency', 'Prices in USD. LBP accepted at the current market rate.'],
       ['Menus and booking', 'Monthly or yearly, with 2 months free when you pay yearly.'],
@@ -12,7 +12,7 @@
       ->map(fn ($product) => ['id' => $product['service']['anchor'], 'label' => $product['name'], 'accent' => $product['accent']])
       ->values()
       ->push(['id' => $custom['service']['anchor'], 'label' => 'Custom development', 'accent' => 'brand'])
-      ->push(['id' => $hosting['anchor'], 'label' => 'Hosting and maintenance', 'accent' => 'brand'])
+      ->push(['id' => 'hosting', 'label' => 'Hosting and maintenance', 'accent' => 'brand'])
       ->all();
 
   // Anchored headings clear the fixed header (--header-h) plus the sticky sub-navigation.
@@ -116,21 +116,21 @@
   </section>
 
   {{-- Hosting and maintenance --}}
-  <section id="{{ $hosting['anchor'] }}" class="accent-brand band py-[72px] {{ $anchorOffset }}">
+  <section id="hosting" class="accent-brand band py-[72px] {{ $anchorOffset }}">
     <div class="wrap">
       <div class="mb-10 max-w-[640px]">
         {{-- 11px wrapper: the reference's inline tag adds only 11px of line height and overhangs the section top, so match that. --}}
-        <p class="text-[11px] leading-none"><span class="product-tag">{{ $hosting['tag'] }}</span></p>
-        <h2 class="heading mt-3 text-[clamp(28px,4vw,42px)] font-bold">{{ $hosting['heading'] }}</h2>
-        <p class="mt-3.5 text-[17px] text-dark-muted">{{ $hosting['intro'] }}</p>
+        <p class="text-[11px] leading-none"><span class="product-tag">Infrastructure and support</span></p>
+        <h2 class="heading mt-3 text-[clamp(28px,4vw,42px)] font-bold">Hosting and maintenance</h2>
+        <p class="mt-3.5 text-[17px] text-dark-muted">Hosting and ongoing care to keep your platform secure, fast and up to date.</p>
       </div>
 
       <div class="mb-5">
-        <h3 class="heading text-[24px] font-bold">{{ $hosting['vps']['heading'] }}</h3>
-        <p class="mt-1.5 text-dark-muted">{{ $hosting['vps']['intro'] }}</p>
+        <h3 class="heading text-[24px] font-bold">{{ $hosting['heading'] }}</h3>
+        <p class="mt-1.5 text-dark-muted">{{ $hosting['intro'] }}</p>
       </div>
       <div class="grid gap-4 min-[901px]:grid-cols-3">
-        @foreach ($hosting['vps']['tiers'] as $tier)
+        @foreach ($hosting['tiers'] as $tier)
           <div class="pcard">
             <h3 class="heading text-[22px] font-bold">{{ $tier['name'] }}</h3>
             <p class="pcard-amount">{{ $tier['price'] }}<small>{{ $tier['period'] }}</small></p>
@@ -144,12 +144,12 @@
       </div>
 
       <div class="mb-5 mt-14">
-        <h3 class="heading text-[24px] font-bold">{{ $hosting['maintenance']['heading'] }}</h3>
-        <p class="mt-1.5 text-dark-muted">{{ $hosting['maintenance']['intro'] }}</p>
+        <h3 class="heading text-[24px] font-bold">{{ $maintenance['heading'] }}</h3>
+        <p class="mt-1.5 text-dark-muted">{{ $maintenance['intro'] }}</p>
       </div>
       <div class="grid gap-4 min-[641px]:grid-cols-2 min-[1101px]:grid-cols-4">
-        @foreach ($hosting['maintenance']['plans'] as $plan)
-          <x-services.plan-card :plan="$plan" :type="$hosting['project_type']" button="btn-brand" />
+        @foreach ($maintenance['plans'] as $plan)
+          <x-services.plan-card :plan="$plan" :type="$maintenance['project_type']" button="btn-brand" />
         @endforeach
       </div>
     </div>
