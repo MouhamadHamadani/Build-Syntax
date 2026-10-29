@@ -4,6 +4,7 @@
 
   {{-- Built by us: one card per product, from the Catalog --}}
   <section class="wrap py-[72px]">
+    <h2 class="sr-only">Built by us</h2>
     <div class="grid gap-4 min-[761px]:grid-cols-2">
       @foreach ($products as $product)
         @php($shot = $product['showcase']['laptop'])
