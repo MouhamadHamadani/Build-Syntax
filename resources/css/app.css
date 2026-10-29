@@ -550,7 +550,8 @@
     .sb-link svg {
         @apply h-[18px] w-[18px] flex-none;
     }
-    .sb-link[aria-current='page'] {
+    .sb-link[aria-current='page'],
+    .sb-link[aria-current='true'] {
         @apply bg-brand-blue-soft text-dark-accent;
     }
     .sb-link[aria-current='page'] svg {

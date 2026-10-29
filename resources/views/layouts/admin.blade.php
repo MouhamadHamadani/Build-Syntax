@@ -77,6 +77,7 @@
         <div>
             <div class="sb-tag">Website</div>
             <nav class="sb-group" aria-label="Website">
+                <x-admin-nav-link route="admin.services.index" icon="services" match="admin.services.*">Services and pricing <span class="sb-new">New</span></x-admin-nav-link>
                 <x-admin-nav-link route="admin.portfolio.index" icon="portfolio" match="admin.portfolio.*">Portfolio</x-admin-nav-link>
                 <x-admin-nav-link route="admin.blog.index" icon="blog" match="admin.blog.*">Blog posts</x-admin-nav-link>
             </nav>

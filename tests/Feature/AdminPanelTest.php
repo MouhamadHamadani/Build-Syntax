@@ -45,7 +45,7 @@ class AdminPanelTest extends TestCase
         $user = User::factory()->create();
         $contact = $this->contact();
 
-        foreach (['dashboard', 'contacts', "contacts/{$contact->id}", 'blog', 'blog/create', 'portfolio', 'portfolio/create', 'newsletter'] as $path) {
+        foreach (['dashboard', 'contacts', "contacts/{$contact->id}", 'blog', 'blog/create', 'portfolio', 'portfolio/create', 'newsletter', 'services'] as $path) {
             $this->actingAs($user)->get("/admin/{$path}")->assertForbidden();
         }
     }
@@ -66,12 +66,12 @@ class AdminPanelTest extends TestCase
         $contact = $this->contact();
         $project = PortfolioProject::create(['title' => 'Olea', 'description' => 'Menu', 'category' => 'digital_menu']);
 
-        foreach (['dashboard', 'contacts', "contacts/{$contact->id}", 'blog', 'blog/create', 'portfolio', 'portfolio/create', "portfolio/{$project->id}/edit", 'newsletter'] as $path) {
+        foreach (['dashboard', 'contacts', "contacts/{$contact->id}", 'blog', 'blog/create', 'portfolio', 'portfolio/create', "portfolio/{$project->id}/edit", 'newsletter', 'services'] as $path) {
             $html = $this->actingAs($admin)->get("/admin/{$path}")->assertOk()->getContent();
 
             $this->assertStringNotContainsString('googletagmanager', $html, $path);
             $this->assertStringNotContainsString('Quick links', $html, $path);
-            $this->assertStringNotContainsString('Services and pricing', $html, $path);
+            $this->assertStringContainsString('Services and pricing', $html, $path);
             $this->assertSame(1, substr_count($html, '<h1'), "{$path} must have exactly one h1");
         }
 

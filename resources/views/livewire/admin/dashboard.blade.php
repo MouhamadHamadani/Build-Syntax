@@ -64,6 +64,7 @@
         {{-- Quick actions --}}
         <section class="panel min-w-0 flex-[1_1_280px]" aria-labelledby="quick-actions">
             <div class="panel-head"><h2 id="quick-actions">Quick actions</h2></div>
+            <a href="{{ route('admin.services.index') }}" wire:navigate class="row-link"><span class="flex-1">Update a price or plan</span><span aria-hidden="true">→</span></a>
             <a href="{{ route('admin.portfolio.create') }}" wire:navigate class="row-link"><span class="flex-1">Add a portfolio project</span><span aria-hidden="true">→</span></a>
             <a href="{{ route('admin.blog.create') }}" wire:navigate class="row-link"><span class="flex-1">Write a blog post</span><span aria-hidden="true">→</span></a>
         </section>

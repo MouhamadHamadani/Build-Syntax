@@ -14,6 +14,8 @@ use App\Livewire\Admin\Contacts\Show as AdminContactsShow;
 use App\Livewire\Admin\Contacts\Index as AdminContactsIndex;
 // Newsletter
 use App\Livewire\Admin\Newsletter\Index as AdminNewsletterIndex;
+// Services and pricing
+use App\Livewire\Admin\Services\Index as AdminServicesIndex;
 
 use App\Livewire\Admin\Dashboard;
 // Admin Section
@@ -75,4 +77,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 
         // Newsletter
         Route::get('/newsletter', AdminNewsletterIndex::class)->name('newsletter.index');
+
+        // Services and pricing (the catalog tables)
+        Route::get('/services', AdminServicesIndex::class)->name('services.index');
     });
