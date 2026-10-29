@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Livewire\Pages\Contact;
 use App\Notifications\NewContactSubmission;
+use App\Support\Catalog;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Livewire;
@@ -37,6 +38,6 @@ class ContactLebaSoukTest extends TestCase
         Livewire::withQueryParams(['type' => 'pos'])
             ->test(Contact::class)
             ->assertSet('project_type', 'pos')
-            ->assertSee('LebaSouk POS (Point of Sale)');
+            ->assertSee(app(Catalog::class)->projectTypeLabels()['pos']);
     }
 }

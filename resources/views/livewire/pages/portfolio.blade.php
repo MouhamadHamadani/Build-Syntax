@@ -95,7 +95,7 @@
         </div>
 
         <div class="mt-10">
-          {{ $projects->links('pagination.site') }}
+          {{ $projects->links('pagination.site', ['noun' => 'projects', 'scrollTo' => 'clients']) }}
         </div>
       @elseif ($search || $category !== 'all')
         <div class="empty-state">

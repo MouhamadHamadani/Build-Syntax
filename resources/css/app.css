@@ -468,6 +468,62 @@
     .info-list b {
         @apply text-right font-semibold;
     }
+
+    /* ------------------------------------------------------------------
+     * Blog post body and legal pages
+     * ------------------------------------------------------------------ */
+    .post-body {
+        @apply max-w-[70ch] text-[17px] leading-[1.75] text-dark-muted;
+    }
+    .post-body > * + * {
+        @apply mt-5;
+    }
+    .post-body h2,
+    .post-body h3,
+    .post-body h4 {
+        @apply mt-10 font-bold leading-[1.2] tracking-[-0.01em] text-dark-accent;
+    }
+    .post-body h2 { @apply text-[28px]; }
+    .post-body h3 { @apply text-[22px]; }
+    .post-body h4 { @apply text-[18px]; }
+    .post-body a {
+        @apply text-brand-blue-light underline underline-offset-2 transition-colors hover:text-dark-accent;
+    }
+    .post-body strong {
+        @apply font-semibold text-dark-accent;
+    }
+    .post-body ul {
+        @apply list-disc pl-6;
+    }
+    .post-body ol {
+        @apply list-decimal pl-6;
+    }
+    .post-body li + li {
+        @apply mt-2;
+    }
+    .post-body code {
+        @apply rounded border border-dark-line bg-dark-secondary px-1.5 py-0.5 font-mono text-[.9em] text-dark-accent;
+    }
+    .post-body pre {
+        @apply overflow-x-auto rounded-[10px] border border-dark-line bg-dark-primary p-4 font-mono text-[13px] leading-[1.7];
+    }
+    .post-body pre code {
+        @apply border-0 bg-transparent p-0 text-[inherit];
+    }
+    .post-body blockquote {
+        @apply border-l-4 border-brand-blue-light pl-5 italic text-dark-accent;
+    }
+    .post-body hr {
+        @apply border-dark-line;
+    }
+    .post-body img {
+        @apply rounded-[10px];
+    }
+
+    /* Legal pages: links in running text */
+    .doc a {
+        @apply text-brand-blue-light underline underline-offset-2 transition-colors hover:text-dark-accent;
+    }
 }
 
 @layer utilities {

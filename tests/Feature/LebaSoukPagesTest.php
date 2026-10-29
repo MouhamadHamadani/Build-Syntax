@@ -24,7 +24,7 @@ class LebaSoukPagesTest extends TestCase
         foreach ([
             'CarteNex &mdash; digital menu platform (monthly subscription)',
             'LebaSouk POS &mdash; point-of-sale software (one-time license)',
-            'The 50% / 30% / 20% schedule below applies to custom development and project-based platform work. It does not apply to LebaSouk POS or CarteNex.',
+            'Custom projects and ShopNex are paid 50% before development begins, 30% on delivery and 20% after training or handover. CarteNex is a monthly subscription. LebaSouk POS has no deposit and is paid once it is installed. Tymelo is a one-time setup fee followed by a monthly fee.',
             'LebaSouk POS is sold as a one-time license with no upfront deposit. Payment is due once installation is complete.',
             'CarteNex is billed as a monthly subscription',
             'Last updated: October 2026',

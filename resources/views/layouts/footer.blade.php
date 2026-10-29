@@ -41,12 +41,10 @@
               </svg>
             </a>
           </div>
-          {{-- Compact newsletter. The blog pages already embed the full form, so skip it there. --}}
-          @unless (request()->routeIs('blog.*'))
-            <div class="mt-6 max-w-sm">
-              <livewire:components.newsletter-subscribe :compact="true" />
-            </div>
-          @endunless
+          {{-- Compact newsletter (the full card is no longer on the blog pages) --}}
+          <div class="mt-6 max-w-sm">
+            <livewire:components.newsletter-subscribe :compact="true" />
+          </div>
         </div>
 
         <!-- Quick Links -->

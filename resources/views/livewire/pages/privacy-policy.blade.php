@@ -1,20 +1,11 @@
-<div>
-    {{-- Hero --}}
-    <section class="gradient-hero-dark text-white pt-32 pb-20">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in text-brand-blue">Privacy Policy</h1>
-            <p class="text-lg opacity-90 max-w-3xl mx-auto fade-in">
-                How Build Syntax collects, uses, and protects your information.
-            </p>
-            <p class="text-sm text-dark-muted mt-4 fade-in">Last updated: June 2026</p>
-        </div>
-    </section>
+<div class="leading-[1.6]">
+    <x-page-hero eyebrow="Legal" title="Privacy Policy"
+        lead="How Build Syntax collects, uses, and protects your information."
+        note="Last updated: June 2026" />
 
-    {{-- Content --}}
-    <section class="py-20 bg-dark-secondary">
-        <div class="container mx-auto px-6">
-            <article class="max-w-4xl mx-auto card-dark p-8 md:p-12 rounded-xl fade-in space-y-10
-                            text-dark-muted leading-relaxed">
+    {{-- Content: a narrow, readable column --}}
+    <section class="wrap pb-[72px]">
+        <article class="doc max-w-[70ch] space-y-10 leading-relaxed text-dark-muted">
 
                 <section>
                     <h2 class="text-2xl font-bold text-dark-accent mb-4">1. Introduction</h2>
@@ -106,7 +97,6 @@
                         the top of this page reflects the most recent revision.
                     </p>
                 </section>
-            </article>
-        </div>
+        </article>
     </section>
 </div>
